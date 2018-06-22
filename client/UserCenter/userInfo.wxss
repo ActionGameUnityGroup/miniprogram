@@ -1,3 +1,42 @@
-.Title {
-  
+.bg {
+  background: #F5F5F5;
+  padding: 20rpx;
+}
+.container {
+  border-radius: 10rpx;
+  background: white;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 0rpx 0;
+  margin: 50rpx;
+}
+
+.line {
+  background: #DCDCDC;
+  margin: 5rpx;
+  height: 2rpx;
+}
+
+.confirm-btn {
+  background: #00C957;
+  color: white;
+}
+.input {
+  width: 100rpx;
+}
+
+.image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.space {
+  height: 50rpx;
+  color: #F5F5F5;
 }
