@@ -1,6 +1,10 @@
 {
   "pages":[
+    "PublicWelfare/publicAction",
     "UserCenter/userInfo"
+
+
+
   ],
   "window":{
     "backgroundTextStyle": "light",
