@@ -1,0 +1,31 @@
+<!--UserCenter/Address.wxml-->
+<view class='bg'>
+
+  <!--dynamicly create address content box-->
+  <scroll-view class='scroll-view' wx:for='{{addressList}}' wx:key='index' wx:for-item='item'>
+    <checkbox-group bindchange='onAddressClicked'>
+      <view class="scroll-item">
+        <checkbox value='{{item.isDefault}}'></checkbox>
+        <text class='userName'>{{item.userName}}</text>
+        <text class='phoneNumber'>{{item.phone}}</text>
+        <text class='detail'>{{item.detail}}</text>
+        <button class='edit-btn'>修改</button>
+      </view>
+    </checkbox-group>
+  </scroll-view>
+  
+  <!-- <view class="scrll-item">
+      <checkbox value='hello checkbox' checked='true'></checkbox>
+      <text class='userName'>haku</text>
+      <text class='phoneNumber'>123456</text>
+      <text class='detail'>渝北区</text>
+      <button class='edit-btn'></button>
+  </view> -->
+
+
+  <!--bottom button-->
+  <button class='add-new-btn' bindtap='onClickAddBtn'>
+    <image class='btn-add-img'></image>
+    <text>添加新地址</text>
+  </button>
+</view>

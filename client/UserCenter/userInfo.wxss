@@ -12,8 +12,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0rpx 0rpx 0;
-  margin: 50rpx;
+  padding: 0rpx 10rpx 0;
+  margin: 45rpx;
 }
 
 .line {
@@ -34,6 +34,12 @@
   width: 60rpx;
   height: 60rpx;
   border-radius: 30rpx;
+}
+
+.navigator {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .space {

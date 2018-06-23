@@ -50,8 +50,11 @@
       </view>
 
       <view class='item'>
+      <navigator class='navigator' url='Address'>
         <text>地址：</text>
-        <input class='input' type='text' placeholder='haku'>haku</input>
+        <!-- <input class='input' type='text' placeholder='haku'>haku</input> -->
+        <text>haku</text>
+      </navigator>
       </view>
 
   </scroll-view>

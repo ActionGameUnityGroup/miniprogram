@@ -1,6 +1,7 @@
 {
   "pages":[
-    "UserCenter/userInfo"
+    "UserCenter/userInfo",
+    "UserCenter/Address"
   ],
   "window":{
     "backgroundTextStyle": "light",
