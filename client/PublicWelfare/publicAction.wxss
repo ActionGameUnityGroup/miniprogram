@@ -11,7 +11,7 @@ page {
 .scroll-item {
   display: flex;
   flex-direction: row;
-  height: 204rpx;
+  height: 204px;
 }
 
 .action-image {
@@ -26,7 +26,8 @@ page {
 .right-content {
   display: flex;
   flex-direction: column;
-  
+  height: 200px;
+  justify-content: space-between;
 }
 
 .action-title {
