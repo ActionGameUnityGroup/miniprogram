@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>测试</title>
+</head>
+<body>
+  <div>标题</div>
+  <input type="button" value="获取数据" id='getBtn' />
+  <input type="button" value="发送数据" id="postBtn" />
+  <!-- <form action="http://192.168.1.104:3000/api/user/setUserInfo" method="POST">
+    <input type="text" name="avatar" placeholder="avatar" />
+    <input type="text" name="nickname" placeholder="nickname"/>
+    <input type="text" name="sex" placeholder="sex"/>
+    <input type="text" name="birthday" placeholder="birthday"/>
+    <input type="text" name="name" placeholder="name"/>
+    <input type="text" name="phonenumber" placeholder="phonenumber"/>
+    <input type="text" name="address" placeholder="address"/>
+    <input type="text" name="unionid" placeholder="unionid"/>
+    <input type="submit" name="submit" value="Submit" />
+  </form> -->
+  <!-- <input type="button" value="Submit"  /> -->
+  <script>
+
+    const setHeader = (data) => {
+      console.log(data);
+      document.querySelector('div').textContent = data.status;
+    };
+
+    document.querySelector('#getBtn').onclick = () => {
+      console.log('请求接口');
+      fetch('http://192.168.1.104:3000/api/user/getUserInfo')
+        .then((res) => {
+          console.log(res);
+          res.json().then((data) => {
+                                      // console.log(data);
+                                      setHeader(data);
+                                    });
+        });
+    };
+    document.querySelector('#postBtn').onclick = () => {
+      console.log('请求接口');
+      fetch(
+        'http://192.168.1.104:3000/api/user/setUserInfo',
+        {method: 'POST', body: JSON.stringify({nickname: 'Jerry', sex: 0})}
+      ).then((res) => {
+        console.log(res, new Date().getTime());
+        if (res.ok) {
+          res.json().then((data) => {
+             console.log(data);
+            // setHeader(data);
+          });
+        }
+      });
+    };
+  </script>
+</body>
+</html>

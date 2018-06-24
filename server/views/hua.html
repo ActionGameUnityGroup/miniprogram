@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>滑动</title>
+  <link rel="stylesheet" type="text/css" href="src/css/main.css"/>
+  <link rel="stylesheet" type="text/css" href="src/css/swiper.min.css"/>
+  <style type="text/css">
+    .swiper-container { width: 100%; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片1"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片2"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <p>123456789</p>
+            <p>abcdefghi</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片1"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片2"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <p>123456789</p>
+            <p>abcdefghi</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片1"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <img src="" alt="图片2"/>
+          </div>
+        </div>
+        <div class="slide-item">
+          <div>
+            <p>123456789</p>
+            <p>abcdefghi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="src/js/jquery.min.js"></script>
+  <script src="src/js/swiper.min.js"></script>
+  <script>
+    const getScreenHeight = function(parent, child){
+      let HEIGHT = window.innerHeight;
+      console.log(HEIGHT);
+      document.querySelector(parent).style.height = `${HEIGHT}px`;
+      document.querySelector(parent).querySelectorAll(child).forEach((slideItem) => {
+        slideItem.style.height = `${HEIGHT}px`;
+      });
+    };
+    getScreenHeight('.swiper-container', '.swiper-slide');
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      loop: true,
+      longSwipesRatio : 0.5,
+      /*pagination: {
+        el: '.swiper-pagination'
+      },*/
+      /*navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },*/
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+</body>
+</html>
