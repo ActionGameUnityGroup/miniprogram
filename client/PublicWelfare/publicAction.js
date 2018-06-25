@@ -74,5 +74,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  // click action
+  onClickAction: function(e) {
+    console.log("click " + e);
   }
 })
