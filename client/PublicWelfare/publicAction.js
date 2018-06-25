@@ -10,7 +10,7 @@ Page({
       title:"标题",
       date:"时间",
       isOnline:false,
-      actionType:1,   /*0 stand for free, 1 stand for charge, 2 stand for over*/
+      actionType:0,   /*0 stand for free, 1 stand for charge, 2 stand for over*/
     }]
   },
 

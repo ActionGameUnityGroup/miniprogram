@@ -60,7 +60,7 @@
   </scroll-view>
 
     <view class='space'></view>
-      <button class='confirm-btn'>
+      <button bindtap='onClickConfirmBtn' class='confirm-btn'>
         确定
       </button>
 </view>

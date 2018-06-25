@@ -5,11 +5,21 @@
   <scroll-view class='scroll-view' wx:for='{{addressList}}' wx:key='index' wx:for-item='item'>
     <checkbox-group bindchange='onAddressClicked'>
       <view class="scroll-item">
-        <checkbox value='{{item.isDefault}}'></checkbox>
-        <text class='userName'>{{item.userName}}</text>
-        <text class='phoneNumber'>{{item.phone}}</text>
+        
+        <view class='Head-info'>
+          <text class='userName'>{{item.userName}}</text>
+          <text class='phoneNumber'>{{item.phone}}</text>
+        </view>
+
         <text class='detail'>{{item.detail}}</text>
-        <button class='edit-btn'>修改</button>
+
+        <view class='line'></view>
+
+        <view class='edit-view'>
+          <checkbox value='{{item.isDefault}}'></checkbox>
+          <button class='edit-btn'>编辑</button>
+          <button class='delete-btn'>删除</button>
+        </view>
       </view>
     </checkbox-group>
   </scroll-view>
