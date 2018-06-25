@@ -1,0 +1,48 @@
+.bg {
+  background: #F5F5F5;
+  padding: 20rpx;
+}
+.container {
+  border-radius: 10rpx;
+  background: white;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rpx 10rpx 0;
+  margin: 45rpx;
+}
+
+.line {
+  background: #DCDCDC;
+  margin: 5rpx;
+  height: 2rpx;
+}
+
+.confirm-btn {
+  background: #00C957;
+  color: white;
+}
+.input {
+  width: 100rpx;
+}
+
+.image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+}
+
+.navigator {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.space {
+  height: 50rpx;
+  color: #F5F5F5;
+}

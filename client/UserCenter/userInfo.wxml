@@ -1,0 +1,66 @@
+<view class='bg'>
+  <scroll-view class='container'>
+      <view class='item'>
+        <text>头像：</text>
+        <!-- <input class='input' type='text' placeholder='haku'>haku</input> -->
+                <image class='image'></image>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+        <text>昵称：</text>
+        <input class='input' type='text' placeholder='haku'>haku</input>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+        <text>性别：</text>
+        <input class='input' type='text' placeholder='haku'>haku</input>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+        <text>生日：</text>
+        <input class='input' type='text' placeholder='haku'>haku</input>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+        <text>真实姓名：</text>
+        <input class='input' type='text' placeholder='haku'>haku</input>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+        <text>手机号：</text>
+        <input class='input' type='number' placeholder='haku'>haku</input>
+      </view>
+
+      <view class='line'>
+      </view>
+
+      <view class='item'>
+      <navigator class='navigator' url='Address'>
+        <text>地址：</text>
+        <!-- <input class='input' type='text' placeholder='haku'>haku</input> -->
+        <text>haku</text>
+      </navigator>
+      </view>
+
+  </scroll-view>
+
+    <view class='space'></view>
+      <button class='confirm-btn'>
+        确定
+      </button>
+</view>

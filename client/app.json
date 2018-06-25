@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "UserCenter/userInfo",
+    "UserCenter/Address"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "light",
+    "navigationBarTextStyle": "black"
+  }
+}

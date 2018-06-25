@@ -1,0 +1,25 @@
+<view class='bg'>
+  <scroll-view class='scroll-view' wx:for='{{publicActionList}}' wx:key='index' wx:item='item'>
+    <view class='scroll-item'>
+      <!--left image-->
+      <image class='action-image' src='{{item.image}}'></image>
+      <!--right info-->
+      <view class='right-content'>
+        <!--top text-->
+        <text class='action-title'>{{item.title}}</text>
+        <!--bottom text-->
+        <view class='action-right-bottom'>
+          <text class='action-date'>{{item.date}}</text>
+          <text class='online'>{{item.isOnline?"线上":"线下"}}</text>
+          <image class='type-image' wx:if="{{item.actionType===0}}" src=''></image>
+          <image class='type-image' wx:if="{{item.actionType===1}}" src=''></image>
+          <image class='type-image' wx:if="{{item.actionType===2}}" src=''></image>      
+        </view>
+
+      </view>
+
+    </view>
+      <view class='line'></view>
+
+  </scroll-view>
+</view>
