@@ -1,6 +1,6 @@
 <!--UserCenter/Address.wxml-->
 <view class='bg'>
-
+  <view class='space'></view>
   <!--dynamicly create address content box-->
   <scroll-view class='scroll-view' wx:for='{{addressList}}' wx:key='index' wx:for-item='item'>
     <checkbox-group bindchange='onAddressClicked'>
@@ -16,9 +16,14 @@
         <view class='line'></view>
 
         <view class='edit-view'>
-          <checkbox value='{{item.isDefault}}'></checkbox>
-          <button class='edit-btn'>编辑</button>
-          <button class='delete-btn'>删除</button>
+          <view>
+            <checkbox value='{{item.isDefault}}'></checkbox>
+            <text class='set-default-text'>设为默认</text>
+          </view>
+          <view class='edit-view-buttons'>
+            <view bindtap='onClickEditBtn' class='edit-btn'>编辑</view>
+            <view bindtap='onClickDeleteBtn' class='delete-btn'>删除</view>
+          </view>
         </view>
       </view>
     </checkbox-group>
@@ -34,8 +39,10 @@
 
 
   <!--bottom button-->
-  <button class='add-new-btn' bindtap='onClickAddBtn'>
-    <image class='btn-add-img'></image>
-    <text>添加新地址</text>
-  </button>
+  <view class='bottom-view'>
+    <button class='add-new-btn' bindtap='onClickAddBtn'>
+      <image class='btn-add-img'></image>
+      <text>添加新地址</text>
+    </button>
+  </view>
 </view>

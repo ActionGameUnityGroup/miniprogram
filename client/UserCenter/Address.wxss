@@ -6,12 +6,22 @@ page{width: 100%; height: 100%;}
   width: 100%;
 }
 
-.add-new-btn {
-  display: flex;
-  justify-content: center;
+.bottom-view {
+  height: 143rpx;
   position: fixed;
   width: 100%;
   bottom: 0;
+  background: white;
+}
+
+.add-new-btn {
+  display: flex;
+  justify-content: center;
+  border-radius: 60rpx;
+  background: #ee6568;
+  color: white;
+  width: 95%;
+  margin-top: 27rpx;
 }
 
 .btn-add-img {
@@ -23,40 +33,75 @@ page{width: 100%; height: 100%;}
   background: white;
   display: flex;
   flex-direction: column;
+  margin-bottom: 16rpx;
+}
+
+.space {
+  height: 16rpx;
 }
 
 .scroll-item {
   display: flex;
   flex-direction: column;
-  height: 171rpx;
+  height: 259rpx;
 }
 
 .Head-info {
   display: flex;
   justify-content: space-between;  
+  margin-top: 30rpx;
+}
+
+.userName {
+  margin-left: 33rpx;
+  color: #060606
+}
+
+.phoneNumber {
+  margin-right: 30rpx;
+}
+
+.detail {
+  margin-top: 25prx;
+  margin-left: 33rpx;
+  color: #050505;
+  font-size: 24rpx;
 }
 
 .line {
   background: #DCDCDC;
   height: 2rpx;
+  margin-top: 30rpx;
 }
 
 .edit-view {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 17rpx;
+  margin-top: 30rpx;
+}
+
+.edit-view-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.set-default-text {
+  font-size: 24rpx;
 }
 
 .edit-btn {
-  width: 100rpx;
   height: 34rpx;
-  font-size: 18rpx;
+  font-size: 24rpx;
+  margin-right: 20rpx;
 }
 
 .delete-btn {
   height: 34rpx;
-  font-size: 18rpx;
+  font-size: 24rpx;
+  margin-right: 30rpx;
 }
 
 

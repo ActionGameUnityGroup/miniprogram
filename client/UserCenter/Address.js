@@ -75,5 +75,14 @@ Page({
 
   onClickAddBtn: function (e) {
     console.log("click button");
+  },
+
+  onClickEditBtn: function (e) {
+    console.log("click edit");
+  },
+
+  onClickDeleteBtn: function (e) {
+    console.log("click delete");
   }
+
 })
