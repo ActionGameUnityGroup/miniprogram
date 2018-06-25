@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressList: [{ userName: 'haku', isDefault: false, phone: "123456", detail: "New York" }],
+    addressList: [{ userName: 'haku', isDefault: false, phone: "123456", detail: "New York" }, { userName: 'haku', isDefault: false, phone: "123456", detail: "New York" }],
   },
 
   /**
