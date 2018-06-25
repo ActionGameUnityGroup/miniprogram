@@ -4,42 +4,82 @@ page {
 }
 
 .scroll-view {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .scroll-item {
   display: flex;
-  flex-direction: row;
-  height: 204px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  height: 204rpx;
 }
 
 .action-image {
+  display: block;
   width: 150rpx;
   height: 150rpx;
-  margin-left: 30rpx;
+  /* margin-left: 30rpx;
   margin-right: 23rpx;
   margin-top: 27rpx;
-  margin-bottom: 27rpx;
+  margin-bottom: 27rpx; */
+  background: #f00;
+  overflow: hidden;
+}
+
+.action-image image {
+  display: block;
+  /*width: 100%;*/
 }
 
 .right-content {
   display: flex;
   flex-direction: column;
-  height: 200px;
   justify-content: space-between;
+  align-items: center;
+  width: 500rpx;
+  height: 60%;
 }
 
 .action-title {
+  width: 100%;
+  text-align: left;
   color: #252525;
-  margin-top: 34rpx;
+  /*margin-top: 34rpx;*/
+}
+
+.action-right-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+}
+
+.course-info{
+  width: 70%;
 }
 
 .action-date{
-  color: #6a6a6a;
-  margin-bottom: 33rpx;
   margin-right: 10rpx;
+  color: #6a6a6a;
 }
+
+.type-image{
+  width: 85rpx;
+  /*height: */
+  text-align: center; line-height: 50rpx;
+  border: 1px solid #f00;
+  border-radius: 10rpx;
+}
+
+ .type-image text{
+  display: block;
+  font-size: 12px;
+  color: #f00;
+} 
 
 .online {
   color: #6a6a6a;
