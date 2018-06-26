@@ -2,8 +2,7 @@
   <scroll-view class='container'>
       <view class='item'>
         <text>头像：</text>
-        <!-- <input class='input' type='text' placeholder='haku'>haku</input> -->
-                <image class='image'></image>
+        <image class='image' src='{{userInfo.headUrl}}'></image>
       </view>
 
       <view class='line'>
@@ -11,7 +10,7 @@
 
       <view class='item'>
         <text>昵称：</text>
-        <input class='input' type='text' placeholder='haku'>haku</input>
+        <input class='input' type='text' placeholder='{{userInfo.nickName}}'></input>
       </view>
 
       <view class='line'>
@@ -19,7 +18,7 @@
 
       <view class='item'>
         <text>性别：</text>
-        <input class='input' type='text' placeholder='haku'>haku</input>
+        <input class='input' type='text' placeholder='{{userInfo.sex}}'></input>
       </view>
 
       <view class='line'>
@@ -27,7 +26,10 @@
 
       <view class='item'>
         <text>生日：</text>
-        <input class='input' type='text' placeholder='haku'>haku</input>
+        <picker class='time-picker' mode="date" value="{{userInfo.birthday}}" start="1900-01-01" end="2017-09-01" bindchange="onDateChange">
+          <!-- <view class='arrow'/> -->
+          <text class='birthday-text'>{{userInfo.birthday}}</text>
+        </picker>
       </view>
 
       <view class='line'>
@@ -35,7 +37,7 @@
 
       <view class='item'>
         <text>真实姓名：</text>
-        <input class='input' type='text' placeholder='haku'>haku</input>
+        <input class='input' type='text' placeholder='{{userInfo.realName}}'></input>
       </view>
 
       <view class='line'>
@@ -43,7 +45,7 @@
 
       <view class='item'>
         <text>手机号：</text>
-        <input class='input' type='number' placeholder='haku'>haku</input>
+        <input class='input' type='number' placeholder='{{userInfo.phoneNumber}}'></input>
       </view>
 
       <view class='line'>
@@ -53,14 +55,18 @@
       <navigator class='navigator' url='Address'>
         <text>地址：</text>
         <!-- <input class='input' type='text' placeholder='haku'>haku</input> -->
-        <text>haku</text>
+        <text>{{userInfo.address}}</text>
       </navigator>
       </view>
 
   </scroll-view>
 
-    <view class='space'></view>
-      <button bindtap='onClickConfirmBtn' class='confirm-btn'>
-        确定
-      </button>
+  <view class='space'></view>
+
+  <button bindtap='onClickConfirmBtn' class='confirm-btn'>
+    保存
+  </button>
+
+  <view class='space'></view>
+  
 </view>

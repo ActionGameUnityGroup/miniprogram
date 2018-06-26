@@ -5,8 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {},
-    titleName: "个人信息"
+    wechatUserInfo: {},
+    titleName: "个人信息",
+    userInfo:{headUrl:"", nickName:"Haku", sex:"男", birthday:"2000.0.0", realName:"Haku", phoneNumber:"8000000000", address:"New York"},
   },
 
   /**
@@ -28,7 +29,7 @@ Page({
 
     if (app.globalData.userInfo) {
       this.setData({
-        userInfo: app.globalData.userInfo,
+        wechatUserInfo: app.globalData.userInfo,
       })
     }
   },
@@ -95,5 +96,9 @@ Page({
       fail: function(res) {},
       complete: function(res) {},
     })
+  },
+
+  onDateChange: function (e) {
+
   }
 })
