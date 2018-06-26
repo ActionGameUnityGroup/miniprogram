@@ -7,7 +7,8 @@ Page({
   data: {
     wechatUserInfo: {},
     titleName: "个人信息",
-    userInfo:{headUrl:"", nickName:"Haku", sex:"男", birthday:"2000.0.0", realName:"Haku", phoneNumber:"8000000000", address:"New York"},
+    userInfo:{headUrl:"", nickName:"Haku", sex:"男", birthday:"2000-01-01", realName:"Haku", phoneNumber:"8000000000", address:"New York"},
+    date:"",
   },
 
   /**
@@ -38,7 +39,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      date:this.data.userInfo.birthday
+    })
   },
 
   /**
@@ -98,7 +101,10 @@ Page({
     })
   },
 
-  onDateChange: function (e) {
-
+  onDateChange: function (e) {   
+    this.setData({
+      date: e.detail.value
+    });
+    this.data.userInfo.birthday = e.detail.value;
   }
 })
