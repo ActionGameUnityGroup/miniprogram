@@ -1,6 +1,6 @@
 <view class='bg'>
+  <view class='space'></view>
   <scroll-view class='scroll-view' wx:for='{{publicActionList}}' wx:key='index' wx:item='item'>
-    <view class='space'></view>
 
     <view class='scroll-item' bindtap='onClickAction'>
       <!--left image-->

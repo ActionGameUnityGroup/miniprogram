@@ -11,7 +11,7 @@ page {
 .space {
   height: 13rpx;
   width: 100%;
-  color: #DCDCDC;
+  background: #DCDCDC;
 }
 
 .scroll-item {
