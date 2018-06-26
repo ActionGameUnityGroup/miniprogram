@@ -1,4 +1,5 @@
 const app = getApp()
+var _this;
 Page({
 
   /**
@@ -8,13 +9,13 @@ Page({
     wechatUserInfo: {},
     titleName: "个人信息",
     userInfo:{headUrl:"", nickName:"Haku", sex:"男", birthday:"2000-01-01", realName:"Haku", phoneNumber:"8000000000", address:"New York"},
-    date:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    _this = this;
     // Set navigation title
     wx.setNavigationBarTitle({
       title: this.data.titleName,
@@ -40,7 +41,6 @@ Page({
    */
   onReady: function () {
     this.setData({
-      date:this.data.userInfo.birthday
     })
   },
 
@@ -102,9 +102,18 @@ Page({
   },
 
   onDateChange: function (e) {   
+    var _userInfo = formatUserInfo("birthday", e.detail.value);
     this.setData({
-      date: e.detail.value
+      userInfo: _userInfo
     });
-    this.data.userInfo.birthday = e.detail.value;
-  }
+  },
+
 })
+
+const formatUserInfo = function (key, value) {
+  var _userInfo = _this.data.userInfo;
+  _userInfo[key] = value;
+
+  return _userInfo;
+};
+

@@ -26,9 +26,9 @@
 
       <view class='item'>
         <text>生日：</text>
-        <picker class='time-picker' mode="date" value="{{date}}" start="1900-01-01" end="2020-12-31" bindchange="onDateChange">
+        <picker class='time-picker' mode="date" value="{{userInfo.birthday}}" start="1900-01-01" end="2020-12-31" bindchange="onDateChange">
           <!-- <view class='arrow'/> -->
-          <text class='birthday-text'>{{date}}</text>
+          <text class='birthday-text'>{{userInfo.birthday}}</text>
         </picker>
       </view>
 
