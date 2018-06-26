@@ -11,7 +11,14 @@ Page({
       date:"时间",
       isOnline:false,
       actionType:0,   /*0 stand for free, 1 stand for charge, 2 stand for over*/
-    }]
+    },
+      {
+        image: "",
+        title: "标题",
+        date: "时间",
+        isOnline: false,
+        actionType: 0,   /*0 stand for free, 1 stand for charge, 2 stand for over*/
+      }]
   },
 
   /**

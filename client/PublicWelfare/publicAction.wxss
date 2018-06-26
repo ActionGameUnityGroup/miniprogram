@@ -5,7 +5,13 @@ page {
 
 .scroll-view {
   /* display: flex;
-  flex-direction: column; */
+  flex-direction: column;  */
+}
+
+.space {
+  height: 13rpx;
+  width: 100%;
+  color: #DCDCDC;
 }
 
 .scroll-item {
@@ -13,8 +19,9 @@ page {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 90%;
   height: 204rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
 }
 
 .action-image {
@@ -25,7 +32,7 @@ page {
   margin-right: 23rpx;
   margin-top: 27rpx;
   margin-bottom: 27rpx; */
-  background: #f00;
+  background: gray;
   overflow: hidden;
 }
 
@@ -87,6 +94,7 @@ page {
 
 .line {
   background: #DCDCDC;
-  margin: 5rpx;
+  margin-left: 30rpx; 
+  margin-right: 30rpx;
   height: 2rpx;
 }
