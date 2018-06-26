@@ -52,7 +52,7 @@
       </view>
 
       <view class='item'>
-      <navigator class='navigator' url='Address'>
+      <navigator class='navigator' url='Address/Address'>
         <text>地址：</text>
         <text>{{userInfo.address}}</text>
       </navigator>

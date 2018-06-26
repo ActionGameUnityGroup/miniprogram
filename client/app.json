@@ -1,7 +1,7 @@
 {
   "pages":[
     "UserCenter/userInfo",
-    "UserCenter/Address",
+    "UserCenter/Address/Address",
     "PublicWelfare/publicAction"
   ],
   "window":{
