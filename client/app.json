@@ -2,7 +2,8 @@
   "pages":[
     "UserCenter/userInfo",
     "UserCenter/Address/Address",
-    "PublicWelfare/publicAction"
+    "PublicWelfare/publicAction",
+    "UserCenter/WatchHistory/watchHistory"
   ],
   "window":{
     "backgroundTextStyle": "light",

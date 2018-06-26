@@ -65,6 +65,10 @@
   <button bindtap='onClickConfirmBtn' class='confirm-btn'>
     保存
   </button>
+  <navigator class='navigator' url='WatchHistory/watchHistory'>
+        <text>测试跳转</text>
+        <text>{{userInfo.address}}</text>
+  </navigator>
 
   <view class='space'></view>
   
