@@ -3,7 +3,8 @@
     "UserCenter/userInfo",
     "UserCenter/Address/Address",
     "PublicWelfare/publicAction",
-    "UserCenter/WatchHistory/watchHistory"
+    "UserCenter/WatchHistory/watchHistory",
+    "Order/ConfirmOrder"
   ],
   "window":{
     "backgroundTextStyle": "light",

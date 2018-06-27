@@ -1,0 +1,21 @@
+<view class='bg'>
+    <view class='address-view'>
+      <image class='address-view-image' src="{{orderInfo.addressIcon}}"></image>
+      <text wx:if="{{orderInfo.addressText != ''}}" class='address-view-text'></text>
+      <text wx:else class='address-view-text'>{{defaultAddressText}}</text>
+    </view>
+
+    <view class='goods-view'>
+      <image class='goods-view-image' src='{{orderInfo.goodsImage}}'></image>
+      <view class='goods-view-content'>
+        <text class='goods-view-title'>{{orderInfo.goodsTitle}}</text>
+        <view class='goods-view-botton'>
+          <text class='goods-view-price-title'>总价</text>
+          <text class='goods-view-price-symbol'>¥</text>
+          <text class='goods-view-price'>{{orderInfo.goodsPrice}}</text>
+          <text class='goods-number'>{{"x" + orderInfo.goodsNumber}}</text>
+        </view>
+      </view>
+    </view>
+
+</view>
