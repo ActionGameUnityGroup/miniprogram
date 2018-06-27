@@ -1,4 +1,4 @@
-// Order/ConfirmOrder.js
+var _this;
 Page({
 
   /**
@@ -12,7 +12,9 @@ Page({
       goodsTitle:"小米电视",
       goodsPrice:"4999",
       goodsNumber:"1",
-      freight:"8",
+      freight:"8.00",
+      creditsNumber:0,
+      useCredits:true,
     },
     defaultAddressText:"添加收货地址",
   },
@@ -21,6 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    _this = this;
     wx.setNavigationBarTitle({
       title: '确认订单',
       success: function(res) {},
@@ -76,5 +79,21 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onChangeSwitcher: function (e) {
+    var _orderInfo = formatOrderInfo("useCredits", e.detail.value);
+    
+    this.setData({
+      orderInfo: _orderInfo
+    });
   }
 })
+
+
+const formatOrderInfo = function (key, value) {
+  var _orderInfo = _this.data.orderInfo;
+  _orderInfo[key] = value;
+
+  return _orderInfo;
+};

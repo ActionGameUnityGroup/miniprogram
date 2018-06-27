@@ -9,13 +9,33 @@
       <image class='goods-view-image' src='{{orderInfo.goodsImage}}'></image>
       <view class='goods-view-content'>
         <text class='goods-view-title'>{{orderInfo.goodsTitle}}</text>
-        <view class='goods-view-botton'>
-          <text class='goods-view-price-title'>总价</text>
-          <text class='goods-view-price-symbol'>¥</text>
-          <text class='goods-view-price'>{{orderInfo.goodsPrice}}</text>
+        <view class='goods-view-bottom'>
+          <view>
+            <text class='goods-view-price-title'>总价</text>
+            <text class='goods-view-price-symbol'>¥</text>
+            <text class='goods-view-price'>{{orderInfo.goodsPrice}}</text>
+          </view>
           <text class='goods-number'>{{"x" + orderInfo.goodsNumber}}</text>
         </view>
       </view>
     </view>
+
+  <view class='credits-view'>
+    <view class='credits-info'>
+      <text class='credits-title'>积分抵</text>
+      <text class='credits-instruction'>{{"本单最高可抵扣¥" + orderInfo.creditsNumber}}</text>
+    </view>
+    <switch class='credits-switcher' checked='{{orderInfo.useCredits}}' bindchange=""></switch>
+  </view>
+
+  <view class='price-view'>
+    <text style='font-size:24rpx'>商品金额</text>
+    <text class='price-view-number'>{{"¥ " + orderInfo.goodsPrice}}</text>
+  </view>
+
+  <view class='freight-view'>
+    <text style='font-size:24rpx'>运费</text>
+    <text class='freight-number'>{{"¥ " + orderInfo.freight}}</text>
+  </view>
 
 </view>
