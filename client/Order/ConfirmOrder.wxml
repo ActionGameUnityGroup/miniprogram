@@ -54,7 +54,7 @@
   <view class='bottom-view'>
     <text style='font-size:26rpx; margin-left:15rpx; margin-top:35rpx; margin-bottom:35rpx;'>实付款</text>
     <text style='font-size:27rpx; color:#cf282f; margin-left:28rpx;'>{{"¥ " + orderInfo.goodsPrice}}</text>
-    <button class='confirm-button' bindtap='onClickConfirm'>提交</button>
+    <button class='confirm-button' bindtap='onClickConfirm'>提交订单</button>
   </view>
 
 </view>

@@ -215,7 +215,8 @@ page {
 }
 
 .confirm-button {
-  height:80%;  
+  height:63rpx;
+  line-height: 63rpx;  
   margin-top:15rpx; 
   margin-bottom: 15rpx; 
   margin-right: 34rpx;
