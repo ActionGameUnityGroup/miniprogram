@@ -215,13 +215,14 @@ page {
 }
 
 .confirm-button {
-   height:80%;  
-  /* margin-top:15rpx; */
-  /* margin-bottom: 15rpx; */
+  height:80%;  
+  margin-top:15rpx; 
+  margin-bottom: 15rpx; 
   margin-right: 34rpx;
   color: white;
   background: #cf282f;
   text-align: center;
+  font-size: 30rpx;
 }
 
 
