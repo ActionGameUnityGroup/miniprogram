@@ -15,8 +15,12 @@ Page({
       freight:"8.00",
       creditsNumber:0,
       useCredits:true,
+      remarkDetail:"",
+      isTermChecked:true,
+      termText:"《常道智慧生活积分商城用户购物条款》",
     },
     defaultAddressText:"添加收货地址",
+    remarkPlaceHolder:"若对订单有特殊要求，请在次填写（50紫以内）",
   },
 
   /**
@@ -87,6 +91,30 @@ Page({
     this.setData({
       orderInfo: _orderInfo
     });
+  },
+
+  onRemarkInputConfirm: function (e) {
+    var _orderInfo = formatOrderInfo("remarkDetail", e.detail.value);
+    
+    this.setData({
+      orderInfo: _orderInfo
+    });
+  },
+
+  onCheckBoxChange: function (e) {
+    var _orderInfo = formatOrderInfo("isTermChecked", e.detail.value);
+
+    this.seData({
+      orderInfo:_orderInfo
+    });
+  },
+
+  onClickTerm: function (e) {
+    // Turn to term page
+    console.log("click term")
+  },
+  onClickConfirm: function (e) {
+    console.log("click comfirm")
   }
 })
 

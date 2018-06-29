@@ -170,3 +170,89 @@ page {
   font-size:30rpx;
   color:#cf282f;
 }
+
+.remarks-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 88rpx;
+}
+
+.term-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background: white;
+  border-radius: 10rpx;
+  margin-top: 23rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  padding: 12rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.bottom-view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+  width: 100%;
+  bottom:0rpx; 
+  background:white; 
+  position: fixed; 
+  height:93rpx;
+}
+
+.confirm-button {
+   height:80%;  
+  /* margin-top:15rpx; */
+  /* margin-bottom: 15rpx; */
+  margin-right: 34rpx;
+  color: white;
+  background: #cf282f;
+  text-align: center;
+}
+
+
+
+
+
+/*check box setting*/
+/*unchecked*/
+checkbox .wx-checkbox-input{
+  border-radius: 50%;
+  width: 40rpx;
+  height: 40rpx;
+  border-color: #cf292e;
+}
+
+/*checked backgroud*/
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+  /* border: none; */
+  background: #fff; 
+}
+
+/*checked tick*/
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+  border-radius: 50%;
+  width: 40rpx;     
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #cf292e; 
+  background: transparent; 
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

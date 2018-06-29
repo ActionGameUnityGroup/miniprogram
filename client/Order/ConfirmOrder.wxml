@@ -38,4 +38,23 @@
     <text class='freight-number'>{{"¥ " + orderInfo.freight}}</text>
   </view>
 
+  <view class='remarks-view'>
+    <text style='font-size:24rpx'>订单备注</text>
+    <input bindconfirm='onRemarkInputConfirm' style='font-size:24rpx; width:500rpx' placeholder='{{remarkPlaceHolder}}'></input>
+  </view>
+
+  <view class='term-view'>
+    <checkbox-group bindchange='onCheckBoxChange'>
+      <checkbox checked='true'></checkbox>
+    </checkbox-group>
+    <text style='font-size:25rpx; margin-left:22rpx; margin-right:22rpx'>我已阅读并同意</text>
+    <view bindtap='onClickTerm' style='font-size:25rpx; color:#cf282f;'>{{orderInfo.termText}}</view>
+  </view>
+
+  <view class='bottom-view'>
+    <text style='font-size:26rpx; margin-left:15rpx; margin-top:35rpx; margin-bottom:35rpx;'>实付款</text>
+    <text style='font-size:27rpx; color:#cf282f; margin-left:28rpx;'>{{"¥ " + orderInfo.goodsPrice}}</text>
+    <button class='confirm-button' bindtap='onClickConfirm'>提交</button>
+  </view>
+
 </view>
