@@ -6,8 +6,19 @@ Page({
    */
   data: {
     syllabueses:[{
-
-    }]
+      startTime: { timeRemain: 5, month: 6, day:5, hour:19, min: 30}, 
+      image: "",
+      title:"如何转变观念",
+      content:"深度解读",
+      times:"5",
+    },
+      {
+        startTime: { timeRemain: 5, month: 6, day: 5, hour: 19, min: 30 },
+        image: "",
+        title: "如何转变观念",
+        content: "深度解读",
+        times: "5",
+      }]
   },
 
   /**
@@ -69,5 +80,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onClickCource: function ()
+  {
+    console.log("Click cource")
   }
 })
