@@ -11,7 +11,7 @@ let userSchema = new mongoose.Schema({
   name: String,
   phonenumber: Number,
   address: String
-}, {collection: 'user', versionKey: false});
+}, {collection: 'User', versionKey: false});
 
 userSchema.methods.findObject = function(obj, callback){
   return this.model('user').find(obj, callback);

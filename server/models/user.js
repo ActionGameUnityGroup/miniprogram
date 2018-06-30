@@ -11,7 +11,7 @@ let userSchema = new mongoose.Schema({
   height: Number,
   phone: Number,
   address: String
-}, {collection: 'user'});
+}, {collection: 'User'});
 
 userSchema.methods.findName = function(username, callback){
   return this.model('user').find({userName: username}, callback);
