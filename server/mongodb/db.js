@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-const DBURI = 'mongodb://120.77.46.0:12888/NaturalRules';
+const DBURI = 'mongodb://Jia:NaturalRules123456@120.77.46.0:12888/NaturalRules';
 mongoose.connect(DBURI);
 
 const db = mongoose.connection;
