@@ -22,7 +22,7 @@ class User {
     await userModel.findObject(query, function(err, result){
       if (!err) {
         console.log(result, 24);
-        const data = formatData(result);
+        const data = await formatData(result);
         ctx.body = data;
         ctx.type = 'text/json';
       }
@@ -47,7 +47,7 @@ class User {
       let res = await saveModel(User);
       const requestdata = formatData(res);
       console.log(requestdata);
-      ctx.body = requestdata;
+      ctx.body = requestdata ;
       ctx.type = 'text/json';
       /*.then((res) => {
         console.log(res, 50);
