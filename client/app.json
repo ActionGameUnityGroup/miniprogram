@@ -5,7 +5,8 @@
     "PublicWelfare/publicAction",
     "UserCenter/WatchHistory/watchHistory",
     "Order/ConfirmOrder",
-    "Syllabus/syllabusMenu"
+    "Syllabus/syllabusMenu",
+    "UserCenter/Member/member"
   ],
   "window":{
     "backgroundTextStyle": "light",
