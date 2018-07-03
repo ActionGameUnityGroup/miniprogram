@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "UserCenter/userInfo",
+    "UserCenter/Address/Address",
+    "PublicWelfare/publicAction",
+    "UserCenter/WatchHistory/watchHistory",
+    "Order/ConfirmOrder",
+    "Syllabus/syllabusMenu"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "light",
+    "navigationBarTextStyle": "black"
+  }
+}
