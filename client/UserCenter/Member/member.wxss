@@ -27,8 +27,8 @@ page {
 .swiper-tab-list {
   margin-top: 31rpx;
   margin-bottom: 31rpx;
-  margin-left: 96rpx;
-  margin-right: 96rpx;
+  margin-left: 95rpx;
+  margin-right: 95rpx;
   font-size: 30rpx;
   color: #6b6b6b;
 }
