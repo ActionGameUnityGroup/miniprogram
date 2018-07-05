@@ -1,0 +1,5 @@
+.headImage
+{
+  background: gray;
+  height: 289rpx;
+}

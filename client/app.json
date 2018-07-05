@@ -6,7 +6,8 @@
     "UserCenter/WatchHistory/watchHistory",
     "Order/ConfirmOrder",
     "Syllabus/syllabusMenu",
-    "UserCenter/Member/member"
+    "UserCenter/Member/member",
+    "ScoreMarket/scoreMarket"
   ],
   "window":{
     "backgroundTextStyle": "light",

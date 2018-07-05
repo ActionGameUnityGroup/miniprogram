@@ -1,0 +1,9 @@
+<view class='top-view'>
+  <swiper class='headImage' indicator-dots="True" indicator-active-color="#0000ff">
+  <block wx:for="{{scoreMarketData.headImages}}" wx:key="item" wx:for-index="index">
+    <swiper-item>
+      <image class='swiper-image' mode="aspectFill" src='{{item}}'></image>
+    </swiper-item>
+  </block>
+  </swiper>
+</view>
