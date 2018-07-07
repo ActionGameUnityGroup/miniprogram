@@ -29,7 +29,7 @@
 
     document.querySelector('#getBtn').onclick = () => {
       console.log('请求接口');
-      fetch('https://www.changdaolife.cn/api/user/getUserInfo')
+      fetch('http://127.0.0.1:9000/api/user/getUserInfo')
         .then((res) => {
           console.log(res);
           res.json().then((data) => {
@@ -41,7 +41,7 @@
     document.querySelector('#postBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'https://www.changdaolife.cn/api/user/setUserInfo',
+        'http://127.0.0.1:9000/api/user/setUserInfo',
         {method: 'POST', body: JSON.stringify({nickname: 'Jerry', sex: 0})}
       ).then((res) => {
         console.log(res, new Date().getTime());

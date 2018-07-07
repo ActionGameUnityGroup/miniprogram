@@ -1,6 +1,6 @@
 let mongoose = require('mongoose');
 
-const DBURI = 'mongodb://changdao:dreamplus2018changdao@120.77.46.0:12888/NaturalRules';
+const DBURI = 'mongodb://changdao:dreamplus2018changdao@120.78.177.45:12888/NaturalRules';
 mongoose.connect(DBURI);
 
 const db = mongoose.connection;
