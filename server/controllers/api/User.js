@@ -21,10 +21,12 @@ class User {
     let query = getObject(ctx);
     await userModel.findObject(query, function(err, result){
       if (!err) {
-        console.log(result, 24);
-        const data = await formatData(result);
-        ctx.body = data;
-        ctx.type = 'text/json';
+        // console.log(result, 24);
+        formatData(result).then((res) => {
+          // console.log(res);
+          ctx.body = res;
+          ctx.type = 'text/json';
+        });
       }
     });
   }
