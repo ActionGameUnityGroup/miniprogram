@@ -9,7 +9,7 @@ const formatData = (data) => {
         _data.push(item);
         if (key+1 === data.length) {
           delete data;
-          resolve({ errMsg: 'request:ok', status: 200, data: _data });
+          resolve({ errMsg: 'request:ok', status: 200, requestData: _data });
         }
       });
     }catch(e){
@@ -22,7 +22,7 @@ const formatDataFail = (data) => {
   return {
             errMsg: 'request:fail',
             status: 404,
-            data: data
+            requestData: data
           };
 };
 
