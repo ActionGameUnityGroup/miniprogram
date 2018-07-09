@@ -7,6 +7,8 @@ Page({
   data: {
     scoreMarketData:{
       headImages:["", "", "", ""],
+      score:7526,
+      scoreOrderImage:"",
     }
   },
 
