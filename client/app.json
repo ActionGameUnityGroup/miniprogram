@@ -7,7 +7,8 @@
     "Order/ConfirmOrder",
     "Syllabus/syllabusMenu",
     "UserCenter/Member/member",
-    "ScoreMarket/scoreMarket"
+    "ScoreMarket/scoreMarket",
+    "ScoreMarket/GoodsPage/goods"
   ],
   "window":{
     "backgroundTextStyle": "light",
