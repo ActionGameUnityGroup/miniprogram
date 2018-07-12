@@ -72,5 +72,21 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onCLickConfirm: function (e) {
+    console.log("Click Confirm");
+  },
+
+  onClickAddToOrder: function (e) {
+    console.log("Click add to order");
+  },
+
+  onClickCollect: function (e)
+  {
+    console.log("Click collect")
+  },
+  onClickOrder: function (e) {
+    console.log("Click order")
   }
 })

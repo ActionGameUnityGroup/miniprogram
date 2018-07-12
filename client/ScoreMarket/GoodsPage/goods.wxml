@@ -24,18 +24,19 @@
   <view style='background:#F5F5F5; height: 26rpx; width:100%;'></view>
 
   <view class='bottom-view'>
-    <view class='order-botton'>
-      <image src='{{goods.collectImage}}' style='width:"50rpx; height:50rpx; background: gray;'></image>
+    <view class='order-botton' bindtap='onClickCollect'>
+      <image src='{{goods.collectImage}}' style='width:50rpx; height:50rpx; background: gray;'></image>
       <text style='color:#565555; font-size:24rpx;'>收藏</text>
     </view>
-    <view class='order-botton'>
-      <image src='{{goods.orderImage}}' style='width:"50rpx; height:50rpx; background: gray;'></image>
+
+    <view class='order-botton' bindtap='onClickOrder'>
+      <image src='{{goods.orderImage}}' style='width:50rpx; height:50rpx; background: gray;'></image>
       <text style='color:#565555; font-size:24rpx;'>订单</text>
     </view>
-    <view class='confirm-button' style='background: pink;'>
+    <view bindtap='onClickAddToOrder' class='confirm-button' style='background: pink;'>
       <text>加入订单</text>
     </view>
-    <view class='confirm-button' style='background: red;'>
+    <view bindtap='onCLickConfirm' class='confirm-button' style='background: red;'>
       <text>立即购买</text>
     </view>
   </view>  
