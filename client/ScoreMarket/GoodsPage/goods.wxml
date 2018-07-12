@@ -32,10 +32,10 @@
       <image src='{{goods.orderImage}}' style='width:"50rpx; height:50rpx; background: gray;'></image>
       <text style='color:#565555; font-size:24rpx;'>订单</text>
     </view>
-    <view style='width:227rpx; height:100rpx; background: pink;'>
+    <view class='confirm-button' style='background: pink;'>
       <text>加入订单</text>
     </view>
-    <view style='width:227rpx; height:100rpx; background: red;'>
+    <view class='confirm-button' style='background: red;'>
       <text>立即购买</text>
     </view>
   </view>  

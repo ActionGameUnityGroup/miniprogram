@@ -52,6 +52,17 @@ page
   bottom: 0;
 }
 
+.confirm-button
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:227rpx; 
+  height:100rpx; 
+  background: red; 
+  text-align: center; 
+}
+
 .order-botton
 {
   display: flex;
