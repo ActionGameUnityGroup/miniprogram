@@ -25,12 +25,12 @@
 
   <view class='bottom-view'>
     <view class='order-botton' bindtap='onClickCollect'>
-      <image src='{{goods.collectImage}}' style='width:50rpx; height:50rpx; background: gray;'></image>
+      <image src='{{goods.collectImage}}' style='width:50rpx; height:50rpx; background: gray; margin-top:14rpx;'></image>
       <text style='color:#565555; font-size:24rpx;'>收藏</text>
     </view>
 
     <view class='order-botton' bindtap='onClickOrder'>
-      <image src='{{goods.orderImage}}' style='width:50rpx; height:50rpx; background: gray;'></image>
+      <image src='{{goods.orderImage}}' style='width:50rpx; height:50rpx; background: gray; margin-top:14rpx;'></image>
       <text style='color:#565555; font-size:24rpx;'>订单</text>
     </view>
     <view bindtap='onClickAddToOrder' class='confirm-button' style='background: pink;'>
