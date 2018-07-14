@@ -7,7 +7,7 @@
   align-content: center;
   flex-wrap: wrap;
   margin: 16rpx 21rpx 0;
-  padding: 4rpx 22rpx 2rpx;
+  padding: 4rpx 22rpx 49rpx;
   background: #fff;
   border-radius: 10rpx;
 }
