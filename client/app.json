@@ -1,5 +1,6 @@
 {
   "pages":[
+    "Index/index",
     "UserCenter/userInfo",
     "UserCenter/Address/Address",
     "PublicWelfare/publicAction",

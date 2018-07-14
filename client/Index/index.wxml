@@ -1,0 +1,99 @@
+<view class="head-banner">
+  <swiper class="banner-list">
+    <block wx:for='{{bannerList}}' wx:key='index'>
+      <swiper-item class="banner-item"><image mode='widthFix' src='{{item.imageUrl}}' key='{{index}}'></image></swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="module-content">
+  <block wx:for='{{moduleList}}' wx:key='index'>
+    <view class="module-item">
+      <image mode='widthFix' src='{{item.moduleImage}}'></image>
+      <text> {{item.moduleName}} </text>
+    </view>
+  </block>
+</view>
+
+<view class="show-content">
+  <view class="show-title">
+    <text class="show-title-name">音频·分享</text>
+    <view class="show-more-action">更多></view>
+  </view>
+  <swiper
+    class="show-video-list"
+    display-multiple-items='{{3.5}}'
+    previous-margin='26rpx'
+    next-margin='26rpx'
+  >
+    <block wx:for='{{videoList}}' wx:key='index'>
+      <swiper-item class="show-video-item" id='video{{index}}'>
+        <image class="show-video-image" src='{{item.videoImg}}' mode='widthFix'></image>
+        <text class="show-video-name">{{item.videoName}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="show-content">
+  <view class="show-title">
+    <text class="show-title-name">文章·推荐</text>
+    <view class="show-more-action">更多></view>
+  </view>
+  <swiper
+    class="show-article-list"
+    display-multiple-items='{{1.5}}'
+    previous-margin='26rpx'
+    next-margin='26rpx'
+  >
+    <block wx:for='{{articleList}}' wx:key='index'>
+      <swiper-item class="show-article-item" id='video{{index}}'>
+        <image class="show-article-image" src='{{item.articleImg}}' mode='widthFix'></image>
+        <view class="show-article-bottom-info">
+          <text class="show-article-name">{{item.articleName}}</text>
+          <view class="show-article-info">
+            <view class="show-article-ground">8小时前</view>
+            <view class="show-article-visit">
+              <image mode='widthFix' src='../assets/icon/miniprogram-icon-31.png'></image>
+              <text> {{item.visitNumber}} </text>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="show-content" style='margin-bottom: 110rpx;'>
+  <view class="show-title">
+    <text class="show-title-name">课程·最新</text>
+    <view class="show-more-action">更多></view>
+  </view>
+  <view class="show-course-list">
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <view class="show-course-item" id='video{{index}}'>
+        <image class="show-course-image" src='{{item.courseImg}}' mode='widthFix'></image>
+        <view class="show-course-info">
+          <text class="show-course-name">{{item.courseName}}</text>
+          <text class="show-course-describe">{{item.courseText}}</text>
+          <text class="show-course-latest">已更新{{item.currentCourse}}期</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<view class="nav-bar">
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-6.png' style='width: 94rpx'></image>
+    <text> 首页 </text>
+  </view>
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
+    <text> 课程表 </text>
+  </view>
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-3.png' style='width: 43rpx'></image>
+    <text> 我的 </text>
+  </view>
+</view>
