@@ -65,7 +65,7 @@
   <button bindtap='onClickConfirmBtn' class='confirm-btn'>
     保存
   </button>
-  <navigator class='navigator' url='../ScoreMarket/scoreMarket'>
+  <navigator class='navigator' url='../ScoreMarket/GoodsPage/goods'>
         <text>测试跳转</text>
         <text>{{userInfo.address}}</text>
   </navigator>

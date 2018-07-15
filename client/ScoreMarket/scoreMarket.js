@@ -7,6 +7,9 @@ Page({
   data: {
     scoreMarketData:{
       headImages:["", "", "", ""],
+      score:7526,
+      scoreOrderImage:"",
+      books: [{ bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }, { bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }, { bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }, { bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }, { bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }, { bookImage: "", bookTitle: "复古精装书籍", scorePrice: 15000, mPrice: 1, }],
     }
   },
 
@@ -69,5 +72,9 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  onClickBook: function (e) {
+    console.log("click book");
   }
 })

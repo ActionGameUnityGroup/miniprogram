@@ -1,0 +1,73 @@
+page
+{
+  witdh:100%;
+  height: 100%;
+}
+
+.container
+{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.mainImage
+{
+  height: 732rpx;
+  width: 100%;
+  background: gray;
+}
+
+.info
+{
+  display: flex;
+  flex-direction: column;
+  padding-left: 23rpx;
+  /* height: 238rpx; */
+}
+
+.price
+{
+  width: 100%;
+  margin-top: 30rpx;
+}
+
+.goods-number
+{
+  padding-left: 23rpx;
+  padding-top: 23rpx;
+  padding-bottom: 23rpx;
+  width: 100%;
+}
+
+.bottom-view
+{
+  display: flex;
+  flex-direction: row;
+
+  background: white;
+  width: 100%;
+  height: 100rpx;
+  bottom: 0;
+}
+
+.confirm-button
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:227rpx; 
+  height:100rpx; 
+  background: red; 
+  text-align: center; 
+}
+
+.order-botton
+{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width:150rpx;
+}
