@@ -1,14 +1,27 @@
 {
+  "comment":{
+"UserCenter/userInfo":"个人信息首页",
+"UserCenter/Address/Address":"个人地址页面",
+"PublicWelfare/publicAction":"公益活动页面",
+"UserCenter/WatchHistory/watchHistory": "观看记录",
+"Order/ConfirmOrder":"确认订单页面",
+"Syllabus/syllabusMenu":"课程表",
+"UserCenter/Member/member":"会员界面",
+"ScoreMarket/scoreMarket":"积分商城",
+"ScoreMarket/GoodsPage/goods":"积分商城子页面"
+  },
+
+
   "pages":[
-    "UserCenter/userInfo",
-    "UserCenter/Address/Address",
+    "UserCenter/userInfo",        
+    "UserCenter/Address/Address", 
     "PublicWelfare/publicAction",
-    "UserCenter/WatchHistory/watchHistory",
-    "Order/ConfirmOrder",
-    "Syllabus/syllabusMenu",
-    "UserCenter/Member/member",
-    "ScoreMarket/scoreMarket",
-    "ScoreMarket/GoodsPage/goods"
+    "UserCenter/WatchHistory/watchHistory", 
+    "Order/ConfirmOrder",         
+    "Syllabus/syllabusMenu",      
+    "UserCenter/Member/member",   
+    "ScoreMarket/scoreMarket",    
+    "ScoreMarket/GoodsPage/goods" 
   ],
   "window":{
     "backgroundTextStyle": "light",
