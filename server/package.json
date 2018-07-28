@@ -20,6 +20,7 @@
     "cors": "^2.8.4",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
+    "koa-static": "^5.0.0",
     "mongodb": "^3.0.7",
     "mongoose": "^5.0.16"
   }

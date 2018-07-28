@@ -5,7 +5,9 @@ const router = new Router();
 const loadRouter = require('./loadRouter');
 const koaBody = require('koa-body');
 const bodyParser = require('koa-bodyparser');
+// const static = require('koa-static');
 const bindConsole = require('./bindConsole');
+const staticFile = require('./static-file');
 
 const env = process.env.NODE_ENV == 'production';
 
@@ -18,10 +20,7 @@ module.exports = (app, rootPath) => {
 
   app.use(bindConsole());
 
-  if(!env){
-    const staticFile = require('./static-file');
-    app.use(staticFile(rootPath));
-  }
+  app.use(staticFile(rootPath));
 
   app.use(bodyParser());
 
