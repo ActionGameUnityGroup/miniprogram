@@ -3,7 +3,7 @@ module.exports = function(rootPath){
     let URL = ctx.url;
     if (URL.includes('.')&&URL!=='/favicon.ico') {
       // 读取静态文件
-      URL = rootPath + URL;
+      URL = rootPath + '/public' + URL;
       const mime = require('mime');
       const fs = require('fs');
       ctx.body = await fs.createReadStream(URL);
