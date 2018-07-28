@@ -21,6 +21,7 @@ module.exports = (app, rootPath) => {
   app.use(bindConsole());
 
   app.use(staticFile(rootPath));
+  // app.use(static(__dirname+'../public'));
 
   app.use(bodyParser());
 
