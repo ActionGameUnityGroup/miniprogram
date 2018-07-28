@@ -31,6 +31,8 @@ class User {
     });
   }
 
+  async getUserCourse(ctx){}
+
   async setUserInfo(ctx){
       let params = JSON.parse(ctx.request.body);
       console.log(params);
