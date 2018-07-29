@@ -10,6 +10,7 @@
   <input type="button" value="发送数据" id="postBtn" />
   <input type="button" value="更新数据" id='putBtn' />
   <input type="button" value="删除数据" id="deleteBtn" />
+  <input type="button" value="获取音频" id="getAudioBtn" />
   <!-- <form action="http://192.168.1.104:3000/api/user/setUserInfo" method="POST">
     <input type="text" name="avatar" placeholder="avatar" />
     <input type="text" name="nickname" placeholder="nickname"/>
@@ -29,11 +30,26 @@
       document.querySelector('div').textContent = data.status;
     };
 
+    const setAudioSrc = (data) => {
+      console.log(data.requestData[0]);
+      const audio = document.createElement('audio');
+      audio.src = data.requestData[0].audioUrl;
+      audio.autoplay = true;
+      // audio.controls = true;
+      document.body.appendChild(audio);
+    };
+
     document.querySelector('#getBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/user/getUserInfo',
-        {method: 'GET'}
+        'http://localhost:9000/api/user/getUserInfo',
+        {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'authentication': '123'
+          }
+        }
       )
         .then((res) => {
           console.log(res);
@@ -90,6 +106,28 @@
           });
         }
       });
+    };
+
+    document.querySelector('#getAudioBtn').onclick = () => {
+      console.log('请求接口');
+      fetch(
+        'http://localhost:9000/api/audio/getAudio',
+        {
+          method: 'GET',
+          headers: {
+            'content-type': 'application/json; charset=utf-8',
+            'authentication': '123'
+          }
+        }
+      )
+        .then((res) => {
+          console.log(res);
+          res.json().then((data) => {
+                                      // console.log(data);
+                                      // setHeader(data);
+                                      setAudioSrc(data);
+                                    });
+        });
     };
 
   </script>

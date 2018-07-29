@@ -22,11 +22,8 @@ class User {
     await userModel.findObject(query, function(err, result){
       if (!err) {
         // console.log(result, 24);
-        formatData(result).then((res) => {
-          // console.log(res);
-          ctx.body = res;
-          ctx.type = 'text/json';
-        });
+        ctx.body = formatData(result);
+        ctx.type = 'text/json';
       }
     });
   }

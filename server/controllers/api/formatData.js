@@ -1,29 +1,17 @@
 const formatData = (data) => {
-  console.log('format', new Date().getTime());
-  return new Promise((resolve, reject) => {
-    // console.log(data);
-    const _data = [];
-    try{
-      data.map((item, key) => {
-        delete item['_id'];
-        _data.push(item);
-        if (key+1 === data.length) {
-          delete data;
-          resolve({ errMsg: 'request:ok', status: 200, requestData: _data });
-        }
-      });
-    }catch(e){
-      reject('遍历失败');
-    }
-  });
+  return {
+    errMsg: 'request:ok',
+    status: 200,
+    requestData: data
+  };
 };
 
 const formatDataFail = (data) => {
   return {
-            errMsg: 'request:fail',
-            status: 404,
-            requestData: data
-          };
+    errMsg: 'request:fail',
+    status: 404,
+    requestData: data
+  };
 };
 
 module.exports = {
