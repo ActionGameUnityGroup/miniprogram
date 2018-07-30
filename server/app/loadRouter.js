@@ -2,12 +2,15 @@ const fs = require('fs');
 
 const addController = (router, controller) => {
   for (let URL in controller) {
+    let [method, fileName] = URL.split(' ');
     if (URL.startsWith('GET ')) {
-      let [method, fileName] = URL.split(' ');
       router.get(fileName, controller[URL]);
-    }else{
-      let [method, fileName] = URL.split(' ');
+    } else if (URL.startsWith('POST ')) {
       router.post(fileName, controller[URL]);
+    } else if (URL.startsWith('PUT ')) {
+      router.put(fileName, controller[URL]);
+    } else {
+      router.delete(fileName, controller[URL]);
     }
   }
 };
