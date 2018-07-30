@@ -5,12 +5,8 @@ const addController = (router, controller) => {
     let [method, fileName] = URL.split(' ');
     if (URL.startsWith('GET ')) {
       router.get(fileName, controller[URL]);
-    } else if (URL.startsWith('POST ')) {
-      router.post(fileName, controller[URL]);
-    } else if (URL.startsWith('PUT ')) {
-      router.put(fileName, controller[URL]);
     } else {
-      router.delete(fileName, controller[URL]);
+      router.post(fileName, controller[URL]);
     }
   }
 };
