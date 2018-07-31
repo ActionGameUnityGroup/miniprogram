@@ -5,6 +5,10 @@ const addController = (router, controller) => {
     let [method, fileName] = URL.split(' ');
     if (URL.startsWith('GET ')) {
       router.get(fileName, controller[URL]);
+    } else if (URL.startsWith('OPTIONS ')) {
+      ctx.options(fileName, (ctx) => {
+        ctx.status = 200;
+      });
     } else {
       router.post(fileName, controller[URL]);
     }

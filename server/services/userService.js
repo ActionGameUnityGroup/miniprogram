@@ -1,6 +1,6 @@
 const userService = (ctx) => {
   let args = ctx.query;
-  console.log(args);
+  // console.log(args);
   return args;
 };
 
