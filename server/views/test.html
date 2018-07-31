@@ -43,7 +43,7 @@
     document.querySelector('#getBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/user/getUserInfo',
+        'https://www.changdaolife.cn/api/user/getUserInfo',
         {
           method: 'GET',
           headers: {
@@ -64,7 +64,7 @@
     document.querySelector('#postBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/user/setUserInfo',
+        'https://www.changdaolife.cn/api/user/setUserInfo',
         {method: 'POST', body: JSON.stringify({nickname: 'Jerry', sex: 0})}
       ).then((res) => {
         console.log(res, new Date().getTime());
@@ -80,7 +80,7 @@
     document.querySelector('#putBtn').onclick = () => {
       console.log('请求接口', '更新');
       fetch(
-        'http://127.0.0.1:9000/api/user/setUserInfo',
+        'https://www.changdaolife.cn/api/user/setUserInfo',
         {method: 'PUT', body: JSON.stringify({nickname: 'Reri', sex: 0})}
       ).then((res) => {
         console.log(res, new Date().getTime());
@@ -96,7 +96,7 @@
     document.querySelector('#deleteBtn').onclick = () => {
       console.log('请求接口', '删除');
       fetch(
-        'http://127.0.0.1:9000/api/user/setUserInfo',
+        'https://www.changdaolife.cn/api/user/setUserInfo',
         {method: 'DELETE', body: JSON.stringify({nickname: 'Jerry', sex: 0})}
       ).then((res) => {
         console.log(res, new Date().getTime());
@@ -112,7 +112,7 @@
     document.querySelector('#getAudioBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/audio/getAudio',
+        'https://www.changdaolife.cn/api/audio/getAudio',
         {
           method: 'GET',
           headers: {
@@ -134,7 +134,7 @@
     document.querySelector('#getLogBtn').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/log/getLogs',
+        'https://www.changdaolife.cn/api/log/getLogs',
         {
           method: 'GET',
           headers: {
