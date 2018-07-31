@@ -21,7 +21,7 @@ class User {
     let query = getObject(ctx);
     await userModel.findObject(query, function(err, result){
       if (!err) {
-        // console.log(result, 24);
+        ctx.info(`${ctx.url}: ${result}`);
         ctx.body = formatData(result);
         ctx.type = 'text/json';
       }
