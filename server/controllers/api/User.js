@@ -19,6 +19,7 @@ class User {
 
   async getUserInfo(ctx){
     let query = getObject(ctx);
+    console.log(query);
     await userModel.findObject(query, function(err, result){
       if (!err) {
         ctx.info(`${ctx.url}: ${result}`);
