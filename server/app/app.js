@@ -8,16 +8,22 @@ const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
 const bindConsole = require('./bindConsole');
 const staticFile = require('./static-file');
+const cors = require('koa-cors');
 
 const env = process.env.NODE_ENV == 'production';
 
 module.exports = (app, rootPath) => {
+  app.use(cors());
+
   app.use(async (ctx, next) => {
     console.log(ctx.method, ctx.url);
-    ctx.set('Access-Control-Allow-Origin', '*');
-    if (ctx.method === 'OPTIONS') ctx.res.status = 200;
+    /*ctx.set('Access-Control-Allow-Origin', '*');
+    if (ctx.method === 'OPTIONS') {
+      ctx.status = 200;
+    };*/
     await next();
   });
+
 
   app.use(bindConsole());
 
