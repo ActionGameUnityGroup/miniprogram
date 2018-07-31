@@ -25,6 +25,7 @@ class User {
         ctx.body = formatData(result);
         ctx.type = 'text/json';
       }
+      ctx.error(err);
     });
   }
 
