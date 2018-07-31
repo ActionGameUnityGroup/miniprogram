@@ -15,6 +15,7 @@ module.exports = (app, rootPath) => {
   app.use(async (ctx, next) => {
     console.log(ctx.method, ctx.url);
     ctx.set('Access-Control-Allow-Origin', '*');
+    if (ctx.method === 'OPTIONS') ctx.res.status = 200;
     await next();
   });
 
