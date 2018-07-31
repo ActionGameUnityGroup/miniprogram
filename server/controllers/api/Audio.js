@@ -7,12 +7,15 @@ class Audio {
 
   async getAudio(ctx){
     let query = ctx.query;
-    await audioModel.find(query, function(err, result) {
+    let data = await audioModel.find(query);
+    ctx.info(`${ctx.url}: ${data}`);
+    ctx.body = await formatData(data);
+    ctx.type = 'text/json';
+    /*audioModel.find(query, function(err, result) {
       if (!err) {
-        ctx.body = formatData(result);
-        ctx.type = 'text/json';
       }
-    });
+      ctx.error(err);
+    });*/
   }
 
 }

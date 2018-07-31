@@ -1,9 +1,11 @@
 const formatData = (data) => {
-  return {
-    errMsg: 'request:ok',
-    status: 200,
-    requestData: data
-  };
+  return new Promise((resolve, reject) => {
+    resolve({
+      errMsg: 'request:ok',
+      status: 200,
+      requestData: data
+    });
+  });
 };
 
 const formatDataFail = (data) => {

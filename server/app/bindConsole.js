@@ -12,7 +12,7 @@ module.exports = () => {
       const date = new Date();
       /*console.log(date, 11);
       console.log(text, 'read');*/
-      text += `${date} ${err}\n\n`;
+      text += `${date}\n${err}\n\n`;
       fs.writeFileSync(filePath, text);
     };
     ctx.info = (info) => {
@@ -20,7 +20,7 @@ module.exports = () => {
       let text = fs.readFileSync(filePath, 'utf8');
       const date = new Date();
       // console.log(text, 'read');
-      text += `${date} ${info}\n\n`;
+      text += `${date}\n${info}\n\n`;
       // text.pipe(writeStream);
       fs.writeFileSync(filePath, text);
     };

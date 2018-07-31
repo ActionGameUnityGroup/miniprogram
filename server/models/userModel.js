@@ -13,11 +13,11 @@ let userSchema = new mongoose.Schema({
   address: String
 }, {collection: 'User', versionKey: false});
 
-userSchema.methods.findObject = function(obj, callback){
+/*userSchema.methods.find = function(obj, callback){
   return this.model('user').find(obj, callback);
-};
+};*/
 
-userSchema.methods.findAll = function(callback){
+/*userSchema.methods.findAll = function(callback){
   return this.model('user').find({}, callback);
 };
 
@@ -27,7 +27,7 @@ userSchema.statics.findObject = function(obj, callback){
 
 userSchema.statics.findAll = function(callback){
   return this.model('user').find({}, callback);
-};
+};*/
 
 let userModel = db.model('user', userSchema);
 

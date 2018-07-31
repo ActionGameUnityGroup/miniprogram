@@ -11,13 +11,13 @@ let audioSchema = new mongoose.Schema({
   audioLength : String
 }, {collection: 'Audio', versionKey: false});
 
-audioSchema.methods.findObject = function(obj, callback){
+/*audioSchema.methods.findObject = function(obj, callback){
   return this.model('audio').find(obj, callback);
 };
 
 audioSchema.statics.findObject = function(obj, callback){
   return this.model('audio').find(obj, callback);
-};
+};*/
 
 let audioModel = db.model('audio', audioSchema);
 

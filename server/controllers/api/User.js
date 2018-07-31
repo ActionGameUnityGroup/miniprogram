@@ -19,15 +19,34 @@ class User {
 
   async getUserInfo(ctx){
     let query = getObject(ctx);
-    console.log(query);
-    await userModel.findObject(query, function(err, result){
+    let data = await userModel.find(query);
+    await ctx.info(`${ctx.url}: ${data}`);
+    ctx.body = await formatData(data);
+    ctx.type = 'text/json';
+    /*userModel.find(query, function (err, result) {
+      if (!err) {
+        console.log(result);
+        ctx.body = result;
+        ctx.type = 'text/json';
+      }
+    });*/
+    // console.log(new Date().getTime());
+    /*await userModel.findObject(query, function(err, result){
       if (!err) {
         ctx.info(`${ctx.url}: ${result}`);
         ctx.body = formatData(result);
         ctx.type = 'text/json';
       }
       ctx.error(err);
-    });
+    });*/
+    /*let query = getObject(ctx);
+    await userModel.find(query, function(err, result){
+      if (!err) {
+        // console.log(result, 24);
+        ctx.body = result;
+        ctx.type = 'text/json';
+      }
+    });*/
   }
 
   async getUserCourse(ctx){}
