@@ -104,6 +104,7 @@ class User {
         'Content-Type': 'application/json; charset=utf-8'
       }
     });
+    console.log(res);
     const appid = 'wxba59a2c0824fd1db';
     const pc = new WXBizDataCrypt(appid, res.session_key);
     /*console.log(typeof decodeURI(query.encryptedData), '\n');
