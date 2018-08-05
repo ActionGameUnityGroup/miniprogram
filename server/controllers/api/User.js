@@ -95,10 +95,11 @@ class User {
     */
     let params = getQuery(ctx);
     // console.log(params);
-    let res = await request(
-      `https://api.weixin.qq.com/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
-      {}
-    );
+    let res = await request({
+      hostname: `api.weixin.qq.com`,
+      path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
+      method: 'GET'
+    });
     console.log(res);
     ctx.body = {};
     ctx.type = 'text/json';
