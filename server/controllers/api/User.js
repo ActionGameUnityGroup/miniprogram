@@ -107,9 +107,9 @@ class User {
     console.log(res);
     const appid = 'wxba59a2c0824fd1db';
     const pc = new WXBizDataCrypt(appid, res.session_key);
-    console.log(decodeURI(query.encryptedData), '\n');
-    console.log(decodeURI(query.iv));
-    const data = pc.decryptData(`${decodeURI(query.encryptedData)}`, `${decodeURI(query.iv)}`);
+    console.log(decodeURIComponent(query.encryptedData), '\n');
+    console.log(decodeURIComponent(query.iv));
+    const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
     const save = {
       unionid: data.unionid || '',
       openid: data.openId || '',
