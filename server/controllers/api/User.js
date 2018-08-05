@@ -104,13 +104,13 @@ class User {
         'Content-Type': 'application/json; charset=utf-8'
       }
     });
-    console.log(res);
+    // console.log(res);
     const appid = 'wxba59a2c0824fd1db';
     const pc = new WXBizDataCrypt(appid, res.session_key);
     console.log(decodeURIComponent(query.encryptedData), '\n');
     console.log(decodeURIComponent(query.iv));
     const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
-    console.log(data);
+    // console.log(data);
     const save = {
       unionid: data.unionid || '',
       openid: data.openId || '',
@@ -125,7 +125,7 @@ class User {
     // console.log(data);
     const User = new userModel(save);
     let saveInfo = await saveModel(User);
-    console.log(saveInfo);
+    // console.log(saveInfo);
     // console.log(data);
     // console.log(res);
     ctx.body = await formatData({openid: res.openid});
