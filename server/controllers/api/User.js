@@ -122,7 +122,8 @@ class User {
     };
     // console.log(data);
     const User = new userModel(save);
-    let res = await saveModel(User);
+    let saveInfo = await saveModel(User);
+    console.log(saveInfo);
     // console.log(data);
     // console.log(res);
     ctx.body = await formatData({openid: res.openid});
