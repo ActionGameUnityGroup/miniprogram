@@ -95,7 +95,7 @@ class User {
       iv
     */
     let query = getQuery(ctx);
-    // console.log(query);
+    console.log(query);
     let res = await request({
       hostname: `api.weixin.qq.com`,
       path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${query.code}&grant_type=authorization_code`,
