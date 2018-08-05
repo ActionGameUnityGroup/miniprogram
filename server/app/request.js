@@ -1,14 +1,15 @@
 const https = require('https');
 
-module.exports = function(url){
+module.exports = function(options){
   return new Promise((resolve, reject) => {
     // https.get('https://api.weixin.qq.com/sns/jscode2session')
-    https.get(url, (res) => {
+    https.request(options, (res) => {
       res.on('data', (data) => {
-        resolve(data);
+        // console.log(data);
+        resolve(JSON.parse(data));
       });
     }).on('error', (e) => {
       reject(e);
-    });
+    }).end();
   });
 };

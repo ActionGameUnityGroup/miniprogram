@@ -2,6 +2,7 @@ const {formatData} = require('./formatData');
 const userModel = require('../../models/userModel');
 const {getQuery, getParams} = require('../../services/userService');
 const request = require('../../app/request');
+const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
 
 const saveModel = (model) => {
   return new Promise((resolve, reject) => {
@@ -93,15 +94,38 @@ class User {
       encryptedData
       iv
     */
-    let params = getQuery(ctx);
-    // console.log(params);
+    let query = getQuery(ctx);
+    // console.log(query);
     let res = await request({
       hostname: `api.weixin.qq.com`,
-      path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
-      method: 'GET'
+      path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${query.code}&grant_type=authorization_code`,
+      method: 'GET',
+      header: {
+        'Content-Type': 'application/json; charset=utf-8'
+      }
     });
-    console.log(res);
-    ctx.body = {};
+    const appid = 'wxba59a2c0824fd1db';
+    const pc = new WXBizDataCrypt(appid, res.session_key);
+    /*console.log(typeof decodeURI(query.encryptedData), '\n');
+    console.log(typeof decodeURI(query.iv));*/
+    const data = pc.decryptData(`${decodeURI(query.encryptedData)}`, `${decodeURI(query.iv)}`);
+    const save = {
+      unionid: data.unionid || '',
+      openid: data.openId || '',
+      avatar: data.avatarUrl || '',
+      nickname: data.nickName || '',
+      gender: data.gender || 0,
+      language: data.language || '',
+      city: data.city || '',
+      province: data.province || '',
+      country: data.country || ''
+    };
+    // console.log(data);
+    const User = new userModel(save);
+    let res = await saveModel(User);
+    // console.log(data);
+    // console.log(res);
+    ctx.body = await formatData({openid: res.openid});
     ctx.type = 'text/json';
   }
 
