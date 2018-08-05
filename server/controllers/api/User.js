@@ -105,6 +105,12 @@ class User {
       }
     });
     // console.log(res);
+    let user = await userModel.find({openid: res.openid}, '-_id');
+    if (user.openid) {
+      // 数据库有
+      ctx.body = await formatData({openid: res.openid});
+      ctx.type = 'text/json';
+    }
     const appid = 'wxba59a2c0824fd1db';
     const pc = new WXBizDataCrypt(appid, res.session_key);
     console.log(decodeURIComponent(query.encryptedData), '\n');
