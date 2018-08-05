@@ -9,4 +9,8 @@ module.exports = {
     console.log('设置数据');
     await User.setUserInfo(ctx);
   },
+  'GET /api/user/login': async (ctx) => {
+    console.log('设置数据');
+    await User.login(ctx);
+  },
 };

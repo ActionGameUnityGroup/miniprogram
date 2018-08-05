@@ -14,7 +14,7 @@ const env = process.env.NODE_ENV == 'production';
 module.exports = (app, rootPath) => {
 
   app.use(async (ctx, next) => {
-    console.log(ctx.method, ctx.url);
+    // console.log(ctx.method, ctx.url);
     ctx.set('Access-Control-Allow-Origin', '*');
     ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
     ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');

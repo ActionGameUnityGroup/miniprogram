@@ -1,6 +1,7 @@
 const {formatData} = require('./formatData');
 const userModel = require('../../models/userModel');
-const getObject = require('../../services/userService');
+const {getQuery, getParams} = require('../../services/userService');
+const request = require('../../app/request');
 
 const saveModel = (model) => {
   return new Promise((resolve, reject) => {
@@ -15,11 +16,10 @@ const saveModel = (model) => {
 
 class User {
 
-  constructor(){}
-
   async getUserInfo(ctx){
-    let query = getObject(ctx);
-    let data = await userModel.find(query);
+    let query = getQuery(ctx);
+    // console.log(ctx.headers);
+    let data = await userModel.find(query, '-_id');
     await ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
     ctx.type = 'text/json';
@@ -39,7 +39,7 @@ class User {
       }
       ctx.error(err);
     });*/
-    /*let query = getObject(ctx);
+    /*let query = getQuery(ctx);
     await userModel.find(query, function(err, result){
       if (!err) {
         // console.log(result, 24);
@@ -52,7 +52,7 @@ class User {
   async getUserCourse(ctx){}
 
   async setUserInfo(ctx){
-      let params = JSON.parse(ctx.request.body);
+      let params = getParams(ctx);
       console.log(params);
       const data = {
         unionid: params.unionid || 0,
@@ -82,6 +82,26 @@ class User {
         ctx.body = error;
         ctx.type = 'text/json';
       });*/
+  }
+
+  async login(ctx){
+    // 登录以后返回openID
+    // 以后请求接口在请求头加入openID
+    /*
+      请求参数：
+      code
+      encryptedData
+      iv
+    */
+    let params = getQuery(ctx);
+    // console.log(params);
+    let res = await request(
+      `https://api.weixin.qq.com/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
+      {}
+    );
+    console.log(res);
+    ctx.body = {};
+    ctx.type = 'text/json';
   }
 
 };
