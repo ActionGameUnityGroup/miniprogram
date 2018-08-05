@@ -95,7 +95,7 @@ class User {
       iv
     */
     let query = getQuery(ctx);
-    console.log(query);
+    // console.log(query);
     let res = await request({
       hostname: `api.weixin.qq.com`,
       path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${query.code}&grant_type=authorization_code`,
@@ -106,36 +106,38 @@ class User {
     });
     // console.log(res);
     let user = await userModel.find({openid: res.openid}, '-_id');
-    if (user.openid) {
+    // console.log(user.length, 109);
+    if (user.length) {
       // 数据库有
       ctx.body = await formatData({openid: res.openid});
       ctx.type = 'text/json';
+    } else {
+      const appid = 'wxba59a2c0824fd1db';
+      const pc = new WXBizDataCrypt(appid, res.session_key);
+      // console.log(decodeURIComponent(query.encryptedData), '\n');
+      // console.log(decodeURIComponent(query.iv));
+      const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
+      // console.log(data);
+      const save = {
+        unionid: data.unionid || '',
+        openid: data.openId || '',
+        avatar: data.avatarUrl || '',
+        nickname: data.nickName || '',
+        gender: data.gender || 0,
+        language: data.language || '',
+        city: data.city || '',
+        province: data.province || '',
+        country: data.country || ''
+      };
+      // console.log(data);
+      const User = new userModel(save);
+      let saveInfo = await saveModel(User);
+      // console.log(saveInfo);
+      // console.log(data);
+      // console.log(res);
+      ctx.body = await formatData({openid: res.openid});
+      ctx.type = 'text/json';
     }
-    const appid = 'wxba59a2c0824fd1db';
-    const pc = new WXBizDataCrypt(appid, res.session_key);
-    console.log(decodeURIComponent(query.encryptedData), '\n');
-    console.log(decodeURIComponent(query.iv));
-    const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
-    // console.log(data);
-    const save = {
-      unionid: data.unionid || '',
-      openid: data.openId || '',
-      avatar: data.avatarUrl || '',
-      nickname: data.nickName || '',
-      gender: data.gender || 0,
-      language: data.language || '',
-      city: data.city || '',
-      province: data.province || '',
-      country: data.country || ''
-    };
-    // console.log(data);
-    const User = new userModel(save);
-    let saveInfo = await saveModel(User);
-    // console.log(saveInfo);
-    // console.log(data);
-    // console.log(res);
-    ctx.body = await formatData({openid: res.openid});
-    ctx.type = 'text/json';
   }
 
 };
