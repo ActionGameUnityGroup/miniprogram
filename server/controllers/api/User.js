@@ -110,6 +110,7 @@ class User {
     console.log(decodeURIComponent(query.encryptedData), '\n');
     console.log(decodeURIComponent(query.iv));
     const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
+    console.log(data);
     const save = {
       unionid: data.unionid || '',
       openid: data.openId || '',
