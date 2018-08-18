@@ -18,13 +18,88 @@
     <input type="text" name="sex" placeholder="sex"/>
     <input type="text" name="birthday" placeholder="birthday"/>
     <input type="text" name="name" placeholder="name"/>
-    <input type="text" name="phonenumber" placeholder="phonenumber"/>
+    <input type="text" name="phone" placeholder="phone"/>
     <input type="text" name="address" placeholder="address"/>
     <input type="text" name="unionid" placeholder="unionid"/>
     <input type="submit" name="submit" value="Submit" />
   </form> -->
   <!-- <input type="button" value="Submit"  /> -->
+  <div>
+    <p>新建地址</p>
+    <input type="text" name="name" placeholder="收货人" value="Reri" />
+    <br/>
+    <input type="tel" name="phone" placeholder="手机" value="15920936308" />
+    <br/>
+    <input type="text" name="area" value="广东省 广州市 荔湾区" />
+    <br/>
+    <input type="text" name="detail" placeholder="详细地址" value="123" />
+    <br/>
+    <label for="default">
+      <input type="checkbox" name="default" id='default' />
+      设为默认地址
+    </label>
+    <br/>
+    <input type="button" name="save" value="保存" />
+    <input type="button" name="get" value="获取地址" />
+  </div>
   <script>
+
+    document.querySelector('input[name=save]').onclick = () => {
+      console.log('新增地址');
+      let [
+        name,
+        phone,
+        area,
+        detail,
+        isDefault
+      ] = [
+        document.querySelector('input[name=name]').value,
+        document.querySelector('input[name=phone]').value,
+        document.querySelector('input[name=area]').value,
+        document.querySelector('input[name=detail]').value,
+        document.querySelector('#default').checked
+      ];
+      console.log(name);
+      console.log(phone);
+      console.log(area);
+      console.log(detail);
+      console.log(isDefault);
+      fetch(
+        'http://127.0.0.1:9000/api/address/setAddress',
+        {
+          method: 'POST',
+          body: JSON.stringify({name: name, phone: phone, area: area, detail: detail, isDefault: isDefault}),
+          headers: {
+            'Authorization': 'owLC84lbLCkG0nhZNu6pq7ZYakws'
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
+
+    document.querySelector('input[name=get]').onclick = () => {
+      console.log('获取地址');
+      fetch(
+        'http://127.0.0.1:9000/api/address/getAddressList',
+        {
+          method: 'GET',
+          headers: {
+            'Authorization': 'owLC84lbLCkG0nhZNu6pq7ZYakws'
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
 
     const setHeader = (data) => {
       console.log(data);

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>上传</title>
+</head>
+<body>
+  <!-- <form enctype="multipart/form-data" method="post" action="/api/audio/setAudio"> -->
+    <input type="file" name="file"/>
+    <input type="button" name="upload" value="提交" />
+  <!-- </form> -->
+  <script>
+    (function(){
+      document.querySelector('input[type=button]').onclick = () => {
+        console.log('点击提交');
+        // let reader = new FileReader();
+        let file = document.querySelector('input[type=file]').files[0];
+        console.log(file);
+        let formData = new FormData();
+        // console.log(formData.get('file'));
+        formData.append('file', file);
+        // console.log(formData.get('file'));
+        // reader.readAsDataURL(file);
+        if (file) {
+          // 请求接口
+          fetch(
+            'http://127.0.0.1:9000/api/audio/setAudio',
+            {
+              method: 'POST',
+              body: formData,
+            }
+          ).then((res) => {
+            if (res.ok) {
+              res.json().then((data) => {
+                console.log(data);
+              });
+            }
+          }).catch((err) => {
+            console.error(err);
+          });
+        } else {
+          console.log('没有选择文件');
+        }
+      };
+    })()
+  </script>
+</body>
+</html>

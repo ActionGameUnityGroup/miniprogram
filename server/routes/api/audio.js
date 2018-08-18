@@ -1,6 +1,10 @@
 const Audio = require('../../controllers/api/Audio');
 
 module.exports = {
+  'GET /api/audio/getAudioList': async (ctx) => {
+    console.log('获取数据');
+    await Audio.getAudioList(ctx);
+  },
   'GET /api/audio/getAudio': async (ctx) => {
     console.log('获取数据');
     await Audio.getAudio(ctx);

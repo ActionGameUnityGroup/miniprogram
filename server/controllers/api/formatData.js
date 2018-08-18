@@ -9,14 +9,28 @@ const formatData = (data) => {
 };
 
 const formatDataFail = (data) => {
-  return {
-    errMsg: 'request:fail',
-    status: 404,
-    requestData: data
-  };
+  return new Promise((resolve, reject) => {
+    resolve({
+      errMsg: 'request:fail',
+      status: 404,
+      requestData: data
+    });
+  });
+};
+
+const saveModel = (model) => {
+  return new Promise((resolve, reject) => {
+    model.save(function(err, res){
+      if (!err) {
+        resolve(res);
+      }
+      reject(err);
+    });
+  });
 };
 
 module.exports = {
   formatData: formatData,
-  formatDataFail: formatDataFail
+  formatDataFail: formatDataFail,
+  saveModel: saveModel
 };

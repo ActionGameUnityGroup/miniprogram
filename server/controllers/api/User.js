@@ -1,19 +1,8 @@
-const {formatData} = require('./formatData');
+const {formatData, saveModel} = require('./formatData');
 const userModel = require('../../models/userModel');
 const {getQuery, getParams} = require('../../services/userService');
 const request = require('../../app/request');
 const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
-
-const saveModel = (model) => {
-  return new Promise((resolve, reject) => {
-    model.save(function(err, res){
-      if (!err) {
-        resolve(res);
-      }
-      reject(err);
-    });
-  });
-};
 
 class User {
 
@@ -67,11 +56,16 @@ class User {
       }
       console.log(data);
       const User = new userModel(data);
-      let res = await saveModel(User);
-      const requestdata = formatData(res);
-      console.log(requestdata);
-      ctx.body = requestdata ;
-      ctx.type = 'text/json';
+      let res = await User.save();
+      if (res._id) {
+        const requestdata = formatData(res);
+        console.log(requestdata);
+        ctx.body = requestdata ;
+        ctx.type = 'text/json';
+      } else {
+        ctx.body = await formatData({info: '添加信息成功！'});
+        ctx.type = 'text/json';
+      }
       /*.then((res) => {
         console.log(res, 50);
         const data = formatData(res);
@@ -132,11 +126,16 @@ class User {
       // console.log(data);
       const User = new userModel(save);
       let saveInfo = await saveModel(User);
+      if (saveInfo._id) {
+        ctx.body = await formatData({openid: res.openid});
+        ctx.type = 'text/json';
+      } else {
+        ctx.body = await formatData({openid: res.openid});
+        ctx.type = 'text/json';
+      }
       // console.log(saveInfo);
       // console.log(data);
       // console.log(res);
-      ctx.body = await formatData({openid: res.openid});
-      ctx.type = 'text/json';
     }
   }
 
