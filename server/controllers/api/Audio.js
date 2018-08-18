@@ -10,7 +10,7 @@ class Audio {
 
   async getAudio(ctx){
     let query = ctx.query;
-    let data = await audioModel.find(query, '-_id', {sort: [['audioID', -1]]});
+    let data = await audioModel.find(query, '-_id').sort({'audioID': -1});
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
     ctx.type = 'text/json';
