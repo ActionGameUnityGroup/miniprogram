@@ -1,4 +1,4 @@
-const audioModel = require('../../models/audioModel');
+const lessonModel = require('../../models/lessonModel');
 const {formatData} = require('./formatData');
 const upload = require('./upload');
 const path = require('path');
@@ -10,11 +10,11 @@ class Audio {
 
   async getAudio(ctx){
     let query = ctx.query;
-    let data = await audioModel.find(query, '-_id').sort({'audioID': -1});
+    let data = await lessonModel.find(query, '-_id').sort({'audioID': -1});
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
     ctx.type = 'text/json';
-    /*audioModel.find(query, function(err, result) {
+    /*lessonModel.find(query, function(err, result) {
       if (!err) {
       }
       ctx.error(err);
@@ -22,7 +22,7 @@ class Audio {
   }
 
   async getAudioList(ctx){
-    let data = await audioModel.find({}, '-_id audioID audioName audioCoverUrl').sort({'audioID': -1});
+    let data = await lessonModel.find({}, '-_id audioID audioName audioCoverUrl').sort({'audioID': -1});
     console.log(data);
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);

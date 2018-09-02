@@ -2,14 +2,15 @@ const {mongoose, db} = require('../mongodb/db');
 
 console.log('模型内连接数据库');
 
-let audioSchema = new mongoose.Schema({
+let lessonSchema = new mongoose.Schema({
   audioID: Number,
   audioName : String,
   audioUrl : String,
-  audioAuthor : String,
-  aduioCoverUrl : String,
+  author : String,
+  courseName: '',
+  lessonCoverUrl : String,
   audioLength : String
-}, {collection: 'Audio', versionKey: false});
+}, {collection: 'Lesson', versionKey: false});
 
 /*audioSchema.methods.findObject = function(obj, callback){
   return this.model('audio').find(obj, callback);
@@ -19,6 +20,6 @@ audioSchema.statics.findObject = function(obj, callback){
   return this.model('audio').find(obj, callback);
 };*/
 
-let audioModel = db.model('audio', audioSchema);
+let lessonModel = db.model('lesson', lessonSchema);
 
-module.exports = audioModel;
+module.exports = lessonModel;

@@ -354,3 +354,69 @@ Thu Aug 09 2018 09:11:47 GMT+0800 (中国标准时间)
   area: '广东省 广州市 荔湾区',
   detail: '123' }
 
+Sun Sep 02 2018 12:59:49 GMT+0800 (中国标准时间)
+/api/banner/getBanner?page=index: { page: 'index', list: [] }
+
+Sun Sep 02 2018 13:00:17 GMT+0800 (中国标准时间)
+/api/banner/getBanner?page=index: { page: 'index', list: [] }
+
+Sun Sep 02 2018 13:00:47 GMT+0800 (中国标准时间)
+/api/banner/getBanner?page=index: { list: [] }
+
+Sun Sep 02 2018 13:12:12 GMT+0800 (中国标准时间)
+/api/banner/setBanner: [object Object]
+
+Sun Sep 02 2018 13:12:45 GMT+0800 (中国标准时间)
+/api/banner/setBanner: [object Object]
+
+Sun Sep 02 2018 13:24:25 GMT+0800 (中国标准时间)
+/api/banner/setBanner: [object Object]
+
+Sun Sep 02 2018 14:40:06 GMT+0800 (中国标准时间)
+/api/banner/setBanner: [object Object]
+
+Sun Sep 02 2018 14:49:53 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 14:50:15 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 14:57:24 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 15:12:31 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: { bannerList: [], _id: 5b8b8d5fa1ab0d5180dc4865, page: 'index' }
+
+Sun Sep 02 2018 15:17:30 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 15:18:28 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: { bannerList: 
+   [ { name: '0.jpg', url: 'https://127.0.0.1:9000/image/0.jpg' } ],
+  _id: 5b8b8ec4673e503978805d59,
+  page: 'index' }
+
+Sun Sep 02 2018 20:58:12 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 20:59:23 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:01:11 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:01:30 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:02:19 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:04:02 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:11:04 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
+Sun Sep 02 2018 21:12:03 GMT+0800 (中国标准时间)
+/api/banner/setBanner?page=index: [object Object]
+
