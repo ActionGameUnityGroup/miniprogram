@@ -31,7 +31,7 @@ class Banner{
         bannerList: [
           {
             name: fileStream.fileName,
-            url: `https://${ctx.header.host}/image/${fileStream.fileName}`
+            url: `https://www.changdaolife.cn/image/${fileStream.fileName}`
           }
         ]
       };
@@ -54,7 +54,7 @@ class Banner{
       if (flag) {
         data[0].bannerList.push({
           name: fileStream.fileName,
-          url: `https://${ctx.header.host}/image/${fileStream.fileName}`
+          url: `https://www.changdaolife.cn/image/${fileStream.fileName}`
         });
         console.log(data[0].bannerList);
         let res = await bannerModel.update({page: page}, {bannerList: data[0].bannerList}, {multi: true});
