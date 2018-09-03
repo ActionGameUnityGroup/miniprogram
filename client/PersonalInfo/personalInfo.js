@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    headerBackground: '',
+    headerBackground: '../assets/icon/miniprogram-icon-72.png',
     avatar: '',
     userName: '',
     identify: 'ididididid',
@@ -31,7 +31,7 @@ Page({
     const _this = this;
     const height = app.globalData.systemInfo.windowHeight;
     this.setData({
-      contentHeight: height*(1 - .438 - .083 - .013)
+      contentHeight: height*(1 - .083)
     });
     wx.getUserInfo({
       success: function(res){
