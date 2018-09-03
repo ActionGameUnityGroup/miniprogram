@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "Index/Index",
+    "Consult/Consult",
+    "Keep/Keep",
+    "Course/Course",
+    "Lesson/Lesson",
+    "MyCourse/MyCourse",
+    "Message/Message",
+    "Spread/Spread",
+    "FeedBack/FeedBack",
+    "Income/Income",
+    "UserCenter/userInfo",
+    "SignIn/SignIn",
+    "UserCenter/Address/Address",
+    "UserCenter/Address/addNewAddress",
+    "Elements/elements",
+    "ScoreMarket/GoodsPage/goods",
+    "PersonalInfo/personalInfo",
+    "PublicWelfare/publicAction",
+    "UserCenter/WatchHistory/watchHistory",
+    "Order/ConfirmOrder",
+    "Syllabus/syllabusMenu",
+    "UserCenter/Member/member",
+    "ScoreMarket/scoreMarket",
+    "Class/Class",
+    "Health/Health"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  }
+}

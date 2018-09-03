@@ -1,0 +1,4 @@
+<textarea class="feedback-content" placeholder="常道智慧平台的每个进步，都离不开您的意见和建议。" placeholder-style="color: #a9a9a9;" bindinput='inputSuggestAction'/>
+<input class="feedback-contact" type="text" placeholder="你的手机 / 微信 / 邮箱" placeholder-style='color: #a9a9a9;' bindinput='inputContactAction' />
+
+<view class="submit-action" bindtap='submitAction'> 提交 </view>

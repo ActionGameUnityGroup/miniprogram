@@ -1,0 +1,5 @@
+Page{ width: 100%; height: 100%; background: #fff; }
+.class-content{ display: block; width: 100%; height: 100%; overflow: auto; }
+.class-item{ display: block; margin: 28rpx auto 0; width: 692rpx; /* height: 296rpx; border-radius: 15rpx; background: #434343; */ }
+.class-item image{ display: block; width: 100%; }
+.class-item:last-child{ margin-bottom: 28rpx; }

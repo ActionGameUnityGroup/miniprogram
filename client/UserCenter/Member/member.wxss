@@ -1,0 +1,31 @@
+.elements-header{ width: 100%; height: 31%; }
+.banner-item{ width: 100%; height: 100%; }
+.banner-item:nth-child(odd){ background: #f00; }
+.banner-item:nth-child(even){ background: #000; }
+
+.elements-nav{ display: flex; justify-content: space-between; align-items: center; margin-top: 1%; width: 100%; height: 7.6%; background: #fff; border-bottom: 1rpx solid #d5d5d5; }
+.nav-item{ display: block; width: 33%; height: 100%; text-align: center; }
+.nav-item text{ display: block; margin: 0 auto; width: 30%; height: 92%; line-height: 3.5; border-bottom: 7rpx solid #fff; font-size: 30rpx; color: #6b6b6b; }
+.nav-item-active text{ border-bottom: 7rpx solid #c280fc; color: #c280fc; }
+
+.detail-content{ padding: 4% 42rpx; height: 47.1%; background: #fff; overflow: auto; }
+.detail-title{ display: block; text-indent: 1.25rem; font-size: 36rpx; font-weight: bold; color: #000; }
+.detail-key{ color: red !important; }
+.detail-bold{ font-weight: bold; }
+.detail-section{ text-align: left; text-indent: 1.45rem; line-height: 1.5; font-size: 26rpx; color: #000; }
+.detail-space{ margin: 30rpx 0; }
+
+.course-list{ height: 52.1%; background: #fff; }
+.course-item{ display: flex; justify-content: space-between; align-content: center; margin: 0 auto; padding: 30rpx 0; width: 666rpx; height: 120rpx; border-bottom: 2rpx solid #dbdbdb; }
+.course-image{ width: 162rpx; height: 120rpx; border-radius: 5rpx; }
+.course-item:nth-child(odd) .course-image{ background: #f00; }
+.course-item:nth-child(even) .course-image{ background: #000; }
+.course-item:last-child{ border-bottom: none; }
+.course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 483rpx; }
+.course-name{ display: block; font-size: 26rpx; }
+.course-describe, .course-latest{ display: block; width: 100%; font-size: 24rpx; }
+.course-latest{ color: #ff266c; }
+.course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
+
+.subscribe-content{ position: fixed; bottom: 0; width: 100%; height: 8.3%; background: #fff; }
+.subscribe-action{ margin: 13rpx auto; width: 526rpx; height: 74%; text-align: center; line-height: 2.5; background: -webkit-linear-gradient(#eaacfc, #bb76fd); border-radius: 50rpx; color: #fff; font-size: 30rpx; }

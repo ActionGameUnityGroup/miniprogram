@@ -1,0 +1,72 @@
+<view class="sign-record">
+  <view class="sign-item">
+    <text> {{registerDays}} </text>
+    <text> 加入天数 </text>
+  </view>
+  <view class="sign-item">
+    <text> {{signDays}} </text>
+    <text> 完成天数 </text>
+  </view>
+  <view class="sign-item">
+    <text> {{serialDays}} </text>
+    <text> 连续天数 </text>
+  </view>
+  <view class="sign-item">
+    <text> {{mostSerialDays}} </text>
+    <text> 历史最高 </text>
+  </view>
+</view>
+
+<view class="calendar-content">
+  <view class="calendar-top">
+    <view>
+      <image mode='widthFix' src='../../assets/icon/miniprogram-icon-20.png'></image>
+      <text>上一月</text>
+    </view>
+    <view>{{currentYear}}年{{currentMonth}}月</view>
+    <view>
+      <text>下一月</text>
+      <image mode='widthFix' src='../../assets/icon/miniprogram-icon-20.png'></image>
+    </view>
+  </view>
+  <view class="calendar-bottom">
+    <view class="calendar-week">
+      <block wx:for='{{week}}' wx:key='index'>
+        <text> {{item.day}} </text>
+      </block>
+    </view>
+    <view class="calendar-date">
+      <block wx:for='{{fill}}' wx:key='index'>
+        <view class='date empty-date'></view>
+      </block>
+      <block wx:for='{{month}}' wx:key='index'>
+        <view class='date'>
+          <view class='register-date' wx:if='{{item.isRegister}}'> {{item.date}} </view>
+          <view class='today' wx:elif='{{item.isToday}}'> {{item.date}} </view>
+          <view wx:else> {{item.date}} </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+<view class="calendar-slogan">
+  <view style='padding: 10rpx 26rpx 0;'>
+    <text class="slogan-label"> 日签 </text>
+  </view>
+  <view class="slogan-content"> “{{slogan}}” </view>
+  <view class="slogan-from"> —— 《{{from}}》 </view>
+</view>
+
+<view class="sign-action" bindtap='signAction'> 今日打卡 </view>
+
+<view style='display: block; position: absolute; top: 0; left: 0; z-index: 9999; width: 100%; height: 100%; background: rgba(238, 238, 238, 0.7);' wx:if='{{signSuccess}}'>
+  <!-- <view style='display: block; position: absolute;'></view> -->
+  <view class="sign-success-content">
+    <image mode='widthFix' src='../assets/icon/miniprogram-icon-62.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
+    <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
+    <view style='margin-top: 69rpx; text-align: center; color: #323232; font-size: 36rpx;'> 签到成功 </view>
+    <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{serialDays}} </text>天</view>
+    <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: #62eedc; border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
+  </view>
+</view>

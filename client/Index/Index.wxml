@@ -1,0 +1,117 @@
+<view></view>
+
+<scroll-view scroll-y style='display: block; height: {{contentHeight}}px;'>
+
+  <view class="head-banner">
+    <swiper class="banner-list"
+      indicator-dots='{{true}}'
+      indicator-color='rgba(0, 0, 0, .3)'
+      indicator-active-color='#0094d7'
+    >
+      <block wx:for='{{bannerList}}' wx:key='index'>
+        <swiper-item class="banner-item"><image mode='widthFix' src='{{item.url}}' key='{{index}}'></image></swiper-item>
+      </block>
+      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #f00;'></image></swiper-item>
+      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #fff;'></image></swiper-item>
+      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #f00;'></image></swiper-item>
+    </swiper>
+  </view>
+
+  <view class="module-content">
+    <block wx:for='{{moduleList}}' wx:key='index'>
+      <navigator url='{{item.moduleUrl}}' class="module-item">
+        <image mode='widthFix' src='{{item.moduleImage}}'></image>
+        <text> {{item.moduleName}} </text>
+      </navigator>
+    </block>
+  </view>
+
+  <view class="show-content">
+    <view class="show-title">
+      <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
+      <text class="show-title-name">音频 · 分享</text>
+      <view class="show-more-action"><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
+    </view>
+    <view class="show-list-content">
+      <swiper
+        class="show-audio-list"
+        display-multiple-items='{{4}}'
+      >
+        <block wx:for='{{AudioList}}' wx:key='index'>
+          <swiper-item>
+            <navigator url='../Course/Course?name={{item.audioName}}' class="show-audio-item" id='{{item.audioId}}'>
+              <image class="show-audio-image" src='{{item.audioCoverUrl}}' mode='widthFix'></image>
+              <text class="show-audio-name">{{item.audioName}}</text>
+            </navigator>
+          </swiper-item>
+        </block>
+        <swiper-item class="view-more-action">
+          <text style='margin: 60rpx auto 0;'>查看更多</text>
+          <text>View More</text>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+
+  <view class="show-content">
+    <view class="show-title">
+      <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
+      <text class="show-title-name">文章 · 推荐</text>
+      <view class="show-more-action"><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
+    </view>
+    <swiper
+      class="show-article-list"
+      display-multiple-items='{{4}}'
+    >
+      <block wx:for='{{articleList}}' wx:key='index'>
+        <swiper-item id='audio{{index}}'>
+          <navigator url='../Course/Course?name={{item.articleName}}' class="show-article-item">
+            <image class="show-article-image" src='{{item.articleCoverUrl}}' mode='scaleToFill'></image>
+            <text class="show-article-name">{{item.articleName}}</text>
+          </navigator>
+        </swiper-item>
+      </block>
+      <swiper-item class="view-more-action">
+        <text style='margin: 70rpx auto 0;'>查看更多</text>
+        <text>View More</text>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="show-content">
+    <view class="show-title">
+      <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
+      <text class="show-title-name">课程 · 最新</text>
+      <view class="show-more-action"><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
+    </view>
+    <view class="show-course-list">
+      <block wx:for='{{courseList}}' wx:key='index'>
+        <navigator url='../Course/Course?name={{item.courseName}}' class="show-course-item" id='audio{{index}}'>
+          <image class="show-course-image" src='{{item.courseCoverUrl}}' mode='widthFix'></image>
+          <view class="show-course-info">
+            <text class="show-course-name">{{item.courseName}}</text>
+            <text class="show-course-describe">{{item.courseText}}</text>
+            <text class="show-course-latest">已更新{{item.currentCourse}}期</text>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+
+  <view style='text-align: center; line-height: 58rpx; color: #a5a4a4; font-size: 24rpx;'>已经到底啦</view>
+</scroll-view>
+
+<view class="nav-bar">
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-6.png' style='width: 94rpx'></image>
+    <text> 首页 </text>
+  </view>
+  <navigator open-type='redirect' url='../Syllabus/syllabusMenu' class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
+    <text> 课程表 </text>
+  </navigator>
+  <navigator open-type='redirect' url='../PersonalInfo/personalInfo' class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-3.png' style='width: 43rpx'></image>
+    <text> 我的 </text>
+  </navigator>
+</view>

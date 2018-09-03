@@ -1,0 +1,4 @@
+.feedback-content, .feedback-contact{ display: block; margin: 20rpx auto 0; padding: 25rpx 40rpx; width: 602rpx; background: #fff; border-radius: 15rpx; }
+.feedback-content{ height: 413rpx; font-size: 24rpx; }
+.feedback-contact{ margin-top: 17rpx; padding-top: 0; padding-bottom: 0; height: 98rpx; font-size: 30rpx; }
+.submit-action{ margin: 81rpx auto 0; width: 682rpx; height: 77rpx; text-align: center; line-height: 77rpx; background: #fd6857; color: #fff; font-size: 30rpx; border-radius: 50rpx; }

@@ -1,0 +1,14 @@
+<view class="message-content">
+  <block wx:for='{{messageList}}' wx:key='index'>
+    <view class="message-item">
+      <image class="message-cover" mode='widthFix' src='{{item.messageCover}}'></image>
+      <view class="message-info">
+        <view> {{item.messageContent}} </view>
+        <view>
+          <text><text style='display: inline-block !important; vertical-align: middle; margin-right: 10rpx; width: 10rpx; height: 23rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #d53435, #f6574e);'></text>{{item.messageDetail}}</text>
+          <text> {{item.messageDate}} </text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

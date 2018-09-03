@@ -1,0 +1,24 @@
+Page{ overflow: auto; }
+.course-teacher-info{ padding-top: .8%; width: 100%; background: #fff; }
+.course-cover{ display: block; margin: 0 auto; width: 90%; }
+.course-cover image{ display: block; width: 100%; height: 384rpx; background: #f00; border-radius: 15rpx; box-shadow: 0rpx 0rpx 20rpx #333; }
+
+.teacher-info{ display: block; padding: 53rpx 31rpx 0; }
+.teacher-name{ font-size: 30rpx; font-weight: bold; color: #000; }
+.teacher-msg{ display: block; margin: 0 auto; padding: 35rpx 0 24rpx; width: 100%; }
+.teacher-msg text{ display: block; margin: 0 auto 22rpx; width: 100%; text-align: left; word-wrap: break-word; font-size: 22rpx; color: #333; }
+
+.course-content{ padding-top: 12rpx; background: #fff; }
+.course-title{ display: block; padding: 0 33rpx; }
+.lesson-list{ padding: 44rpx 33rpx 0; }
+.lesson-item{ display: flex; justify-content: space-between; align-items: center; margin-top: 46rpx; width: 100%; }
+.lesson-item:first-child{ margin-top: 0; }
+.lesson-title{ font-size: 30rpx; font-weight: bold; color: #000; }
+.lesson-info{ display: block; width: 100%; }
+.lesson-detail{ margin-top: 21rpx; font-size: 26rpx; color: #5e5e5e; }
+.lesson-detail text{ display: inline-block; vertical-align: middle; margin-right: 20rpx; }
+.audition-label{ padding: 5rpx; background: #7fcd1c; border-radius: 5rpx; color: #fff; font-size: 18rpx; }
+.audition-action{ display: block; padding: 10rpx; width: 28rpx; height: 33rpx; }
+.audition-action image{ display: block; width: 100%; height: 100%; }
+
+.course-outline{ margin-top: 23rpx; padding-top: 12rpx; background: #fff; }

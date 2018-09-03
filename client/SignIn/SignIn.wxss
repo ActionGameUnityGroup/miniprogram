@@ -1,0 +1,34 @@
+page{ position: relative; }
+.sign-record{ display: flex; justify-content: space-between; align-items: center; margin: 19rpx auto 0; width: 693rpx; border-radius: 15rpx; overflow: hidden; }
+.sign-item{ display: block; padding: 25rpx 0; width: 25%; background: #fff; }
+.sign-item text{ display: block; text-align: center; font-size: 36rpx; color: #0e0e0e; }
+.sign-item text:last-child{ margin-top: 25rpx; font-size: 24rpx; }
+.sign-item:nth-child(3) text{ color: #31cbca; }
+
+.calendar-content{ display: block; margin: 16rpx auto 0; /* padding-bottom: 49rpx; */ width: 693rpx; border-radius: 15rpx; background: #fff; }
+.calendar-top{ display: flex; justify-content: space-between; align-items: center; padding: 0 25rpx; height: 87rpx; border-bottom: 1rpx solid #748592; }
+.calendar-top view{ font-size: 26rpx; color: #748592; }
+.calendar-top view image{ width: 13rpx; height: 25rpx; }
+.calendar-top view:nth-child(2){ color: #0e0e0e; }
+.calendar-top view:first-child image{ transform: rotate(180deg); }
+
+.calendar-week{ display: flex; justify-content: space-between; align-items: center; padding: 40rpx 40rpx 10rpx; }
+.calendar-week text{ font-size: 26rpx; }
+.calendar-week text:first-child, .calendar-week text:last-child{ color: #fe4945; }
+
+.calendar-date{ display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; }
+.fill-date{ width: 92rpx; height: 102rpx; }
+.date{ padding: 26rpx; }
+.empty-date{ width: 46rpx; height: 46rpx; }
+.date view{ width: 46rpx; height: 46rpx; text-align: center; line-height: 46rpx; border-radius: 10rem; color: #898989; font-size: 30rpx; }
+.today{ border: 2rpx solid #32ccc7; color: #060606 !important; }
+.register-date{ background: #32ccc7; color: #fff !important; }
+
+.calendar-slogan{ margin: 18rpx auto 0; width: 693rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.slogan-label{ display: inline-block; width: 84rpx; height: 36rpx; text-align: center; line-height: 36rpx; font-size: 24rpx; color: #33cbc7; background: #dafef7; border-radius: 15rpx; }
+.slogan-content{ padding: 25rpx 105rpx 0; text-align: left; line-height: 1.5; font-size: 30rpx; color: #737373; }
+.slogan-from{ padding: 30rpx 45rpx; text-align: right; font-size: 28rpx; color: #191919; }
+
+.sign-action{ margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; }
+
+.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; }

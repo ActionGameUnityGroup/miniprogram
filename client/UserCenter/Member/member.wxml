@@ -1,0 +1,50 @@
+<swiper
+  class="elements-header"
+  loop='{{false}}'
+  indicator-dots='{{true}}'
+  indicator-color='{{rgba(100, 100, 100, 0.3)}}'
+  indicator-active-color='#00a0e7'
+>
+  <block wx:for='{{bannerList}}' wx:key='index'>
+    <swiper-item class='banner-item'>
+      <image mode='widthFix' src='{{item.bannerUrl}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="elements-nav">
+  <view class="{{isFirst ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='firstNavAction'>
+    <text> 详情 </text>
+  </view>
+  <view class="{{isSecond ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='secondNavAction'>
+    <text> 机制 </text>
+  </view>
+  <view class="{{isThird ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='thirdNavAction'>
+    <text> 福利 </text>
+  </view>
+</view>
+
+<block wx:if='{{isFirst}}'>
+  <view class="detail-content"></view>
+</block>
+
+<block wx:if='{{isSecond}}'>
+  <scroll-view class="course-list" scroll-y>
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <view class="course-item">
+        <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
+        <view class="course-info">
+          <text class="course-name">{{item.courseName}}</text>
+          <text class="course-describe">{{item.courseText}}</text>
+          <text class="course-latest">已更新{{item.currentCourse}}期</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</block>
+
+<block wx:if='{{isThird}}'></block>
+
+<view class="subscribe-content">
+  <view class="subscribe-action"> 点击订阅 </view>
+</view>

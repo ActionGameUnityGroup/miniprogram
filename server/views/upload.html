@@ -70,6 +70,9 @@
             {
               method: 'POST',
               body: formData,
+              header: {
+                authorization: ''
+              }
             }
           ).then((res) => {
             if (res.ok) {

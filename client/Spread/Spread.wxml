@@ -1,0 +1,45 @@
+<view class="spread-content">
+  <view class="spread-background"><image mode='widthFix' src=''></image></view>
+  <view class="user-info">
+    <image mode='widthFix' src='{{userAvatar}}'></image>
+    <text> {{nickName}} </text>
+  </view>
+  <view class="spread-income">
+    <view class="spread-income-title"> 累积推广收益 </view>
+    <view class="spread-income-content">
+      <view class='spread-income-item' style='border-bottom: 1rpx solid #c9c9c9;'>
+        <view style='font-size: 48rpx; color: #f5663f;'>
+          <text style='font-size: 30rpx; color: #f5663f;'>￥</text>{{totalIncome}}
+        </view>
+        <view style='font-size: 24rpx; color: #f5663f;' bindtap='cashAction'> 立即提现> </view>
+      </view>
+      <view class="spread-income-item">
+        <view style='display: flex; justify-content: space-around; align-items: center; width: 50%; font-size: 24rpx; color: #707070;'>
+          <text> 累积客户 </text>
+          <text style='font-size: 48rpx; color: #f7653f;'> {{totalCustomer}} </text>
+        </view>
+        <view style='display: flex; justify-content: space-around; align-items: center; width: 50%; font-size: 24rpx; color: #707070;'>
+          <text> 推广订单 </text>
+          <text style='font-size: 48rpx; color: #f7653f'> {{totalSpreadOrder}} </text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view style='padding: 26rpx 31rpx 32rpx; font-size: 24rpx; color: #565656;'>
+  <text style='margin-right: 15rpx; font-size: 30rpx; color: #0f0f0f;'>公告</text>
+  *课程佣金比例按公告发布为准
+</view>
+<view class="announcement-content">
+  <block wx:for='{{spreadCourseList}}' wx:key='index'>
+    <view class="announcement-item">
+      <image mode='widthFix' src='{{item.courseCoverUrl}}'></image>
+      <view class="announcement-info">
+        <text> {{item.courseName}} </text>
+        <text> 佣金比例: {{item.commissionRate}}% </text>
+        <text style='color: #cf292e;'> 预计收益: {{item.expectIncome}}元 </text>
+      </view>
+      <view class="spread-action" bindtap='spreadAction'> 推广 </view>
+    </view>
+  </block>
+</view>

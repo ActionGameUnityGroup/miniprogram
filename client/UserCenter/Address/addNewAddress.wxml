@@ -1,0 +1,35 @@
+<view class="new-address-content">
+  <view class="address-item">
+    <text> 收货人 </text>
+    <input type="text" bindinput='changeName' confirm-type='next' placeholder='请输入收货人姓名(25字以内)' placeholder-style="color: #848484;" />
+  </view>
+  <view class="address-item">
+    <text> 联系手机 </text>
+    <input type="number" bindinput='changePhone' confirm-type='next' placeholder='请输入联系手机' placeholder-style="color: #848484;" />
+  </view>
+  <view class="address-item">
+    <text> 所在地区 </text>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <view class="picker-empty" wx:if='{{region.length == 0}}'>
+        <text> 请选择 </text>
+        <image mode='widthFix' src='../../assets/icon/miniprogram-icon-20.png'></image>
+      </view>
+      <view class="picker" wx:else>
+        {{region[0]}} {{region[1]}} {{region[2]}}
+      </view>
+    </picker>
+  </view>
+  <view class="address-item">
+    <text> 详细地址 </text>
+    <input type="text" bindinput='changeAddressDetail' confirm-type='done' placeholder='请输入详细地址(75字以内)' placeholder-style="color: #848484;" />
+  </view>
+</view>
+
+<view class="set-default-action" bindtap='changeDefault'>
+  <image src='{{defaultIcon}}' mode='widthFix'></image>
+  <text> 设默认地址 </text>
+</view>
+
+<view class="save-action">
+  <view class="save-btn" bindtap='saveAction'> 保存 </view>
+</view>

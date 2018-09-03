@@ -1,0 +1,55 @@
+<view class="top-content">
+
+  <view class="audio-cover">
+    <image src='{{audioCover}}' mode='widthFix'></image>
+  </view>
+
+  <view class="audio-name">
+    <text>【试听】{{audioName}}</text>
+  </view>
+
+  <view class="audio-action-bar">
+    <view class="audio-action"><image src='../assets/icon/miniprogram-icon-41.png' mode='widthFix' style='width: 41rpx;'></image></view>
+    <view class="audio-action"><image src='../assets/icon/miniprogram-icon-52.png' mode='widthFix' style='width: 37rpx;'></image></view>
+  </view>
+
+  <view class="progress-bar"></view>
+
+  <view class="audio-control-bar">
+    <view class="pre-action" bindtap='preAction'><image mode='widthFix' src='../assets/icon/miniprogram-icon-63.png'></image></view>
+      <block wx:if='{{!isPlay}}'>
+        <view class="play-action" bindtap='playAction'><image mode='widthFix' src='../assets/icon/miniprogram-icon-61.png'></image></view>
+      </block>
+      <block wx:else>
+        <view class="pause-action" bindtap='pauseAction'><image mode='widthFix' src='../assets/icon/miniprogram-icon-67.png'></image></view>
+      </block>
+    <view class="next-action" bindtap='nextAction'><image mode='widthFix' src='../assets/icon/miniprogram-icon-64.png'></image></view>
+  </view>
+
+</view>
+
+<view class="bottom-content">
+
+  <view class="collection-top">
+
+    <view class="collection-info">
+      <image class="collection-cover" mode='widthFix'></image>
+      <view class="collection-msg">
+        <text> {{collectionName}} </text>
+        <text> 智慧生活导师： {{collectionTeacher}} </text>
+      </view>
+    </view>
+
+    <view class="subscribe-collection-action"> 订阅专辑 </view>
+
+  </view>
+
+  <view class="collection-bottom">
+    <view class="collection-title">
+      <text>【{{collectionType}}】</text>
+      <text>{{collectionName}}</text>
+    </view>
+    <view class="collection-explain"> {{collectionExplain}} </view>
+  </view>
+
+</view>

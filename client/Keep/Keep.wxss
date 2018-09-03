@@ -1,0 +1,12 @@
+.keep-content{ margin: 0 auto; padding: 18rpx 0; width: 100%; height: 100%; overflow-y: auto; }
+.keep-item{ margin: 0 auto; padding-top: 16rpx; width: 94.4%; overflow: auto; }
+.keep-item:first-child{ padding-top: 0; }
+.flow{ display: flex; justify-content: space-between; align-items: center; width: 120.8%; }
+.keep-course-info{ display: inline-flex; justify-content: space-between; align-items: center; vertical-align: middle; padding: 21rpx 20rpx 25rpx; width: 100%; border-radius: 15rpx; background: #fff; overflow: hidden; }
+.keep-course-info image{ width: 182rpx; }
+.keep-course-info view{ display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 70%; height: 100%; }
+.keep-course-info text{ margin-top: 10rpx; font-size: 18rpx; color: #575757; }
+.keep-course-info text:last-child{ margin-top: 20rpx; }
+.keep-course-info text:first-child{ margin-top: 0; font-size: 26rpx; color: #000; }
+
+.delete-keep-action{ display: inline-block; vertical-align: middle; margin-right: 25rpx; width: 69rpx; height: 69rpx; text-align: center; line-height: 69rpx; background: #fff; border-radius: 50rpx; }

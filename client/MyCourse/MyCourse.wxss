@@ -1,0 +1,12 @@
+Page{ overflow: auto; }
+.course-list{ padding: 18rpx 21rpx; }
+.course-item{ display: flex; justify-content: space-between; align-content: center; margin-top: 16rpx; padding: 21rpx 25rpx; background: #fff; border-radius: 15rpx; }
+.course-item:first-child{ margin-top: 0; }
+.course-image{ margin-right: 14rpx; width: 182rpx; height: 182rpx; border-radius: 15rpx; }
+.course-item:nth-child(odd) .course-image{ background: #f00; }
+.course-item:nth-child(even) .course-image{ background: #000; }
+.course-item:last-child{ border-bottom: none; }
+.course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 483rpx; }
+.course-name{ display: block; font-size: 26rpx; }
+.course-describe, .course-latest{ display: block; width: 100%; font-size: 24rpx; color: #575757; }
+.course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; }

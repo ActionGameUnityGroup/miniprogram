@@ -1,0 +1,10 @@
+<view class="class-content">
+  <block wx:for='{{classList}}' wx:key='index'>
+    <view class="class-item">
+      <image mode='widthFix' src='{{item.classCover}}'></image>
+    </view>
+  </block>
+  <view class="class-item">
+    <image mode='widthFix' src='../assets/icon/miniprogram-icon-71.png'></image>
+  </view>
+</view>

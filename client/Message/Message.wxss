@@ -1,0 +1,10 @@
+Page{ overflow: auto; }
+.message-content{ padding: 22rpx 23rpx; }
+.message-item{ margin-top: 22rpx; width: 100%; border-radius: 15rpx; background: #fff; overflow: hidden; }
+.message-item:first-child{ margin-top: 0; }
+.message-cover{ width: 100%; height: 251rpx; background: #f00; }
+.message-info{ margin: 24rpx 0 34rpx; background: #fff; }
+.message-info view:first-child{ display: block; padding: 0 47rpx; font-size: 30rpx; color: #281b46; }
+.message-info view:last-child{ display: flex; justify-content: space-between; align-items: center; margin-top: 23rpx; padding: 0 27rpx; }
+.message-info view:last-child text{ font-size: 24rpx; color: #281b46 }
+.message-info view:last-child text:last-child{ color: #a4a4a4; }

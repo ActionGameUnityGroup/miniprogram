@@ -1,0 +1,60 @@
+<view class="personal-info-header">
+  <view class="header-background"><image mode='aspectFit' src='{{headerBackground}}'></image></view>
+  <view class="header-info">
+    <view class="personal-info-avatar">
+      <image src='{{avatar}}' mode='aspectFit'></image>
+    </view>
+    <view class="personal-info-name">
+      <text> {{userName}} </text>
+    </view>
+    <view class="personal-info-identify">
+      <text> {{identify}} </text>
+    </view>
+    <view class="header-action-content">
+      <view class="header-action-item">
+        <image mode='aspectFit' src='../assets/icon/miniprogram-icon-34.png' style='width: 129rpx; height: 88rpx;'></image>
+        <text> 报名入学 </text>
+      </view>
+      <view class="header-action-item">
+        <image mode='aspectFit' src='../assets/icon/miniprogram-icon-46.png' style='width: 131rpx; height: 88rpx;'></image>
+        <text> 邀请好友 </text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view style='margin-top: 2%; height: {{contentHeight}}px; overflow: auto;'>
+  <view class="module-content">
+    <block wx:for='{{moduleList}}' wx:key='index'>
+      <block wx:if='{{item.moduleUrl}}'>
+        <navigator url='{{item.moduleUrl}}' class="module-item">
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </navigator>
+      </block>
+      <block wx:else>
+        <view class="module-item">
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>
+
+<view class="nav-bar">
+  <navigator open-type='redirect' url='../Index/Index' class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-5.png' style='width: 94rpx'></image>
+    <text> 首页 </text>
+  </navigator>
+  <navigator open-type='redirect' url='../Syllabus/syllabusMenu' class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
+    <text> 课程表 </text>
+  </navigator>
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-4.png' style='width: 43rpx'></image>
+    <text> 我的 </text>
+  </view>
+</view>
+
+<!-- <button open-type='getUserInfo' bindtap='getInfoAction' style="position: absolute; top: 529rpx;"> 获取用户数据 </button> -->

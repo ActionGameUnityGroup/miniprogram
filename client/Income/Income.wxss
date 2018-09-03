@@ -1,0 +1,36 @@
+.incone-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 33rpx auto 0;
+  padding: 0 30rpx;
+  width: 584rpx;
+  height: 261rpx;
+  background: -webkit-linear-gradient(left top, #2cbaff, #8ad8ff);
+  box-shadow: 0rpx 0rpx 13rpx #3abeff;
+  border-radius: 15rpx;
+}
+.income-balance{ height: 100%; }
+.income-balance text{ display: block; margin-top: 44rpx; color: #fff; font-size: 36rpx; }
+.income-balance text:last-child{ margin-top: 45rpx; font-size: 58rpx; }
+
+.today-income-action{ display: block; height: 100%; }
+.today-income-content{ display: block; width: 140rpx; height: 151rpx; background: #18b3ff; }
+.today-income-content text{ display: block; font-size: 24rpx; color: #fff; text-align: center; }
+.today-income-content text:last-child{ margin-top: 47rpx; font-size: 48rpx; }
+
+.cash-action{ display: block; margin-top: 20rpx; padding: 26rpx 0; }
+.cash-action text{ display: inline-block; margin-right: 7rpx; vertical-align: middle; color: #fff; font-size: 24rpx; }
+
+.income-history{ margin-top: 38rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.income-history-header{ display: flex; justify-content: space-between; align-items: center; padding: 0 46rpx; height: 91rpx; border-bottom: 1rpx solid #565656; color: #f76541; }
+.income-history-header text{ font-size: 30rpx; }
+.income-history-header text:last-child{ font-size: 24rpx; }
+
+.income-history-content{ display: block; width: 100%; overflow: auto; }
+.income-history-item{ display: flex; justify-content: space-between; align-items: center; padding: 21rpx 7.5%; width: 85%; border-bottom: 1rpx solid #565656; }
+.income-history-item:last-child{ border-bottom: none; }
+.income-history-item image{ display: block; width: 161rpx; height: 125rpx; background: #f00; }
+.course-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 70%; }
+.course-info text{ display: block; width: 100%; text-align: left; font-size: 24rpx; color: #565656; }
+.course-info text:last-child{ text-align: right; color: #f76541; }
