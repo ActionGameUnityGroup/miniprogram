@@ -3,7 +3,7 @@ const app = getApp()
 
 Page({
   data: {
-    headerBackground: '../assets/icon/miniprogram-icon-72.png',
+    headerBackground: '../assets/icon/miniprogram-icon-73.jpg',
     avatar: '',
     userName: '',
     identify: 'ididididid',

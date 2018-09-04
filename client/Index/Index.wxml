@@ -11,9 +11,6 @@
       <block wx:for='{{bannerList}}' wx:key='index'>
         <swiper-item class="banner-item"><image mode='widthFix' src='{{item.url}}' key='{{index}}'></image></swiper-item>
       </block>
-      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #f00;'></image></swiper-item>
-      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #fff;'></image></swiper-item>
-      <swiper-item class="banner-item"><image mode='widthFix' src='' key='' style='background: #f00;'></image></swiper-item>
     </swiper>
   </view>
 
