@@ -37,7 +37,7 @@
 .view-more-action text:last-child{ font-size: 16rpx; }
 
 .show-article-list{ display: flex; justify-content: space-around; align-items: center; margin-top: 22rpx; height: 220rpx; }
-.show-article-item{ width: 140rpx; }
+.show-article-item{ margin: 0 auto; width: 140rpx; }
 .show-article-image{ display: block; margin: 0 auto; width: 140rpx; height: 165rpx; border-radius: 5rpx; background: #f00; }
 .show-article-bottom-info{ margin: 0 auto; width: 140rpx; }
 .show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0; height: 1rem; text-align: center; font-size: 24rpx; word-wrap: break-word; overflow: hidden; }

@@ -1,0 +1,24 @@
+.elements-header{ width: 100%; height: 376rpx; }
+.banner-item{ width: 100%; height: 100%; }
+.banner-item:nth-child(odd){ background: #f00; }
+.banner-item:nth-child(even){ background: #000; }
+
+.elements-nav{ display: flex; justify-content: space-between; align-items: center; margin-top: 14rpx; width: 100%; height: 92rpx; background: #fff; border-bottom: 1rpx solid #d5d5d5; }
+.nav-item{ display: block; width: 33%; height: 100%; text-align: center; }
+.nav-item text{ display: inline-block; margin: 0 auto; height: 85rpx; line-height: 85rpx; border-bottom: 7rpx solid #fff; font-size: 30rpx; color: #6b6b6b; }
+.nav-item-active text{ border-bottom: 7rpx solid orange; color: orange; }
+
+.detail-content{ padding: 0 42rpx; }
+.course-item{ display: flex; justify-content: space-between; align-content: center; margin: 0 auto; padding: 30rpx 0; width: 680rpx; border-bottom: 2rpx solid #dbdbdb; }
+.course-image{ width: 182rpx; height: 182rpx; border-radius: 5rpx; }
+.course-item:nth-child(odd) .course-image{ background: #f00; }
+.course-item:nth-child(even) .course-image{ background: #000; }
+.course-item:last-child{ border-bottom: none; }
+.course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 483rpx; }
+.course-name{ display: block; font-size: 26rpx; }
+.course-describe, .course-latest{ display: block; width: 100%; font-size: 26rpx; }
+.course-latest{ color: #fe2660; }
+.course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
+
+.book-content{ padding: 13.5rpx 0; width: 100%; background: #fff; }
+.book-action{ margin: 0 auto; width: 560rpx; height: 75rpx; text-align: center; line-height: 75rpx; background: orange/*  -webkit-linear-gradient(#fd7977, #fa3130) */; border-radius: 50rpx; color: #fff; font-size: 30rpx; }
