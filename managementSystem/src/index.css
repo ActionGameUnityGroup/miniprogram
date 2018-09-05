@@ -1,0 +1,16 @@
+
+html, body, :global(#root) {
+  height: 100%;
+}
+
+body{ margin: 0; padding: 0; min-width: 800px; font-family: "Microsoft YaHei" !important; background: #eee; }
+
+header{ display: flex !important; justify-content: space-between; align-items: center; width: 100%; height: 50px; background: #001529; font-family: "Microsoft YaHei" !important; }
+content{ display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+ul{ margin: 0; padding: 0; }
+li{ list-style: none; }
+
+::-webkit-scrollbar{ width: 0; height: 0; }
+
+.page{ margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
