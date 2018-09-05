@@ -1,11 +1,11 @@
 {
   "pages":[
-    "Consult/Consult",
     "Index/Index",
+    "Message/Message",
+    "Consult/Consult",
     "Live/Live",
     "Order/ConfirmOrder",
     "PersonalInfo/personalInfo",
-    "Message/Message",
     "Dream/Dream",
     "Keep/Keep",
     "Course/Course",

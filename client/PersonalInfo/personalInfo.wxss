@@ -21,7 +21,7 @@
 .header-action-item text{ display: block; margin: 17rpx auto 0; text-align: center; font-size: 28rpx; color: #eb6000; }
 
 .module-content{ margin: 16rpx auto; width: 710rpx; }
-.module-item{ display: flex; justify-content: flex-start; align-items: center; padding: 0 30rpx; height: 88rpx; background: #fff; border-bottom: .5rpx solid #565656; }
+.module-item{ display: flex; justify-content: flex-start; align-items: center; padding: 0 30rpx; height: 88rpx; background: #fff; border-bottom: .5rpx solid #ddd; }
 .module-item image{ display: block; margin-right: 30rpx; width: 46rpx; height: 38rpx; }
 .module-item text{ display: block; color: #333; font-size: 28rpx; }
 /*.module-item:last-child{ border-bottom: none; }*/
