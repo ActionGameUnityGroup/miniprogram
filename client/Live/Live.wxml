@@ -29,50 +29,52 @@
   </view>
 
   <block wx:if='{{isFirst}}'>
-    <view style='height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
+    <view style='margin-bottom: 140rpx; height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
   </block>
 
   <block wx:if='{{isSecond}}'>
     <!-- <view style='margin-top: 15rpx; height: {{scrollViewHeight}}px; overflow: auto;'> -->
-      <block wx:for='{{typeList}}' wx:key='index'>
-        <!-- <view class="course-item">
-          <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
-          <view class="course-info">
-            <text class="course-name"> {{item.courseName}} </text>
-            <text class="course-describe"> {{item.courseText}} </text>
-            <text class="course-latest">￥ {{item.coursePrice}} </text>
+      <view style='margin-bottom: 140rpx;'>
+        <block wx:for='{{typeList}}' wx:key='index'>
+          <!-- <view class="course-item">
+            <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
+            <view class="course-info">
+              <text class="course-name"> {{item.courseName}} </text>
+              <text class="course-describe"> {{item.courseText}} </text>
+              <text class="course-latest">￥ {{item.coursePrice}} </text>
+            </view>
+          </view> -->
+          <view class="type-content">
+            <view style='display: flex; justify-content: space-between; align-items: center; padding: 35rpx 32rpx;'>
+              <text class='type-title'>{{item.title}}</text>
+              <view style='font-size: 26rpx; color: #6b6b6b;'>更多 ></view>
+            </view>
+            <view style='display: flex; justify-content: space-between; align-items: center; margin-top: 10rpx; padding: 0 32rpx; background: #fff;'>
+              <block wx:for='{{item.list}}' wx:for-item='course' wx:key='courseIndex'>
+                <view class="type-course-item">
+                  <image src='{{}}'></image>
+                  <text> {{course.courseName}} </text>
+                  <text> {{course.courseDetail}} </text>
+                </view>
+              </block>
+            </view>
+            <view class="study-action">进入课程</view>
           </view>
-        </view> -->
-        <view class="type-content">
-          <view style='display: flex; justify-content: space-between; align-items: center; padding: 35rpx 32rpx;'>
-            <text class='type-title'>{{item.title}}</text>
-            <view style='font-size: 26rpx; color: #6b6b6b;'>更多 ></view>
-          </view>
-          <view style='display: flex; justify-content: space-between; align-items: center; margin-top: 10rpx; padding: 0 32rpx; background: #fff;'>
-            <block wx:for='{{item.list}}' wx:for-item='course' wx:key='courseIndex'>
-              <view class="type-course-item">
-                <image src='{{}}'></image>
-                <text> {{course.courseName}} </text>
-                <text> {{course.courseDetail}} </text>
-              </view>
-            </block>
-          </view>
-          <view class="study-action">进入课程</view>
-        </view>
-      </block>
+        </block>
+      </view>
       <!-- <view style='text-align: center; line-height: 58rpx; background: #f0f0f0; color: #a5a4a4; font-size: 24rpx;'>已经到底啦</view> -->
     <!-- </view> -->
   </block>
 
   <block wx:if='{{isThird}}'>
-    <view style='height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
+    <view style='margin-bottom: 140rpx; height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
   </block>
 
   <block wx:if='{{isForth}}'>
-    <view style='height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
+    <view style='margin-bottom: 140rpx; height: {{scrollViewHeight}}px; background: #fff; overflow: auto;'></view>
   </block>
 
   <view class="book-content">
-    <view class="book-action"> 预约咨询 </view>
+    <view class="book-action"> 点击订阅 </view>
   </view>
 </view>

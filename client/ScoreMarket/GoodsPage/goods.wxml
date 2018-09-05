@@ -46,8 +46,8 @@
     <view bindtap='onClickAddToOrder' class='confirm-button' style='background: pink; color: #ce2b31;'>
       <text>加入订单</text>
     </view>
-    <view bindtap='onCLickConfirm' class='confirm-button' style='background: red; color: #fff'>
+    <navigator url='../../Order/ConfirmOrder' class='confirm-button' style='background: red; color: #fff'>
       <text>立即购买</text>
-    </view>
+    </navigator>
   </view>  
 </view>

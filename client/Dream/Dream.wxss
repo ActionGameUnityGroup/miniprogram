@@ -20,5 +20,5 @@
 .course-latest{ color: #fe2660; }
 .course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
 
-.book-content{ padding: 13.5rpx 0; width: 100%; background: #fff; }
-.book-action{ margin: 0 auto; width: 560rpx; height: 75rpx; text-align: center; line-height: 75rpx; background: orange/*  -webkit-linear-gradient(#fd7977, #fa3130) */; border-radius: 50rpx; color: #fff; font-size: 30rpx; }
+.book-content{ padding: 13.5rpx 0; width: 100%; /* background: #fff; */ }
+.book-action{ margin: 0 auto; width: 560rpx; height: 75rpx; text-align: center; line-height: 75rpx; background: -webkit-linear-gradient(#ffd09b, #ffb968); border-radius: 50rpx; color: #fff; font-size: 30rpx; }

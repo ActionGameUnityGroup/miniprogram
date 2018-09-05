@@ -8,7 +8,7 @@ class Audio {
 
   constructor(){}
 
-  async getAudio(ctx){
+  async getLesson(ctx){
     let query = ctx.query;
     let data = await lessonModel.find(query, '-_id').sort({'audioID': -1});
     ctx.info(`${ctx.url}: ${data}`);
@@ -21,7 +21,7 @@ class Audio {
     });*/
   }
 
-  async getAudioList(ctx){
+  async getLessonList(ctx){
     let data = await lessonModel.find({}, '-_id audioID audioName audioCoverUrl').sort({'audioID': -1});
     console.log(data);
     ctx.info(`${ctx.url}: ${data}`);
@@ -29,7 +29,7 @@ class Audio {
     ctx.type = 'text/json';
   }
 
-  async setAudio(ctx){
+  async setLesson(ctx){
     // console.log('上传音频');
     let fileStream = await upload(ctx);
     fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/audio/${fileStream.fileName}`)));

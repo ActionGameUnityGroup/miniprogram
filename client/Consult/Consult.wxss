@@ -1,9 +1,15 @@
-.consult-content{ padding: 0 30rpx; height: 91.8%; }
+.consult-content{ margin: 0 auto; width: 92%; height: 91.8%; }
 .time{ width: 100%; height: 92rpx; text-align: center; line-height: 92rpx; color: #333; font-size: 24rpx; }
 .consult-item{ margin-top: 22rpx; width: 100%; }
 .consult-item:first-child{ margin-top: 0; }
-.consult-item image{ display: block; width: 66rpx; height: 66rpx; background: #666; }
-.consult-item text{ display: block; padding: 22rpx 30rpx; max-width: 60%; line-height: 1.5; }
+.consult-item image{ display: block; width: 66rpx; height: 66rpx; background: #666; border-radius: 10rem; }
+.consult-item text{ display: block; padding: 22rpx 30rpx; max-width: 75%; line-height: 1.5; word-wrap: break-word; font-size: 26rpx; border-radius: 10rpx; }
+.customer{ display: flex; justify-content: flex-start; align-items: flex-start; position: relative; }
+.customer text{ margin-left: 45rpx; background: #fff; }
+.customer text:before{ position: absolute; top: 15rpx; left: 70rpx; content: ' '; border-top: 20rpx solid transparent; border-left: 20rpx solid transparent; border-right: 30rpx solid #fff; border-bottom: 20rpx solid transparent; }
+.me{ display: flex; justify-content: flex-end; align-items: flex-start; position: relative; }
+.me text{ margin-right: 45rpx; background: #c6fba4; }
+.me text:after{ position: absolute; content: ' '; right: 70rpx; top: 15rpx; border-top: 20rpx solid transparent; border-left: 30rpx solid #c6fba4; border-right: 20rpx solid transparent; border-bottom: 20rpx solid transparent; }
 
 .input-content{ display: flex; justify-content: space-between; align-items: center; height: 8.2%; }
 .input-content input{ padding-left: 2%; width: 78%; height: 100%; line-height: 99rpx; background: #fff; color: #333; font-size: 26rpx; }

@@ -50,8 +50,8 @@ page {
 }
 
 .confirm-btn {
-  background: #cf292e;
-  color: white;
+  background: #fd6857;
+  color: #fff;
   border-radius: 100rpx;
 }
 .input {

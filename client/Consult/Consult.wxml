@@ -4,14 +4,14 @@
   </block>
   <block wx:for='{{consultList}}' wx:key='index'>
     <block wx:if='{{!item.isMe}}'>
-      <view class="consult-item" style='display: flex; justify-content: flex-start; align-items: center;'>
+      <view class="consult-item customer">
         <image mode='widthFix' src='{{item.customerAvatar}}'></image>
         <text style='background: #fff;'> {{item.customerText}} </text>
       </view>
     </block>
     <block wx:else>
-      <view class="consult-item" style='display: flex; justify-content: flex-end; align-items: center;'>
-        <text style='background: #fff;'> {{item.userText}} </text>
+      <view class="consult-item me">
+        <text> {{item.userText}} </text>
         <image mode='widthFix' src='{{item.userAvatar}}'></image>
       </view>
     </block>

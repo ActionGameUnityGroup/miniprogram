@@ -37,7 +37,8 @@ Page({
           {courseName: '过有灵魂的生活', courseDetail: '愤怒、焦虑、悲伤抱怨...各种...'}, 
         ]
       },
-    ]
+    ],
+    bannerList: [{}, {}]
   },
   onLoad: function(options){
     console.log(options);

@@ -1,5 +1,5 @@
 Page{ overflow: auto; }
-.message-content{ padding: 22rpx 23rpx; }
+.message-content{ padding: 22rpx 23rpx; overflow: auto; }
 .message-item{ margin-top: 22rpx; width: 100%; border-radius: 15rpx; background: #fff; overflow: hidden; }
 .message-item:first-child{ margin-top: 0; }
 .message-cover{ width: 100%; height: 251rpx; background: #f00; }

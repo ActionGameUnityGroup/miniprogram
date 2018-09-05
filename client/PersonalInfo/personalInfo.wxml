@@ -1,5 +1,5 @@
 <view style='width: 100%; height: {{contentHeight}}px; overflow: auto;'>
-  <view class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></view>
+  <navigator url='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></navigator>
   <view class="personal-info-header">
     <view class="header-background"><image mode='widthFix' src='{{headerBackground}}'></image></view>
     <view class="header-info">
@@ -25,23 +25,27 @@
     </view>
   </view>
 
-  <view style='margin-top: 80rpx;'>
-    <view class="module-content">
-      <block wx:for='{{moduleList}}' wx:key='index'>
-        <block wx:if='{{item.moduleUrl}}'>
-          <navigator url='{{item.moduleUrl}}' class="module-item">
-            <image mode='aspectFit' src='{{item.moduleImg}}'></image>
-            <text> {{item.moduleName}} </text>
-          </navigator>
-        </block>
-        <block wx:else>
-          <view class="module-item">
-            <image mode='aspectFit' src='{{item.moduleImg}}'></image>
-            <text> {{item.moduleName}} </text>
-          </view>
-        </block>
+  <view class="module-content">
+    <block wx:for='{{moduleList}}' wx:key='index'>
+      <block wx:if='{{item.moduleUrl}}'>
+        <navigator url='{{item.moduleUrl}}' class="module-item">
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </navigator>
       </block>
-    </view>
+      <block wx:elif='{{index == 10}}'>
+        <view class="module-item" bindtap='callAction'>
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="module-item">
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </view>
+      </block>
+    </block>
   </view>
 </view>
 

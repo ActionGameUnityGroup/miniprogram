@@ -8,5 +8,9 @@ Page({
       {messageCover: '', messageContent: '【过有灵魂的生活】 报名开始啦！', messageDetail: '常道智慧生活·情绪疗愈', messageDate: '2018-07-19'},
     ],
   },
-  onLoad: function(){}
+  onLoad: function(){
+    wx.setNavigationBarTitle({
+      title: '消息提醒'
+    })
+  }
 });

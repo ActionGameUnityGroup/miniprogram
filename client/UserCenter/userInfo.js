@@ -93,12 +93,12 @@ Page({
     console.log("Click confirm button");
 
     // Test for turning to puclic action page
-    wx:wx.navigateTo({
+    /*wx:wx.navigateTo({
       url: '../PublicWelfare/publicAction',
       success: function(res) {},
       fail: function(res) {},
       complete: function(res) {},
-    })
+    })*/
   },
 
   onDateChange: function (e) {   
