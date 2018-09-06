@@ -1,6 +1,8 @@
 {
   "pages":[
+    "HomeWork/HomeWork",
     "Index/Index",
+    "SignIn/SignIn",
     "Message/Message",
     "Consult/Consult",
     "Live/Live",
@@ -15,7 +17,6 @@
     "FeedBack/FeedBack",
     "Income/Income",
     "UserCenter/userInfo",
-    "SignIn/SignIn",
     "UserCenter/Address/Address",
     "UserCenter/Address/addNewAddress",
     "Elements/elements",

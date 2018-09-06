@@ -1,0 +1,16 @@
+<viwe class='text-content'>
+  <textarea
+    placeholder="点击输入您的文字"
+    placeholder-style='font-size: 24rpx; color: #bfbfbf;'
+    style=""
+  ></textarea>
+</viwe>
+
+<view class='image-content'>
+  <view class="image-list">
+    <block wx:for='{{imageList}}'></block>
+  </view>
+  <view class="add-action"><text></text></view>
+</view>
+
+<view class='submit-action'> 提交 </view>

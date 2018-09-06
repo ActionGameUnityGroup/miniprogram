@@ -1,11 +1,29 @@
-page{ position: relative; }
+.slogan-content{ display: block; width: 100%; }
+.slogan-content image{ display: block; width: 100%; }
+
+.date-content{ display: block; position: relative; top: -28rpx; z-index: 99999; margin: 0 auto; width: 92%; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.date-month{ padding: 41rpx 30rpx 35rpx; text-align: left; color: #3ad3cc; font-size: 24rpx; }
+
+.today{ color: #3ad3cc !important; }
+
+.sign-info{ display: flex; justify-content: space-between; align-items: center; margin-top: 52rpx; padding: 0 32rpx 50rpx; }
+.sign-msg{}
+.sign-msg view:first-child{ color: #676767; font-size: 30rpx; font-weight: bold; }
+.sign-msg view:first-child text:first-child{ color: #ffa700; font-size: 60rpx; }
+.sign-msg view:first-child text:last-child{ color: #ffa700; font-size: 32rpx; }
+.total-point{ margin-top: 38rpx; color: #676767; font-size: 30rpx; }
+.total-point text{ display: inline-block; vertical-align: text-bottom; margin-right: 22rpx; color: #ffa700; }
+
+.sign-in-action{ width: 224rpx; height: 68rpx; text-align: center; line-height: 68rpx; color: #fff; font-size: 30rpx; background: -webkit-linear-gradient(#5fedda, #33cdc8); border-radius: 15rpx; }
+
+/* page{ position: relative; }
 .sign-record{ display: flex; justify-content: space-between; align-items: center; margin: 19rpx auto 0; width: 693rpx; border-radius: 15rpx; overflow: hidden; }
 .sign-item{ display: block; padding: 25rpx 0; width: 25%; background: #fff; }
 .sign-item text{ display: block; text-align: center; font-size: 36rpx; color: #0e0e0e; }
 .sign-item text:last-child{ margin-top: 25rpx; font-size: 24rpx; }
 .sign-item:nth-child(3) text{ color: #31cbca; }
 
-.calendar-content{ display: block; margin: 16rpx auto 0; /* padding-bottom: 49rpx; */ width: 693rpx; border-radius: 15rpx; background: #fff; }
+.calendar-content{ display: block; margin: 16rpx auto 0; padding-bottom: 49rpx; width: 693rpx; border-radius: 15rpx; background: #fff; }
 .calendar-top{ display: flex; justify-content: space-between; align-items: center; padding: 0 25rpx; height: 87rpx; border-bottom: 1rpx solid #748592; }
 .calendar-top view{ font-size: 26rpx; color: #748592; }
 .calendar-top view image{ width: 13rpx; height: 25rpx; }
@@ -31,4 +49,4 @@ page{ position: relative; }
 
 .sign-action{ margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; }
 
-.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; }
+.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; } */

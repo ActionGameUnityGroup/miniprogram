@@ -1,4 +1,31 @@
-<view class="sign-record">
+<view class="slogan-content">
+  <image mode='widthFix' src='{{sloganCover}}'></image>
+</view>
+
+<view class="date-content">
+  <view class="date-month">{{currentMonth}}</view>
+  <swiper
+    class="date-day"
+    current='{{currentDate}}'
+    display-multiple-items='{{7}}'
+    style='display: block; text-align: center; height: 40rpx;'
+  >
+    <block wx:for='{{dateList}}' wx:key='index'>
+      <swiper-item class='{{currentDate == index ? "today" : ""}}' style='font-size: 30rpx; color: #676767;'>{{item}}</swiper-item>
+    </block>
+  </swiper>
+  <view class="sign-info">
+    <view class="sign-msg">
+      <view>
+        连续签到<text> {{continuityDate}} </text>天 <text>{{increasePoint}}</text>
+      </view>
+      <view class="total-point"><text> {{totalPoint}} </text>积分</view>
+    </view>
+    <view class="sign-in-action">点击签到</view>
+  </view>
+</view>
+
+<!-- <view class="sign-record">
   <view class="sign-item">
     <text> {{registerDays}} </text>
     <text> 加入天数 </text>
@@ -61,7 +88,7 @@
 <view class="sign-action" bindtap='signAction'> 今日打卡 </view>
 
 <view style='display: block; position: absolute; top: 0; left: 0; z-index: 9999; width: 100%; height: 100%; background: rgba(238, 238, 238, 0.7);' wx:if='{{signSuccess}}'>
-  <!-- <view style='display: block; position: absolute;'></view> -->
+  <view style='display: block; position: absolute;'></view>
   <view class="sign-success-content">
     <image mode='widthFix' src='../assets/icon/miniprogram-icon-62.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
     <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
@@ -69,4 +96,4 @@
     <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{serialDays}} </text>天</view>
     <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: #62eedc; border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
   </view>
-</view>
+</view> -->
