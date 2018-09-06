@@ -21,7 +21,7 @@
 .course-latest{ color: #fe2660; }
 .course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
 
-.book-content{ position: fixed; bottom: 0; padding: 17rpx 0; width: 100%; background: #fff; }
+.book-content{ position: fixed; bottom: 0; padding: 17rpx 0; width: 100%;  background: #fff;  }
 .book-action{ margin: 0 auto; width: 560rpx; height: 76rpx; text-align: center; line-height: 76rpx; background: -webkit-linear-gradient(#fe8a0c, #ff6d15);  border-radius: 50rpx; color: #fff; font-size: 30rpx; }
 
 .type-content{ margin: 0 auto 15rpx; padding-bottom: 5rpx; width: 100%; background: #fff; }

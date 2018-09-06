@@ -101,7 +101,7 @@ Page({
     })*/
   },
 
-  onDateChange: function (e) {   
+  onDateChange: function (e) {
     var _userInfo = formatUserInfo("birthday", e.detail.value);
     this.setData({
       userInfo: _userInfo

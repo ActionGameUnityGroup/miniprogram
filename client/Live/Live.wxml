@@ -15,16 +15,16 @@
 
   <view class="elements-nav">
     <view class="{{isFirst ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='firstNavAction'>
-      <text> 个案 </text>
+      <text> 详情 </text>
     </view>
     <view class="{{isSecond ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='secondNavAction'>
-      <text> 工作坊 </text>
+      <text> 个人 </text>
     </view>
     <view class="{{isThird ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='thirdNavAction'>
-      <text> 定制 </text>
+      <text> 家族 </text>
     </view>
     <view class="{{isForth ? 'nav-item nav-item-active' : 'nav-item'}}" bindtap='forthNavAction'>
-      <text> 定制 </text>
+      <text> 企业 </text>
     </view>
   </view>
 

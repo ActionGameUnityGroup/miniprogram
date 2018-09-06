@@ -1,4 +1,4 @@
-<view style='width: 100%; height: {{contentHeight}}px; overflow: auto;'>
+<view style='position: relative; width: 100%; height: {{contentHeight}}px; overflow: auto;'>
   <navigator url='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></navigator>
   <view class="personal-info-header">
     <view class="header-background"><image mode='widthFix' src='{{headerBackground}}'></image></view>
