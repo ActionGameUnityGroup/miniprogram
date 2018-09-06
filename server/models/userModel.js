@@ -14,22 +14,6 @@ let userSchema = new mongoose.Schema({
   country: String
 }, {collection: 'User', versionKey: false});
 
-/*userSchema.methods.find = function(obj, callback){
-  return this.model('user').find(obj, callback);
-};*/
-
-/*userSchema.methods.findAll = function(callback){
-  return this.model('user').find({}, callback);
-};
-
-userSchema.statics.findObject = function(obj, callback){
-  return this.model('user').find(obj, callback);
-};
-
-userSchema.statics.findAll = function(callback){
-  return this.model('user').find({}, callback);
-};*/
-
 let userModel = db.model('user', userSchema);
 
 module.exports = userModel;
