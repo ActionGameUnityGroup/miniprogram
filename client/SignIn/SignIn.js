@@ -38,7 +38,8 @@ Page({
     currentDate: 0,
     continuityDate: 1,
     increasePoint: '+10',
-    totalPoint: 800
+    totalPoint: 800,
+    signSuccess: false,
   },
   onLoad: function(){
     _this = this;
@@ -46,6 +47,17 @@ Page({
       title: '签到'
     })
     setDate();
+  },
+  signInAction: function(){
+    console.log('签到');
+    this.setData({
+      signSuccess: true
+    });
+  },
+  signCompleteAction: function(){
+    this.setData({
+      signSuccess: false
+    });
   }
 });
 
@@ -108,11 +120,6 @@ Page({
 //     console.log('打卡');
 //     this.setData({
 //       signSuccess: true
-//     });
-//   },
-//   signCompleteAction: function(){
-//     this.setData({
-//       signSuccess: false
 //     });
 //   }
 // });

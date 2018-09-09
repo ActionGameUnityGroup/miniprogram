@@ -1,0 +1,9 @@
+#.gitignore
+/server/node_modules/
+/server/log/
+/server2/
+# /client/
+/managementSystem/node_modules
+/server/public/audio/
+/Slider/
+/Node/

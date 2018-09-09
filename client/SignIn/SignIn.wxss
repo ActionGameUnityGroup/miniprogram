@@ -15,6 +15,8 @@
 .total-point text{ display: inline-block; vertical-align: text-bottom; margin-right: 22rpx; color: #ffa700; }
 
 .sign-in-action{ width: 224rpx; height: 68rpx; text-align: center; line-height: 68rpx; color: #fff; font-size: 30rpx; background: -webkit-linear-gradient(#5fedda, #33cdc8); border-radius: 15rpx; }
+.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; border-radius: 15rpx; overflow: hidden; }
+
 
 /* page{ position: relative; }
 .sign-record{ display: flex; justify-content: space-between; align-items: center; margin: 19rpx auto 0; width: 693rpx; border-radius: 15rpx; overflow: hidden; }
@@ -47,6 +49,4 @@
 .slogan-content{ padding: 25rpx 105rpx 0; text-align: left; line-height: 1.5; font-size: 30rpx; color: #737373; }
 .slogan-from{ padding: 30rpx 45rpx; text-align: right; font-size: 28rpx; color: #191919; }
 
-.sign-action{ margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; }
-
-.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; } */
+.sign-action{ margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; } */

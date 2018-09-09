@@ -12,11 +12,11 @@ function RouterConfig({ history }) {
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={IndexPage} />
-        <Route path="/module" component={ModulePage} />
-        <Route path="/userList" component={UserListPage} />
-        <Route path="/course" component={CoursePage} />
-        <Route path="/shop" component={ShopPage} />
-        <Route path="/setting" component={SettingPage} />
+        <Route path="/module/" component={ModulePage} />
+        <Route path="/userList/" component={UserListPage} />
+        <Route path="/course/" component={CoursePage} />
+        <Route path="/shop/" component={ShopPage} />
+        <Route path="/setting/" component={SettingPage} />
       </Switch>
     </Router>
   );

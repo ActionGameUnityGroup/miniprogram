@@ -2,15 +2,14 @@
   <textarea
     placeholder="点击输入您的文字"
     placeholder-style='font-size: 24rpx; color: #bfbfbf;'
-    style=""
   ></textarea>
 </viwe>
 
 <view class='image-content'>
   <view class="image-list">
-    <block wx:for='{{imageList}}'></block>
+    <block wx:for='{{imageList}}' wx:key='index'></block>
   </view>
-  <view class="add-action"><text></text></view>
+  <view class="add-action" bindtap='addAction'><text></text></view>
 </view>
 
-<view class='submit-action'> 提交 </view>
+<view class='submit-action' bindtap='submitAction'> 提交 </view>

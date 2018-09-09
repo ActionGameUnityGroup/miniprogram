@@ -13,7 +13,7 @@ Page({
       {moduleImg: '../assets/icon/miniprogram-icon-43.png', moduleName: '我的邀请人'},
       {moduleImg: '../assets/icon/miniprogram-icon-45.png', moduleName: '消息提醒', moduleUrl: '../Message/Message'},
       {moduleImg: '../assets/icon/miniprogram-icon-40.png', moduleName: '我的课程', moduleUrl: '../MyCourse/MyCourse'},
-      {moduleImg: '../assets/icon/miniprogram-icon-44.png', moduleName: '我的作业'},
+      {moduleImg: '../assets/icon/miniprogram-icon-44.png', moduleName: '我的作业', moduleUrl: '../HomeWork/HomeWork'},
       {moduleImg: '../assets/icon/miniprogram-icon-37.png', moduleName: '积分商城', moduleUrl: '../ScoreMarket/scoreMarket'},
       {moduleImg: '../assets/icon/miniprogram-icon-41.png', moduleName: '我的收藏', moduleUrl: '../Keep/Keep'},
       {moduleImg: '../assets/icon/miniprogram-icon-36.png', moduleName: '观看历史', moduleUrl: '../UserCenter/WatchHistory/watchHistory'},

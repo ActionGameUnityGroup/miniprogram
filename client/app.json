@@ -1,7 +1,7 @@
 {
   "pages":[
-    "HomeWork/HomeWork",
     "Index/Index",
+    "HomeWork/HomeWork",
     "SignIn/SignIn",
     "Message/Message",
     "Consult/Consult",
