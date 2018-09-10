@@ -11,8 +11,8 @@
 .sign-msg view:first-child{ color: #676767; font-size: 30rpx; font-weight: bold; }
 .sign-msg view:first-child text:first-child{ color: #ffa700; font-size: 60rpx; }
 .sign-msg view:first-child text:last-child{ color: #ffa700; font-size: 32rpx; }
-.total-point{ margin-top: 38rpx; color: #676767; font-size: 30rpx; }
-.total-point text{ display: inline-block; vertical-align: text-bottom; margin-right: 22rpx; color: #ffa700; }
+.total-point{ display: flex; justify-content: flex-start; align-items: center; margin-top: 38rpx; color: #676767; font-size: 30rpx; }
+.total-point text{ display: block; margin-right: 22rpx; color: #ffa700; }
 
 .sign-in-action{ width: 224rpx; height: 68rpx; text-align: center; line-height: 68rpx; color: #fff; font-size: 30rpx; background: -webkit-linear-gradient(#5fedda, #33cdc8); border-radius: 15rpx; }
 .sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; border-radius: 15rpx; overflow: hidden; }
