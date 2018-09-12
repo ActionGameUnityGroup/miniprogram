@@ -40,7 +40,6 @@
         </view>
       </view>
     </block>
-    <view style='text-align: center; line-height: 58rpx; background: #f0f0f0; color: #a5a4a4; font-size: 24rpx;'>已经到底啦</view>
   </scroll-view>
 </block>
 

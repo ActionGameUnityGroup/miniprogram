@@ -5,12 +5,12 @@
 
 .elements-nav{ display: flex; justify-content: space-between; align-items: center; margin-top: 1%; width: 100%; height: 7.6%; background: #fff; border-bottom: 1rpx solid #d5d5d5; }
 .nav-item{ display: block; width: 33%; height: 100%; text-align: center; }
-.nav-item text{ display: block; margin: 0 auto; width: 30%; height: 92%; line-height: 3.5; border-bottom: 7rpx solid #fff; font-size: 30rpx; color: #6b6b6b; }
-.wood .nav-item-active text{ border-bottom: 7rpx solid #56cd3a; color: #56cd3a; }
-.fire .nav-item-active text{ border-bottom: 7rpx solid #fd6555; color: #fd6555; }
-.earth .nav-item-active text{ border-bottom: 7rpx solid #c38837; color: #c38837; }
-.gold .nav-item-active text{ border-bottom: 7rpx solid #feb756; color: #feb756; }
-.water .nav-item-active text{ border-bottom: 7rpx solid #3cc1ff; color: #3cc1ff; }
+.nav-item text{ display: block; margin: 0 auto; width: 30%; height: 92%; line-height: 3.5; border-width: 8%; border-color: #fff; border-style: none none solid none; font-size: 30rpx; color: #6b6b6b; }
+.wood .nav-item-active text{ border-bottom-color: #56cd3a; color: #56cd3a; }
+.fire .nav-item-active text{ border-bottom-color: #fd6555; color: #fd6555; }
+.earth .nav-item-active text{ border-bottom-color: #c38837; color: #c38837; }
+.gold .nav-item-active text{ border-bottom-color: #feb756; color: #feb756; }
+.water .nav-item-active text{ border-bottom-color: #3cc1ff; color: #3cc1ff; }
 
 .detail-content{ padding: 4% 42rpx; height: 47.1%; background: #fff; overflow: auto; }
 .detail-title{ display: block; text-indent: 1.25rem; font-size: 36rpx; font-weight: bold; color: #000; }
@@ -31,7 +31,7 @@
 .course-latest{ color: #ff266c; }
 .course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
 
-.subscribe-content{ position: fixed; bottom: 0; width: 100%; height: 8.3%; background: #fff; }
+.subscribe-content{ position: fixed; bottom: 1rpx; width: 100%; height: 8.3%; background: #fff; }
 .subscribe-action{ margin: 13rpx auto; width: 526rpx; height: 74%; text-align: center; line-height: 2.5; /* background: #cf2c32; */ border-radius: 50rpx; color: #fff; font-size: 30rpx; }
 .wood .subscribe-action{ background: -webkit-linear-gradient(#60e88e, #56cf3f); }
 .fire .subscribe-action{ background: -webkit-linear-gradient(#feac77, #fc6756); }
