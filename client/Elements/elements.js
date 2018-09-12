@@ -1,5 +1,7 @@
 let _this;
 
+const app = getApp();
+
 Page({
   data: {
     isDetail: false,
@@ -18,7 +20,8 @@ Page({
     isFire: false,
     isEarth: false,
     isGold: false,
-    isWater: false
+    isWater: false,
+    navBorderWidth: 0
   },
   onLoad: function(options){
     _this = this;
@@ -63,6 +66,10 @@ Page({
       default :
         console.log('没有关键字');
     }
+    const borderWidth = app.globalData.systemInfo.windowHeight * .076 * .08;
+    _this.setData({
+      navBorderWidth: borderWidth
+    });
     wx.setNavigationBarTitle({
       title: _this.data.key+'元素'
     });

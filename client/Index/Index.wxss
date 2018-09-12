@@ -45,13 +45,13 @@
 .show-article-ground, .show-article-visit{ display: inline-block; font-size: 17rpx; color: #9c9c9c; }
 .show-article-visit image{ margin-right: 9rpx; width: 27rpx; height: 16rpx; }
 
-.show-course-list{  }
-.show-course-item{ display: flex; justify-content: space-between; align-content: center; margin: 0 auto; padding: 30rpx 0; width: 680rpx;/*  height: 120rpx; */ border-bottom: 2rpx solid #dbdbdb; }
+.show-course-list{ display: block; width: 100%; }
+.show-course-item{ display: flex; justify-content: space-between; align-content: center; margin: 0 auto; padding: 30rpx 0; width: 90%; border-bottom: 2rpx solid #dbdbdb; }
 .show-course-image{ width: 182rpx; height: 182rpx; border-radius: 15rpx; }
 .show-course-item:nth-child(odd) .show-course-image{ background: #f00; }
 .show-course-item:nth-child(even) .show-course-image{ background: #000; }
 .show-course-item:last-child{ border-bottom: none; }
-.show-course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 483rpx; }
+.show-course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 70%; }
 .show-course-name{ display: block; font-size: 26rpx; }
 .show-course-describe, .show-course-latest{ display: block; width: 100%; font-size: 24rpx; }
 .show-course-latest{ color: #f86442; }
