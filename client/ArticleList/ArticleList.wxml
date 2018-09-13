@@ -1,0 +1,34 @@
+<view class="nav-content">
+  <view class="nav-item" bindtap='chooseNavAction'>
+    <text>全部</text>
+  </view>
+  <view class="nav-item" bindtap='chooseNavAction'>
+    <text>关系篇</text>
+  </view>
+  <view class="nav-item" bindtap='chooseNavAction'>
+    <text>疗愈篇</text>
+  </view>
+  <view class="nav-item" bindtap='chooseNavAction'>
+    <text>灵性篇</text>
+  </view>
+</view>
+<view class="list-content">
+  <block wx:for='{{articleList}}' wx:key='index'>
+    <view class="article-item">
+      <image mode='widthFix' src='{{item.articleCover}}' class="article-image"></image>
+      <view class="article-info">
+        <view class="aritcle-title"> {{item.aritcleName}} </view>
+        <view class="article-msg">
+          <view>
+            <image src='../assets/icon/miniprogram-icon-32.png' mode='widthFix'></image>
+            <text>{{item.updateTime}}</text>
+          </view>
+          <view>
+            <image src='../assets/icon/miniprogram-icon-31.png'></image>
+            <text> {{item.viewNumber}} </text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

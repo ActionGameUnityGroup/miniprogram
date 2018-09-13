@@ -11,18 +11,18 @@ import request from '../../utils/request';
 }*/
 
 const mapChild = (list) => {
-  let fileList = [];
+  let indexFileList = [];
   list.forEach((child, index) => {
-    fileList.push({uid: index, name: child.name, status: 'done', url: child.url});
+    indexFileList.push({uid: index, name: child.name, status: 'done', url: child.url});
   });
-  return fileList;
+  return indexFileList;
 };
 
 class IndexSection extends Component{
   state = {
     previewVisible: false,
     previewImage: '',
-    fileList: JSON.parse(localStorage.getItem('fileList')) || [],
+    indexFileList: JSON.parse(localStorage.getItem('indexFileList')) || [],
   };
 
   UNSAFE_componentWillMount(){
@@ -31,10 +31,10 @@ class IndexSection extends Component{
     request('https://www.changdaolife.cn/api/banner/getBanner?page=index')
     .then(res => {
       let list = mapChild(res.data.requestData[0].bannerList);
-      localStorage.setItem('fileList', JSON.stringify(list));
+      localStorage.setItem('indexFileList', JSON.stringify(list));
       // console.info(list);
       _this.setState({
-        fileList: list
+        indexFileList: list
       });
     })
     .catch(err => {
@@ -51,11 +51,11 @@ class IndexSection extends Component{
     });
   }
 
-  handleChange = ({ fileList }) => this.setState({ fileList })
+  handleChange = ({ indexFileList }) => this.setState({ indexFileList })
 
   render(){
 
-    const { previewVisible, previewImage, fileList } = this.state;
+    const { previewVisible, previewImage, indexFileList } = this.state;
 
     return (
       <div className={style["index-section"]}>
@@ -64,7 +64,7 @@ class IndexSection extends Component{
           <Upload
             action="https://www.changdaolife.cn/api/banner/setBanner?page=index"
             listType="picture-card"
-            fileList={fileList}
+            fileList={indexFileList}
             onPreview={this.handlePreview}
             onChange={this.handleChange}
           >

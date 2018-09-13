@@ -6,6 +6,11 @@ import Fire from './Fire/Fire';
 import Earth from './Earth/Earth';
 import Gold from './Gold/Gold';
 import Water from './Water/Water';
+import Class from './Class/Class';
+import Health from './Health/Health';
+import Vip from './Vip/Vip';
+import Welfare from './Welfare/Welfare';
+import Signin from './Signin/Signin';
 const { Link } = Anchor;
 
 class ModuleSection extends Component{
@@ -25,7 +30,7 @@ class ModuleSection extends Component{
           <Link href='#class' title='课堂'/>
           <Link href='#health' title='疗愈'/>
           <Link href='#vip' title='会员'/>
-          <Link href='#walfare' title='公益'/>
+          <Link href='#welfare' title='公益'/>
           <Link href='#signin' title='签到'/>
         </Anchor>
         <div className={style["module-content"]}>
@@ -38,7 +43,23 @@ class ModuleSection extends Component{
         </div>
         <div className={style["module-content"]}>
           <h2 id="class">课堂</h2>
-          
+          <Class/>
+        </div>
+        <div className={style["module-content"]}>
+          <h2 id="health">疗愈</h2>
+          <Health/>
+        </div>
+        <div className={style["module-content"]}>
+          <h2 id="vip">会员</h2>
+          <Vip/>
+        </div>
+        <div className={style["module-content"]}>
+          <h2 id="welfare">公益</h2>
+          <Welfare/>
+        </div>
+        <div className={style["module-content"]}>
+          <h2 id="signin">签到</h2>
+          <Signin/>
         </div>
       </div>
     );
