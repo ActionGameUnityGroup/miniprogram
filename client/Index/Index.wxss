@@ -54,4 +54,4 @@
 .show-course-name{ display: block; font-size: 26rpx; }
 .show-course-describe, .show-course-latest{ display: block; width: 100%; font-size: 24rpx; }
 .show-course-latest{ color: #f86442; }
-.show-course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
+.show-course-describe{ height: 60rpx; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 1.5; color: #575757; }

@@ -113,7 +113,7 @@ Page({
   },
   moreArticleAction: function(){
     wx.navigateTo({
-      url: '../ArticleLise/ArticleLise'
+      url: '../ArticleList/ArticleList'
     });
   }
 });

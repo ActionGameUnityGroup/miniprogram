@@ -1,6 +1,5 @@
-#.gitignore
 /server/node_modules/
-/server/log/
+/server/log/*
 /server2/
 # /client/
 /managementSystem/node_modules
