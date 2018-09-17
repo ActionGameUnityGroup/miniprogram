@@ -8,7 +8,7 @@ const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
 const bindConsole = require('./bindConsole');
 const staticFile = require('./static-file');
-const connectHistory = require('connect-history-api-fallback');
+// const connectHistory = require('connect-history-api-fallback');
 
 
 const env = process.env.NODE_ENV == 'production';
