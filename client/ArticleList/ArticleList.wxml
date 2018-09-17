@@ -1,17 +1,22 @@
+<view class="baseline"></view>
+
 <view class="nav-content">
-  <view class="nav-item" bindtap='chooseNavAction'>
+  <view class="{{isAll ? 'nav-item nav-item-active' : 'nav-item'}}" id='all' bindtap='chooseNavAction'>
     <text>全部</text>
   </view>
-  <view class="nav-item" bindtap='chooseNavAction'>
+  <view class="{{isRelation ? 'nav-item nav-item-active' : 'nav-item'}}" id='relation' bindtap='chooseNavAction'>
     <text>关系篇</text>
   </view>
-  <view class="nav-item" bindtap='chooseNavAction'>
+  <view class="{{isHealth ? 'nav-item nav-item-active' : 'nav-item'}}" id='health' bindtap='chooseNavAction'>
     <text>疗愈篇</text>
   </view>
-  <view class="nav-item" bindtap='chooseNavAction'>
+  <view class="{{isAptitude ? 'nav-item nav-item-active' : 'nav-item'}}" id='aptitude' bindtap='chooseNavAction'>
     <text>灵性篇</text>
   </view>
 </view>
+
+<view class="baseline"></view>
+
 <view class="list-content">
   <block wx:for='{{articleList}}' wx:key='index'>
     <view class="article-item">

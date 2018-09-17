@@ -1,3 +1,4 @@
+page{ background: #fff; }
 .incone-content{
   display: flex;
   justify-content: space-between;
@@ -6,8 +7,8 @@
   padding: 0 30rpx;
   width: 584rpx;
   height: 261rpx;
-  background: -webkit-linear-gradient(left top, #2cbaff, #8ad8ff);
-  box-shadow: 0rpx 0rpx 13rpx #3abeff;
+  background: -webkit-linear-gradient(left top, #ffaf4f, #fee079);
+  box-shadow: 0rpx 0rpx 13rpx rgba(249, 161, 61, .51);
   border-radius: 15rpx;
 }
 .income-balance{ height: 100%; }
@@ -15,7 +16,7 @@
 .income-balance text:last-child{ margin-top: 45rpx; font-size: 58rpx; }
 
 .today-income-action{ display: block; height: 100%; }
-.today-income-content{ display: block; width: 140rpx; height: 151rpx; background: #18b3ff; }
+.today-income-content{ display: block; width: 140rpx; height: 151rpx; background: #f9a13d; }
 .today-income-content text{ display: block; font-size: 24rpx; color: #fff; text-align: center; }
 .today-income-content text:last-child{ margin-top: 47rpx; font-size: 48rpx; }
 

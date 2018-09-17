@@ -12,6 +12,7 @@
   <input type="button" value="删除数据" id="deleteBtn" />
   <input type="button" value="获取音频" id="getAudioBtn" />
   <input type="button" value="获取记录" id="getLogBtn" />
+  <input type="button" value="获取打卡信息" id='getSignInfo'/>
   <!-- <form action="http://192.168.1.104:3000/api/user/setUserInfo" method="POST">
     <input type="text" name="avatar" placeholder="avatar" />
     <input type="text" name="nickname" placeholder="nickname"/>
@@ -210,6 +211,28 @@
       console.log('请求接口');
       fetch(
         'https://www.changdaolife.cn/api/log/getLogs',
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json; charset=utf-8',
+            'Authorization': '123'
+          }
+        }
+      )
+        .then((res) => {
+          console.log(res);
+          res.json().then((data) => {
+                                      console.log(data);
+                                      // setHeader(data);
+                                      // setAudioSrc(data);
+                                    });
+        });
+    };
+
+    document.querySelector('#getSignInfo').onclick = () => {
+      console.log('请求接口');
+      fetch(
+        'http://127.0.0.1:9000/api/sign/getSignInfo',
         {
           method: 'GET',
           headers: {

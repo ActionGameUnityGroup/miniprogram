@@ -1,0 +1,20 @@
+<view></view>
+
+<block wx:if='{{!MyInivitationList.length}}'>
+  <view class="empty-image"><image src='../assets/icon/miniprogram-icon-75.jpg' mode='widthFix'></image></view>
+</block>
+<block wx:else>
+  <view class="inivitation-list">
+    <block wx:for='{{MyInivitationList}}' wx:key='index'>
+      <view class="inivitation-item">
+        <image class="user-avatar" src='{{item.avatar}}' mode='widthFix'></image>
+        <view class="user-info">
+          <text class="course-name">{{item.nickname}}</text>
+          <text class="inivitation-time">{{item.inivationTime}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+
+<view></view>

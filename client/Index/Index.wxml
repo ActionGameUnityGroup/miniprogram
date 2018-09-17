@@ -54,7 +54,7 @@
     <view class="show-title">
       <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
       <text class="show-title-name">文章 · 推荐</text>
-      <view class="show-more-action"><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
+      <view class="show-more-action" bindtap='moreArticleAction'><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
     </view>
     <swiper
       class="show-article-list"

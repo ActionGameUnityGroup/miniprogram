@@ -21,6 +21,9 @@ Page({
     courseHeight: 0
   },
   onLoad: function(){
+    wx.setNavigationBarTitle({
+      title: '我的收益'
+    });
     this.setData({
       incomeBalance: this.data.incomeBalance.toFixed(2),
       todayIncome: this.data.todayIncome.toFixed(2),

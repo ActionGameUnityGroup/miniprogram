@@ -1,17 +1,22 @@
-<scroll-view class="message-content" scroll-y>
-  <block wx:for='{{messageList}}' wx:key='index'>
-    <view class="message-item">
-      <image class="message-cover" mode='widthFix' src='{{item.messageCover}}'></image>
-      <view class="message-info">
-        <view> {{item.messageContent}} </view>
-        <view>
-          <text>{{item.messageDetail}}</text>
-          <text> {{item.messageDate}} </text>
+<blcok wx:if='{{!messageList.length}}'>
+  <view class="empty-image"><image mode='widthFix' src='../assets/icon/miniprogram-icon-75.jpg'></image></view>
+</blcok>
+<block wx:else>
+  <scroll-view class="message-content" scroll-y>
+    <block wx:for='{{messageList}}' wx:key='index'>
+      <view class="message-item">
+        <image class="message-cover" mode='widthFix' src='{{item.messageCover}}'></image>
+        <view class="message-info">
+          <view> {{item.messageContent}} </view>
+          <view>
+            <text>{{item.messageDetail}}</text>
+            <text> {{item.messageDate}} </text>
+          </view>
         </view>
       </view>
-    </view>
-  </block>
-</scroll-view>
+    </block>
+  </scroll-view>
+</block>
 
 <!-- <view></view>
 

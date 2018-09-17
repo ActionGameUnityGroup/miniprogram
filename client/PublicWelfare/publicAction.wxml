@@ -1,35 +1,27 @@
 <view class='bg'>
   <view class='space'></view>
-  <scroll-view class='scroll-view' wx:for='{{publicActionList}}' wx:key='index' wx:item='item'>
-
-    <view class='scroll-item' bindtap='onClickAction'>
-      <!--left image-->
-      <view class='action-image'>
-        <image src='{{item.image}}' mode='widthFix'></image>
-      </view>
-      <!--right info-->
-      <view class='right-content'>
-        <!--top text-->
-        <view class='action-title'>
-          <text> {{item.title}} </text>
+  <view class='activity-list'>
+    <block wx:for='{{welfareActivityList}}' wx:key='index'>
+      
+      <view class='activity-item' bindtap='onClickAction'>
+        <!--left image-->
+        <view class='activity-image'>
+          <image src='{{item.activityCover}}' mode='widthFix'></image>
         </view>
-        <!--bottom text-->
-        <view class='action-right-bottom'>
+        <view class='activity-info'>
+          <view class='activity-title'> {{item.activityName}} </view>
+          <view class='activity-msg'>
+            <view class="activity-detail">
+              <text class='activity-date'>{{item.activityTime}}</text>
+              <text class='online'>{{item.activityType == 1 ? "线上":"线下"}}</text>
+            </view>
 
-          <view class="course-info">
-            <text class='action-date'>{{item.date}}</text>
-            <text class='online'>{{item.isOnline?"线上":"线下"}}</text>
+            <view class='{{item.isEnd ? "activity-type disable" : "activity-type"}}'> {{item.activityStatus}} </view>
+
           </view>
-
-          <view class="type-image">
-            <text wx:if="{{item.actionType===0}}"> 免费 </text>
-            <text wx:if="{{item.actionType===1}}">付费</text>
-            <text wx:if="{{item.actionType===2}}">结束</text>
-          </view>
-
         </view>
       </view>
-    </view>
       <view class='line'></view>
-  </scroll-view>
+    </block>
+  </view>
 </view>

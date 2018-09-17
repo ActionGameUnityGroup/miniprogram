@@ -1,12 +1,17 @@
-<view class="course-list">
-  <block wx:for='{{MyCourseList}}' wx:key='index'>
-    <view class="course-item" id='audio{{index}}'>
-      <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
-      <view class="course-info">
-        <text class="course-name">{{item.courseName}}</text>
-        <text class="course-describe">{{item.courseText}}</text>
-        <text class="course-latest">已更新{{item.currentCourse}}期</text>
+<block wx:if='{{!MyCourseList.length}}'>
+  <view class="empty-image"><image mode='widthFix' src='../assets/icon/miniprogram-icon-75.jpg'></image></view>
+</block>
+<block wx:else>
+  <view class="course-list">
+    <block wx:for='{{MyCourseList}}' wx:key='index'>
+      <view class="course-item" id='audio{{index}}'>
+        <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
+        <view class="course-info">
+          <text class="course-name">{{item.courseName}}</text>
+          <text class="course-describe">{{item.courseText}}</text>
+          <text class="course-latest">已更新{{item.currentCourse}}期</text>
+        </view>
       </view>
-    </view>
-  </block>
-</view>
+    </block>
+  </view>
+</block>

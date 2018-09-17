@@ -1,17 +1,22 @@
-<view class="keep-content">
-  <block wx:for='{{keepList}}' wx:key='index'>
-    <view class="keep-item">
-      <view class="flow">
-        <view class="keep-course-info" style='width: {{infoWidth}}px;'>
-          <image mode='widthFix' src='{{item.courseCover}}'></image>
-          <view>
-            <text> {{item.courseName}} </text>
-            <text> {{item.courseDetail}} </text>
-            <text> 已更新{{item.currentLesson}}期 </text>
+<block wx:if='{{!keepList.length}}'>
+  <view class="empty-image"><image mode='widthFix' src='../assets/icon/miniprogram-icon-75.jpg'></image></view>
+</block>
+<block wx:else>
+  <view class="keep-content">
+    <block wx:for='{{keepList}}' wx:key='index'>
+      <view class="keep-item">
+        <view class="flow">
+          <view class="keep-course-info" style='width: {{infoWidth}}px;'>
+            <image mode='widthFix' src='{{item.courseCover}}'></image>
+            <view>
+              <text> {{item.courseName}} </text>
+              <text> {{item.courseDetail}} </text>
+              <text> 已更新{{item.currentLesson}}期 </text>
+            </view>
           </view>
+          <view class="delete-keep-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-49.png' style='display: inline-block; width: 27rpx;'></image></view>
         </view>
-        <view class="delete-keep-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-49.png' style='display: inline-block; width: 27rpx;'></image></view>
       </view>
-    </view>
-  </block>
-</view>
+    </block>
+  </view>
+</block>

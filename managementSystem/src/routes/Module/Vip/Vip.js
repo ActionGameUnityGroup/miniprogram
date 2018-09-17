@@ -51,7 +51,6 @@ class Vip extends Component{
     const { previewVisible, previewImage, vipFileList } = this.state;
     return (
       <div className={style["element-content"]}>
-        <h3 id="earth">会员</h3>
         <h3 style={{marginTop: 20, marginLeft: 20}}>banner</h3>
         <div className={style["banner-content"]}>
           <Upload

@@ -83,7 +83,7 @@ Page({
     });
     wx.login({
       success: function(res){
-        // console.log(res);
+        console.log(res);
         wx.getUserInfo({
           success: function(e){
             /*console.log(e);
@@ -111,4 +111,9 @@ Page({
       }
     });
   },
+  moreArticleAction: function(){
+    wx.navigateTo({
+      url: '../ArticleLise/ArticleLise'
+    });
+  }
 });
