@@ -21,7 +21,7 @@ Page({
       {moduleImage: '../assets/icon/miniprogram-icon-29.png', moduleName: '水元素', moduleUrl: '../Elements/elements?key=water'},
       {moduleImage: '../assets/icon/miniprogram-icon-25.png', moduleName: '课堂', moduleUrl: '../Class/Class'},
       {moduleImage: '../assets/icon/miniprogram-icon-26.png', moduleName: '疗愈', moduleUrl: '../Health/Health'},
-      {moduleImage: '../assets/icon/miniprogram-icon-22.png', moduleName: '会员', moduleUrl: '../UserCenter/Member/member'},
+      {moduleImage: '../assets/icon/miniprogram-icon-22.png', moduleName: '会员', moduleUrl: '../Member/member'},
       {moduleImage: '../assets/icon/miniprogram-icon-21.png', moduleName: '公益', moduleUrl: '../PublicWelfare/publicAction'},
       {moduleImage: '../assets/icon/miniprogram-icon-28.png', moduleName: '签到', moduleUrl: '../SignIn/SignIn'},
     ],
@@ -114,6 +114,21 @@ Page({
   moreArticleAction: function(){
     wx.navigateTo({
       url: '../ArticleList/ArticleList'
+    });
+  },
+  redirectToSyllabusMenu: function(){
+    wx.redirectTo({
+      url: '../Syllabus/syllabusMenu'
+    });
+  },
+  redirectToPersonalInfo: function(){
+    wx.redirectTo({
+      url: '../PersonalInfo/personalInfo'
+    });
+  },
+  navigateAction: function(e){
+    wx.navigateTo({
+      url: e.currentTarget.id
     });
   }
 });

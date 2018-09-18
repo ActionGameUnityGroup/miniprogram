@@ -31,7 +31,7 @@
 .course-latest{ color: #ff266c; }
 .course-describe{ text-overflow: ellipsis; white-space: nowrap; overflow: hidden; line-height: 30rpx; color: #575757; }
 
-.subscribe-content{ position: fixed; bottom: 1rpx; width: 100%; height: 8.3%; background: #fff; }
+.subscribe-content{ position: fixed; bottom: 2rpx; width: 100%; height: 8.3%; background: #fff; }
 .subscribe-action{ margin: 13rpx auto; width: 526rpx; height: 74%; text-align: center; line-height: 2.5; /* background: #cf2c32; */ border-radius: 50rpx; color: #fff; font-size: 30rpx; }
 .wood .subscribe-action{ background: -webkit-linear-gradient(#60e88e, #56cf3f); }
 .fire .subscribe-action{ background: -webkit-linear-gradient(#feac77, #fc6756); }

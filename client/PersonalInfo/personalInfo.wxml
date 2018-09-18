@@ -1,5 +1,5 @@
 <view style='position: relative; width: 100%; height: {{contentHeight}}px; overflow: auto;'>
-  <navigator url='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></navigator>
+  <view bindtap='redirectAction' id='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></view>
   <view class="personal-info-header">
     <view class="header-background"><image mode='widthFix' src='{{headerBackground}}'></image></view>
     <view class="header-info">
@@ -28,10 +28,10 @@
   <view class="module-content">
     <block wx:for='{{moduleList}}' wx:key='index'>
       <block wx:if='{{item.moduleUrl}}'>
-        <navigator url='{{item.moduleUrl}}' class="module-item">
+        <view bindtap='navigateAction' id='{{item.moduleUrl}}' class="module-item">
           <image mode='aspectFit' src='{{item.moduleImg}}'></image>
           <text> {{item.moduleName}} </text>
-        </navigator>
+        </view>
       </block>
       <block wx:elif='{{index == 10}}'>
         <view class="module-item" bindtap='callAction'>
@@ -50,14 +50,14 @@
 </view>
 
 <view class="nav-bar">
-  <navigator open-type='redirect' url='../Index/Index' class="nav-bar-item">
+  <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-5.png' style='width: 94rpx'></image>
     <text> 首页 </text>
-  </navigator>
-  <navigator open-type='redirect' url='../Syllabus/syllabusMenu' class="nav-bar-item">
+  </view>
+  <view id='../Syllabus/syllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
     <text> 课程表 </text>
-  </navigator>
+  </view>
   <view class="nav-bar-item">
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-4.png' style='width: 43rpx'></image>
     <text> 我的 </text>

@@ -47,6 +47,16 @@ Page({
     wx.makePhoneCall({
       phoneNumber: '0755-82557627'
     })
+  },
+  redirectAction: function(e){
+    wx.redirectTo({
+      url: e.currentTarget.id
+    });
+  },
+  navigateAction: function(e){
+    wx.navigateTo({
+      url: e.currentTarget.id
+    });
   }
   /*getInfoAction: function(){
     wx.getUserInfo({

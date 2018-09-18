@@ -47,6 +47,17 @@ Page({
       title: '签到'
     })
     setDate();
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/banner/getBanner?page=signin',
+      method: 'GET',
+      success: function(res){
+        console.log(res.errMsg);
+        _this.setData({
+          sloganCover: res.data.requestData[0].bannerList[0].url
+          // bannerList: res.data.requestData[0].bannerList
+        });
+      }
+    });
   },
   signInAction: function(){
     console.log('签到');

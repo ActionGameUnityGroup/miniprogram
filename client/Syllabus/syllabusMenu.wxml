@@ -28,16 +28,16 @@
 </view>
 
 <view class="nav-bar">
-  <navigator open-type='redirect' url='../Index/Index' class="nav-bar-item">
+  <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-5.png' style='width: 94rpx'></image>
     <text> 首页 </text>
-  </navigator>
+  </view>
   <view class="nav-bar-item">
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-1.png' style='width: 55rpx'></image>
     <text> 课程表 </text>
   </view>
-  <navigator open-type='redirect' url='../PersonalInfo/personalInfo' class="nav-bar-item">
+  <view id='../PersonalInfo/personalInfo' class="nav-bar-item" bindtap='redirectAction'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-3.png' style='width: 43rpx'></image>
     <text> 我的 </text>
-  </navigator>
+  </view>
 </view>

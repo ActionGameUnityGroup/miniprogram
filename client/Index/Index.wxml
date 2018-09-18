@@ -16,10 +16,10 @@
 
   <view class="module-content">
     <block wx:for='{{moduleList}}' wx:key='index'>
-      <navigator url='{{item.moduleUrl}}' class="module-item">
+      <view id='{{item.moduleUrl}}' class="module-item" bindtap='navigateAction'>
         <image mode='widthFix' src='{{item.moduleImage}}'></image>
         <text> {{item.moduleName}} </text>
-      </navigator>
+      </view>
     </block>
   </view>
 
@@ -36,10 +36,10 @@
       >
         <block wx:for='{{AudioList}}' wx:key='index'>
           <swiper-item>
-            <navigator url='../Course/Course?name={{item.audioName}}' class="show-audio-item" id='{{item.audioId}}'>
+            <view class="show-audio-item" id='../Course/Course?name={{item.audioName}}' bindtap='navigateAction'>
               <image class="show-audio-image" src='{{item.audioCoverUrl}}' mode='widthFix'></image>
               <text class="show-audio-name">{{item.audioName}}</text>
-            </navigator>
+            </view>
           </swiper-item>
         </block>
         <swiper-item class="view-more-action">
@@ -62,10 +62,10 @@
     >
       <block wx:for='{{articleList}}' wx:key='index'>
         <swiper-item id='audio{{index}}'>
-          <navigator url='../Course/Course?name={{item.articleName}}' class="show-article-item">
+          <view id='../Course/Course?name={{item.articleName}}' class="show-article-item" bindtap='navigateAction'>
             <image class="show-article-image" src='{{item.articleCoverUrl}}' mode='scaleToFill'></image>
             <text class="show-article-name">{{item.articleName}}</text>
-          </navigator>
+          </view>
         </swiper-item>
       </block>
       <swiper-item class="view-more-action" bindtap='moreArticleAction'>
@@ -83,14 +83,14 @@
     </view>
     <view class="show-course-list">
       <block wx:for='{{courseList}}' wx:key='index'>
-        <navigator url='../Course/Course?name={{item.courseName}}' class="show-course-item" id='audio{{index}}'>
+        <view id='../Course/Course?name={{item.courseName}}' class="show-course-item" bindtap='navigateAction'>
           <image class="show-course-image" src='{{item.courseCoverUrl}}' mode='widthFix'></image>
           <view class="show-course-info">
             <text class="show-course-name">{{item.courseName}}</text>
             <text class="show-course-describe">{{item.courseText}}</text>
             <!-- <text class="show-course-latest">已更新{{item.currentCourse}}期</text> -->
           </view>
-        </navigator>
+        </view>
       </block>
     </view>
   </view>
@@ -103,12 +103,12 @@
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-6.png' style='width: 94rpx'></image>
     <text> 首页 </text>
   </view>
-  <navigator open-type='redirect' url='../Syllabus/syllabusMenu' class="nav-bar-item">
+  <view class="nav-bar-item" bindtap='redirectToSyllabusMenu'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
     <text> 课程表 </text>
-  </navigator>
-  <navigator open-type='redirect' url='../PersonalInfo/personalInfo' class="nav-bar-item">
+  </view>
+  <view class="nav-bar-item" bindtap='redirectToPersonalInfo'>
     <image mode='aspectFit' src='../assets/icon/miniprogram-icon-3.png' style='width: 43rpx'></image>
     <text> 我的 </text>
-  </navigator>
+  </view>
 </view>
