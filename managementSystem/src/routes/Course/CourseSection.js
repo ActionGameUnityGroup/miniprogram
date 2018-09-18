@@ -6,7 +6,24 @@ class CourseSection extends Component{
 
   state = {
     courseList: [
-      {courseCover: '', courseTitle: '《中庸》第一章：天命之谓性', courseDetail: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活'},
+      {
+        courseCover: '',
+        courseId: '001',
+        courseTitle: '《中庸》第一章：天命之谓性',
+        courseDetail: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活',
+        courseStatus: '上线',
+        status: 1,
+        courseLength: '10课时'
+      },
+      {
+        courseCover: '',
+        courseId: '002',
+        courseTitle: '《中庸》第一章：天命之谓性',
+        courseDetail: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活',
+        courseStatus: '下线',
+        status: 0,
+        courseLength: '10课时'
+      },
     ]
   };
 
@@ -28,6 +45,11 @@ class CourseSection extends Component{
     console.log(e.target);
   }
 
+  groundingAction(e){
+    console.log('上架课程');
+    console.log(e.target);
+  }
+
   render(){
     return (
       <div className={style['course-section']}>
@@ -36,8 +58,12 @@ class CourseSection extends Component{
           <Button type="primary" onClick={this.addCourseAction}> 添加课程 </Button>
         </h1>
         <div className={style["course-explain"]}>
-          <div style={{width: '70%', textAlign: 'center'}}>课程信息</div>
-          <div style={{width: 120, textAlign: 'center'}}>课程操作</div>
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '75%', textAlign: 'center'}}>
+            <div style={{width: 535, textAlign: 'center'}}>课程信息</div>
+            <div style={{width: 200, textAlign: 'center'}}>课程状态</div>
+            <div style={{width: 200, textAlign: 'center'}}>课时数量</div>
+          </div>
+          <div style={{width: '20%', textAlign: 'center'}}>课程操作</div>
         </div>
         <div className={style['course-list']}>
           {
@@ -50,13 +76,29 @@ class CourseSection extends Component{
                       <div className={style["course-title"]}>{child.courseTitle}</div>
                       <div className={style["course-detail"]}>{child.courseDetail}</div>
                     </div>
+                    <div className={style['line']}></div>
+                    <div className={style["course-status"]}>
+                      <span className={child.status === 1 ? style['on-line'] : style['off-line']}> {child.courseStatus} </span>
+                    </div>
+                    <div className={style['line']}></div>
+                    <div className={style["course-length"]}>{child.courseLength}</div>
                   </div>
                   <div className={style['line']}></div>
-                  <div className={style["course-action"]}>
-                    <Button size='small' onClick={e => this.updateCourseAction(e)}> 更新课程 </Button>
-                    <br/>
-                    <Button size='small' onClick={e => this.undercarriageAction(e)}> 下架课程 </Button>
-                  </div>
+                  {
+                    child.status === 0 ? (
+                      <div className={style["course-action"]}>
+                        <Button size='small' id={child.courseId} onClick={e => this.updateCourseAction(e)}> 更新课程 </Button>
+                        <br/>
+                        <Button size='small' id={child.courseId} onClick={e => this.groundingAction(e)}> 上架课程 </Button>
+                      </div>
+                    ) : (
+                      <div className={style["course-action"]}>
+                        <Button size='small' id={child.courseId} onClick={e => this.updateCourseAction(e)}> 更新课程 </Button>
+                        <br/>
+                        <Button size='small' id={child.courseId} onClick={e => this.undercarriageAction(e)}> 下架课程 </Button>
+                      </div>
+                    )
+                  }
                 </div>
               );
             })

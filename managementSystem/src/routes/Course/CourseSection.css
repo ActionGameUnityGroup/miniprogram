@@ -1,15 +1,19 @@
 .course-section{ display: block; margin: 0 auto; padding: 2% 0; width: 96%; height: 96%; }
 
-.course-explain{ display: flex; justify-content: space-around; align-items: center; margin-top: 10px; padding: 15px 0; background: #fff; border-bottom: 1px solid #d0d0d0; }
+.course-explain{ display: flex; justify-content: center; align-items: center; margin-top: 10px; padding: 15px 0; background: #fff; border-bottom: 1px solid #d0d0d0; }
 
 .course-list{ display: block; margin: 0 auto; width: 100%; }
-.course-item{ display: flex; justify-content: space-around; align-items: center; padding: 15px 0; width: 100%; border-bottom: 1px dashed #ddd; background: #fff; }
-.course-info{ display: flex; justify-content: flex-start; align-items: center; width: 70%; }
+.course-item{ display: flex; justify-content: center; align-items: center; padding: 15px 0; width: 100%; border-bottom: 1px dashed #ddd; background: #fff; }
+.course-info{ display: flex; justify-content: space-between; align-items: center; width: 75%; }
 .course-cover{ display: block; margin-right: 15px; width: 120px; height: 120px; background: #ddd; border-radius: 15px; overflow: hidden; }
 .course-msg{ display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 400px; height: 120px; }
 .course-title{ display: block; margin-top: 10px; width: 100%; text-align: left; font-size: 18px; color: #333; }
 .course-detail{ display: block; width: 100%; height: 66px; text-align: left; font-size: 15px; color: #565656; overflow: hidden; }
-
-.course-action{ display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 120px; height: 120px; }
+.course-status, .course-length{ display: block; width: 200px; height: 120px; text-align: center; line-height: 120px; font-size: 18px; color: #333; }
+.course-status{ color: #333; }
+.course-status span{ display: inline-block; }
+.on-line{ color: #3fa00f; }
+.off-line{ color: #bf2222; }
+.course-action{ display: flex; flex-direction: column; justify-content: space-around; align-items: center; width: 20%; height: 120px; }
 
 .line{ display: block; height: 120px; border-left: 1px solid #d0d0d0; }
