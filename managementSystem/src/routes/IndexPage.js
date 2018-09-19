@@ -17,7 +17,7 @@ function getClientWidth(){
 function IndexPage() {
   return (
     <div className="page" style={{height: getClientHeight()+'px'}}>
-      <PageHead userName={'智慧小编'} avatar={''} />
+      <PageHead/>
       <content style={{height: getClientHeight() - 50 +'px'}}>
         <NavBar2 height={getClientHeight() - 50} selectKey={['1']} />
         <PageSection height={getClientHeight() - 50} width={getClientWidth() - 112}>

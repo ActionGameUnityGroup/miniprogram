@@ -25,4 +25,8 @@ module.exports = {
     console.log('设置页');
     Index.show(ctx);
   },
+  'GET /login': async (ctx) => {
+    console.log('设置页');
+    Index.show(ctx);
+  },
 }

@@ -9,7 +9,7 @@ class LoginSection extends Component{
 
   state = {
     username: '',
-    password: ''
+    password: '',
   }
 
   handleTypingUserName(e){
@@ -31,6 +31,7 @@ class LoginSection extends Component{
   }
 
   handleLogin(){
+    let _this = this;
     let [username, password] = [this.state.username, this.state.password];
     // const sha1 = crypto.createHash('sha1'); // sha1算法
     // sha1.update(this.state.username+this.state.password);
@@ -52,6 +53,12 @@ class LoginSection extends Component{
     request('https://www.changdaolife.cn/manage/login?username=f81ea43e20e1d6a0ee0385e3c5f6c8c0&password=cb5dab341f8202d2e310ec07a9dd542b')
     .then(res => {
       console.info(res);
+
+      localStorage.setItem('avatar', res.data.requestData.avatar);
+      localStorage.setItem('nickname', res.data.requestData.nickname);
+      localStorage.setItem('token', res.data.requestData.token);
+
+      window.location.href = '/';
     })
     .catch(err => {
       console.error(err);
