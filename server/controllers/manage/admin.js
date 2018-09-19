@@ -85,10 +85,10 @@ class Admin {
       iv
     */
     // console.log(ctx);
-    let params = JSON.parse(ctx.request.body);
+    let params = ctx.query;
     console.log(params);
     let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');
-    console.log(adminInfo, '管理员信息');
+    console.log('管理员信息', adminInfo);
     if(adminInfo[0].token){
       ctx.body = await formatData({token: adminInfo[0].token, avatar: adminInfo[0].avatar, nickname: adminInfo[0].nickname});
       ctx.type = 'text/json';
