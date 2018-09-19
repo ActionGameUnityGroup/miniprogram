@@ -85,7 +85,7 @@ class Admin {
       iv
     */
     // console.log(ctx);
-    let params = ctx.query;
+    let params = JSON.parse(ctx.request.body);
     console.log(params);
     let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');
     console.log(adminInfo, '管理员信息');
