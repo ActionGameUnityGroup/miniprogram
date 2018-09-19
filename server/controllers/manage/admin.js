@@ -84,7 +84,7 @@ class Admin {
       encryptedData
       iv
     */
-    // console.log(ctx);
+    console.log('管理员登陆');
     let params = ctx.query;
     console.log(params);
     let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');

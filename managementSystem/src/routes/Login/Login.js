@@ -22,7 +22,7 @@ class LoginSection extends Component{
   }
 
   handleTypingPassWord(e){
-    const md5 = crypto.createHash('md5'); 
+    const md5 = crypto.createHash('md5');
     md5.update(e.target.value); // 加入到md5算法队列
     let encodePassWord = md5.digest('hex');
     this.setState({
@@ -36,13 +36,20 @@ class LoginSection extends Component{
     // sha1.update(this.state.username+this.state.password);
     // let encodeToken = sha1.digest('hex');
     // console.log(encodeToken);
-    request(
-      'https://www.changdaolife.cn/manage/login',
+    /*request(
+      'http://localhost:9000/manage/login',
       {
         method: 'POST',
-        body: JSON.stringify({username: username, password: password})
+        body: JSON.stringify({username: 'f81ea43e20e1d6a0ee0385e3c5f6c8c0', password: 'cb5dab341f8202d2e310ec07a9dd542b'})
       }
     )
+    .then(res => {
+      console.info(res);
+    })
+    .catch(err => {
+      console.error(err);
+    });*/
+    request('https://www.changdaolife.cn/manage/login?username=f81ea43e20e1d6a0ee0385e3c5f6c8c0&password=cb5dab341f8202d2e310ec07a9dd542b')
     .then(res => {
       console.info(res);
     })
