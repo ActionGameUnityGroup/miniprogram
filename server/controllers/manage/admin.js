@@ -52,6 +52,29 @@ class Admin {
       });*/
   }
 
+  // async login(ctx){
+  //   // 登录以后返回openID
+  //   // 以后请求接口在请求头加入openID
+  //   /*
+  //     请求参数：
+  //     code
+  //     encryptedData
+  //     iv
+  //   */
+  //   // console.log(ctx);
+  //   let params = JSON.parse(ctx.request.body);
+  //   console.log(params);
+  //   let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');
+  //   console.log(adminInfo, '管理员信息');
+  //   if(adminInfo[0].token){
+  //     ctx.body = await formatData({token: adminInfo[0].token, avatar: adminInfo[0].avatar, nickname: adminInfo[0].nickname});
+  //     ctx.type = 'text/json';
+  //   } else {
+  //     ctx.body = await formatDataFail({info: '您不是管理员!'});
+  //     ctx.type = 'text/json';
+  //   }
+  // }
+
   async login(ctx){
     // 登录以后返回openID
     // 以后请求接口在请求头加入openID
@@ -62,7 +85,7 @@ class Admin {
       iv
     */
     // console.log(ctx);
-    let params = JSON.parse(ctx.request.body);
+    let params = ctx.query;
     console.log(params);
     let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');
     console.log(adminInfo, '管理员信息');

@@ -5,4 +5,8 @@ module.exports = {
     console.log('登录后台');
     await Admin.login(ctx);
   },
+  'GET /manage/login': async (ctx) => {
+    console.log('登录后台');
+    await Admin.login(ctx);
+  },
 };
