@@ -42,8 +42,26 @@
     <br/>
     <input type="button" name="save" value="保存" />
     <input type="button" name="get" value="获取地址" />
+    <input type="button" name='login' value="登录后台"/>
   </div>
   <script>
+
+    document.querySelector('input[name=login]').onclick = () => {
+      console.log('登录后台');
+      fetch(
+        'http://localhost:9000/manage/login',
+        {
+          method: 'POST',
+          body: JSON.stringify({username: "f81ea43e20e1d6a0ee0385e3c5f6c8c0", password: "cb5dab341f8202d2e310ec07a9dd542b"}),
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
 
     document.querySelector('input[name=save]').onclick = () => {
       console.log('新增地址');
@@ -66,7 +84,7 @@
       console.log(detail);
       console.log(isDefault);
       fetch(
-        'http://127.0.0.1:9000/api/address/setAddress',
+        'http://localhost:9000/api/address/setAddress',
         {
           method: 'POST',
           body: JSON.stringify({name: name, phone: phone, area: area, detail: detail, isDefault: isDefault}),
@@ -86,7 +104,7 @@
     document.querySelector('input[name=get]').onclick = () => {
       console.log('获取地址');
       fetch(
-        'http://127.0.0.1:9000/api/address/getAddressList',
+        'http://localhost:9000/api/address/getAddressList',
         {
           method: 'GET',
           headers: {
@@ -232,7 +250,7 @@
     document.querySelector('#getSignInfo').onclick = () => {
       console.log('请求接口');
       fetch(
-        'http://127.0.0.1:9000/api/sign/getSignInfo',
+        'http://localhost:9000/api/sign/getSignInfo',
         {
           method: 'GET',
           headers: {

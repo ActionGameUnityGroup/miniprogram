@@ -9,7 +9,7 @@ const addController = (router, controller) => {
       ctx.options(fileName, (ctx) => {
         ctx.status = 200;
       });
-    } else {
+    } else if(URL.startsWith('POST ')) {
       router.post(fileName, controller[URL]);
     }
   }

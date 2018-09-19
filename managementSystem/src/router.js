@@ -6,6 +6,7 @@ import UserListPage from './routes/UserListPage';
 import CoursePage from './routes/CoursePage';
 import ShopPage from './routes/ShopPage';
 import SettingPage from './routes/SettingPage';
+import LoginPage from './routes/LoginPage';
 
 function RouterConfig({ history }) {
   return (
@@ -17,6 +18,7 @@ function RouterConfig({ history }) {
         <Route path="/course/" component={CoursePage} />
         <Route path="/shop/" component={ShopPage} />
         <Route path="/setting/" component={SettingPage} />
+        <Route path="/login" component={LoginPage} />
       </Switch>
     </Router>
   );

@@ -423,3 +423,35 @@ Sun Sep 02 2018 21:12:03 GMT+0800 (中国标准时间)
 Sun Sep 02 2018 22:08:47 GMT+0800 (中国标准时间)
 /api/banner/setBanner?page=index: [object Object]
 
+Wed Sep 19 2018 16:56:28 GMT+0800 (GMT+08:00)
+/api/address/getAddressList: { openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  detail: '123' },{ openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  area: '广东省 广州市 荔湾区',
+  detail: '123' },{ openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  area: '广东省 广州市 荔湾区',
+  detail: '123' },{ openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  area: '广东省 广州市 荔湾区',
+  detail: '123' },{ openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  area: '广东省 广州市 荔湾区',
+  detail: '123' },{ openid: 'owLC84lbLCkG0nhZNu6pq7ZYakws',
+  name: 'Reri',
+  isDefault: true,
+  phone: '15920936308',
+  area: '广东省 广州市 荔湾区',
+  detail: '123' }
+
