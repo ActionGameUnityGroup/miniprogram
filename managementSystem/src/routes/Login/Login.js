@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Icon, Button, Input} from 'antd';
+import {Icon, Button, Input, message} from 'antd';
 import style from './Login.css';
 import crypto from 'crypto';
 import request from '../../utils/request';
@@ -13,7 +13,7 @@ class LoginSection extends Component{
   }
 
   handleTypingUserName(e){
-    const md5 = crypto.createHash('md5'); 
+    const md5 = crypto.createHash('md5');
     md5.update(e.target.value); // 加入到md5算法队列
     let encodeUserName = md5.digest('hex');
     this.setState({
@@ -52,8 +52,8 @@ class LoginSection extends Component{
     if(username&&password){
       // console.log('有');
       request(
-        // `https://www.changdaolife.cn/manage/login`,
-        'http://127.0.0.1:9000/manage/login',
+        // 'https://www.changdaolife.cn/manage/login',
+        'http://localhost:9000/manage/login',
         {
           method: 'POST',
           body: JSON.stringify({username: username, password: password}),
@@ -61,12 +61,16 @@ class LoginSection extends Component{
       )
       .then(res => {
         console.info(res);
-
-        localStorage.setItem('avatar', res.data.requestData.avatar);
-        localStorage.setItem('nickname', res.data.requestData.nickname);
-        localStorage.setItem('token', res.data.requestData.token);
-
-        window.location.href = '/';
+        // console.log(res.status === 200);
+        if(res.data.status === 200){
+          message.success(res.data.requestData.info);
+          localStorage.setItem('avatar', res.data.requestData.avatar);
+          localStorage.setItem('nickname', res.data.requestData.nickname);
+          localStorage.setItem('token', res.data.requestData.token);
+          window.location.href = '/';
+        } else {
+          message.error(res.data.requestData.info);
+        }
       })
       .catch(err => {
         console.error(err);

@@ -1,4 +1,4 @@
-const {formatData, saveModel} = require('../api/formatData');
+const {formatData, formatDataFail} = require('../api/formatData');
 const adminModel = require('../../models/adminModel');
 const {getQuery, getParams} = require('../../services/userService');
 const request = require('../../app/request');
@@ -89,8 +89,13 @@ class Admin {
     console.log(params);
     let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id');
     console.log('管理员信息', adminInfo);
-    if(adminInfo[0].token){
-      ctx.body = await formatData({token: adminInfo[0].token, avatar: adminInfo[0].avatar, nickname: adminInfo[0].nickname});
+    if(adminInfo.length){
+      ctx.body = await formatData({
+        token: adminInfo[0].token,
+        avatar: adminInfo[0].avatar,
+        nickname: adminInfo[0].nickname,
+        info: '欢迎你, '+adminInfo[0].nickname
+      });
       ctx.type = 'text/json';
     } else {
       ctx.body = await formatDataFail({info: '您不是管理员!'});
