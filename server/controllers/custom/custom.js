@@ -9,7 +9,7 @@ class Custom {
   async getUserMessage(ctx){
     let params = ctx.query;
     // let data = await customModel.find(query, '-_id');
-    const [token, appid, encodingaeskey] = ['changdao2018', "wxba59a2c0824fd1db", '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2'];
+    const [token, appid, encodingaeskey] = ['changdao', "wxba59a2c0824fd1db", '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2'];
     let [
       signature,
       timestamp,
@@ -21,6 +21,7 @@ class Custom {
       params.nonce,
       params.echostr,
     ];
+    console.log()
     let cryptor = new WXBizMsgCrypt(token, encodingaeskey, appid);
     let data = cryptor.decrypt(echostr);
     console.log(data, 'data');
