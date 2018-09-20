@@ -11,7 +11,7 @@ class Custom {
     // let data = await customModel.find(query, '-_id');
     var signature = params.signature;
     var timestamp = params.timestamp;
-    var nonce params.nonce;
+    var nonce = params.nonce;
     var echostr = params.echostr;
     console.log(signature, '签名');
     console.log(timestamp, '时间戳');
