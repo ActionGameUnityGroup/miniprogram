@@ -9,11 +9,10 @@ class Custom {
   async getUserMessage(ctx){
     let params = ctx.query;
     // let data = await customModel.find(query, '-_id');
-    var signature = params.signature,
-        timestamp = params.timestamp,
-        nonce params.nonce,
-        echostr = params.echostr;
-    ];
+    var signature = params.signature;
+    var timestamp = params.timestamp;
+    var nonce params.nonce;
+    var echostr = params.echostr;
     console.log(signature, '签名');
     console.log(timestamp, '时间戳');
     console.log(nonce, '随机数');
