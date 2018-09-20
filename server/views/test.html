@@ -49,7 +49,7 @@
     document.querySelector('input[name=login]').onclick = () => {
       console.log('登录后台');
       fetch(
-        'http://localhost:9000/manage/login',
+        'http://127.0.0.1:9000/manage/login',
         {
           method: 'POST',
           body: JSON.stringify({username: "f81ea43e20e1d6a0ee0385e3c5f6c8c0", password: "cb5dab341f8202d2e310ec07a9dd542b"}),

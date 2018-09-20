@@ -31,7 +31,6 @@ class LoginSection extends Component{
   }
 
   handleLogin(){
-    let _this = this;
     let [username, password] = [this.state.username, this.state.password];
     // const sha1 = crypto.createHash('sha1'); // sha1算法
     // sha1.update(this.state.username+this.state.password);
@@ -50,19 +49,32 @@ class LoginSection extends Component{
     .catch(err => {
       console.error(err);
     });*/
-    request('https://www.changdaolife.cn/manage/login?username=f81ea43e20e1d6a0ee0385e3c5f6c8c0&password=cb5dab341f8202d2e310ec07a9dd542b')
-    .then(res => {
-      console.info(res);
+    if(username&&password){
+      // console.log('有');
+      request(
+        // `https://www.changdaolife.cn/manage/login`,
+        'http://127.0.0.1:9000/manage/login',
+        {
+          method: 'POST',
+          body: JSON.stringify({username: username, password: password}),
+        }
+      )
+      .then(res => {
+        console.info(res);
 
-      localStorage.setItem('avatar', res.data.requestData.avatar);
-      localStorage.setItem('nickname', res.data.requestData.nickname);
-      localStorage.setItem('token', res.data.requestData.token);
+        localStorage.setItem('avatar', res.data.requestData.avatar);
+        localStorage.setItem('nickname', res.data.requestData.nickname);
+        localStorage.setItem('token', res.data.requestData.token);
 
-      window.location.href = '/';
-    })
-    .catch(err => {
-      console.error(err);
-    });
+        window.location.href = '/';
+      })
+      .catch(err => {
+        console.error(err);
+      });
+    } else {
+      console.log('无');
+      // 
+    }
   }
 
   render(){
@@ -73,8 +85,8 @@ class LoginSection extends Component{
             <p>常道智慧生活</p>
             <p>后台管理系统</p>
           </h1>
-          <Input placeholder='账号' prefix={<Icon type="user" theme="outlined" />} style={{marginTop: 15}} value='ivey' onChange={e => this.handleTypingUserName(e)} />
-          <Input placeholder='密码' prefix={<Icon type="key" theme="outlined" />} style={{marginTop: 15}} value='changdao@ivey' onChange={e => this.handleTypingPassWord(e)} type='password' />
+          <Input placeholder='账号' prefix={<Icon type="user" theme="outlined" />} style={{marginTop: 15}} onChange={e => this.handleTypingUserName(e)} />
+          <Input placeholder='密码' prefix={<Icon type="key" theme="outlined" />} style={{marginTop: 15}} onChange={e => this.handleTypingPassWord(e)} type='password' />
           <Button type='primary'  style={{marginTop: 15}} onClick={() => this.handleLogin()}>登录</Button>
         </div>
       </div>
