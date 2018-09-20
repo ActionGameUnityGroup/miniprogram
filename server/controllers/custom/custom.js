@@ -23,6 +23,7 @@ class Custom {
     ];
     let cryptor = new WXBizMsgCrypt(token, encodingaeskey, appid);
     let data = cryptor.decrypt(echostr);
+    console.log(data, 'data');
     ctx.body = data.message;
     // ctx.type = 'text/json';
   }
