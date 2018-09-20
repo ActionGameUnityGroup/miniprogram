@@ -21,7 +21,10 @@ class Custom {
       params.nonce,
       params.echostr,
     ];
-    console.log()
+    console.log(signature, '签名');
+    console.log(timestamp, '时间戳');
+    console.log(nonce, '随机数');
+    console.log(echostr, '随机字符串');
     let cryptor = new WXBizMsgCrypt(token, encodingaeskey, appid);
     let data = cryptor.decrypt(echostr);
     console.log(data, 'data');
