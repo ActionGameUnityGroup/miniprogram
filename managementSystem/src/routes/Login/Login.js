@@ -7,9 +7,14 @@ import request from '../../utils/request';
 
 class LoginSection extends Component{
 
-  state = {
+  /*state = {
     username: '',
     password: '',
+  }*/
+
+  constructor(props){
+    super(props);
+    console.log(this.props);
   }
 
   handleTypingUserName(e){
@@ -31,7 +36,7 @@ class LoginSection extends Component{
   }
 
   handleLogin(){
-    let [username, password] = [this.state.username, this.state.password];
+    let [username, password, _this] = [this.state.username, this.state.password, this];
     // const sha1 = crypto.createHash('sha1'); // sha1算法
     // sha1.update(this.state.username+this.state.password);
     // let encodeToken = sha1.digest('hex');
@@ -64,10 +69,11 @@ class LoginSection extends Component{
         // console.log(res.status === 200);
         if(res.data.status === 200){
           message.success(res.data.requestData.info);
-          localStorage.setItem('avatar', res.data.requestData.avatar);
+          /*localStorage.setItem('avatar', res.data.requestData.avatar);
           localStorage.setItem('nickname', res.data.requestData.nickname);
-          localStorage.setItem('token', res.data.requestData.token);
-          window.location.href = '/';
+          localStorage.setItem('token', res.data.requestData.token);*/
+          this.props.onLogin(res.data.requestData.avatar, res.data.requestData.nickname, res.data.requestData.token);
+          // window.location.href = '/';
         } else {
           message.error(res.data.requestData.info);
         }

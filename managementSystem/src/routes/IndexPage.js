@@ -14,7 +14,8 @@ function getClientWidth(){
   return window.innerWidth;
 }
 
-function IndexPage() {
+function IndexPage({dispatch, avatar, nickname, token}) {
+  console.log(avatar, nickname, token)
   return (
     <div className="page" style={{height: getClientHeight()+'px'}}>
       <PageHead/>
@@ -29,4 +30,6 @@ function IndexPage() {
   );
 }
 
-export default connect()(IndexPage);
+export default connect(({ token, avatar, nickname }) => ({
+  token, avatar, nickname,
+}))(IndexPage);

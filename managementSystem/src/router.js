@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { Router, Route, Switch } from 'dva/router';
 import IndexPage from './routes/IndexPage';
 import ModulePage from './routes/ModulePage';
@@ -6,11 +6,77 @@ import UserListPage from './routes/UserListPage';
 import CoursePage from './routes/CoursePage';
 import ShopPage from './routes/ShopPage';
 import SettingPage from './routes/SettingPage';
-import LoginPage from './routes/LoginPage';
+import LoginPage from './routes/LoginPage';*/
 
-function RouterConfig({ history }) {
+import React from 'react';
+import dynamic from 'dva/dynamic'
+import { Route, Switch, routerRedux } from 'dva/router';
+import { LocaleProvider } from 'antd';
+import IndexPage from './routes/IndexPage';
+import enUS from 'antd/lib/locale-provider/en_US';
+const { ConnectedRouter } = routerRedux;
+const routes = [
+  {
+    path: '/',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/IndexPage'),
+  },
+  {
+    path: '/module',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/ModulePage'),
+  },
+  {
+    path: '/userList',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/UserListPage'),
+  },
+  {
+    path: '/course',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/CoursePage'),
+  },
+  {
+    path: '/shop',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/ShopPage'),
+  },
+  {
+    path: '/setting',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/SettingPage'),
+  },
+  {
+    path: '/login',
+    models: () => [import('./models/admin')],
+    component: () => import('./routes/LoginPage'),
+  },
+];
+
+function RouterConfig({ history, app }) {
   return (
-    <Router history={history}>
+
+    <ConnectedRouter history={history}>
+      <LocaleProvider locale={enUS}>
+        <Switch>
+          {
+            routes.map(({path, ...dynamics}, key) => (
+              <Route
+                key={key}
+                exact
+                path={path}
+                component={dynamic({
+                  app,
+                  ...dynamics
+                })}
+              />
+            ))
+          }
+        </Switch>
+      </LocaleProvider>
+    </ConnectedRouter>
+
+    /*<Router history={history}>
       <Switch>
         <Route path="/" exact component={IndexPage} />
         <Route path="/module/" component={ModulePage} />
@@ -20,7 +86,7 @@ function RouterConfig({ history }) {
         <Route path="/setting/" component={SettingPage} />
         <Route path="/login" component={LoginPage} />
       </Switch>
-    </Router>
+    </Router>*/
   );
 }
 
