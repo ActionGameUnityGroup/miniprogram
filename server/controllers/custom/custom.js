@@ -9,23 +9,17 @@ class Custom {
   async getUserMessage(ctx){
     let params = ctx.query;
     // let data = await customModel.find(query, '-_id');
-    let [
-      signature,
-      timestamp,
-      nonce,
-      echostr
-    ] = [
-      params.signature,
-      params.timestamp,
-      params.nonce,
-      params.echostr,
+    var signature = params.signature,
+        timestamp = params.timestamp,
+        nonce params.nonce,
+        echostr = params.echostr;
     ];
     console.log(signature, '签名');
     console.log(timestamp, '时间戳');
     console.log(nonce, '随机数');
     console.log(echostr, '随机字符串');
     let cryptor = new WXBizMsgCrypt('changdao', '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2', 'wxba59a2c0824fd1db');
-    console.log(cryptor, '不知道是啥');
+    // console.log(cryptor, '不知道是啥');
     let data = cryptor.decrypt(echostr);
     console.log(data, 'data');
     ctx.body = data.message;
