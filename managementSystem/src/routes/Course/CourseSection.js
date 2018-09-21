@@ -43,6 +43,10 @@ class CourseSection extends Component{
     });
   }
 
+  componentWillUpdate(){
+    console.log('即将更新');
+  }
+
   addCourseAction(){
     console.log('添加课程');
     console.log(this);
@@ -128,7 +132,7 @@ class CourseSection extends Component{
             })
           }
         </div>
-        <CreateCourse isVisible={this.state.visible} onCancelAddCourse={() => this.cancelAddCourseAction()} />
+        <CreateCourse isVisible={this.state.visible} onCancelAddCourse={() => this.cancelAddCourseAction()} onUpdate={this.props.onUpdate} />
       </div>
     );
   }

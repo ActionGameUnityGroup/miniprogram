@@ -16,6 +16,8 @@ function getClientWidth(){
 const ModulePage = ({dispatch, courseList}) => {
 
   const updateCourseList = (list) => {
+    console.log('更新state');
+    console.log(list);
     dispatch({
       type: 'course/updateCourseList',
       payload: {

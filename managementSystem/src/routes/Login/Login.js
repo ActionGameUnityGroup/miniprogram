@@ -73,7 +73,7 @@ class LoginSection extends Component{
           localStorage.setItem('nickname', res.data.requestData.nickname);
           localStorage.setItem('token', res.data.requestData.token);*/
           this.props.onLogin(res.data.requestData.avatar, res.data.requestData.nickname, res.data.requestData.token);
-          // window.location.href = '/';
+          window.location.href = '/';
         } else {
           message.error(res.data.requestData.info);
         }

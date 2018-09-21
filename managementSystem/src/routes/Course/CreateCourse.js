@@ -23,8 +23,8 @@ class CreateCourse extends Component {
   addCourse = () => {
     let [author, courseTitle, courseDetail] = [this.state.author, this.state.courseTitle, this.state.courseDetail];
     request(
-      // 'https://www.changdaolife.cn/manage/login',
-      'http://localhost:9000/api/course/setCourse',
+      'https://www.changdaolife.cn/api/course/setCourse',
+      // 'http://localhost:9000/api/course/setCourse',
       {
         method: 'POST',
         body: JSON.stringify({author: author, courseTitle: courseTitle, courseDetail: courseDetail}),

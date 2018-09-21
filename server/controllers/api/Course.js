@@ -49,7 +49,8 @@ class Course {
     let course = new courseModel(courseInfo);
     let res = await course.save();
     console.log(course, '插入信息');
-    ctx.body = await formatData({info: '已增加课程'});
+    let courseList = await courseModel.find({}, '-_id');
+    ctx.body = await formatData({info: '已增加课程', courseList: courseList});
   }
 
 }
