@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Button } from 'antd';
 import style from './CourseSection.css';
+import CreateCourse from './CreateCourse';
 
 class CourseSection extends Component{
 
@@ -24,7 +25,8 @@ class CourseSection extends Component{
         status: 0,
         courseLength: '10课时'
       },
-    ]
+    ],
+    visible: false
   };
 
   UNSAFE_componentWillMount(){
@@ -33,6 +35,16 @@ class CourseSection extends Component{
 
   addCourseAction(){
     console.log('添加课程');
+    console.log(this);
+    this.setState({
+      visible: true,
+    });
+  }
+
+  cancelAddCourseAction(){
+    this.setState({
+      visible: false,
+    });
   }
 
   updateCourseAction(e){
@@ -51,11 +63,12 @@ class CourseSection extends Component{
   }
 
   render(){
+    console.log(this.state);
     return (
       <div className={style['course-section']}>
         <h1 style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 0, padding: '10px 0', /*borderBottom: '1px dashed #999'*/}}>
           <span> 课程列表 </span>
-          <Button type="primary" onClick={this.addCourseAction}> 添加课程 </Button>
+          <Button type="primary" onClick={() => this.addCourseAction()}> 添加课程 </Button>
         </h1>
         <div className={style["course-explain"]}>
           <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '75%', textAlign: 'center'}}>
@@ -104,6 +117,7 @@ class CourseSection extends Component{
             })
           }
         </div>
+        <CreateCourse isVisible={this.state.visible} onCancelAddCourse={this.cancelAddCourseAction} />
       </div>
     );
   }
