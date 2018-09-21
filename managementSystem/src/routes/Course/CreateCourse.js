@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Drawer, Input, Select, DatePicker, Upload, Modal, Icon, AutoComplete } from 'antd';
+import { Drawer, Input, Select, DatePicker, Upload, Modal, Icon, Button, message } from 'antd';
+import request from '../../utils/request';
 
 const { Option } = Select;
 
@@ -17,14 +18,55 @@ class CreateCourse extends Component {
     previewVisible: false,
     previewImage: '',
     courseCoverist: JSON.parse(localStorage.getItem('courseCoverist')) || [],
-    dataSource: [],
   };
 
-  handleSearch = (value) => {
+  addCourse = () => {
+    let [author, courseTitle, courseDetail] = [this.state.author, this.state.courseTitle, this.state.courseDetail];
+    request(
+      // 'https://www.changdaolife.cn/manage/login',
+      'http://localhost:9000/api/course/setCourse',
+      {
+        method: 'POST',
+        body: JSON.stringify({author: author, courseTitle: courseTitle, courseDetail: courseDetail}),
+      }
+    )
+    .then(res => {
+      console.info(res);
+      // console.log(res.status === 200);
+      if(res.data.status === 200){
+        message.success(res.data.requestData.info);
+        /*localStorage.setItem('avatar', res.data.requestData.avatar);
+        localStorage.setItem('nickname', res.data.requestData.nickname);
+        localStorage.setItem('token', res.data.requestData.token);*/
+        // this.props.onLogin(res.data.requestData.avatar, res.data.requestData.nickname, res.data.requestData.token);
+        // window.location.href = '/';
+      } else {
+        message.error(res.data.requestData.info);
+      }
+    })
+    .catch(err => {
+      console.error(err);
+    });
+  }
+
+  inputAuthorAction(e){
+    console.log(e);
     this.setState({
-      dataSource: !value ? [] : [
-        value,
-      ],
+      author: e.target.value
+    });
+  }
+
+  inputCourseTitle(e){
+    console.log(e);
+    this.setState({
+      courseTitle: e.target.value
+    });
+  }
+
+  inputCourseDetail(e){
+    console.log(e);
+    this.setState({
+      courseDetail: e.target.value
     });
   }
 
@@ -33,23 +75,27 @@ class CreateCourse extends Component {
     return (
       <div>
         <Drawer
-          title="Basic Drawer"
+          title="添加课程"
           placement="right"
-          closable={false}
-          width={720}
-          onClose={this.props.cancelAddCourseAction}
+          maskClosable={false}
+          style={{
+            height: 'calc(100% - 55px)',
+            overflow: 'auto',
+            paddingBottom: 53,
+          }}
+          placement="right"
+          width={600}
+          onClose={this.props.onCancelAddCourse}
           visible={this.props.isVisible}
         >
-          <AutoComplete
-            dataSource={dataSource}
-            style={{ width: 200 }}
-            onSearch={this.handleSearch}
-            placeholder="input here"
-          />
+          <div><Input style={{ width: 150 }} placeholder="课程讲师" onChange={(e) => this.inputAuthorAction(e)} /></div>
+          <div><Input style={{marginTop: 30, width: 500}} placeholder="课程标题" onChange={(e) => this.inputCourseTitle(e)}/></div>
+          <div><Input.TextArea rows={3} style={{marginTop: 30, width: 500}} placeholder="课程简介" onChange={(e) => this.inputCourseDetail(e)}/></div>
           <div style={{marginTop: 25}}>
             <p>课程封面</p>
             <Upload
-              action="https://www.changdaolife.cn/api/course/setCourseCover"
+              // action="https://www.changdaolife.cn/api/course/setCourseCover"
+              action="http://localhost:9000/api/course/setCourseCover"
               listType="picture-card"
               fileList={courseCoverist}
               onPreview={this.handlePreview}
@@ -64,6 +110,7 @@ class CreateCourse extends Component {
               <img alt="example" style={{ width: '100%' }} src={previewImage} />
             </Modal>
           </div>
+          <Button type='primary' style={{marginTop: 30, width: '100%'}} onClick={() => this.addCourse()}>确认添加</Button>
         </Drawer>
       </div>
     );

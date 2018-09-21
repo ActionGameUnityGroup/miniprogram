@@ -13,14 +13,24 @@ function getClientWidth(){
   return window.innerWidth;
 }
 
-const ModulePage = () => {
+const ModulePage = ({dispatch, courseList}) => {
+
+  const updateCourseList = (list) => {
+    dispatch({
+      type: 'course/updateCourseList',
+      payload: {
+        courseList: list
+      }
+    });
+  };
+
   return (
     <div className="page" style={{height: getClientHeight()+'px'}}>
       <PageHead userName={'智慧小编'} avatar={''} />
       <content style={{height: getClientHeight() - 50 +'px'}}>
         <NavBar2 height={getClientHeight() - 50} selectKey={['4']} />
         <PageSection height={getClientHeight() - 50} width={getClientWidth() - 112}>
-          <CourseSection/>
+          <CourseSection onUpdate={updateCourseList} courseList={courseList} />
         </PageSection>
       </content>
       <footer></footer>
@@ -28,4 +38,10 @@ const ModulePage = () => {
   );
 };
 
-export default connect()(ModulePage);
+const mapPropsToState = (state) => {
+  return {
+    courseList: state.course.courseList
+  }
+};
+
+export default connect(mapPropsToState)(ModulePage);

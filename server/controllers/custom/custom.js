@@ -2,7 +2,7 @@ const {formatData, formatDataFail} = require('../api/formatData');
 const customModel = require('../../models/customModel');
 // const request = require('../../app/request');
 // const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
-const WXBizMsgCrypt = require('wechat-crypto');
+const crypto = require('crypto');
 
 class Custom {
 

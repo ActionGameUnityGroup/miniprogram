@@ -2,11 +2,12 @@ import React, {Component} from 'react';
 import { Button } from 'antd';
 import style from './CourseSection.css';
 import CreateCourse from './CreateCourse';
+import request from '../../utils/request';
 
 class CourseSection extends Component{
 
   state = {
-    courseList: [
+    /*courseList: [
       {
         courseCover: '',
         courseId: '001',
@@ -25,12 +26,21 @@ class CourseSection extends Component{
         status: 0,
         courseLength: '10课时'
       },
-    ],
+    ],*/
     visible: false
   };
 
   UNSAFE_componentWillMount(){
     console.log('准备渲染');
+    let _this = this;
+    request('https://www.changdaolife.cn/api/course/getCourse')
+    .then(res => {
+      console.log(res, '课程');
+      _this.props.onUpdate(res.data.requestData.courseList);
+    })
+    .then(err => {
+      console.error(err, '错误');
+    });
   }
 
   addCourseAction(){
@@ -42,6 +52,7 @@ class CourseSection extends Component{
   }
 
   cancelAddCourseAction(){
+    console.log('不添加课程');
     this.setState({
       visible: false,
     });
@@ -80,7 +91,7 @@ class CourseSection extends Component{
         </div>
         <div className={style['course-list']}>
           {
-            this.state.courseList.map((child, key) => {
+            this.props.courseList.map((child, key) => {
               return (
                 <div className={style['course-item']} key={key}>
                   <div className={style["course-info"]}>
@@ -117,7 +128,7 @@ class CourseSection extends Component{
             })
           }
         </div>
-        <CreateCourse isVisible={this.state.visible} onCancelAddCourse={this.cancelAddCourseAction} />
+        <CreateCourse isVisible={this.state.visible} onCancelAddCourse={() => this.cancelAddCourseAction()} />
       </div>
     );
   }

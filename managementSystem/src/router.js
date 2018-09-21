@@ -33,7 +33,7 @@ const routes = [
   },
   {
     path: '/course',
-    models: () => [import('./models/admin')],
+    models: () => [import('./models/course')],
     component: () => import('./routes/CoursePage'),
   },
   {
