@@ -95,15 +95,35 @@ class CourseSection extends Component{
                   {
                     child.status === 0 ? (
                       <div className={style["course-action"]}>
-                        <Button size='small' id={child.courseId} onClick={e => this.updateCourseAction(e)}> 更新课程 </Button>
+                        <Button
+                          size='large'
+                          id={child.courseId}
+                          onClick={e => this.updateCourseAction(e)}
+                          type=''
+                        > 更新课程 </Button>
                         <br/>
-                        <Button size='small' id={child.courseId} onClick={e => this.groundingAction(e)}> 上架课程 </Button>
+                        <Button
+                          size='large'
+                          id={child.courseId}
+                          onClick={e => this.groundingAction(e)}
+                          type='primary'
+                        > 上架课程 </Button>
                       </div>
                     ) : (
                       <div className={style["course-action"]}>
-                        <Button size='small' id={child.courseId} onClick={e => this.updateCourseAction(e)}> 更新课程 </Button>
+                        <Button
+                          size='large'
+                          id={child.courseId}
+                          onClick={e => this.updateCourseAction(e)}
+                          type=''
+                        > 更新课程 </Button>
                         <br/>
-                        <Button size='small' id={child.courseId} onClick={e => this.undercarriageAction(e)}> 下架课程 </Button>
+                        <Button
+                          size='large'
+                          id={child.courseId}
+                          onClick={e => this.undercarriageAction(e)}
+                          type='danger'
+                        > 下架课程 </Button>
                       </div>
                     )
                   }
