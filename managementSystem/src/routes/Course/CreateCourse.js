@@ -21,10 +21,10 @@ class CreateCourse extends Component {
   };
 
   addCourse = () => {
+    let _this = this;
     let [author, courseTitle, courseDetail] = [this.state.author, this.state.courseTitle, this.state.courseDetail];
     request(
       'https://www.changdaolife.cn/api/course/setCourse',
-      // 'http://localhost:9000/api/course/setCourse',
       {
         method: 'POST',
         body: JSON.stringify({author: author, courseTitle: courseTitle, courseDetail: courseDetail}),
@@ -35,11 +35,8 @@ class CreateCourse extends Component {
       // console.log(res.status === 200);
       if(res.data.status === 200){
         message.success(res.data.requestData.info);
-        /*localStorage.setItem('avatar', res.data.requestData.avatar);
-        localStorage.setItem('nickname', res.data.requestData.nickname);
-        localStorage.setItem('token', res.data.requestData.token);*/
-        // this.props.onLogin(res.data.requestData.avatar, res.data.requestData.nickname, res.data.requestData.token);
-        // window.location.href = '/';
+        this.props.onUpdate(res.data.requestData.courseList);
+        this.props.onCancelAddCourse();
       } else {
         message.error(res.data.requestData.info);
       }
@@ -50,21 +47,21 @@ class CreateCourse extends Component {
   }
 
   inputAuthorAction(e){
-    console.log(e);
+    // console.log(e);
     this.setState({
       author: e.target.value
     });
   }
 
   inputCourseTitle(e){
-    console.log(e);
+    // console.log(e);
     this.setState({
       courseTitle: e.target.value
     });
   }
 
   inputCourseDetail(e){
-    console.log(e);
+    // console.log(e);
     this.setState({
       courseDetail: e.target.value
     });
@@ -94,8 +91,7 @@ class CreateCourse extends Component {
           <div style={{marginTop: 25}}>
             <p>课程封面</p>
             <Upload
-              // action="https://www.changdaolife.cn/api/course/setCourseCover"
-              action="http://localhost:9000/api/course/setCourseCover"
+              action="https://www.changdaolife.cn/api/course/setCourseCover"
               listType="picture-card"
               fileList={courseCoverist}
               onPreview={this.handlePreview}
@@ -118,5 +114,3 @@ class CreateCourse extends Component {
 }
 
 export default CreateCourse;
-
-// const App = Form.create()(CreateCourse);

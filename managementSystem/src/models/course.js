@@ -1,7 +1,7 @@
 export default {
   namespace: 'course',
   state: {
-    courseList: []
+    courseList: [],
   },
   subscriptions: {
     setup ({ dispatch, history }) {

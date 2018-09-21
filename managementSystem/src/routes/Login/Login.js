@@ -37,28 +37,10 @@ class LoginSection extends Component{
 
   handleLogin(){
     let [username, password, _this] = [this.state.username, this.state.password, this];
-    // const sha1 = crypto.createHash('sha1'); // sha1算法
-    // sha1.update(this.state.username+this.state.password);
-    // let encodeToken = sha1.digest('hex');
-    // console.log(encodeToken);
-    /*request(
-      'http://localhost:9000/manage/login',
-      {
-        method: 'POST',
-        body: JSON.stringify({username: 'f81ea43e20e1d6a0ee0385e3c5f6c8c0', password: 'cb5dab341f8202d2e310ec07a9dd542b'})
-      }
-    )
-    .then(res => {
-      console.info(res);
-    })
-    .catch(err => {
-      console.error(err);
-    });*/
     if(username&&password){
       // console.log('有');
       request(
-        // 'https://www.changdaolife.cn/manage/login',
-        'http://localhost:9000/manage/login',
+        'https://www.changdaolife.cn/manage/login',
         {
           method: 'POST',
           body: JSON.stringify({username: username, password: password}),

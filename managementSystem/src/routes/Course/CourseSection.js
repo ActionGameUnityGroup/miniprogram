@@ -7,26 +7,6 @@ import request from '../../utils/request';
 class CourseSection extends Component{
 
   state = {
-    /*courseList: [
-      {
-        courseCover: '',
-        courseId: '001',
-        courseTitle: '《中庸》第一章：天命之谓性',
-        courseDetail: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活',
-        courseStatus: '上线',
-        status: 1,
-        courseLength: '10课时'
-      },
-      {
-        courseCover: '',
-        courseId: '002',
-        courseTitle: '《中庸》第一章：天命之谓性',
-        courseDetail: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活',
-        courseStatus: '下线',
-        status: 0,
-        courseLength: '10课时'
-      },
-    ],*/
     visible: false
   };
 
@@ -99,7 +79,7 @@ class CourseSection extends Component{
               return (
                 <div className={style['course-item']} key={key}>
                   <div className={style["course-info"]}>
-                    <div className={style["course-cover"]}><img src={child.courseCover} alt="课程封面"/></div>
+                    <div className={style["course-cover"]}><img src={child.courseCover} alt="暂无课程封面"/></div>
                     <div className={style["course-msg"]}>
                       <div className={style["course-title"]}>{child.courseTitle}</div>
                       <div className={style["course-detail"]}>{child.courseDetail}</div>

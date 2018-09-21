@@ -33,18 +33,15 @@ class Course {
 
   async setCourse(ctx) {
     console.log('设置课程封面');
-    // let fileStream = await upload(ctx);
-    // fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
     let params = JSON.parse(ctx.request.body);
-    // let token = ctx.request.header.auth
     console.log(params, '课程信息');
     let courseInfo = {
       // courseId : "",
       author : params.author || '',
       // authorInfo: params.authorInfo|| [],
-      courseName: params.courseName || "",
-      courseCover: params.courseCover||"",
-      // coursePrice : 0
+      courseTitle: params.courseTitle || "",
+      courseDetail: params.courseDetail||"",
+      courseLength: 0
     }
     let course = new courseModel(courseInfo);
     let res = await course.save();
@@ -52,6 +49,8 @@ class Course {
     let courseList = await courseModel.find({}, '-_id');
     ctx.body = await formatData({info: '已增加课程', courseList: courseList});
   }
+
+  async updateCourse(ctx){}
 
 }
 
