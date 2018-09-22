@@ -29,12 +29,12 @@ PKCS7Encoder.prototype.encode = function(msg){
 
 function XMLParse(){
 
-//   var AES_TEXT_RESPONSE_TEMPLATE = `<xml>
-//                                        <Encrypt><![CDATA[%(msg_encrypt)s]]></Encrypt>
-//                                        <MsgSignature><![CDATA[%(msg_signaturet)s]]></MsgSignature>
-//                                        <TimeStamp>%(timestamp)s</TimeStamp>
-//                                        <Nonce><![CDATA[%(nonce)s]]></Nonce>
-//                                      </xml>`
+  /*var AES_TEXT_RESPONSE_TEMPLATE = `<xml>
+                                       <Encrypt><![CDATA[%(msg_encrypt)s]]></Encrypt>
+                                       <MsgSignature><![CDATA[%(msg_signaturet)s]]></MsgSignature>
+                                       <TimeStamp>%(timestamp)s</TimeStamp>
+                                       <Nonce><![CDATA[%(nonce)s]]></Nonce>
+                                     </xml>`*/
  
 //   XMLParse.prototype.extract = function(this, xmltext){
 //     // 提取出xml数据包中的加密消息
@@ -50,29 +50,29 @@ function XMLParse(){
 //     }
 //   }
 
-  var generate = function(this, encrypt, signature, timestamp, nonce){
+}
+
+XMLParse.prototype.generate = function(encrypt, signature, timestamp, nonce){
     // 生成xml消息
     /*@param encrypt: 加密后的消息密文
     @param signature: 安全签名
     @param timestamp: 时间戳
     @param nonce: 随机字符串
     @return: 生成的xml字符串*/
-    var resp_dict = {
+    /*var resp_dict = {
       msg_encrypt: encrypt,
       msg_signaturet: signature,
       timestamp: timestamp,
       nonce: nonce,
-    }
+    }*/
     var resp_xml = `<xml>
-                      <Encrypt><![CDATA[${msg_encrypt}]]></Encrypt>
-                      <MsgSignature><![CDATA[${msg_signaturet}]]></MsgSignature>
+                      <Encrypt>${encrypt}</Encrypt>
+                      <MsgSignature>${signature}</MsgSignature>
                       <TimeStamp>${timestamp}</TimeStamp>
-                      <Nonce><![CDATA[${nonce}]]></Nonce>
+                      <Nonce>${nonce}</Nonce>
                     </xml>`
     return resp_xml;
   }
-}
-
 
 function Prpcrypt(aesKey){
   this.aesKey = aesKey;
@@ -112,8 +112,8 @@ WXBizMsgCrypt.prototype.EncryptMsg = function(replyMsg, nonce, timestamp) {
   sha1.update(this.token, timestamp, nonce, encrypt);
   var signature = sha1.digest('hex');
   // if (ret != 0) return ret
-  // var xmlParse = XMLParse()
-  return xmlParse.generate(encrypt, signature, timestamp, sNonce)
+  var xmlParse = new XMLParse();
+  return xmlParse.generate(encrypt, signature, timestamp, nonce)
   /*return {
     encrypt: encrypt,
     signature: signature,
