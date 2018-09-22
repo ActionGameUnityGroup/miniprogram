@@ -25,9 +25,12 @@ class Custom {
     console.log(timestamp, '时间戳');
     console.log(nonce, '随机数');
     console.log(echostr, '随机字符串');
+    var token = 'changdao';
+    var encodingAESKey = '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2';
+    var appid = 'wxba59a2c0824fd1db';
     let cryptor = new WXBizMsgCrypt(token, encodingAESKey, appid);
     let data = cryptor.EncryptMsg(to_xml, nonce, timestamp);
-    // let cryptor = new WXBizMsgCrypt('changdao', '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2', 'wxba59a2c0824fd1db');
+    // let cryptor = new WXBizMsgCrypt('', '2NViDJCTlFv2IGxFrn4jQJJFWhSlFqqdHlXHw45pgH2', 'wxba59a2c0824fd1db');
     // console.log(cryptor, '不知道是啥');
     // let data = cryptor.decrypt(echostr);
     console.log(data, 'data');
