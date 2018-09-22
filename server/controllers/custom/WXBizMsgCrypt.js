@@ -27,7 +27,7 @@ PKCS7Encoder.prototype.encode = function(msg){
   return msg + pad;
 }
 
-// function XMLParse(){
+function XMLParse(){
 
 //   var AES_TEXT_RESPONSE_TEMPLATE = `<xml>
 //                                        <Encrypt><![CDATA[%(msg_encrypt)s]]></Encrypt>
@@ -50,28 +50,28 @@ PKCS7Encoder.prototype.encode = function(msg){
 //     }
 //   }
 
-//   var generate = function(this, encrypt, signature, timestamp, nonce){
-//     // 生成xml消息
-//     /*@param encrypt: 加密后的消息密文
-//     @param signature: 安全签名
-//     @param timestamp: 时间戳
-//     @param nonce: 随机字符串
-//     @return: 生成的xml字符串*/
-//     var resp_dict = {
-//       msg_encrypt: encrypt,
-//       msg_signaturet: signature,
-//       timestamp: timestamp,
-//       nonce: nonce,
-//     }
-//     var resp_xml = `<xml>
-//                       <Encrypt><![CDATA[%(msg_encrypt)s]]></Encrypt>
-//                       <MsgSignature><![CDATA[%(msg_signaturet)s]]></MsgSignature>
-//                       <TimeStamp>%(timestamp)s</TimeStamp>
-//                       <Nonce><![CDATA[%(nonce)s]]></Nonce>
-//                     </xml>`
-//     return resp_xml;
-//   }
-// }
+  var generate = function(this, encrypt, signature, timestamp, nonce){
+    // 生成xml消息
+    /*@param encrypt: 加密后的消息密文
+    @param signature: 安全签名
+    @param timestamp: 时间戳
+    @param nonce: 随机字符串
+    @return: 生成的xml字符串*/
+    var resp_dict = {
+      msg_encrypt: encrypt,
+      msg_signaturet: signature,
+      timestamp: timestamp,
+      nonce: nonce,
+    }
+    var resp_xml = `<xml>
+                      <Encrypt><![CDATA[${msg_encrypt}]]></Encrypt>
+                      <MsgSignature><![CDATA[${msg_signaturet}]]></MsgSignature>
+                      <TimeStamp>${timestamp}</TimeStamp>
+                      <Nonce><![CDATA[${nonce}]]></Nonce>
+                    </xml>`
+    return resp_xml;
+  }
+}
 
 
 function Prpcrypt(aesKey){
@@ -113,13 +113,13 @@ WXBizMsgCrypt.prototype.EncryptMsg = function(replyMsg, nonce, timestamp) {
   var signature = sha1.digest('hex');
   // if (ret != 0) return ret
   // var xmlParse = XMLParse()
-  // return xmlParse.generate(encrypt, signature, timestamp, sNonce)
-  return {
+  return xmlParse.generate(encrypt, signature, timestamp, sNonce)
+  /*return {
     encrypt: encrypt,
     signature: signature,
     timestamp: timestamp,
     sNonce: nonce
-  };
+  };*/
 }
 
 const DecryptMsg = function(postData, signature, timeStamp, nonce){
