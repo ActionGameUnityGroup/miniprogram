@@ -12,51 +12,49 @@
   </view>
 </view>
 
-<scroll-view style='margin-top: 2%; height: {{contentHeight}}px' scroll-y>
-  <view class="course-content">
-    <view class="course-title">
-      <text style='display: inline-block; margin-right: 10rpx; width: 10rpx; height: 25rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #fead78, #fc6857);'></text><text style='display: inline-block; font-size: 30rpx; font-weight: bold; color: #000;'> 课程内容 </text>
-    </view>
-    <view class="lesson-list">
-      <block wx:for='{{lessonList}}' wx:key='index'>
-        <block wx:if='{{index == 0}}'>
-          <navigator class="lesson-item" url='../Lesson/Lesson?lessonId={{item.lessonAudioId}}&lessonName={{item.lessonName}}'>
-            <view class="lesson-info">
-              <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonName}}</view>
-              <view class="lesson-detail">
-                <text>{{item.lessonAudioLength}}</text>
-                <text>{{item.lessonStudyLength}}人学过</text>
-                <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
-              </view>
+<view class="course-content">
+  <view class="course-title">
+    <text style='display: inline-block; margin-right: 10rpx; width: 10rpx; height: 25rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #fead78, #fc6857);'></text><text style='display: inline-block; font-size: 30rpx; font-weight: bold; color: #000;'> 课程内容 </text>
+  </view>
+  <view class="lesson-list">
+    <block wx:for='{{lessonList}}' wx:key='index'>
+      <block wx:if='{{index == 0}}'>
+        <navigator class="lesson-item" url='../Lesson/Lesson?lessonId={{item.lessonAudioId}}&lessonName={{item.lessonName}}'>
+          <view class="lesson-info">
+            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonName}}</view>
+            <view class="lesson-detail">
+              <text>{{item.lessonAudioLength}}</text>
+              <text>{{item.lessonStudyLength}}人学过</text>
+              <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
             </view>
-            <view class="audition-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-58.png'></image></view>
-          </navigator>
-        </block>
-        <block wx:else>
-          <view class="lesson-item">
-            <view class="lesson-info">
-              <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonName}}</view>
-              <view class="lesson-detail">
-                <text>{{item.lessonAudioLength}}</text>
-                <text>{{item.lessonStudyLength}}人学过</text>
-                <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
-              </view>
-            </view>
-            <navigator class="audition-action" url='../Lesson/Lesson?lessonId={{item.lessonAudioId}}&lessonName={{item.lessonName}}'><image mode='widthFix' src='../assets/icon/miniprogram-icon-56.png'></image></navigator>
           </view>
-        </block>
+          <view class="audition-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-58.png'></image></view>
+        </navigator>
       </block>
-    </view>
+      <block wx:else>
+        <view class="lesson-item">
+          <view class="lesson-info">
+            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonName}}</view>
+            <view class="lesson-detail">
+              <text>{{item.lessonAudioLength}}</text>
+              <text>{{item.lessonStudyLength}}人学过</text>
+              <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
+            </view>
+          </view>
+          <navigator class="audition-action" url='../Lesson/Lesson?lessonId={{item.lessonAudioId}}&lessonName={{item.lessonName}}'><image mode='widthFix' src='../assets/icon/miniprogram-icon-56.png'></image></navigator>
+        </view>
+      </block>
+    </block>
   </view>
+</view>
 
-  <view class="course-outline">
-    <view class="course-title">
-      <text style='display: inline-block; margin-right: 10rpx; width: 10rpx; height: 25rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #fead78, #fc6857);'></text><text style='display: inline-block; font-size: 30rpx; font-weight: bold; color: #000;'> 课程大纲 </text>
-    </view>
-    <view class="course-outline-content">
-      <!-- <block wx:for='{{}}' wx:key='index'></block> -->
-    </view>
+<view class="course-outline">
+  <view class="course-title">
+    <text style='display: inline-block; margin-right: 10rpx; width: 10rpx; height: 25rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #fead78, #fc6857);'></text><text style='display: inline-block; font-size: 30rpx; font-weight: bold; color: #000;'> 课程大纲 </text>
   </view>
-</scroll-view>
+  <view class="course-outline-content">
+    <!-- <block wx:for='{{}}' wx:key='index'></block> -->
+  </view>
+</view>
 
 <view></view>
