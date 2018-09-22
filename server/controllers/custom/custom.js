@@ -2,8 +2,8 @@ const {formatData, formatDataFail} = require('../api/formatData');
 const customModel = require('../../models/customModel');
 // const request = require('../../app/request');
 // const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
-const crypto = require('crypto');
-const WXBizDataCrypt = require('./WXBizMsgCrypt');
+// const crypto = require('crypto');
+const WXBizMsgCrypt = require('./WXBizMsgCrypt');
 
 class Custom {
 
