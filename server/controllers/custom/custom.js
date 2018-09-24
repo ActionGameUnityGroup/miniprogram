@@ -9,6 +9,7 @@ class Custom {
 
   async getUserMessage(ctx){
     let params = ctx.query;
+    console.log(ctx.request.body, '是否有body');
     /*
       6eac6834e2dd2ba8ab1694cd4fb6f5c4ccb82238 签名
       1537521497 时间戳
