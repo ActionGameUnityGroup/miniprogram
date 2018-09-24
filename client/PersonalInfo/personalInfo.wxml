@@ -40,7 +40,7 @@
         </view>
       </block>
       <block wx:elif='{{item.isContact}}'>
-        <button open-type='contact' class="module-item">
+        <button open-type='contact' class="module-item" session-from='mini'>
           <image mode='aspectFit' src='{{item.moduleImg}}'></image>
           <text> {{item.moduleName}} </text>
         </button>
