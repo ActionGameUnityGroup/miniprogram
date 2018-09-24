@@ -49,21 +49,24 @@ class Custom {
     }
   }
 
-  /*async achieveUserMessage(ctx){
+  async achieveUserMessage(ctx){
     // 获取用户信息
     let params = ctx.query;
     console.log(params, '请求参数');
-    let {
+    console.log(ctx.request.body, '请求body');
+   /* let {
       msg_signature,
       signature,
       echostr,
       timestamp,
       nonce
-    } = params;
+    } = params;*/
 
+    console.log('直接返回success看看怎么样');
 
+    ctx.body = 'success';
 
-  }*/
+  }
 
   // async getUserMessage(ctx){
   //   let params = ctx.query;
