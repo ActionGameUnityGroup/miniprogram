@@ -4,10 +4,12 @@ const customModel = require('../../models/customModel');
 // const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
 const crypto = require('crypto');
 // const WXBizMsgCrypt = require('./WXBizMsgCrypt');
+const decryptWXContact = require('./decryptContact');
 
 class Custom {
 
   async getUserMessage(ctx){
+    // 获取用户信息
     let params = ctx.query;
     // signature  签名
     // echostr  随机字符串
@@ -37,6 +39,34 @@ class Custom {
     } else {
       ctx.body = {code: -1, data: '验证失败'};
     }
+  }
+
+  async setUserMessage(ctx){
+    // POST请求
+    let params = ctx.query;
+    console.log(ctx.request.body, '是否有body');
+    /*
+      6eac6834e2dd2ba8ab1694cd4fb6f5c4ccb82238 签名
+      1537521497 时间戳
+      321865937 随机数
+      2387209843328860127 随机字符串
+     */
+    // signature  签名
+    // echostr  随机字符串
+    // timestamp  时间戳
+    // nonce  随机数
+    const { ToUserName, Encrypt } = ctx.request.body;
+    const decryptData = decryptWXContact(Encrypt);
+    const { MsgType, FromUserName, MediaId } = decryptData;
+    
+    if (MsgType === 'text') { // 文本消息
+      miniapp.sendTextMessage(FromUserName, replyMsg);
+    }
+
+    // 非加密方式
+    // const { MsgType, FromUserName, Content,  Event } = ctx.request.body;
+    
+    ctx.body = 'success';
   }
 
   // async getUserMessage(ctx){
