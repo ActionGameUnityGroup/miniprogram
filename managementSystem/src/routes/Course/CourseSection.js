@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import { Button } from 'antd';
+import { Button, Modal } from 'antd';
 import style from './CourseSection.css';
 import CreateCourse from './CreateCourse';
 import request from '../../utils/request';
+
+const confirm = Modal.confirm;
 
 class CourseSection extends Component{
 
@@ -48,8 +50,21 @@ class CourseSection extends Component{
   }
 
   undercarriageAction(e){
-    console.log('下架课程');
-    console.log(e.target);
+    // console.log('下架课程');
+    // console.log(e.target);
+    confirm({
+      title: '是否下架该课程?',
+      content: '下架后用户将无法学习该课程',
+      okText: '立即下架',
+      okType: 'danger',
+      cancelText: '暂不下架',
+      onOk() {
+        console.log('下架');
+      },
+      onCancel() {
+        console.log('不下架');
+      },
+    });
   }
 
   groundingAction(e){
@@ -121,7 +136,7 @@ class CourseSection extends Component{
                         <Button
                           size='large'
                           id={child.courseId}
-                          onClick={e => this.undercarriageAction(e)}
+                          onClick={this.undercarriageAction}
                           type='danger'
                         > 下架课程 </Button>
                       </div>

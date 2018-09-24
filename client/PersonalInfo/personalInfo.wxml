@@ -39,6 +39,12 @@
           <text> {{item.moduleName}} </text>
         </view>
       </block>
+      <block wx:elif='{{item.isContact}}'>
+        <button open-type='contact' class="module-item">
+          <image mode='aspectFit' src='{{item.moduleImg}}'></image>
+          <text> {{item.moduleName}} </text>
+        </button>
+      </block>
       <block wx:else>
         <view class="module-item">
           <image mode='aspectFit' src='{{item.moduleImg}}'></image>

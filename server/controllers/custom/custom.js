@@ -5,6 +5,12 @@ const customModel = require('../../models/customModel');
 const crypto = require('crypto');
 // const WXBizMsgCrypt = require('./WXBizMsgCrypt');
 const decryptWXContact = require('./decryptContact');
+const WX = require('./wx');
+const miniapp = new WX({
+  token: 'changdao',
+  appID: 'wxba59a2c0824fd1db',
+  appScrect: '5fb3f9c59ed54b36206dd07288620d7d'
+});
 
 class Custom {
 

@@ -17,7 +17,7 @@ Page({
       {moduleImg: '../assets/icon/miniprogram-icon-37.png', moduleName: '积分商城', moduleUrl: '../ScoreMarket/scoreMarket'},
       {moduleImg: '../assets/icon/miniprogram-icon-41.png', moduleName: '我的收藏', moduleUrl: '../Keep/Keep'},
       {moduleImg: '../assets/icon/miniprogram-icon-36.png', moduleName: '观看历史', moduleUrl: '../WatchHistory/watchHistory'},
-      {moduleImg: '../assets/icon/miniprogram-icon-48.png', moduleName: '在线咨询', moduleUrl: '../Consult/Consult'},
+      {moduleImg: '../assets/icon/miniprogram-icon-48.png', moduleName: '在线咨询', isContact: true},
       {moduleImg: '../assets/icon/miniprogram-icon-35.png', moduleName: '电话咨询'},
       {moduleImg: '../assets/icon/miniprogram-icon-47.png', moduleName: '意见反馈', moduleUrl: '../FeedBack/FeedBack'},
     ],
