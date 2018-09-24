@@ -42,7 +42,7 @@ class Custom {
     console.log(resultCode, '加密后的code');
     // 4. 将加密后的字符串与signature对比，标识请求来源于微信
     if(resultCode === signature){
-      ctx.body = echostr;
+      ctx.body = 'success';
     } else {
       ctx.body = {code: -1, data: '验证失败'};
     }
