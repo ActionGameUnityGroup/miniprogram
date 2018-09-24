@@ -28,7 +28,8 @@ class Custom {
       echostr,
       timestamp,
       nonce
-    } = ctx.query;
+    } = params;
+    console.log(params.msg_signature, '这是msg_signature');
 
     // 2. 将token、timestamp、nonce三个参数进行字典排序
     let array = ['changdao', timestamp, nonce];
@@ -59,7 +60,7 @@ class Custom {
       nonce
     } = params;
 
-    
+
 
   }*/
 
