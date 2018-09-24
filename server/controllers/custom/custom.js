@@ -17,6 +17,7 @@ class Custom {
   async getUserMessage(ctx){
     // 获取用户信息
     let params = ctx.query;
+    console.log(ctx.request.body, '请求body');
     // signature  签名
     // echostr  随机字符串
     // timestamp  时间戳
