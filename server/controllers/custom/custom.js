@@ -17,7 +17,6 @@ class Custom {
   async getUserMessage(ctx){
     // 获取用户信息
     let params = ctx.query;
-    console.log(ctx.request.body, '请求body');
     // signature  签名
     // echostr  随机字符串
     // timestamp  时间戳
@@ -43,7 +42,7 @@ class Custom {
     console.log(resultCode, '加密后的code');
     // 4. 将加密后的字符串与signature对比，标识请求来源于微信
     if(resultCode === signature){
-      ctx.body = 'success';
+      ctx.body = echostr;
     } else {
       ctx.body = {code: -1, data: '验证失败'};
     }
