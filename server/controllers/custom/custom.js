@@ -38,7 +38,7 @@ class Custom {
     const tempStr = array.join('');
     const hashCode = crypto.createHash('sha1');
     const resultCode = hashCode.update(tempStr, 'utf8').digest('hex');
-
+    console.log(resultCode, '加密后的code');
     // 4. 将加密后的字符串与signature对比，标识请求来源于微信
     if(resultCode === signature){
       ctx.body = echostr;
@@ -47,34 +47,39 @@ class Custom {
     }
   }
 
-  async setUserMessage(ctx){
-    // POST请求
+  async achieveUserMessage(ctx){
+    // 获取用户信息
     let params = ctx.query;
-    console.log(ctx.request.body, '是否有body');
-    /*
-      6eac6834e2dd2ba8ab1694cd4fb6f5c4ccb82238 签名
-      1537521497 时间戳
-      321865937 随机数
-      2387209843328860127 随机字符串
-     */
+    console.log(params, '请求参数');
+    console.log(ctx.request.body, '请求body');
     // signature  签名
     // echostr  随机字符串
     // timestamp  时间戳
     // nonce  随机数
-    const { ToUserName, Encrypt } = params;
-    console.log(ToUserName, '去哪里');
-    console.log(Encrypt, '加密');
-    const decryptData = decryptWXContact(Encrypt);
-    const { MsgType, FromUserName, MediaId } = decryptData;
-    
-    if (MsgType === 'text') { // 文本消息
-      miniapp.sendTextMessage(FromUserName, replyMsg);
-    }
 
-    // 非加密方式
-    // const { MsgType, FromUserName, Content,  Event } = ctx.request.body;
-    
-    ctx.body = 'success';
+    // 1. 获取微信推送过来的信息
+    let {
+      msg_signature,
+      echostr,
+      timestamp,
+      nonce
+    } = params;
+
+    // 2. 将token、timestamp、nonce三个参数进行字典排序
+    let array = ['changdao', timestamp, nonce];
+    await array.sort();
+
+    // 3. 将三个参数拼接成一个字符串进行sha1加密
+    const tempStr = array.join('');
+    const hashCode = crypto.createHash('sha1');
+    const resultCode = hashCode.update(tempStr, 'utf8').digest('hex');
+    console.log(resultCode, '加密后的code');
+    // 4. 将加密后的字符串与signature对比，标识请求来源于微信
+    if(resultCode === signature){
+      ctx.body = echostr;
+    } else {
+      ctx.body = {code: -1, data: '验证失败'};
+    }
   }
 
   // async getUserMessage(ctx){
