@@ -62,6 +62,8 @@ class Custom {
     // timestamp  时间戳
     // nonce  随机数
     const { ToUserName, Encrypt } = params;
+    console.log(ToUserName, '去哪里');
+    console.log(Encrypt, '加密');
     const decryptData = decryptWXContact(Encrypt);
     const { MsgType, FromUserName, MediaId } = decryptData;
     
