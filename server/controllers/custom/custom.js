@@ -61,7 +61,7 @@ class Custom {
     // echostr  随机字符串
     // timestamp  时间戳
     // nonce  随机数
-    const { ToUserName, Encrypt } = ctx.request.body;
+    const { ToUserName, Encrypt } = params;
     const decryptData = decryptWXContact(Encrypt);
     const { MsgType, FromUserName, MediaId } = decryptData;
     
