@@ -61,8 +61,9 @@ class Custom {
     console.log('ToUserName: ', ToUserName);
     console.log('Encrypt: ', Encrypt);
     const decryptData = decryptWXContact(Encrypt);
-    console.log('解析完的消息体：', decryptData);
     decryptData.MsgType = 'transfer_customer_service ';
+    console.log('解析完的消息体：', decryptData);
+    ctx.body = decryptData;
     /*
       ToUserName
       FromUserName
@@ -84,12 +85,12 @@ class Custom {
       </Video>
     </xml>
      */
-    ctx.body = `<xml>
+    /*ctx.body = `<xml>
                   <ToUserName>${decryptData.ToUserName}</ToUserName>
                   <FromUserName>${decryptData.FromUserName}</FromUserName>
                   <CreateTime>${decryptData.CreateTime}</CreateTime>
                   <MsgType>transfer_customer_service</MsgType>
-                </xml>`;
+                </xml>`;*/
     /*const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
