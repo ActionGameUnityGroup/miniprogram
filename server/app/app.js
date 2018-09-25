@@ -64,6 +64,15 @@ module.exports = (app, rootPath) => {
     });
   });
 
+  app.use(async (ctx, next) => {
+    this.text = await getRawBody(this.req, {
+      length: this.req.headers['content-length'],
+      limit: '1mb',
+      encoding: contentType.parse(this.req).parameters.charset
+    });
+    await next();
+  })
+
   app.use(bodyParser());
 
   app.use(koaBody());
