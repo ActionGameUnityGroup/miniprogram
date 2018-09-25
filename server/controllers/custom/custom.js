@@ -70,12 +70,12 @@ class Custom {
                   <CreateTime>${decryptData.CreateTime}</CreateTime>
                   <MsgType>transfer_customer_service</MsgType>
                 </xml>`;*/
-    const returnMsg = `<xml>
+    /*const returnMsg = `<xml>
                          <ToUserName><![CDATA[wxba59a2c0824fd1db]]></ToUserName>
                          <FromUserName><![CDATA[${decryptData.ToUserName}]]></FromUserName>
                          <CreateTime>${decryptData.CreateTime}</CreateTime>
                          <MsgType><![CDATA[transfer_customer_service]]></MsgType>
-                       </xml>`;
+                       </xml>`;*/
     /*const returnMsg = {
       Encrypt: Encrypt,
       ToUserName: decryptData.ToUserName,
@@ -83,8 +83,8 @@ class Custom {
       CreateTime: decryptData.CreateTime,
       MsgType: 'transfer_customer_service'
     };*/
-    console.log('把消息转去微信网页客服那里', returnMsg);
-    ctx.body = returnMsg;
+    /*console.log('把消息转去微信网页客服那里', returnMsg);
+    ctx.body = returnMsg;*/
     // ctx.type = 'text/json';
     /*decryptData.MsgType = 'transfer_customer_service ';
     console.log('json：', decryptData);
@@ -113,7 +113,7 @@ class Custom {
       </Video>
     </xml>
      */
-    /*const { MsgType, FromUserName, MsgId } = decryptData;
+    const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
     console.log('openid: ', FromUserName);
@@ -121,9 +121,9 @@ class Custom {
 
     if (MsgType === 'text') { // 文本消息
       miniapp.sendTextMessage(FromUserName, replyMsg);
-    }*/
+    }
 
-    // ctx.body = 'success';
+    ctx.body = 'success';
 
     // 非加密方式
     // const { MsgType, FromUserName, Content,  Event } = ctx.request.body;

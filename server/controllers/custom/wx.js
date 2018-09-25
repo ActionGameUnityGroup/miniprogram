@@ -56,7 +56,7 @@ class Wechat {
     const token = await this.getAccessToken();
     const msgData = {
       "touser": openid,
-      "msgtype": 'text',
+      "msgtype": 'transfer_customer_service',
       "text": {
         "content": message
       }
