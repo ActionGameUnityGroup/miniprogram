@@ -62,7 +62,7 @@ class Custom {
     console.log('ToUserName: ', ToUserName);
     console.log('Encrypt: ', Encrypt);
     const decryptData = decryptWXContact(Encrypt);
-    console.log('解析完的消息体：' decryptData);
+    console.log('解析完的消息体：', decryptData);
     const { MsgType, FromUserName, MsgId } = decryptData;
     console.log('消息类型: ', MsgType);
     console.log('openid: ', MsgType);
