@@ -42,7 +42,7 @@ module.exports = (app, rootPath) => {
   // app.use(static(__dirname+'../public'));
 
   app.use(xmlParser({
-    limit: 128,
+    limit: 1024,
     encoding: 'utf8', // lib will detect it from `content-type`
     xmlOptions: {
         explicitArray: false
