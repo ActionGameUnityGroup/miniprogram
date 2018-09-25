@@ -42,14 +42,9 @@ module.exports = (app, rootPath) => {
   // app.use(static(__dirname+'../public'));
 
   app.use(xmlParser({
-    limit: 1024,
-    encoding: 'utf8', // lib will detect it from `content-type`
-    xmlOptions: {
-        explicitArray: false
-    },
     onerror: (err, ctx) => {
-        // ctx.throw(err.status, err.message);
-        console.log('解析xml体失败：', err);
+      // ctx.throw(err.status, err.message);
+      console.log('解析xml体失败：', err);
     }
   }));
 
