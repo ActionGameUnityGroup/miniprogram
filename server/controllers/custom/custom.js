@@ -70,22 +70,22 @@ class Custom {
                   <CreateTime>${decryptData.CreateTime}</CreateTime>
                   <MsgType>transfer_customer_service</MsgType>
                 </xml>`;*/
-    /*const returnMsg = `<xml>
-                         <ToUserName>${decryptData.ToUserName}</ToUserName>
-                         <FromUserName>${decryptData.FromUserName}</FromUserName>
-                         <CreateTime>${decryptData.CreateTime}</CreateTime>
-                         <MsgType>transfer_customer_service</MsgType>
-                       </xml>`;*/
-    const returnMsg = {
+    const returnMsg = `<xml>
+                         <ToUserName><![CDATA['${decryptData.ToUserName}></ToUserName>
+                         <FromUserName><![CDATA['${decryptData.FromUserName}></FromUserName>
+                         <CreateTime><![CDATA['${decryptData.CreateTime}></CreateTime>
+                         <MsgType><![CDATA[transfer_customer_service></MsgType>
+                       </xml>`;
+    /*const returnMsg = {
       Encrypt: Encrypt,
       ToUserName: decryptData.ToUserName,
       FromUserName: decryptData.FromUserName,
       CreateTime: decryptData.CreateTime,
       MsgType: 'transfer_customer_service'
-    };
+    };*/
     console.log('把消息转去微信网页客服那里', returnMsg);
     ctx.body = returnMsg;
-    ctx.type = 'text/json';
+    // ctx.type = 'text/json';
     /*decryptData.MsgType = 'transfer_customer_service ';
     console.log('json：', decryptData);
     console.log('json转xml');
