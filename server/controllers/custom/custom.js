@@ -78,6 +78,7 @@ class Custom {
                        </xml>`;
     console.log('把消息转去微信网页客服那里', returnMsg);
     ctx.body = returnMsg;
+    ctx.type = 'text/xml';
     /*decryptData.MsgType = 'transfer_customer_service ';
     console.log('json：', decryptData);
     console.log('json转xml');
