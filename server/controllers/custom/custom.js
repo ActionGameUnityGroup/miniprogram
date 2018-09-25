@@ -55,6 +55,8 @@ class Custom {
     console.log(params, '请求参数');
     console.log(ctx.request.body, '请求body');
     console.log(ctx.text.toString(), '请求text');
+    let body = JSON.parse(ctx.text.toString());
+    console.log(body, 'xml的body');
    /* let {
       msg_signature,
       signature,
