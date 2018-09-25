@@ -45,6 +45,7 @@ module.exports = (app, rootPath) => {
     onerror: (err, ctx) => {
       // ctx.throw(err.status, err.message);
       console.log('解析xml体失败：', err);
+      console.log('xml主体：', err.body);
     }
   }));
 
