@@ -64,8 +64,9 @@ class Custom {
     const decryptData = decryptWXContact(Encrypt);
     console.log('解析完的消息体：', decryptData);
     const { MsgType, FromUserName, MsgId } = decryptData;
+    const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
-    console.log('openid: ', MsgType);
+    console.log('openid: ', FromUserName);
     console.log('消息ID: ', MsgId);
 
     if (MsgType === 'text') { // 文本消息
