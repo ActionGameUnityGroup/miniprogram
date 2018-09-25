@@ -18,6 +18,8 @@ module.exports = (app, rootPath) => {
 
   app.use(async (ctx, next) => {
     console.log(ctx.method, ctx.url);
+    console.log(ctx.req, '请求req');
+    console.log(ctx.request, '请求request');
     ctx.set('Access-Control-Allow-Origin', '*');
     ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
     ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
@@ -46,6 +48,8 @@ module.exports = (app, rootPath) => {
       // ctx.throw(err.status, err.message);
       console.log('解析xml体失败：', err);
       console.log('xml主体：', err.body);
+      ctx.request.body = err.body;
+      throw err;
     }
   }));
 
