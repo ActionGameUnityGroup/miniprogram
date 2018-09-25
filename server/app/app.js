@@ -5,6 +5,7 @@ const router = new Router();
 const loadRouter = require('./loadRouter');
 const koaBody = require('koa-body');
 // const xmlParser = require('koa-xml-body')
+const getRawBody = require('raw-body');
 const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
 const bindConsole = require('./bindConsole');
@@ -52,7 +53,7 @@ module.exports = (app, rootPath) => {
       throw err;
     }
   }));*/
-  app.use(async(ctx, next) => {
+  /*app.use(async(ctx, next) => {
     getRawBody(ctx.req, {
       length: ctx.req.headers['content-length'],
       limit: '1mb',
@@ -62,7 +63,7 @@ module.exports = (app, rootPath) => {
       ctx.req.text = string
       await next();
     });
-  });
+  });*/
 
   app.use(async (ctx, next) => {
     this.text = await getRawBody(this.req, {
