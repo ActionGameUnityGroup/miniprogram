@@ -58,7 +58,7 @@ class Custom {
     let body = JSON.parse(ctx.text.toString());
     console.log(body, 'xml的body');
 
-    const builder = new xml2js.builder(); // json转xml
+    const builder = new xml2js.Builder(); // json转xml
 
     const { ToUserName, Encrypt } = body;
     console.log('ToUserName: ', ToUserName);
