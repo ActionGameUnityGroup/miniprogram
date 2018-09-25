@@ -5,6 +5,7 @@ const router = new Router();
 const loadRouter = require('./loadRouter');
 const koaBody = require('koa-body');
 // const xmlParser = require('koa-xml-body')
+const contentType = require('content-type');
 const getRawBody = require('raw-body');
 const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
