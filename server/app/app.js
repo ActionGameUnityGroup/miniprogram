@@ -18,8 +18,8 @@ module.exports = (app, rootPath) => {
 
   app.use(async (ctx, next) => {
     console.log(ctx.method, ctx.url);
-    console.log(ctx.req, '请求req');
-    console.log(ctx.request, '请求request');
+    console.log(ctx.req.body, '请求req的body');
+    console.log(ctx.request.body, '请求request的body');
     ctx.set('Access-Control-Allow-Origin', '*');
     ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
     ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
