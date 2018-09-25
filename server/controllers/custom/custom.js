@@ -30,7 +30,6 @@ class Custom {
       timestamp,
       nonce
     } = params;
-    console.log(params.msg_signature, '这是msg_signature');
 
     // 2. 将token、timestamp、nonce三个参数进行字典排序
     let array = ['changdao', timestamp, nonce];
@@ -72,11 +71,24 @@ class Custom {
       Content
       MsgId
      */
+    /*
+    <xml>
+      <ToUserName><![CDATA[oia2TjjewbmiOUlr6X-1crbLOvLw]]></ToUserName>
+      <FromUserName><![CDATA[gh_7f083739789a]]></FromUserName>
+      <CreateTime>1407743423</CreateTime>
+      <MsgType><![CDATA[video]]></MsgType>
+      <Video>
+        <MediaId><![CDATA[eYJ1MbwPRJtOvIEabaxHs7TX2D-HV71s79GUxqdUkjm6Gs2Ed1KF3ulAOA9H1xG0]]></MediaId>
+        <Title><![CDATA[testCallBackReplyVideo]]></Title>
+        <Description><![CDATA[testCallBackReplyVideo]]></Description>
+      </Video>
+    </xml>
+     */
     ctx.body = `<xml>
-                  <ToUserName><![CDATA[${decryptData.ToUserName}]]></ToUserName>
-                  <FromUserName><![CDATA[${decryptData.FromUserName}]]></FromUserName>
+                  <ToUserName>${decryptData.ToUserName}</ToUserName>
+                  <FromUserName>${decryptData.FromUserName}</FromUserName>
                   <CreateTime>${decryptData.CreateTime}</CreateTime>
-                  <MsgType><![CDATA[transfer_customer_service]]></MsgType>
+                  <MsgType>transfer_customer_service</MsgType>
                 </xml>`;
     /*const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
