@@ -64,12 +64,25 @@ class Custom {
     console.log('ToUserName: ', ToUserName);
     console.log('Encrypt: ', Encrypt);
     const decryptData = decryptWXContact(Encrypt);
-    decryptData.MsgType = 'transfer_customer_service ';
+    /*const xml = `<xml>
+                  <ToUserName>${decryptData.ToUserName}</ToUserName>
+                  <FromUserName>${decryptData.FromUserName}</FromUserName>
+                  <CreateTime>${decryptData.CreateTime}</CreateTime>
+                  <MsgType>transfer_customer_service</MsgType>
+                </xml>`;*/
+    const returnMsg = {
+      ToUserName: decryptData.ToUserName,
+      FromUserName: decryptData.FromUserName,
+      CreateTime: decryptData.CreateTime,
+      MsgType: 'transfer_customer_service'
+    };
+    ctx.body = returnMsg;
+    /*decryptData.MsgType = 'transfer_customer_service ';
     console.log('json：', decryptData);
     console.log('json转xml');
     const returnXML = builder.buildObject(decryptData);
     console.log('json：', returnXML);
-    ctx.body = returnXML;
+    ctx.body = returnXML;*/
     /*
       ToUserName
       FromUserName
@@ -91,12 +104,6 @@ class Custom {
       </Video>
     </xml>
      */
-    /*ctx.body = `<xml>
-                  <ToUserName>${decryptData.ToUserName}</ToUserName>
-                  <FromUserName>${decryptData.FromUserName}</FromUserName>
-                  <CreateTime>${decryptData.CreateTime}</CreateTime>
-                  <MsgType>transfer_customer_service</MsgType>
-                </xml>`;*/
     /*const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
