@@ -54,7 +54,7 @@ class Custom {
     let params = ctx.query;
     console.log(params, '请求参数');
     console.log(ctx.request.body, '请求body');
-    console.log(ctx.text, '请求text');
+    console.log(ctx.text.toString(), '请求text');
    /* let {
       msg_signature,
       signature,
