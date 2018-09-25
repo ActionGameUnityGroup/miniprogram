@@ -71,7 +71,7 @@ class Custom {
                   <MsgType>transfer_customer_service</MsgType>
                 </xml>`;*/
     const returnMsg = `<xml>
-                         <ToUserName><![CDATA[${decryptData.FromUserName}]]></ToUserName>
+                         <ToUserName><![CDATA[wxba59a2c0824fd1db]]></ToUserName>
                          <FromUserName><![CDATA[${decryptData.ToUserName}]]></FromUserName>
                          <CreateTime>${decryptData.CreateTime}</CreateTime>
                          <MsgType><![CDATA[transfer_customer_service]]></MsgType>
