@@ -76,6 +76,7 @@ class Custom {
       CreateTime: decryptData.CreateTime,
       MsgType: 'transfer_customer_service'
     };
+    console.log('把消息转去微信网页客服那里', returnMsg);
     ctx.body = returnMsg;
     /*decryptData.MsgType = 'transfer_customer_service ';
     console.log('json：', decryptData);
