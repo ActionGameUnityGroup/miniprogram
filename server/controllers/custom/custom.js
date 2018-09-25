@@ -67,7 +67,7 @@ class Custom {
     ctx.body = {
       ToUserName: params.openid,
       FromUserName: 'Reri_mars',
-      CreateTime: new Date().getTime(),
+      CreateTime: params.timestamp,
       MsgType: 'transfer_customer_service'
     };
 
