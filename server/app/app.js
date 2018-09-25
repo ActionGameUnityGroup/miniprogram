@@ -4,7 +4,7 @@ const Router = require('koa-router');
 const router = new Router();
 const loadRouter = require('./loadRouter');
 const koaBody = require('koa-body');
-const xmlParser = require('koa-xml-body')
+// const xmlParser = require('koa-xml-body')
 const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
 const bindConsole = require('./bindConsole');
@@ -43,7 +43,7 @@ module.exports = (app, rootPath) => {
   app.use(staticFile(rootPath));
   // app.use(static(__dirname+'../public'));
 
-  app.use(xmlParser({
+  /*app.use(xmlParser({
     onerror: (err, ctx) => {
       // ctx.throw(err.status, err.message);
       console.log('解析xml体失败：', err);
@@ -51,7 +51,18 @@ module.exports = (app, rootPath) => {
       ctx.request.body = err.body;
       throw err;
     }
-  }));
+  }));*/
+  app.use(async(ctx, next) => {
+    getRawBody(ctx.req, {
+      length: ctx.req.headers['content-length'],
+      limit: '1mb',
+      encoding: contentType.parse(ctx.req).parameters.charset
+    }, async function (err, string) {
+      if (err) return next(err)
+      ctx.req.text = string
+      await next();
+    });
+  });
 
   app.use(bodyParser());
 
