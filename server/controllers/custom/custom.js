@@ -62,9 +62,14 @@ class Custom {
       nonce
     } = params;*/
 
-    console.log('直接返回success看看怎么样');
+    console.log('把请求转到微信客服');
 
-    ctx.body = 'success';
+    ctx.body = {
+      ToUserName: params.openid,
+      FromUserName: 'Reri_mars',
+      CreateTime: new Date().getTime(),
+      MsgType: 'transfer_customer_service'
+    };
 
   }
 
