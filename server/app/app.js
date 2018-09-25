@@ -66,10 +66,10 @@ module.exports = (app, rootPath) => {
   });*/
 
   app.use(async (ctx, next) => {
-    this.text = await getRawBody(this.req, {
-      length: this.req.headers['content-length'],
+    ctx.text = await getRawBody(ctx.req, {
+      length: ctx.req.headers['content-length'],
       limit: '1mb',
-      encoding: contentType.parse(this.req).parameters.charset
+      encoding: contentType.parse(ctx.req).parameters.charset
     });
     await next();
   })
