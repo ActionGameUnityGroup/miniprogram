@@ -62,14 +62,22 @@ class Custom {
       nonce
     } = params;*/
 
-    console.log('把请求转到微信客服');
+    // console.log('直接返回success看看怎么样');
+    /*
+      {
+        ToUserName: '',
+        FromUserName: '',
+        CreateTime: '',
+        MsgType: '',
+        <Content><![CDATA[abcdteT]]></Content>
+        <MsgId>6054768590064713728</MsgId>
+        <Encrypt><![CDATA[hyzAe4OzmOMbd6TvGdIOO6uBmdJoD0Fk53REIHvxYtJlE2B655HuD0m8KUePWB3+LrPXo87wzQ1QLvbeUgmBM4x6F8PGHQHFVAFmOD2LdJF9FrXpbUAh0B5GIItb52sn896wVsMSHGuPE328HnRGBcrS7C41IzDWyWNlZkyyXwon8T332jisa+h6tEDYsVticbSnyU8dKOIbgU6ux5VTjg3yt+WGzjlpKn6NPhRjpA912xMezR4kw6KWwMrCVKSVCZciVGCgavjIQ6X8tCOp3yZbGpy0VxpAe+77TszTfRd5RJSVO/HTnifJpXgCSUdUue1v6h0EIBYYI1BD1DlD+C0CR8e6OewpusjZ4uBl9FyJvnhvQl+q5rv1ixrcpCumEPo5MJSgM9ehVsNPfUM669WuMyVWQLCzpu9GhglF2PE=]]></Encrypt>
+      }
+    */
 
-    ctx.body = {
-      ToUserName: params.openid,
-      FromUserName: 'Reri_mars',
-      CreateTime: params.timestamp,
-      MsgType: 'transfer_customer_service'
-    };
+    ctx.body = 'success';
+
+
 
   }
 
