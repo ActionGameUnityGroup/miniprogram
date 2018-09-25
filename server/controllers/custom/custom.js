@@ -3,6 +3,7 @@ const customModel = require('../../models/customModel');
 // const request = require('../../app/request');
 // const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
 const crypto = require('crypto');
+const xml2js = require('xml2js');
 // const WXBizMsgCrypt = require('./WXBizMsgCrypt');
 const decryptWXContact = require('./decryptContact');
 const WX = require('./wx');
@@ -57,13 +58,18 @@ class Custom {
     let body = JSON.parse(ctx.text.toString());
     console.log(body, 'xml的body');
 
+    const builder = new xml2js.builder(); // json转xml
+
     const { ToUserName, Encrypt } = body;
     console.log('ToUserName: ', ToUserName);
     console.log('Encrypt: ', Encrypt);
     const decryptData = decryptWXContact(Encrypt);
     decryptData.MsgType = 'transfer_customer_service ';
-    console.log('解析完的消息体：', decryptData);
-    ctx.body = decryptData;
+    console.log('json：', decryptData);
+    console.log('json转xml');
+    const returnXML = builder.buildObject(decryptData);
+    console.log('json：', returnXML);
+    ctx.body = returnXML;
     /*
       ToUserName
       FromUserName
