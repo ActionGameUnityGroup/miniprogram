@@ -71,10 +71,10 @@ class Custom {
                   <MsgType>transfer_customer_service</MsgType>
                 </xml>`;*/
     const returnMsg = `<xml>
-                         <ToUserName><![CDATA['${decryptData.ToUserName}></ToUserName>
-                         <FromUserName><![CDATA['${decryptData.FromUserName}></FromUserName>
-                         <CreateTime><![CDATA['${decryptData.CreateTime}></CreateTime>
-                         <MsgType><![CDATA[transfer_customer_service></MsgType>
+                         <ToUserName><![CDATA[${decryptData.ToUserName}]]></ToUserName>
+                         <FromUserName><![CDATA[${decryptData.FromUserName}]]></FromUserName>
+                         <CreateTime><![CDATA[${decryptData.CreateTime}]]></CreateTime>
+                         <MsgType><![CDATA[transfer_customer_service]]></MsgType>
                        </xml>`;
     /*const returnMsg = {
       Encrypt: Encrypt,
