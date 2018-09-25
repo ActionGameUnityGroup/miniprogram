@@ -64,7 +64,20 @@ class Custom {
     const decryptData = decryptWXContact(Encrypt);
     console.log('解析完的消息体：', decryptData);
     decryptData.MsgType = 'transfer_customer_service ';
-    ctx.body = decryptData;
+    /*
+      ToUserName
+      FromUserName
+      CreateTime
+      MsgType
+      Content
+      MsgId
+     */
+    ctx.body = `<xml>
+                  <ToUserName><![CDATA[${decryptData.ToUserName}]]></ToUserName>
+                  <FromUserName><![CDATA[${decryptData.FromUserName}]]></FromUserName>
+                  <CreateTime>${MsgId}</CreateTime>
+                  <MsgType><![CDATA[transfer_customer_service]]></MsgType>
+                </xml>`;
     /*const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
