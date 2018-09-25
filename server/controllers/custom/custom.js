@@ -57,6 +57,26 @@ class Custom {
     console.log(ctx.text.toString(), '请求text');
     let body = JSON.parse(ctx.text.toString());
     console.log(body, 'xml的body');
+
+    const { ToUserName, Encrypt } = body;
+    console.log('ToUserName: ', ToUserName);
+    console.log('Encrypt: ', Encrypt);
+    const decryptData = decryptWXContact(Encrypt);
+    console.log('解析完的消息体：' decryptData);
+    const { MsgType, FromUserName, MsgId } = decryptData;
+    console.log('消息类型: ', MsgType);
+    console.log('openid: ', MsgType);
+    console.log('消息ID: ', MsgId);
+
+    if (MsgType === 'text') { // 文本消息
+      miniapp.sendTextMessage(FromUserName, replyMsg);
+    }
+
+    // 非加密方式
+    // const { MsgType, FromUserName, Content,  Event } = ctx.request.body;
+    
+    ctx.body = 'success';
+
    /* let {
       msg_signature,
       signature,
