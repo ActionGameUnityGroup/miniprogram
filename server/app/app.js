@@ -4,6 +4,7 @@ const Router = require('koa-router');
 const router = new Router();
 const loadRouter = require('./loadRouter');
 const koaBody = require('koa-body');
+const xmlParser = require('koa-xml-body')
 const bodyParser = require('koa-bodyparser');
 // const static = require('koa-static');
 const bindConsole = require('./bindConsole');
@@ -39,6 +40,8 @@ module.exports = (app, rootPath) => {
 
   app.use(staticFile(rootPath));
   // app.use(static(__dirname+'../public'));
+
+  app.use(xmlParser());
 
   app.use(bodyParser());
 
