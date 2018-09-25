@@ -41,7 +41,16 @@ module.exports = (app, rootPath) => {
   app.use(staticFile(rootPath));
   // app.use(static(__dirname+'../public'));
 
-  app.use(xmlParser());
+  app.use(xmlParser({
+    limit: 128,
+    encoding: 'utf8', // lib will detect it from `content-type`
+    xmlOptions: {
+        explicitArray: false
+    },
+    onerror: (err, ctx) => {
+        ctx.throw(err.status, err.message);
+    }
+  }));
 
   app.use(bodyParser());
 

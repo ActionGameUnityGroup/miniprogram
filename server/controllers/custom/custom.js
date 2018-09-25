@@ -53,7 +53,7 @@ class Custom {
     // 获取用户信息
     let params = ctx.query;
     console.log(params, '请求参数');
-    console.log(ctx.request, '请求body');
+    console.log(ctx.request.body, '请求body');
    /* let {
       msg_signature,
       signature,
