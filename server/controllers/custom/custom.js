@@ -75,7 +75,7 @@ class Custom {
     ctx.body = `<xml>
                   <ToUserName><![CDATA[${decryptData.ToUserName}]]></ToUserName>
                   <FromUserName><![CDATA[${decryptData.FromUserName}]]></FromUserName>
-                  <CreateTime>${MsgId}</CreateTime>
+                  <CreateTime>${decryptData.CreateTime}</CreateTime>
                   <MsgType><![CDATA[transfer_customer_service]]></MsgType>
                 </xml>`;
     /*const { MsgType, FromUserName, MsgId } = decryptData;
