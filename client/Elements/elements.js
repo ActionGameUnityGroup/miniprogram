@@ -95,4 +95,8 @@ Page({
       isSeason: true
     });
   },
+  subscribeAction: function(e){
+    console.log('订阅');
+    console.log(e.currentTarget.id);
+  }
 });

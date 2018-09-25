@@ -84,7 +84,7 @@
   <block wx:if='{{isSeason}}'></block>
 
   <view class="subscribe-content wood">
-    <view class="subscribe-action"> 点击订阅 </view>
+    <view class="subscribe-action" bindtap='subscribeAction' id='wood'> 点击订阅 </view>
   </view>
 </block>
 
@@ -186,7 +186,7 @@
   <block wx:if='{{isSeason}}'></block>
 
   <view class="subscribe-content fire">
-    <view class="subscribe-action"> 点击订阅 </view>
+    <view class="subscribe-action" bindtap='subscribeAction' id='fire'> 点击订阅 </view>
   </view>
 </block>
 
@@ -282,7 +282,7 @@
   <block wx:if='{{isSeason}}'></block>
 
   <view class="subscribe-content earth">
-    <view class="subscribe-action"> 点击订阅 </view>
+    <view class="subscribe-action" bindtap='subscribeAction' id='earth'> 点击订阅 </view>
   </view>
 </block>
 
@@ -413,7 +413,7 @@
   <block wx:if='{{isSeason}}'></block>
 
   <view class="subscribe-content gold">
-    <view class="subscribe-action"> 点击订阅 </view>
+    <view class="subscribe-action" bindtap='subscribeAction' id='gold'> 点击订阅 </view>
   </view>
 </block>
 
@@ -510,6 +510,6 @@
   <block wx:if='{{isSeason}}'></block>
 
   <view class="subscribe-content water">
-    <view class="subscribe-action"> 点击订阅 </view>
+    <view class="subscribe-action" bindtap='subscribeAction' id='water'> 点击订阅 </view>
   </view>
 </block>

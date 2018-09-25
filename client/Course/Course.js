@@ -4,10 +4,10 @@ Page({
   data: {
     courseCoverUrl: '',
     lessonList: [
-      {lessonName: '过有灵魂的生活', lessonAudioLength: '00:05:30', lessonStudyLength: '526', lessonAudioId: 'audition'},
-      {lessonName: '过有灵魂的生活', lessonAudioLength: '00:05:30', lessonStudyLength: '526', lessonAudioId: ''},
-      {lessonName: '过有灵魂的生活', lessonAudioLength: '00:05:30', lessonStudyLength: '526', lessonAudioId: ''},
-      {lessonName: '过有灵魂的生活', lessonAudioLength: '00:05:30', lessonStudyLength: '526', lessonAudioId: ''},
+      {periodName: '过有灵魂的生活', periodAudioLength: '00:05:30', periodStudyLength: '526', periodId: 'audition'},
+      {periodName: '过有灵魂的生活', periodAudioLength: '00:05:30', periodStudyLength: '526', periodId: ''},
+      {periodName: '过有灵魂的生活', periodAudioLength: '00:05:30', periodStudyLength: '526', periodId: ''},
+      {periodName: '过有灵魂的生活', periodAudioLength: '00:05:30', periodStudyLength: '526', periodId: ''},
     ],
     contentHeight: 0
   },
@@ -28,5 +28,9 @@ Page({
   },
   auditionActionLock: function(){
     console.log('没有购买课程');
+  },
+  toStudyAction: function(e){
+    console.log('跳去lesson页面');
+    console.log(e.currentTarget.id);
   }
 })
