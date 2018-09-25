@@ -63,7 +63,9 @@ class Custom {
     console.log('Encrypt: ', Encrypt);
     const decryptData = decryptWXContact(Encrypt);
     console.log('解析完的消息体：', decryptData);
-    const { MsgType, FromUserName, MsgId } = decryptData;
+    decryptData.MsgType = 'transfer_customer_service ';
+    ctx.body = decryptData;
+    /*const { MsgType, FromUserName, MsgId } = decryptData;
     const replyMsg = decryptData.Content;
     console.log('消息类型: ', MsgType);
     console.log('openid: ', FromUserName);
@@ -71,12 +73,13 @@ class Custom {
 
     if (MsgType === 'text') { // 文本消息
       miniapp.sendTextMessage(FromUserName, replyMsg);
-    }
+    }*/
+
+    // ctx.body = 'success';
 
     // 非加密方式
     // const { MsgType, FromUserName, Content,  Event } = ctx.request.body;
     
-    ctx.body = 'success';
 
    /* let {
       msg_signature,
