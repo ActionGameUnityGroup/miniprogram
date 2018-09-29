@@ -14,7 +14,7 @@
 .pre-action image, .next-action image, .play-action image, .pause-action image{ display: block; width: 100%; height: 100%; }
 
 .bottom-content{ display: block; margin: 18rpx auto 0; padding-bottom: 15rpx; background: #fff; }
-.collection-top{ display: flex; justify-content: space-between; align-items: center; padding: 0 26rpx; height: 155rpx; border-bottom: 1rpx solid #ddd; }
+.collection-top{ display: flex; justify-content: space-between; align-items: center; padding: 0 26rpx; height: 155rpx; border-bottom: 2rpx solid #ddd; }
 .collection-info{ display: flex; justify-content: space-between; align-items: center; }
 .collection-cover{ display: block; margin-right: 20rpx; width: 78rpx; height: 78rpx; }
 .collection-msg text{ display: block; }

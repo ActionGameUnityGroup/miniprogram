@@ -1,14 +1,19 @@
 const app = getApp()
 var _this;
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    wechatUserInfo: {},
-    titleName: "个人信息",
-    userInfo:{headUrl:"", nickName:"Haku", sex:"男", birthday:"2000-01-01", realName:"Haku", phoneNumber:"8000000000", address:"New York"},
+    userInfo:{
+      avatar: "",
+      nickName: "",
+      gender: 0,
+      birthday:"",
+      userName: "",
+      phoneNumber: "",
+      address: ""
+    },
   },
 
   /**
@@ -18,22 +23,8 @@ Page({
     _this = this;
     // Set navigation title
     wx.setNavigationBarTitle({
-      title: this.data.titleName,
-      success: function (res) {
-        console.log("set navigation title complete")
-      },
-      fail: function (res) {
-        console.log("set navigation title failse")
-      },
-      complete: function (res) {
-      },
+      title: '个人信息',
     });
-
-    if (app.globalData.userInfo) {
-      this.setData({
-        wechatUserInfo: app.globalData.userInfo,
-      })
-    }
   },
 
   /**

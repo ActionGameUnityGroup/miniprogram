@@ -21,13 +21,10 @@ class Course {
       courseId : "",
       author : "",
       honor : "",
-      authorInfo : [ 
-          "", 
-          ""
-      ],
+      authorInfo : [],
       courseName : "",
       courseCover : "",
-      coursePrice : 0
+      coursePrice : 0,
     }
   }
 
@@ -41,7 +38,8 @@ class Course {
       // authorInfo: params.authorInfo|| [],
       courseTitle: params.courseTitle || "",
       courseDetail: params.courseDetail||"",
-      courseLength: 0
+      courseLength: 0,
+      status: 0
     }
     let course = new courseModel(courseInfo);
     let res = await course.save();

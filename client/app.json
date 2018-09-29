@@ -1,9 +1,11 @@
 {
   "pages":[
+    "FeedBack/FeedBack",
+    "PersonalInfo/personalInfo",
+    "UserInfo/UserInfo",
     "Index/Index",
     "PublicWelfare/publicAction",
     "ArticleList/ArticleList",
-    "PersonalInfo/personalInfo",
     "MyInivitation/MyInivitation",
     "HomeWork/HomeWork",
     "SignIn/SignIn",
@@ -17,9 +19,7 @@
     "Lesson/Lesson",
     "MyCourse/MyCourse",
     "Spread/Spread",
-    "FeedBack/FeedBack",
     "Income/Income",
-    "UserCenter/userInfo",
     "Address/Address",
     "AddAddress/AddAddress",
     "Elements/elements",

@@ -2,7 +2,7 @@
   <scroll-view class='container'>
       <view class='item'>
         <text>头像：</text>
-        <image class='image' src='{{userInfo.headUrl}}'></image>
+        <image class='image' src='{{userInfo.avatar}}'></image>
       </view>
 
       <view class='line'>
@@ -10,7 +10,7 @@
 
       <view class='item'>
         <text>昵称：</text>
-        <input class='input' type='text' placeholder='{{userInfo.nickName}}'></input>
+        <input class='input' type='text' placeholder='昵称' value="{{userInfo.nickName}}"/>
       </view>
 
       <view class='line'>
@@ -18,7 +18,15 @@
 
       <view class='item'>
         <text>性别：</text>
-        <input class='input' type='text' placeholder='{{userInfo.sex}}'></input>
+        <block wx:if='{{userInfo.gender == 0}}'>
+          <input class='input' type='text' placeholder='性别' value="未知" />
+        </block>
+        <block wx:elif='{{userInfo.gender == 1}}'>
+          <input class='input' type='text' placeholder='性别' value="男" />
+        </block>
+        <block wx:else>
+          <input class='input' type='text' placeholder='性别' value="女" />
+        </block>
       </view>
 
       <view class='line'>
@@ -37,7 +45,7 @@
 
       <view class='item'>
         <text>真实姓名：</text>
-        <input class='input' type='text' placeholder='{{userInfo.realName}}'></input>
+        <input class='input' type='text' placeholder='{{userInfo.realName}}'/>
       </view>
 
       <view class='line'>
@@ -45,14 +53,14 @@
 
       <view class='item'>
         <text>手机号：</text>
-        <input class='input' type='number' placeholder='{{userInfo.phoneNumber}}'></input>
+        <input class='input' type='number' placeholder='{{userInfo.phoneNumber}}'/>
       </view>
 
       <view class='line'>
       </view>
 
       <view class='item'>
-      <navigator class='navigator' url='Address/Address'>
+      <navigator class='navigator' url='../Address/Address'>
         <text>地址：</text>
         <text>{{userInfo.address}}</text>
       </navigator>
