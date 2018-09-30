@@ -1,9 +1,9 @@
 {
   "pages":[
-    "FeedBack/FeedBack",
-    "PersonalInfo/personalInfo",
-    "UserInfo/UserInfo",
     "Index/Index",
+    "PersonalInfo/personalInfo",
+    "FeedBack/FeedBack",
+    "UserInfo/UserInfo",
     "PublicWelfare/publicAction",
     "ArticleList/ArticleList",
     "MyInivitation/MyInivitation",

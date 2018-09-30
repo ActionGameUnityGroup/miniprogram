@@ -1,3 +1,19 @@
+const sendSuggest = (options) => {
+  const openid = wx.getStorageSync('openid');
+  wx.request({
+    url: 'https://www.changdaolife.cn/api/feedback/sendFeedBack', //仅为示例，并非真实的接口地址
+    data: JSON.stringify(options),
+    method: 'POST',
+    header: {
+      'content-type': 'text/plain', // 默认值
+      'Authorization': openid
+    },
+    success (res) {
+      console.log(res.data)
+    }
+  });
+}
+
 Page({
   data: {
     suggest: '',
@@ -24,6 +40,14 @@ Page({
     console.log(this.data);
     const date = new Date();
     const feedbackDate = `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
-    const feedbackTime = `${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}`;
+    const feedbackTime = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+    const options = {
+      suggest: this.data.suggest,
+      contact: this.data.contact,
+      date: feedbackDate,
+      time: feedbackTime
+    };
+    console.log(JSON.stringify(options), '提交的内容');
+    sendSuggest(options);
   }
 });
