@@ -1,5 +1,6 @@
 {
   "pages":[
+    "SignIn/SignIn",
     "Index/Index",
     "PersonalInfo/personalInfo",
     "FeedBack/FeedBack",
@@ -8,7 +9,6 @@
     "ArticleList/ArticleList",
     "MyInivitation/MyInivitation",
     "HomeWork/HomeWork",
-    "SignIn/SignIn",
     "Message/Message",
     "Consult/Consult",
     "Live/Live",

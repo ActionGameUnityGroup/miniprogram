@@ -30,6 +30,24 @@ const setDate = () => {
   });
 };
 
+const userSignIn = () => {
+  const openid = wx.getStorageSync('openid');
+  wx.request({
+    url: 'https://www.changdaolife.cn/api/sign/signIn',
+    data: JSON.stringify({}),
+    header: {
+      'content-type': 'text/plain',
+      'Authorization': openid
+    },
+    success: function(res){
+      console.log(res);
+    },
+    fail: function(err){
+      console.log(err);
+    }
+  });
+};
+
 Page({
   data: {
     sloganCover: '../assets/icon/miniprogram-icon-74.jpg',
@@ -40,22 +58,25 @@ Page({
     increasePoint: '+10',
     totalPoint: 800,
     signSuccess: false,
+    signFailure: false
   },
   onLoad: function(){
     _this = this;
     wx.setNavigationBarTitle({
       title: '签到'
-    })
+    });
     setDate();
     wx.request({
       url: 'https://www.changdaolife.cn/api/banner/getBanner?page=signin',
       method: 'GET',
       success: function(res){
         console.log(res.errMsg);
-        _this.setData({
-          sloganCover: res.data.requestData[0].bannerList[0].url
-          // bannerList: res.data.requestData[0].bannerList
-        });
+        if(res.data.requestData[0].bannerList.length){
+          _this.setData({
+            sloganCover: res.data.requestData[0].bannerList[0].url
+            // bannerList: res.data.requestData[0].bannerList
+          });
+        }
       }
     });
   },
@@ -64,6 +85,7 @@ Page({
     this.setData({
       signSuccess: true
     });
+    userSignIn();
   },
   signCompleteAction: function(){
     this.setData({
