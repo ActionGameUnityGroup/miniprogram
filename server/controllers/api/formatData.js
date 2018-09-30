@@ -1,17 +1,17 @@
 const formatData = (data) => {
-  resolve({
+  return {
     errMsg: 'request:ok',
     status: 200,
     requestData: data
-  });
+  };
 };
 
 const formatDataFail = (data) => {
-  resolve({
+  return {
     errMsg: 'request:fail',
     status: 404,
     requestData: data
-  });
+  };
 };
 
 const saveModel = (model) => {

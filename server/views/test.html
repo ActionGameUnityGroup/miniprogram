@@ -43,8 +43,29 @@
     <input type="button" name="save" value="保存" />
     <input type="button" name="get" value="获取地址" />
     <input type="button" name='login' value="登录后台"/>
+    <input type="button" name='suggest' value="发送意见" />
   </div>
   <script>
+
+    document.querySelector('input[name=suggest]').onclick = () => {
+      console.log('登录后台');
+      fetch(
+        'http://127.0.0.1:9000/api/feedback/sendFeedBack',
+        {
+          method: 'POST',
+          body: JSON.stringify({suggest: "123", contact: "456", date: "2018-9-30", time: "11:27:30"}),
+          headers: {
+            Authorization: 'owLC84lbLCkG0nhZNu6pq7ZYakws'
+          }
+        }
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    };
 
     document.querySelector('input[name=login]').onclick = () => {
       console.log('登录后台');

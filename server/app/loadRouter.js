@@ -10,6 +10,7 @@ const addController = (router, controller) => {
         ctx.status = 200;
       });
     } else if(URL.startsWith('POST ')) {
+      console.log(fileName, 'POST路径');
       router.post(fileName, controller[URL]);
     }
   }
