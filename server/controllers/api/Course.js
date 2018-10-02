@@ -4,6 +4,13 @@ const path = require('path');
 const lessonModel = require('../../models/lessonModel');
 const courseModel = require('../../models/courseModel');
 const {formatData} = require('./formatData');
+const crypto = require('crypto');
+
+function setFileName(){
+  const md5 = crypto.createHash('md5');
+  md5.update(`${data.getFullYear()}${date.getMonth()+1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`);
+  return md5.digest('hex');
+}
 
 class Course {
 
@@ -16,7 +23,11 @@ class Course {
   async setCourseCover(ctx){
     console.log('设置课程封面');
     let fileStream = await upload(ctx);
-    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
+    const date = new Date();
+    console.log(fileStream, '文件流');
+    const fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
+    const fileName = setFileName();
+    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileName}${fileType}`)));
     let course = {
       courseId : "",
       author : "",
