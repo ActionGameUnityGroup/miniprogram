@@ -3,10 +3,11 @@ const {formatData, formatDataFail} = require('./formatData');
 
 class SignIn{
 
-  async getSignInfo(ctx){
+  async getUserSignInfo(ctx){
     let openid = ctx.request.headers.authorization;
     console.log(openid);
-    ctx.body = formatData({});
+    const userSignInfo = await signModel.find({openid: openid}, '-_id').sort({date: 1});
+    ctx.body = formatData({signInfo: userSignInfo});
     ctx.type = 'text/json';
   }
 
