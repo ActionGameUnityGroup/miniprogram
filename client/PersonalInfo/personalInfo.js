@@ -6,7 +6,7 @@ Page({
     headerBackground: '../assets/icon/miniprogram-icon-73.jpg',
     avatar: '',
     userName: '用户名',
-    identify: 'ididididid',
+    identify: '用户id',
     moduleList: [
       {moduleImg: '../assets/icon/miniprogram-icon-42.png', moduleName: '我的收益', moduleUrl: '../Income/Income'},
       {moduleImg: '../assets/icon/miniprogram-icon-39.png', moduleName: '推广中心', moduleUrl: '../Spread/Spread'},
@@ -33,15 +33,33 @@ Page({
     this.setData({
       contentHeight: height*(1 - .083)
     });
-    wx.getUserInfo({
+    /*wx.getUserInfo({
       success: function(res){
         console.log(res.userInfo);
         _this.setData({
           userName: res.userInfo.nickName,
-          avatar: res.userInfo.avatarUrl
+          avatar: res.userInfo.avatarUrl,
+          identify: 
+        });
+      }
+    });*/
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/user/getUserInfo',
+      method: 'GET',
+      header: {
+        'content-type': 'text/plain',
+        'Authorization': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        _this.setData({
+          userName: res.data.requestData.nickName,
+          avatar: res.data.requestData.avatarUrl,
+          identify: res.data.requestData.userid
         });
       }
     });
+
   },
   callAction: function(){
     wx.makePhoneCall({

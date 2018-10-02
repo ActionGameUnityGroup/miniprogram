@@ -54,7 +54,7 @@ const userSignIn = () => {
           continuityDate: _this.data.continuityDate + 1,
           increasePoint: 5
         });
-        setContinueDate(res.data.requestData);
+        setContinueDate([res.data.requestData]);
       } else {
         // 失败
         console.log(_this, '当前');
@@ -70,7 +70,7 @@ const userSignIn = () => {
 const setContinueDate = (signInfoList) => {
   console.log(signInfoList, '签到信息');
   console.log(_this.data, '当前');
-  console.log(signInfoList.length == 0);
+  console.log(signInfoList.length);
   if(signInfoList.length == 0){
     _this.setData({
       increasePoint: 0
@@ -79,6 +79,7 @@ const setContinueDate = (signInfoList) => {
     let totalPoint = _this.data.totalPoint;
     for(var i = 0; i < signInfoList.length; i++){
       totalPoint += 5;
+      console.log(i+1 < signInfoList.length);
       if(i+1 < signInfoList.length){
         let lastDate = signInfoList[i].date.substring(0, signInfoList[i].date.lastIndexOf('-'));
         let thisDate = signInfoList[i+1].date.substring(0, signInfoList[i+1].date.lastIndexOf('-'));
@@ -97,7 +98,7 @@ const setContinueDate = (signInfoList) => {
         }
       } else {
         // 长度为1
-        totalPoint += 5;
+        break;
       }
     }
     _this.setData({

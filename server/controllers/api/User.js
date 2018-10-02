@@ -3,6 +3,7 @@ const userModel = require('../../models/userModel');
 const {getQuery, getParams} = require('../../services/userService');
 const request = require('../../app/request');
 const WXBizDataCrypt = require('../../app/WXBizDataCrypt');
+const createCode = require('./createCode');
 
 class User {
 
@@ -114,6 +115,7 @@ class User {
       // console.log(data);
       const save = {
         unionid: data.unionid || '',
+        userid: createCode(),
         openid: data.openId || '',
         avatar: data.avatarUrl || '',
         nickname: data.nickName || '',
