@@ -1,8 +1,9 @@
 Page({
   data: {
     classList: [
-      {className: '', classCover: '../assets/icon/miniprogram-icon-69.png', url: '../Live/Live'},
-      {className: '', classCover: '../assets/icon/miniprogram-icon-70.png', url: '../Dream/Dream'},
+      {className: '', classId: '', classCover: '../assets/icon/miniprogram-icon-78.jpg', url: '../Live/Live'},
+      {className: '', classId: '', classCover: '../assets/icon/miniprogram-icon-80.jpg', url: '../Live/Live'},
+      {className: '', classId: '', classCover: '../assets/icon/miniprogram-icon-79.jpg', url: '../Dream/Dream'},
     ]
   },
   onLoad: function(){

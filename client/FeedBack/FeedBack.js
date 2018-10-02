@@ -1,3 +1,5 @@
+let _this;
+
 const sendSuggest = (options) => {
   const openid = wx.getStorageSync('openid');
   wx.request({
@@ -9,10 +11,30 @@ const sendSuggest = (options) => {
       'Authorization': openid
     },
     success (res) {
-      console.log(res.data)
+      console.log(res.data.status == 200);
+      if(res.data.status == 200){
+        wx.showToast({
+          title: res.data.requestData.info,
+          icon: 'none',
+          mask: true,
+          complete: function(){
+            _this.setData({
+              suggest: '',
+              contact: ''
+            });
+          }
+        });
+      } else {
+        wx.showToast({
+          title: res.data.requestData.info,
+          icon: 'none',
+          mask: true
+        });
+      }
     }
   });
 }
+
 
 Page({
   data: {
@@ -23,6 +45,7 @@ Page({
     wx.setNavigationBarTitle({
       title: '意见反馈'
     });
+    _this = this;
   },
   inputSuggestAction: function(e){
     console.log(e.detail.value);

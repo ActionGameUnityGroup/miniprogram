@@ -1,7 +1,7 @@
 {
   "pages":[
-    "SignIn/SignIn",
     "Index/Index",
+    "SignIn/SignIn",
     "PersonalInfo/personalInfo",
     "FeedBack/FeedBack",
     "UserInfo/UserInfo",

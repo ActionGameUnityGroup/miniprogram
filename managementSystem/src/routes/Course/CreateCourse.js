@@ -91,7 +91,8 @@ class CreateCourse extends Component {
           <div style={{marginTop: 25}}>
             <p>课程封面</p>
             <Upload
-              action="https://www.changdaolife.cn/api/course/setCourseCover"
+              // action="https://www.changdaolife.cn/api/course/setCourseCover"
+              action="http://127.0.0.1:9000/api/course/setCourseCover"
               listType="picture-card"
               fileList={courseCoverist}
               onPreview={this.handlePreview}

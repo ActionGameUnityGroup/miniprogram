@@ -35,16 +35,57 @@ const userSignIn = () => {
   wx.request({
     url: 'https://www.changdaolife.cn/api/sign/signIn',
     data: JSON.stringify({}),
+    method: 'POST',
     header: {
       'content-type': 'text/plain',
       'Authorization': openid
     },
     success: function(res){
-      console.log(res);
-    },
-    fail: function(err){
-      console.log(err);
+      console.log(res, 'res');
+      if(res.data.requestData.signType == 1){
+        // 成功
+        _this.setData({
+          signSuccess: true,
+          signResText: res.data.requestData.info
+        });
+      } else {
+        // 失败
+        console.log(_this, '当前');
+        _this.setData({
+          signFailure: true,
+          signResText: res.data.requestData.info
+        });
+      }
     }
+  });
+};
+
+const setContinueDate = (signInfoList) => {
+  console.log(signInfoList, '签到信息');
+  console.log(_this.data, '当前');
+  let totalPoint = _this.data.totalPoint;
+  for(var i = 0; i < signInfoList.length; i++){
+    totalPoint += 5;
+    if(i+1 < signInfoList.length){
+      let lastDate = signInfoList[i].date.substring(0, signInfoList[i].date.lastIndexOf('-'));
+      let thisDate = signInfoList[i+1].date.substring(0, signInfoList[i+1].date.lastIndexOf('-'));
+      if(thisDate == lastDate){
+        lastDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
+        thisDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
+        if(lastDate == thisDate) {
+          _this.setData({
+            continuityDate: _this.data.continuityDate + 1
+          });
+        } else {
+          _this.setData({
+            continuityDate: 0
+          });
+        }
+      }
+    }
+  }
+  _this.setData({
+    totalPoint: totalPoint
   });
 };
 
@@ -55,17 +96,20 @@ Page({
     dateList: [],
     currentDate: 0,
     continuityDate: 1,
-    increasePoint: '+10',
-    totalPoint: 800,
+    increasePoint: 5,
+    totalPoint: 0,
     signSuccess: false,
-    signFailure: false
+    signFailure: false,
+    signResText: ''
   },
   onLoad: function(){
     _this = this;
     wx.setNavigationBarTitle({
       title: '签到'
     });
+
     setDate();
+
     wx.request({
       url: 'https://www.changdaolife.cn/api/banner/getBanner?page=signin',
       method: 'GET',
@@ -79,17 +123,31 @@ Page({
         }
       }
     });
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/sign/getSignInfo',
+      method: 'GET',
+      header: {
+        'Authorization': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res.data.requestData.signInfo, '签到信息');
+        setContinueDate(res.data.requestData.signInfo);
+      }
+    });
+
   },
   signInAction: function(){
     console.log('签到');
-    this.setData({
+    /*this.setData({
       signSuccess: true
-    });
+    });*/
     userSignIn();
   },
   signCompleteAction: function(){
     this.setData({
-      signSuccess: false
+      signSuccess: false,
+      signFailure: false
     });
   }
 });
