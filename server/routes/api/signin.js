@@ -4,7 +4,8 @@ module.exports = {
   'GET /api/sign/getSignInfo': async (ctx) => {
     await SignIn.getUserSignInfo(ctx);
   },
-  'POSt /api/sign/signIn': async (ctx) => {
+  'POST /api/sign/signIn': async (ctx) => {
+    console.log('签到');
     await SignIn.signIn(ctx);
   },
 };
