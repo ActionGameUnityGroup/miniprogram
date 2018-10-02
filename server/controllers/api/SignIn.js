@@ -24,7 +24,7 @@ class SignIn{
       };
       const signInfo = new signModel(options);
       const signRes = await signInfo.save();
-      ctx.body = formatData({info: '签到成功', signType: 1});
+      ctx.body = formatData({info: '签到成功', signType: 1, date: params.date});
     } else {
       ctx.body = formatDataFail({info: '你已经签过了哦', signType: 0});
     }

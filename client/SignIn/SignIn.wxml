@@ -32,7 +32,7 @@
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-62.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
       <view style='margin-top: 69rpx; text-align: center; color: #323232; font-size: 36rpx;'> 签到成功 </view>
-      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{serialDays}} </text>天</view>
+      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{continuityDate}} </text>天</view>
       <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: #62eedc; border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
     </view>
   </view>
@@ -44,7 +44,7 @@
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-77.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
       <view style='margin-top: 69rpx; text-align: center; color: #323232; font-size: 36rpx;'> 你已经签过了哦~ </view>
-      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{serialDays}} </text>天</view>
+      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{continuityDate}} </text>天</view>
       <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: -webkit-linear-gradient(#ffdd75, #ffb253); border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
     </view>
   </view>

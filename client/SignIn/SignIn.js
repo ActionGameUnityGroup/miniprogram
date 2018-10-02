@@ -32,9 +32,13 @@ const setDate = () => {
 
 const userSignIn = () => {
   const openid = wx.getStorageSync('openid');
+  const date = new Date();
   wx.request({
     url: 'https://www.changdaolife.cn/api/sign/signIn',
-    data: JSON.stringify({}),
+    data: JSON.stringify({
+      date: `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`,
+      time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }),
     method: 'POST',
     header: {
       'content-type': 'text/plain',
@@ -46,8 +50,11 @@ const userSignIn = () => {
         // 成功
         _this.setData({
           signSuccess: true,
-          signResText: res.data.requestData.info
+          signResText: res.data.requestData.info,
+          continuityDate: _this.data.continuityDate + 1,
+          increasePoint: 5
         });
+        setContinueDate(res.data.requestData);
       } else {
         // 失败
         console.log(_this, '当前');
@@ -63,30 +70,40 @@ const userSignIn = () => {
 const setContinueDate = (signInfoList) => {
   console.log(signInfoList, '签到信息');
   console.log(_this.data, '当前');
-  let totalPoint = _this.data.totalPoint;
-  for(var i = 0; i < signInfoList.length; i++){
-    totalPoint += 5;
-    if(i+1 < signInfoList.length){
-      let lastDate = signInfoList[i].date.substring(0, signInfoList[i].date.lastIndexOf('-'));
-      let thisDate = signInfoList[i+1].date.substring(0, signInfoList[i+1].date.lastIndexOf('-'));
-      if(thisDate == lastDate){
-        lastDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
-        thisDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
-        if(lastDate == thisDate) {
-          _this.setData({
-            continuityDate: _this.data.continuityDate + 1
-          });
-        } else {
-          _this.setData({
-            continuityDate: 0
-          });
+  console.log(signInfoList.length == 0);
+  if(signInfoList.length == 0){
+    _this.setData({
+      increasePoint: 0
+    });
+  } else {
+    let totalPoint = _this.data.totalPoint;
+    for(var i = 0; i < signInfoList.length; i++){
+      totalPoint += 5;
+      if(i+1 < signInfoList.length){
+        let lastDate = signInfoList[i].date.substring(0, signInfoList[i].date.lastIndexOf('-'));
+        let thisDate = signInfoList[i+1].date.substring(0, signInfoList[i+1].date.lastIndexOf('-'));
+        if(thisDate == lastDate){
+          lastDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
+          thisDate = signInfoList[i].date.substring(signInfoList[i].date.lastIndexOf('-'), signInfoList[i].date.length);
+          if(lastDate == thisDate) {
+            _this.setData({
+              continuityDate: _this.data.continuityDate + 1
+            });
+          } else {
+            _this.setData({
+              continuityDate: 0
+            });
+          }
         }
+      } else {
+        // 长度为1
+        totalPoint += 5;
       }
     }
+    _this.setData({
+      totalPoint: totalPoint
+    });
   }
-  _this.setData({
-    totalPoint: totalPoint
-  });
 };
 
 Page({
@@ -95,7 +112,7 @@ Page({
     currentMonth: '',
     dateList: [],
     currentDate: 0,
-    continuityDate: 1,
+    continuityDate: 0,
     increasePoint: 5,
     totalPoint: 0,
     signSuccess: false,
