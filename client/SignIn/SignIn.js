@@ -100,7 +100,9 @@ Page({
     totalPoint: 0,
     signSuccess: false,
     signFailure: false,
-    signResText: ''
+    signResText: '',
+    serialDays: 0,
+    integration: 5
   },
   onLoad: function(){
     _this = this;

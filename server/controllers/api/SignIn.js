@@ -13,7 +13,7 @@ class SignIn{
 
   async signIn(ctx){
     const params = JSON.parse(ctx.request.body);
-    console.log(params, '请求参数');
+    console.log(params, 'query args');
     const openid = ctx.request.headers.authorization;
     const signList = await signModel.find({openid: openid, date: params.date}, '-_id');
     if(!signList.length){
