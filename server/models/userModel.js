@@ -4,7 +4,7 @@ console.log('模型内连接数据库');
 
 let userSchema = new mongoose.Schema({
   openid: String,
-  userid: String
+  userid: String,
   avatar: String,
   nickname: String,
   gender: Number,
