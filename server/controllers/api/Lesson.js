@@ -22,7 +22,7 @@ class Audio {
   }
 
   async getLessonList(ctx){
-    let data = await lessonModel.find({}, '-_id audioID audioName audioCoverUrl').sort({'audioID': -1});
+    let data = await lessonModel.find({}, '-_id').sort({'audioID': -1});
     console.log(data);
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
