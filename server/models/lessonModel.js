@@ -3,13 +3,12 @@ const {mongoose, db} = require('../mongodb/db');
 console.log('模型内连接数据库');
 
 let lessonSchema = new mongoose.Schema({
-  audioID: Number,
-  audioName : String,
-  audioUrl : String,
-  author : String,
-  courseName: '',
-  lessonCoverUrl : String,
-  audioLength : String
+  lessonId: String,
+  courseId: String,
+  lessonAudioName: String,
+  lessonAudioUrl: String,
+  lessonName: String,
+  lessonAudioLength: String
 }, {collection: 'Lesson', versionKey: false});
 
 /*audioSchema.methods.findObject = function(obj, callback){
