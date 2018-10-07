@@ -1,39 +1,48 @@
 let audio = wx.createInnerAudioContext();
-audio.autoplay = false;
+audio.autoplay = true;
 audio.onPlay(() => {
   console.log('音频开始');
+  _this.setData({
+    isPlay: true
+  });
+  setTimeout(function(){
+    wx.hideLoading();
+  }, 300);
 });
 
-function Audio(data){
-  console.log('开始创建audio', data);
-  // audio.src = data.audioUrl;
-  // console.log(audio);
-  /*audio.onPlay = function(e){
-    console.log('音频开始');
-    console.log(e);
-  }*/
-}
+let _this;
 
 Page({
   data: {
-    audioName: '令人窒息的爱',
-    audioCover: '../assets/icon/cover.png',
-    collectionName: '过有灵魂的生活',
-    collectionTeacher: '杨凡',
-    collectionType: '照梦空间',
-    collectionExplain: '文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍文字介绍',
+    // courseTitle: '令人窒息的爱',
+    courseCover: '',
+    lessonTitle: '过有灵魂的生活',
+    courseAuthor: '杨凡',
+    courseType: '照梦空间',
+    lessonExplain: [],
     isPlay: false
   },
   onLoad: function(options){
     console.log(options);
+    _this = this;
     wx.setNavigationBarTitle({
       title: options.lessonName
+    });
+    wx.showLoading({
+      title: '正在获取课时内容',
+      mask: true
     });
     wx.request({
       url:'https://www.changdaolife.cn/api/lesson/getLesson?lessonId='+options.lessonId,
       success: function(res){
         // console.log(data);
-        Audio(res.data.requestData[0]);
+        let requestData = res.data.requestData[0];
+        audio.src = requestData.lessonAudioUrl;
+        _this.setData({
+          lessonTitle: requestData.lessonTitle,
+          courseCover: requestData.courseCover,
+          lessonExplain: requestData.lessonDetail
+        });
       }
     });
   },

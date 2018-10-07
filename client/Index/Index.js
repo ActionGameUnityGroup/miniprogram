@@ -26,27 +26,27 @@ Page({
       {moduleImage: '../assets/icon/miniprogram-icon-28.png', moduleName: '签到', moduleUrl: '../SignIn/SignIn'},
     ],
     AudioList: [
+      /*{audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
       {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
       {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
       {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
+      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},*/
     ],
     articleList: [
+      /*{articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
       {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
       {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
       {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
+      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},*/
     ],
     courseList: [
+      /*{courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
+      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},*/
     ],
     showAudioWidth: 180 * 7 + 19 * 6,
     contentHeight: 0,
@@ -65,16 +65,49 @@ Page({
     wx.setNavigationBarTitle({
       title: '常道智慧生活'
     });
-    wx.request({
-      url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
-      method: 'GET',
-      success: function(res){
-        console.log(res.errMsg);
-        _this.setData({
-          bannerList: res.data.requestData[0].bannerList
-        });
-      }
-    });
+    // const bannerList = wx.getStorageSync('bannerList');
+    // if(bannerList.length == 0){
+      wx.request({
+        url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
+        method: 'GET',
+        success: function(res){
+          console.log(res.errMsg);
+          _this.setData({
+            bannerList: res.data.requestData[0].bannerList
+          });
+          /*wx.setStorage({
+            key: 'bannerList',
+            data: res.data.requestData[0].bannerList
+          });*/
+        }
+      });
+    // }
+    // const audioList = wx.getStorageSync('audioList');
+    // if (audioList.length == 0) {
+      wx.request({
+        url: 'https://www.changdaolife.cn/api/course/getCourseList',
+        method: 'GET',
+        success: function(res){
+          console.log(res.data.requestData);
+          const resList = [];
+          if(res.data.requestData.courseList.length < 4){
+            for(var i = 0; i < 4; i++){
+              resList[i] = res.data.requestData.courseList[i];
+            }
+          }
+          console.log(resList);
+          _this.setData({
+            AudioList: resList,
+            articleList: resList,
+            courseList: res.data.requestData.courseList,
+          });
+          /*wx.setStorage({
+            key: 'audioList',
+            data: res.data.requestData
+          });*/
+        }
+      });
+    // }
     let height = app.globalData.systemInfo.windowHeight;
     _this = this;
     _this.setData({

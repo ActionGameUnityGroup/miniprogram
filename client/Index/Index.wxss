@@ -25,7 +25,7 @@
 .show-more-action{ display: flex; justify-content: space-between; align-items: center; position: absolute; right: 36rpx; top: 0; z-index: 3; }
 .show-more-action text{ display: block; line-height: 74rpx; font-size: 28rpx; color: #5a5a5a; }
 
-.show-audio-list{ /* display: flex; justify-content: space-around; align-items: center; */ margin-top: 11rpx; height: 185rpx; }
+.show-audio-list{ /* display: flex; justify-content: space-around; align-items: center; */ position: relative; margin-top: 11rpx; height: 185rpx; }
 .show-audio-item{ margin: 0 auto; width: 140rpx; }
 .show-audio-item image{ background: #ddd; }
 .show-audio-image { display: block; margin: 0 auto; width: 140rpx; height: 140rpx; border-radius: 15rpx; }
@@ -37,9 +37,9 @@
 
 .show-article-list{ display: flex; justify-content: space-around; align-items: center; margin-top: 22rpx; height: 220rpx; }
 .show-article-item{ margin: 0 auto; width: 140rpx; }
-.show-article-image{ display: block; margin: 0 auto; width: 140rpx; height: 165rpx; border-radius: 5rpx; background: #f00; }
+.show-article-image{ display: block; margin: 0 auto; width: 140rpx; height: 165rpx; border-radius: 5rpx; background: #ddd; }
 .show-article-bottom-info{ margin: 0 auto; width: 140rpx; }
-.show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0; height: 1rem; text-align: center; font-size: 24rpx; word-wrap: break-word; overflow: hidden; }
+.show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0 0; height: 1rem; text-align: center; font-size: 24rpx; word-wrap: break-word; overflow: hidden; }
 .show-article-info{ display: flex; justify-content: space-between; align-content: center; margin: 48rpx auto 20rpx; padding: 0 14rpx; }
 .show-article-ground, .show-article-visit{ display: inline-block; font-size: 17rpx; color: #9c9c9c; }
 .show-article-visit image{ margin-right: 9rpx; width: 27rpx; height: 16rpx; }
@@ -47,7 +47,7 @@
 .show-course-list{ display: block; width: 100%; }
 .show-course-item{ display: flex; justify-content: space-between; align-content: center; margin: 0 auto; padding: 30rpx 0; width: 90%; border-bottom: 2rpx solid #dbdbdb; }
 .show-course-image{ width: 182rpx; height: 182rpx; border-radius: 15rpx; }
-.show-course-item:nth-child(odd) .show-course-image{ background: #f00; }
+.show-course-item:nth-child(odd) .show-course-image{ background: #ddd; }
 .show-course-item:nth-child(even) .show-course-image{ background: #000; }
 .show-course-item:last-child{ border-bottom: none; }
 .show-course-info{ display: inline-flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 70%; }

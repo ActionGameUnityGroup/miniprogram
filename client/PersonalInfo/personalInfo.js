@@ -33,16 +33,15 @@ Page({
     this.setData({
       contentHeight: height*(1 - .083)
     });
-    /*wx.getUserInfo({
+    wx.getUserInfo({
       success: function(res){
         console.log(res.userInfo);
         _this.setData({
           userName: res.userInfo.nickName,
           avatar: res.userInfo.avatarUrl,
-          identify: 
         });
       }
-    });*/
+    });
 
     wx.request({
       url: 'https://www.changdaolife.cn/api/user/getUserInfo',
@@ -52,10 +51,9 @@ Page({
         'Authorization': wx.getStorageSync('openid')
       },
       success: function(res){
+        console.log(res);
         _this.setData({
-          userName: res.data.requestData.nickName,
-          avatar: res.data.requestData.avatarUrl,
-          identify: res.data.requestData.userid
+          identify: res.data.requestData[0].userid
         });
       }
     });

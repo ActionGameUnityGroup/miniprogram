@@ -1,11 +1,11 @@
 <view class="top-content">
 
   <view class="audio-cover">
-    <image src='{{audioCover}}' mode='widthFix'></image>
+    <image src='{{courseCover}}' mode='widthFix'></image>
   </view>
 
   <view class="audio-name">
-    <text>【试听】{{audioName}}</text>
+    <text>【试听】{{lessonTitle}}</text>
   </view>
 
   <view class="audio-action-bar">
@@ -35,8 +35,8 @@
     <view class="collection-info">
       <image class="collection-cover" mode='widthFix'></image>
       <view class="collection-msg">
-        <text> {{collectionName}} </text>
-        <text> 智慧生活导师： {{collectionTeacher}} </text>
+        <text> {{lessonTitle}} </text>
+        <text> 智慧生活导师： {{courseAuthor}} </text>
       </view>
     </view>
 
@@ -46,10 +46,16 @@
 
   <view class="collection-bottom">
     <view class="collection-title">
-      <text>【{{collectionType}}】</text>
-      <text>{{collectionName}}</text>
+      <text>【{{courseType}}】</text>
+      <text>{{lessonTitle}}</text>
     </view>
-    <view class="collection-explain"> {{collectionExplain}} </view>
+    <view class="collection-explain">
+      <block wx:for='{{lessonExplain}}' wx:key='index'>
+        <view class='lesson-paragraph'> {{item}} </view>
+      </block>
+    </view>
   </view>
 
 </view>
+
+<view></view>

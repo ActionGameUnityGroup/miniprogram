@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Button, Modal } from 'antd';
 import style from './CourseSection.css';
 import CreateCourse from './CreateCourse';
+import UpdateLesson from './UpdateLesson';
 import request from '../../utils/request';
 
 const confirm = Modal.confirm;
@@ -9,7 +10,8 @@ const confirm = Modal.confirm;
 class CourseSection extends Component{
 
   state = {
-    visible: false
+    visible: false,
+    showLesson: false
   };
 
   UNSAFE_componentWillMount(){
@@ -44,9 +46,19 @@ class CourseSection extends Component{
     });
   }
 
-  updateCourseAction(e){
+  cancelUpdateLessonAction(){
+    console.log('不更新课程');
+    this.setState({
+      showLesson: false,
+    });
+  }
+
+  updateLessonAction(e){
     console.log('更新课程');
     console.log(e.target);
+    this.setState({
+      showLesson: true,
+    });
   }
 
   undercarriageAction(e){
@@ -113,7 +125,7 @@ class CourseSection extends Component{
                         <Button
                           size='large'
                           id={child.courseId}
-                          onClick={e => this.updateCourseAction(e)}
+                          onClick={e => this.updateLessonAction(e)}
                           type=''
                         > 更新课程 </Button>
                         <br/>
@@ -129,7 +141,7 @@ class CourseSection extends Component{
                         <Button
                           size='large'
                           id={child.courseId}
-                          onClick={e => this.updateCourseAction(e)}
+                          onClick={e => this.updateLessonAction(e)}
                           type=''
                         > 更新课程 </Button>
                         <br/>
@@ -148,6 +160,7 @@ class CourseSection extends Component{
           }
         </div>
         <CreateCourse isVisible={this.state.visible} onCancelAddCourse={() => this.cancelAddCourseAction()} onUpdate={this.props.onUpdate} />
+        <UpdateLesson isVisible={this.state.showLesson} onCancelAddCourse={() => this.cancelUpdateLessonAction()} />
       </div>
     );
   }

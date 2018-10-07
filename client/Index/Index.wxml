@@ -35,17 +35,22 @@
         display-multiple-items='{{4}}'
       >
         <block wx:for='{{AudioList}}' wx:key='index'>
-          <swiper-item>
-            <view class="show-audio-item" id='../Course/Course?name={{item.audioName}}' bindtap='navigateAction'>
-              <image class="show-audio-image" src='{{item.audioCoverUrl}}' mode='widthFix'></image>
-              <text class="show-audio-name">{{item.audioName}}</text>
-            </view>
-          </swiper-item>
+          <block wx:if='{{item.courseCover !== undefined}}'>
+            <swiper-item>
+              <view class="show-audio-item" id='../Course/Course?courseId={{item.courseId}}' bindtap='navigateAction'>
+                <image class="show-audio-image" src='{{item.courseCover}}' mode='widthFix'></image>
+                <text class="show-audio-name">{{item.courseTitle}}</text>
+              </view>
+            </swiper-item>
+          </block>
+          <block wx:else><swiper-item></swiper-item></block>
+          <block wx:if='{{index == 4 && item.courseCover !== undefined}}'>
+            <swiper-item class="view-more-action">
+              <text style='margin: 60rpx auto 0;'>查看更多</text>
+              <text>View More</text>
+            </swiper-item>
+          </block>
         </block>
-        <swiper-item class="view-more-action">
-          <text style='margin: 60rpx auto 0;'>查看更多</text>
-          <text>View More</text>
-        </swiper-item>
       </swiper>
     </view>
   </view>
@@ -61,17 +66,22 @@
       display-multiple-items='{{4}}'
     >
       <block wx:for='{{articleList}}' wx:key='index'>
-        <swiper-item id='audio{{index}}'>
-          <view id='../Course/Course?name={{item.articleName}}' class="show-article-item" bindtap='navigateAction'>
-            <image class="show-article-image" src='{{item.articleCoverUrl}}' mode='scaleToFill'></image>
-            <text class="show-article-name">{{item.articleName}}</text>
-          </view>
-        </swiper-item>
+        <block wx:if='{{item.courseCover !== undefined}}'>
+          <swiper-item id='audio{{index}}'>
+            <view id='../Course/Course?courseId={{item.courseId}}' class="show-article-item" bindtap='navigateAction'>
+              <image class="show-article-image" src='{{item.courseCover}}' mode='scaleToFill'></image>
+              <text class="show-article-name">{{item.courseTitle}}</text>
+            </view>
+          </swiper-item>
+        </block>
+        <block wx:else><swiper-item></swiper-item></block>
+        <block wx:if='{{index == 4 && item.courseCover !== undefined}}'>
+          <swiper-item class="view-more-action">
+            <text style='margin: 60rpx auto 0;'>查看更多</text>
+            <text>View More</text>
+          </swiper-item>
+        </block>
       </block>
-      <swiper-item class="view-more-action" bindtap='moreArticleAction'>
-        <text style='margin: 70rpx auto 0;'>查看更多</text>
-        <text>View More</text>
-      </swiper-item>
     </swiper>
   </view>
 
@@ -83,11 +93,11 @@
     </view>
     <view class="show-course-list">
       <block wx:for='{{courseList}}' wx:key='index'>
-        <view id='../Course/Course?name={{item.courseName}}' class="show-course-item" bindtap='navigateAction'>
-          <image class="show-course-image" src='{{item.courseCoverUrl}}' mode='widthFix'></image>
+        <view id='../Course/Course?courseId={{item.courseId}}' class="show-course-item" bindtap='navigateAction'>
+          <image class="show-course-image" src='{{item.courseCover}}' mode='widthFix'></image>
           <view class="show-course-info">
-            <text class="show-course-name">{{item.courseName}}</text>
-            <text class="show-course-describe">{{item.courseText}}</text>
+            <text class="show-course-name">{{item.courseTitle}}</text>
+            <text class="show-course-describe">{{item.courseDetail}}</text>
             <!-- <text class="show-course-latest">已更新{{item.currentCourse}}期</text> -->
           </view>
         </view>
@@ -95,7 +105,7 @@
     </view>
   </view>
 
-  <view style='text-align: center; line-height: 58rpx; color: #a5a4a4; font-size: 24rpx;'>已经到底啦</view>
+  <!-- <view style='text-align: center; line-height: 58rpx; color: #a5a4a4; font-size: 24rpx;'>已经到底啦</view> -->
 </scroll-view>
 
 <view class="nav-bar">

@@ -19,12 +19,12 @@
   <view class="lesson-list">
     <block wx:for='{{lessonList}}' wx:key='index'>
       <block wx:if='{{index == 0}}'>
-        <view class="lesson-item" id='../Lesson/Lesson?lessonId={{item.periodId}}&periodName={{item.periodName}}' bindtap='toStudyAction'>
+        <view class="lesson-item" id='../Lesson/Lesson?lessonId={{item.lessonId}}&lessonName={{item.lessonTitle}}' bindtap='toStudyAction'>
           <view class="lesson-info">
-            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.periodName}}</view>
+            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonTitle}}</view>
             <view class="lesson-detail">
-              <text>{{item.periodAudioLength}}</text>
-              <text>{{item.lessonStudyLength}}人学过</text>
+              <text>{{item.lessonAudioLengthString}}</text>
+              <text>{{item.studyNumber}}人学过</text>
               <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
             </view>
           </view>
@@ -34,10 +34,10 @@
       <block wx:else>
         <view class="lesson-item">
           <view class="lesson-info">
-            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.periodName}}</view>
+            <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonTitle}}</view>
             <view class="lesson-detail">
-              <text>{{item.periodAudioLength}}</text>
-              <text>{{item.lessonStudyLength}}人学过</text>
+              <text>{{item.lessonAudioLengthString}}</text>
+              <text>{{item.studyNumber}}人学过</text>
               <block wx:if='{{index == 0}}'><text class="audition-label">试听</text></block>
             </view>
           </view>
@@ -53,6 +53,7 @@
     <text style='display: inline-block; margin-right: 10rpx; width: 10rpx; height: 25rpx; border-radius: 50rpx; background: -webkit-linear-gradient(top left, #fead78, #fc6857);'></text><text style='display: inline-block; font-size: 30rpx; font-weight: bold; color: #000;'> 课程大纲 </text>
   </view>
   <view class="course-outline-content">
+    {{courseOutLine}}
     <!-- <block wx:for='{{}}' wx:key='index'></block> -->
   </view>
 </view>

@@ -46,5 +46,5 @@
 <block wx:if='{{isThird}}'></block>
 
 <view class="subscribe-content">
-  <view class="subscribe-action"> 点击订阅 </view>
+  <view class="subscribe-action"> 加入会员 </view>
 </view>
