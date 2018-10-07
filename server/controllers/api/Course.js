@@ -22,7 +22,9 @@ class Course {
   }
 
   async getCourse(ctx){
-    let courseList = await courseModel.find({}, '-_id');
+    const params = ctx.query;
+    const courseId = params.courseId;
+    let courseList = await courseModel.find({courseId: courseId}, '-_id');
     console.log(courseList, '课程列表');
     ctx.body = await formatData({courseList: courseList});
   }
