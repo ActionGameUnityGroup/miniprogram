@@ -5,6 +5,7 @@ const lessonModel = require('../../models/lessonModel');
 const courseModel = require('../../models/courseModel');
 const {formatData} = require('./formatData');
 const crypto = require('crypto');
+const date = new Date();
 
 function setFileName(){
   const md5 = crypto.createHash('md5');
@@ -14,6 +15,12 @@ function setFileName(){
 
 class Course {
 
+  async getCourseList(ctx){
+    let courseList = await courseModel.find({}, '-_id');
+    console.log(courseList, '课程列表');
+    ctx.body = await formatData({courseList: courseList});
+  }
+
   async getCourse(ctx){
     let courseList = await courseModel.find({}, '-_id');
     console.log(courseList, '课程列表');
@@ -22,12 +29,6 @@ class Course {
 
   async setCourseCover(ctx){
     console.log('设置课程封面');
-    let fileStream = await upload(ctx);
-    const date = new Date();
-    console.log(fileStream, '文件流');
-    const fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
-    const fileName = setFileName();
-    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileName}${fileType}`)));
     let course = {
       courseId : "",
       author : "",
@@ -43,10 +44,15 @@ class Course {
     console.log('设置课程封面');
     let params = JSON.parse(ctx.request.body);
     console.log(params, '课程信息');
+    let fileStream = await upload(ctx);
+    console.log(fileStream, '文件流');
+    const fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
+    const fileName = setFileName();
+    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileName}${fileType}`)));
     let courseInfo = {
-      // courseId : "",
+      courseId : "",
       author : params.author || '',
-      // authorInfo: params.authorInfo|| [],
+      authorInfo: params.authorInfo|| [],
       courseTitle: params.courseTitle || "",
       courseDetail: params.courseDetail||"",
       courseLength: 0,
