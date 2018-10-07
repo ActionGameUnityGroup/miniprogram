@@ -10,7 +10,7 @@ class Audio {
 
   async getLesson(ctx){
     let query = ctx.query;
-    let data = await lessonModel.find(query, '-_id').sort({'audioID': -1});
+    let data = await lessonModel.find(query, '-_id').sort({'courseId': 1});
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
     ctx.type = 'text/json';
@@ -22,7 +22,9 @@ class Audio {
   }
 
   async getLessonList(ctx){
-    let data = await lessonModel.find({}, '-_id').sort({'audioID': -1});
+    const params = ctx.query;
+    const courseId = params.courseId;
+    let data = await lessonModel.find({courseId: courseId}, '-_id').sort({'courseId': 1});
     console.log(data);
     ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
