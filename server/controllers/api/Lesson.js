@@ -27,7 +27,7 @@ class Audio {
     let data = await lessonModel.find({courseId: courseId}, '-_id').sort({'courseId': 1});
     console.log(data);
     ctx.info(`${ctx.url}: ${data}`);
-    ctx.body = await formatData(data);
+    ctx.body = await formatData({lessonList: data});
     ctx.type = 'text/json';
   }
 
