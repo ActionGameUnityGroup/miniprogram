@@ -16,7 +16,7 @@ function setFileName(){
 class Course {
 
   async getCourseList(ctx){
-    let courseList = await courseModel.find({}, '-_id');
+    let courseList = await courseModel.find({status: 1}, '-_id');
     console.log(courseList, '课程列表');
     ctx.body = await formatData({courseList: courseList});
   }
