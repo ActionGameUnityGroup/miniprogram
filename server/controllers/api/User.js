@@ -8,9 +8,10 @@ const createCode = require('./createCode');
 class User {
 
   async getUserInfo(ctx){
-    let query = getQuery(ctx);
+    // let query = getQuery(ctx);
     // console.log(ctx.headers);
-    let data = await userModel.find(query, '-_id');
+    const openid = ctx.request.headers.authorization;
+    let data = await userModel.find({openid: openid}, '-_id');
     await ctx.info(`${ctx.url}: ${data}`);
     ctx.body = await formatData(data);
     ctx.type = 'text/json';

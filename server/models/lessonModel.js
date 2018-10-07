@@ -9,7 +9,8 @@ let lessonSchema = new mongoose.Schema({
   lessonAudioUrl: String,
   lessonName: String,
   lessonAudioLengthNumber: Number,
-  lessonAudioLengthString: String
+  lessonAudioLengthString: String,
+  studyNumber: Number
 }, {collection: 'Lesson', versionKey: false});
 
 /*audioSchema.methods.findObject = function(obj, callback){
