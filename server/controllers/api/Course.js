@@ -5,6 +5,7 @@ const lessonModel = require('../../models/lessonModel');
 const courseModel = require('../../models/courseModel');
 const {formatData} = require('./formatData');
 const crypto = require('crypto');
+const images = require('images');
 const date = new Date();
 
 function setFileName(){
@@ -48,18 +49,27 @@ class Course {
     console.log(params, '课程信息');
     let fileStream = await upload(ctx);
     console.log(fileStream, '文件流');
-    const fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
-    const fileName = setFileName();
-    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileName}${fileType}`)));
+    // const fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
+    // const fileName = setFileName();
+    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
+
+    images(`../../public/image/${fileStream.fileName}`)
+    .size(400)
+    .save(`../../public/image/temp_${fileStream.fileName}`, {
+      quality: 50
+    });
+
     let courseInfo = {
       courseId : "",
       author : params.author || '',
       authorInfo: params.authorInfo|| [],
       courseTitle: params.courseTitle || "",
       courseDetail: params.courseDetail||"",
+      courseCover: `https://www.changdaolife.cn/image/${fileStream.fileName}`,
+      tempCourseCover: `https://www.changdaolife.cn/image/temp_${fileStream.fileName}`,
       courseLength: 0,
       status: 0
-    }
+    };
     let course = new courseModel(courseInfo);
     let res = await course.save();
     console.log(course, '插入信息');
