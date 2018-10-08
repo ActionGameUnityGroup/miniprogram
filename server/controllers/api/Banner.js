@@ -3,7 +3,6 @@ const {formatData, formatDataFail} = require('./formatData');
 const upload = require('./upload');
 const fs = require('fs');
 const path = require('path');
-const images = require('images');
 
 class Banner{
 
@@ -24,11 +23,6 @@ class Banner{
     // console.log('页面banner：', data);
     let fileStream = await upload(ctx);
     fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
-    images(`../../public/image/${fileStream.fileName}`)
-    .size(400)
-    .save(`../../public/image/temp_${fileStream.fileName}`, {
-      quality: 50
-    });
     if (!data.length) {
       // 没数据
       console.log('没数据');
@@ -60,8 +54,7 @@ class Banner{
       if (flag) {
         data[0].bannerList.push({
           name: fileStream.fileName,
-          url: `https://www.changdaolife.cn/image/${fileStream.fileName}`,
-          tempUrl: `https://www.changdaolife.cn/image/temp_${fileStream.fileName}`
+          url: `https://www.changdaolife.cn/image/${fileStream.fileName}`
         });
         console.log(data[0].bannerList);
         let res = await bannerModel.update({page: page}, {bannerList: data[0].bannerList}, {multi: true});

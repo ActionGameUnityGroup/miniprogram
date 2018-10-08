@@ -455,3 +455,6 @@ Wed Sep 19 2018 16:56:28 GMT+0800 (GMT+08:00)
   area: '广东省 广州市 荔湾区',
   detail: '123' }
 
+Mon Oct 08 2018 11:31:14 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
