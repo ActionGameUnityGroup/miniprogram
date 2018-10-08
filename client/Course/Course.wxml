@@ -1,6 +1,6 @@
 <view class="course-teacher-info">
   <view class="course-cover">
-    <image mode='widthFix' src='{{courseCoverUrl}}'></image>
+    <image mode='widthFix' src='{{courseCoverUrl}}' style='background: url(../assets/icon/cover.jpg);'></image>
   </view>
 
   <view class="teacher-info">
@@ -19,7 +19,15 @@
   <view class="lesson-list">
     <block wx:for='{{lessonList}}' wx:key='index'>
       <block wx:if='{{index == 0}}'>
-        <view class="lesson-item" id='../Lesson/Lesson?lessonId={{item.lessonId}}&lessonName={{item.lessonTitle}}' bindtap='toStudyAction'>
+        <view
+          class="lesson-item"
+          id='../Lesson/Lesson?lessonId={{item.lessonId}}&lessonName={{item.lessonTitle}}'
+          bindtap='toStudyAction'
+          data-audioUrl='{{item.lessonAudioUrl}}'
+          data-audioTitle='{{item.lessonTitle}}'
+          data-audioCover='{{item.courseCover}}'
+          data-audioDetail='{{item.lessonDetail}}'
+        >
           <view class="lesson-info">
             <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonTitle}}</view>
             <view class="lesson-detail">

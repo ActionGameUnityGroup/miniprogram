@@ -36,10 +36,12 @@ App({
       success: (info) => {
         this.globalData.systemInfo = info;
       }
-    })
+    });
+    this.globalData.backgroundAudio = wx.getBackgroundAudioManager();
   },
   globalData: {
     userInfo: null,
-    systemInfo: null
+    systemInfo: null,
+    backgroundAudio: null
   }
 })

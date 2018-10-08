@@ -143,6 +143,7 @@ Page({
         });
       }
     });
+    console.log(app);
   },
   moreArticleAction: function(){
     wx.navigateTo({

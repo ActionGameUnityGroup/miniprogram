@@ -47,6 +47,10 @@ Page({
         _this.setData({
           courseCoverUrl: res.data.requestData.courseList[0].courseCover,
         });
+        wx.setStorage({
+          key: 'courseInfo',
+          data: res.data.requestData.courseList[0]
+        });
         wx.setNavigationBarTitle({
           title: res.data.requestData.courseList[0].courseTitle
         });
@@ -80,9 +84,16 @@ Page({
   },
   toStudyAction: function(e){
     console.log('跳去lesson页面');
-    console.log(e.currentTarget.id);
+    console.log(e);
+    const dataset = e.currentTarget.dataset;
+    console.log(dataset);
+    const audio = app.globalData.backgroundAudio;
+    audio.src = dataset.audiourl;
+    audio.title = dataset.audiotitle;
+    audio.coverImgUrl = dataset.audiocover;
+    const courseInfo = wx.getStorageSync('courseInfo');
     wx.navigateTo({
-      url: e.currentTarget.id
+      url: `${e.currentTarget.id}?courseCover=${dataset.audiocover}&lessonDetail=${dataset.lessonDetail}`
     });
   }
 })

@@ -1,5 +1,6 @@
-let audio = wx.createInnerAudioContext();
-audio.autoplay = true;
+/*console.log(audio, '背景音频');
+// let audio = wx.createInnerAudioContext();
+// audio.autoplay = true;
 audio.onPlay(() => {
   console.log('音频开始');
   _this.setData({
@@ -8,9 +9,11 @@ audio.onPlay(() => {
   setTimeout(function(){
     wx.hideLoading();
   }, 300);
-});
+});*/
+const app = getApp();
 
 let _this;
+let audio = app.globalData.backgroundAudio;
 
 Page({
   data: {
@@ -28,16 +31,16 @@ Page({
     wx.setNavigationBarTitle({
       title: options.lessonName
     });
-    wx.showLoading({
+    /*wx.showLoading({
       title: '正在获取课时内容',
       mask: true
-    });
+    });*/
     wx.request({
       url:'https://www.changdaolife.cn/api/lesson/getLesson?lessonId='+options.lessonId,
       success: function(res){
         // console.log(data);
         let requestData = res.data.requestData[0];
-        audio.src = requestData.lessonAudioUrl;
+        // audio.src = requestData.lessonAudioUrl;
         _this.setData({
           lessonTitle: requestData.lessonTitle,
           courseCover: requestData.courseCover,
@@ -45,6 +48,7 @@ Page({
         });
       }
     });
+    console.log(audio);
   },
   pauseAction: function(){
     console.log('暂停');

@@ -22,6 +22,7 @@ class Banner{
     let data = await bannerModel.find({page: page}, '-_id');
     // console.log('页面banner：', data);
     let fileStream = await upload(ctx);
+    console.log(fileStream, '上传的图片');
     fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
     if (!data.length) {
       // 没数据

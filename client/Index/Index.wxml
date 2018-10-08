@@ -9,7 +9,7 @@
       indicator-active-color='#0094d7'
     >
       <block wx:for='{{bannerList}}' wx:key='index'>
-        <swiper-item class="banner-item"><image mode='widthFix' src='{{item.url}}' key='{{index}}'></image></swiper-item>
+        <swiper-item class="banner-item"><image mode='widthFix' src='{{item.url}}' key='{{index}}' style='background: url(../assets/icon/banner.jpg); height: 378rpx;'></image></swiper-item>
       </block>
     </swiper>
   </view>
@@ -38,7 +38,7 @@
           <block wx:if='{{item.courseCover !== undefined}}'>
             <swiper-item>
               <view class="show-audio-item" id='../Course/Course?courseId={{item.courseId}}' bindtap='navigateAction'>
-                <image class="show-audio-image" src='{{item.courseCover}}' mode='widthFix'></image>
+                <image class="show-audio-image" src='{{item.courseCover}}' mode='widthFix' style='background: url(../assets/icon/cover.jpg); height: 140rpx;'></image>
                 <text class="show-audio-name">{{item.courseTitle}}</text>
               </view>
             </swiper-item>
