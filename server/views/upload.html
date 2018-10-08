@@ -34,7 +34,8 @@
         if (file) {
           // 请求接口
           fetch(
-            'https://www.changdaolife.cn/api/audio/setAudio',
+            'http://127.0.0.1:9000/api/audio/setAudio',
+            // 'https://www.changdaolife.cn/api/audio/setAudio',
             {
               method: 'POST',
               body: formData,
@@ -49,6 +50,7 @@
             console.error(err);
           });
         } else {
+          alert('没有选择文件');
           console.log('没有选择文件');
         }
       };
