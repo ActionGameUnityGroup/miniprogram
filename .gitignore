@@ -3,6 +3,6 @@
 /server2/
 # /client/
 /managementSystem/node_modules
-/server/public/audio/
+# /server/public/audio/
 /Slider/
 /Node/
