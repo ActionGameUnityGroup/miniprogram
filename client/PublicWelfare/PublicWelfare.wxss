@@ -17,7 +17,7 @@ page {
 .activity-image image{ display: block; width: 100%; }
 
 .activity-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 430rpx; height: 150rpx; }
-.activity-title{ display: block; width: 100%; text-align: left; color: #333; font-size: 30rpx; }
+.activity-title{ display: block; width: 100%; max-width: 80rpx; text-align: left; color: #333; font-size: 30rpx; overflow: hidden; }
 .activity-msg{ display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
 .activity-detail{ display: inline-flex; justify-content: space-between; align-items: center; vertical-align: middle; font-size: 24rpx; color: #252525; }
