@@ -1,11 +1,12 @@
 {
   "pages":[
     "Index/Index",
+    "WelfareActivity/WelfareActivity",
     "SignIn/SignIn",
     "PersonalInfo/personalInfo",
     "FeedBack/FeedBack",
     "UserInfo/UserInfo",
-    "PublicWelfare/publicAction",
+    "PublicWelfare/PublicWelfare",
     "ArticleList/ArticleList",
     "MyInivitation/MyInivitation",
     "HomeWork/HomeWork",

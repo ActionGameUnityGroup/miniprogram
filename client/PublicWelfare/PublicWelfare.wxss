@@ -22,10 +22,7 @@ page {
 
 .activity-detail{ display: inline-flex; justify-content: space-between; align-items: center; vertical-align: middle; font-size: 24rpx; color: #252525; }
 
-.activity-date{
-  margin-right: 10rpx;
-  color: #6a6a6a;
-}
+.activity-date, .activity-time{ margin-right: 10rpx; color: #6a6a6a; }
 
 .activity-type{
   display: block;

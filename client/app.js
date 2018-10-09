@@ -37,7 +37,9 @@ App({
         this.globalData.systemInfo = info;
       }
     });
-    this.globalData.backgroundAudio = wx.getBackgroundAudioManager();
+    // this.globalData.backgroundAudio = wx.getBackgroundAudioManager();
+    this.globalData.backgroundAudio = wx.createInnerAudioContext();
+    this.globalData.backgroundAudio.autoplay = true;
   },
   globalData: {
     userInfo: null,

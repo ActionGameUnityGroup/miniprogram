@@ -21,12 +21,12 @@
       <block wx:if='{{index == 0}}'>
         <view
           class="lesson-item"
-          id='../Lesson/Lesson?lessonId={{item.lessonId}}&lessonName={{item.lessonTitle}}'
+          id='{{item.lessonId}}'
           bindtap='toStudyAction'
-          data-audioUrl='{{item.lessonAudioUrl}}'
-          data-audioTitle='{{item.lessonTitle}}'
-          data-audioCover='{{item.courseCover}}'
-          data-audioDetail='{{item.lessonDetail}}'
+          data-url='../Lesson/Lesson'
+          data-courseCover='{{item.courseCover}}'
+          data-audioUrl='{{item.lessonAudioUrl[0]}}'
+          data-lessonTitle='{{item.lessonTitle}}'
         >
           <view class="lesson-info">
             <view class="lesson-title">{{index == 0 ? '【试听】' : index + '.'}} {{item.lessonTitle}}</view>

@@ -47,10 +47,6 @@ Page({
         _this.setData({
           courseCoverUrl: res.data.requestData.courseList[0].courseCover,
         });
-        wx.setStorage({
-          key: 'courseInfo',
-          data: res.data.requestData.courseList[0]
-        });
         wx.setNavigationBarTitle({
           title: res.data.requestData.courseList[0].courseTitle
         });
@@ -62,6 +58,10 @@ Page({
       method: 'GET',
       success: function(res){
         console.log(res.data.requestData.lessonList);
+        wx.setStorage({
+          key: 'lessonList',
+          data: res.data.requestData.lessonList
+        });
         _this.setData({
           lessonList: res.data.requestData.lessonList,
         });
@@ -86,14 +86,16 @@ Page({
     console.log('跳去lesson页面');
     console.log(e);
     const dataset = e.currentTarget.dataset;
-    console.log(dataset);
-    const audio = app.globalData.backgroundAudio;
-    audio.src = dataset.audiourl;
-    audio.title = dataset.audiotitle;
-    audio.coverImgUrl = dataset.audiocover;
-    const courseInfo = wx.getStorageSync('courseInfo');
+    console.log(dataset, 'data-');
+    console.log(dataset.audiourl);
+    console.log(dataset.lessonTitle);
+    console.log(dataset.audiocover);
+    app.globalData.backgroundAudio.src = dataset.audiourl;
+    // app.globalData.backgroundAudio.title = dataset.audiotitle;
+    // app.globalData.backgroundAudio.coverImgUrl = dataset.audiocover;
+    // const courseInfo = wx.getStorageSync('courseInfo');
     wx.navigateTo({
-      url: `${e.currentTarget.id}?courseCover=${dataset.audiocover}&lessonDetail=${dataset.lessonDetail}`
+      url: `${dataset.url}?lessonId=${e.currentTarget.id}&lessonName=${dataset.lessontitle}&courseCover=${dataset.coursecover}`
     });
   }
 })
