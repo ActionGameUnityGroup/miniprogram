@@ -12,6 +12,7 @@
     "dva": "^2.4.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-lz-editor": "^0.12.1",
     "reqwest": "^2.0.5"
   },
   "devDependencies": {
