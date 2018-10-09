@@ -6,8 +6,8 @@
   indicator-active-color='#00a0e7'
 >
   <block wx:for='{{bannerList}}' wx:key='index'>
-    <swiper-item class='banner-item'>
-      <image mode='widthFix' src='{{item.url}}' style='background: url({{item.tempUrl}});'></image>
+    <swiper-item class='banner-item' style='background: url(../assets/icon/banner.jpg); background-size: 100% auto;'>
+      <image mode='widthFix' src='{{item.url}}'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -32,7 +32,7 @@
   <scroll-view style='height: {{scrollViewHeight}}px; background: #fff;' scroll-y>
     <block wx:for='{{courseList}}' wx:key='index'>
       <view class="course-item">
-        <image class="course-image" src='{{item.courseImg}}' mode='widthFix'></image>
+        <image class="course-image" src='{{item.courseImg}}' mode='widthFix' style='background: url(../assets/icon/cover.jpg) no-repeat; background-size: 100% auto;'></image>
         <view class="course-info">
           <text class="course-name"> {{item.courseName}} </text>
           <text class="course-describe"> {{item.courseText}} </text>

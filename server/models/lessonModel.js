@@ -6,7 +6,7 @@ let lessonSchema = new mongoose.Schema({
   lessonId: String,
   courseId: String,
   lessonAudioName: String,
-  lessonAudioUrl: String,
+  lessonAudioUrl: Array,
   lessonName: String,
   lessonAudioLengthNumber: Number,
   lessonAudioLengthString: String,
