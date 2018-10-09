@@ -7,7 +7,7 @@
 >
   <block wx:for='{{bannerList}}' wx:key='index'>
     <swiper-item class='banner-item'>
-      <image mode='widthFix' src='{{item.url}}' style='background: url(../assets/icon/banner.jpg);'></image>
+      <image mode='widthFix' src='{{item.url}}' style='background: url({{item.tempUrl}});'></image>
     </swiper-item>
   </block>
 </swiper>
@@ -48,5 +48,5 @@
 </block>
 
 <view class="book-content">
-  <view class="book-action"> 预约咨询 </view>
+  <button class="book-action" open-type='contact'> 预约咨询 </button>
 </view>
