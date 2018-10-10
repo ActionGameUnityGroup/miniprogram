@@ -1,26 +1,25 @@
-<scroll-view scroll-y='{true}' class='activity-list'>
-  <block wx:for='{{welfareActivityList}}' wx:key='index'>
+<!-- <scroll-view scroll-y='{true}' class='activity-list' style='width: auto;'></scroll-view> -->
+<block wx:for='{{welfareActivityList}}' wx:key='index'>
 
-    <view class='activity-item' bindtap='navigateAction' id='{{item.activityId}}'>
-      <view class='activity-image'>
-        <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
-        <view class="truly-image"><image src='{{item.activityCover}}' mode='widthFix'></image></view>
-      </view>
-      <view class='activity-info'>
-        <view class='activity-title'> {{item.activityName}} </view>
-        <view class='activity-msg'>
-          <view class="activity-detail">
-            <text class='activity-date'> {{item.activityDate}} </text>
-            <text class='activity-time'> {{item.activityTime}} </text>
-            <!-- <text class="not-end" wx:if='{{item.activityType == 0}}'> 线上 </text> -->
-            <text class='online'>{{item.activityType == 0 ? "线上":"线下"}}</text>
-          </view>
-          <view class='{{item.isEnd ? "activity-type disable" : "activity-type"}}'> {{item.activityStatus}} </view>
+  <view class='activity-item' bindtap='navigateAction' id='{{item.activityId}}'>
+    <view class='activity-image'>
+      <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+      <view class="truly-image"><image src='{{item.activityCover}}' mode='widthFix'></image></view>
+    </view>
+    <view class='activity-info'>
+      <view class='activity-title'> {{item.activityName}} </view>
+      <view class='activity-msg'>
+        <view class="activity-detail">
+          <text class='activity-date'> {{item.activityDate}} </text>
+          <text class='activity-time'> {{item.activityTime}} </text>
+          <!-- <text class="not-end" wx:if='{{item.activityType == 0}}'> 线上 </text> -->
+          <text class='online'>{{item.activityType == 0 ? "线上":"线下"}}</text>
         </view>
+        <view class='{{item.isEnd ? "activity-type disable" : "activity-type"}}'> {{item.activityStatus}} </view>
       </view>
     </view>
+  </view>
 
-    <view class='line'></view>
+  <view class='line'></view>
 
-  </block>
-</scroll-view>
+</block>

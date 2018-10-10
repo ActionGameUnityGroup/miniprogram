@@ -4,7 +4,7 @@ Page({
   data: {
     welfareActivityList: []
   },
-  onLoad: function(options) {
+  onReady: function(options) {
     _this = this;
     wx.setNavigationBarTitle({
       title: '公益活动'

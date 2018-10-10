@@ -1,7 +1,8 @@
 <view class="top-content">
 
   <view class="audio-cover">
-    <image src='{{courseCover}}' mode='widthFix'></image>
+    <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+    <view class="truly-image"><image src='{{courseCover}}' mode='widthFix'></image></view>
   </view>
 
   <view class="audio-name">

@@ -1,7 +1,7 @@
 Page{ overflow: auto; }
 .course-teacher-info{ padding-top: 30rpx; width: 100%; background: #fff; }
-.course-cover{ display: block; margin: 0 auto; width: 90%; }
-.course-cover image{ display: block; width: 100%; height: 384rpx; background: #ddd; border-radius: 15rpx; box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, .5); }
+.course-cover{ display: block; position: relative; margin: 0 auto; width: 90%; }
+.truly-image image{ display: block; width: 100%; height: 384rpx; border-radius: 15rpx; box-shadow: 0rpx 0rpx 20rpx rgba(0, 0, 0, .5); }
 
 .teacher-info{ display: block; padding: 53rpx 31rpx 0; }
 .teacher-name{ font-size: 30rpx; font-weight: bold; color: #000; }

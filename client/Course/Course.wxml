@@ -1,6 +1,7 @@
 <view class="course-teacher-info">
   <view class="course-cover">
-    <image mode='widthFix' src='{{courseCoverUrl}}' style='background: url(../assets/icon/cover.jpg);'></image>
+    <view class="preload-image"><image mode='widthFix' src='../assets/icon/cover.jpg'></image></view>
+    <view class="truly-image"><image mode='widthFix' src='{{courseCoverUrl}}'></image></view>
   </view>
 
   <view class="teacher-info">
