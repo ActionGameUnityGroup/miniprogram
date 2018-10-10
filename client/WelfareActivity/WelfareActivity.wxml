@@ -1,13 +1,19 @@
-<view class="activity-title"> {{activityTitle}} </view>
-<block wx:for='{{activityInfo}}' wx:key='index'>
-  <block wx:if='{{item.isURL}}'>
-    <view class="activity-item">
-      <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
-      <view class="truly-image"><image mode='aspectFill' src='{{item.data}}'></image></view>
-    </view>
+<view></view>
+
+<scroll-view scroll-y style='height: 100%;'>
+  <view class="activity-title"> {{activityTitle}} </view>
+  <block wx:for='{{activityInfo}}' wx:key='index'>
+    <block wx:if='{{item.isURL}}'>
+      <view class="activity-item">
+        <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+        <view class="truly-image"><image mode='aspectFill' src='{{item.data}}'></image></view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='activity-item'> {{item.data}} </view>
+    </block>
   </block>
-  <block wx:else>
-    <view class='activity-item'> {{item.data}} </view>
-  </block>
-</block>
-<view class="activity-footer"> - END - </view>
+  <view class="activity-footer"> - END - </view>
+</scroll-view>
+
+<view></view>
