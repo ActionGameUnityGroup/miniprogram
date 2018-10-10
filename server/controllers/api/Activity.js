@@ -3,7 +3,7 @@ const activityModel = require('../../models/activityModel');
 
 class Activity{
   async getActivityList(ctx){
-    const activityList = await activityModel.find({}, '-_id').sort({});
+    const activityList = await activityModel.find({}, '-_id').sort({activityDate: -1});
     ctx.body = formatData(activityList);
   }
 }
