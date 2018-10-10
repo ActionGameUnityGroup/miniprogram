@@ -1,0 +1,12 @@
+<view class="activity-title"> {{activityTitle}} </view>
+<block wx:for='{{activityInfo}}' wx:key='index'>
+  <block wx:if='{{item.isURL}}'>
+    <view class="activity-item">
+      <image mode='widthFix' src='{{item.data}}' style='background: url(../assets/icon/cover.jpg); background-size: 100% auto;'></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='activity-item'> {{item.data}} </view>
+  </block>
+</block>
+<view class="activity-footer"> - END - </view>

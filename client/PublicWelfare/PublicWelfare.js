@@ -1,9 +1,11 @@
+let _this;
 
 Page({
   data: {
     welfareActivityList: []
   },
   onLoad: function(options) {
+    _this = this;
     wx.setNavigationBarTitle({
       title: '公益活动'
     });
@@ -12,6 +14,13 @@ Page({
       method: 'GET',
       success: function(res){
         console.log(res);
+        _this.setData({
+          welfareActivityList: res.data.requestData
+        });
+        wx.setStorage({
+          key: 'activityList',
+          data: res.data.requestData
+        });
       }
     });
   },
@@ -20,9 +29,9 @@ Page({
    */
   onShareAppMessage: function() {},
   navigateAction: function(e) {
-    // console.log(e);
+    console.log(e.currentTarget);
     wx.navigateTo({
-      url: '../WelfareActivity/WelfareActivity'
+      url: '../WelfareActivity/WelfareActivity?activityId='+e.currentTarget.id
     });
   }
 })

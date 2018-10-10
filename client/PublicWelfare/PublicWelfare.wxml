@@ -3,9 +3,9 @@
   <view class='activity-list'>
     <block wx:for='{{welfareActivityList}}' wx:key='index'>
 
-      <view class='activity-item' bindtap='navigateAction' id=''>
+      <view class='activity-item' bindtap='navigateAction' id='{{item.activityId}}'>
         <view class='activity-image'>
-          <image src='{{item.activityCover}}' mode='widthFix'></image>
+          <image src='{{item.activityCover}}' mode='widthFix'  style='background: url(../assets/icon/cover.jpg); background-size: 100% auto; height: 100%;'></image>
         </view>
         <view class='activity-info'>
           <view class='activity-title'> {{item.activityName}} </view>
@@ -13,7 +13,8 @@
             <view class="activity-detail">
               <text class='activity-date'> {{item.activityDate}} </text>
               <text class='activity-time'> {{item.activityTime}} </text>
-              <text class='online'>{{item.activityType == 1 ? "线上":"线下"}}</text>
+              <!-- <text class="not-end" wx:if='{{item.activityType == 0}}'> 线上 </text> -->
+              <text class='online'>{{item.activityType == 0 ? "线上":"线下"}}</text>
             </view>
             <view class='{{item.isEnd ? "activity-type disable" : "activity-type"}}'> {{item.activityStatus}} </view>
           </view>
