@@ -14,15 +14,23 @@ Page({
       method: 'GET',
       success: function(res){
         console.log(res);
-        _this.setData({
-          welfareActivityList: res.data.requestData
-        });
+        let data = {};
+        for(var i = 0; i < res.data.requestData.length; i++){
+          data[i] = false;
+          // _this.setData(data);
+        }
+        data.welfareActivityList = res.data.requestData;
+        console.log(data, '新建的data');
+        _this.setData(data);
         wx.setStorage({
           key: 'activityList',
           data: res.data.requestData
         });
       }
     });
+  },
+  loadImage: function(e){
+    console.log(e.currentTarget.dataset);
   },
   /**
    * 用户点击右上角分享

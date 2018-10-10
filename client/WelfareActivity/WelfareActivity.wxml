@@ -2,7 +2,8 @@
 <block wx:for='{{activityInfo}}' wx:key='index'>
   <block wx:if='{{item.isURL}}'>
     <view class="activity-item">
-      <image mode='widthFix' src='{{item.data}}' style='background: url(../assets/icon/cover.jpg); background-size: 100% auto;'></image>
+      <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+      <view class="truly-image"><image mode='aspectFill' src='{{item.data}}'></image></view>
     </view>
   </block>
   <block wx:else>

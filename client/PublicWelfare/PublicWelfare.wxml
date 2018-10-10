@@ -1,10 +1,10 @@
-<view class='space'></view>
-<view class='activity-list'>
+<scroll-view scroll-y='{true}' class='activity-list'>
   <block wx:for='{{welfareActivityList}}' wx:key='index'>
 
     <view class='activity-item' bindtap='navigateAction' id='{{item.activityId}}'>
       <view class='activity-image'>
-        <image src='{{item.activityCover}}' mode='scaleToFill'  style='background: url(../assets/icon/cover.jpg) no-repeat; background-size: 100% auto; height: 100%;'></image>
+        <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+        <view class="truly-image"><image src='{{item.activityCover}}' mode='widthFix'></image></view>
       </view>
       <view class='activity-info'>
         <view class='activity-title'> {{item.activityName}} </view>
@@ -23,5 +23,4 @@
     <view class='line'></view>
 
   </block>
-</view>
-<view class='space'></view>
+</scroll-view>

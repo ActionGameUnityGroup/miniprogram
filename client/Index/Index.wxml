@@ -9,7 +9,10 @@
       indicator-active-color='#0094d7'
     >
       <block wx:for='{{bannerList}}' wx:key='index'>
-        <swiper-item class="banner-item"><image mode='widthFix' src='{{item.url}}' key='{{index}}' style='background: url(../assets/icon/banner.jpg); background-size: 100% auto; height: 378rpx;'></image></swiper-item>
+        <swiper-item class="banner-item">
+          <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+          <view class="truly-image"><image mode='widthFix' src='{{item.url}}' key='{{index}}'></image></view>
+        </swiper-item>
       </block>
     </swiper>
   </view>
@@ -38,7 +41,10 @@
           <block wx:if='{{item.courseCover !== undefined}}'>
             <swiper-item>
               <view class="show-audio-item" id='../Course/Course?courseId={{item.courseId}}' bindtap='navigateAction'>
-                <image class="show-audio-image" src='{{item.courseCover}}' mode='widthFix' style='background: url(../assets/icon/cover.jpg) no-repeat; background-size: 100% auto;'></image>
+                <view class="show-audio-image">
+                  <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+                  <view class="truly-image"><image src='{{item.courseCover}}' mode='widthFix'></image></view>
+                </view>
                 <text class="show-audio-name">{{item.courseTitle}}</text>
               </view>
             </swiper-item>
@@ -69,7 +75,10 @@
         <block wx:if='{{item.courseCover !== undefined}}'>
           <swiper-item id='audio{{index}}'>
             <view id='../Course/Course?courseId={{item.courseId}}' class="show-article-item" bindtap='navigateAction'>
-              <image class="show-article-image" src='{{item.courseCover}}' mode='scaleToFill' style='background: url(../assets/icon/cover.jpg) no-repeat; background-size: 100% auto;'></image>
+              <view class="show-article-image">
+                <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+                <view class="truly-image"><image class="" src='{{item.courseCover}}' mode='scaleToFill'></image></view>
+              </view>
               <text class="show-article-name">{{item.courseTitle}}</text>
             </view>
           </swiper-item>
@@ -94,7 +103,10 @@
     <view class="show-course-list">
       <block wx:for='{{courseList}}' wx:key='index'>
         <view id='../Course/Course?courseId={{item.courseId}}' class="show-course-item" bindtap='navigateAction'>
-          <image class="show-course-image" src='{{item.courseCover}}' mode='widthFix' style='background: url(../assets/icon/cover.jpg) no-repeat; background-size: 100% auto;'></image>
+          <view class="show-course-image">
+            <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+            <view class="truly-image"><image src='{{item.courseCover}}' mode='widthFix'></image></view>
+          </view>
           <view class="show-course-info">
             <text class="show-course-name">{{item.courseTitle}}</text>
             <text class="show-course-describe">{{item.courseDetail}}</text>
