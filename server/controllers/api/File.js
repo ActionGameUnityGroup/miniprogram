@@ -8,7 +8,7 @@ class File {
   async getFile(ctx){
     let publicPath = path.resolve(__dirname, '../../public/image');
     console.log(publicPath);
-    let file = fs.readFileSync(`${publicPath}/course201891515124cover.txt`);
+    let file = fs.readFileSync(`${publicPath}/course201891515124cover.txt`, 'utf8');
     // let file = require('../../public/image/course201891515124cover.txt');
     ctx.body = formatData({
       bannerList: [
