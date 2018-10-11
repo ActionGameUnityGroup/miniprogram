@@ -32,6 +32,7 @@
     "Class/Class",
     "Health/Health"
   ],
+"requiredBackgroundModes": ["audio"],
   "window":{
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black"

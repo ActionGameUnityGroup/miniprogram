@@ -5,7 +5,7 @@
 
     <view class='activity-item' bindtap='navigateAction' id='{{item.activityId}}'>
       <view class='activity-image'>
-        <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+        <view class="preload-image"></view>
         <view class="truly-image"><image src='{{item.activityCover}}' mode='widthFix'></image></view>
       </view>
       <view class='activity-info'>

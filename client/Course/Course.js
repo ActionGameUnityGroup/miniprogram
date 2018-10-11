@@ -90,7 +90,8 @@ Page({
     console.log(dataset.audiourl);
     console.log(dataset.lessonTitle);
     console.log(dataset.audiocover);
-    app.globalData.backgroundAudio.src = dataset.audiourl;
+    app.globalData.backgroundAudio1.src = dataset.audiourl;
+    app.globalData.backgroundAudio2.src = dataset.nextaudiourl;
     // app.globalData.backgroundAudio.title = dataset.audiotitle;
     // app.globalData.backgroundAudio.coverImgUrl = dataset.audiocover;
     // const courseInfo = wx.getStorageSync('courseInfo');

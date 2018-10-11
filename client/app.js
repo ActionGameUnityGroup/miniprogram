@@ -38,12 +38,14 @@ App({
       }
     });
     // this.globalData.backgroundAudio = wx.getBackgroundAudioManager();
-    this.globalData.backgroundAudio = wx.createInnerAudioContext();
-    this.globalData.backgroundAudio.autoplay = true;
+    this.globalData.backgroundAudio1 = wx.createInnerAudioContext();
+    this.globalData.backgroundAudio2 = wx.createInnerAudioContext();
+    this.globalData.backgroundAudio1.autoplay = true;
   },
   globalData: {
     userInfo: null,
     systemInfo: null,
-    backgroundAudio: null
+    backgroundAudio1: null,
+    backgroundAudio2: null
   }
 })

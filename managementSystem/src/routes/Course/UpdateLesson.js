@@ -2,27 +2,27 @@ import React, {Component} from 'react';
 import { Drawer, Input, Icon, Button, message, Upload, Select } from 'antd';
 import AddLesson from './AddLesson';
 import request from '../../utils/request';
-const Option = Select.Option;
+// const Option = Select.Option;
 
-const mapChild = (list) => {
-  let courseCoverist = [];
+/*const mapChild = (list) => {
+  let courseCoverList = [];
   list.forEach((child, index) => {
-    courseCoverist.push({uid: index, name: child.name, status: 'done', url: child.url});
+    courseCoverList.push({uid: index, name: child.name, status: 'done', url: child.url});
   });
-  return courseCoverist;
-};
+  return courseCoverList;
+};*/
 
 class UpdateLesson extends Component {
 
   state = {
-    previewVisible: false,
-    previewImage: '',
-    courseCoverist: JSON.parse(localStorage.getItem('courseCoverist')) || [],
+    // previewVisible: false,
+    // previewImage: '',
+    // courseCoverList: JSON.parse(localStorage.getItem('courseCoverList')) || [],
     isAddLesson: false
   };
 
   addCourse(){
-    let _this = this;
+    // let _this = this;
     let [author, courseTitle, courseDetail] = [this.state.author, this.state.courseTitle, this.state.courseDetail];
     request(
       'https://www.changdaolife.cn/api/course/setCourse',
@@ -91,7 +91,7 @@ class UpdateLesson extends Component {
 
   render() {
 
-    const { previewVisible, previewImage, courseCoverist, dataSource } = this.state;
+    // const { previewVisible, previewImage, courseCoverList, dataSource } = this.state;
     const lessonList = [];
     const props = {
       name: 'file',

@@ -1,6 +1,6 @@
 <view class="course-teacher-info">
   <view class="course-cover">
-    <view class="preload-image"><image mode='widthFix' src='../assets/icon/cover.jpg'></image></view>
+    <view class="preload-image"></view>
     <view class="truly-image"><image mode='widthFix' src='{{courseCoverUrl}}'></image></view>
   </view>
 
@@ -27,6 +27,7 @@
           data-url='../Lesson/Lesson'
           data-courseCover='{{item.courseCover}}'
           data-audioUrl='{{item.lessonAudioUrl[0]}}'
+          data-nextaudioUrl='{{item.lessonAudioUrl[1]}}'
           data-lessonTitle='{{item.lessonTitle}}'
         >
           <view class="lesson-info">

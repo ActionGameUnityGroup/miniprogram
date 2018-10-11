@@ -10,7 +10,7 @@
     >
       <block wx:for='{{bannerList}}' wx:key='index'>
         <swiper-item class="banner-item">
-          <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+          <view class="preload-image"></view>
           <view class="truly-image"><image mode='widthFix' src='{{item.url}}' key='{{index}}'></image></view>
         </swiper-item>
       </block>
@@ -42,7 +42,7 @@
             <swiper-item>
               <view class="show-audio-item" id='../Course/Course?courseId={{item.courseId}}' bindtap='navigateAction'>
                 <view class="show-audio-image">
-                  <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+                  <view class="preload-image"></view>
                   <view class="truly-image"><image src='{{item.courseCover}}' mode='widthFix'></image></view>
                 </view>
                 <text class="show-audio-name">{{item.courseTitle}}</text>
@@ -76,7 +76,7 @@
           <swiper-item id='audio{{index}}'>
             <view id='../Course/Course?courseId={{item.courseId}}' class="show-article-item" bindtap='navigateAction'>
               <view class="show-article-image">
-                <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+                <view class="preload-image"></view>
                 <view class="truly-image"><image class="" src='{{item.courseCover}}' mode='scaleToFill'></image></view>
               </view>
               <text class="show-article-name">{{item.courseTitle}}</text>
@@ -104,7 +104,7 @@
       <block wx:for='{{courseList}}' wx:key='index'>
         <view id='../Course/Course?courseId={{item.courseId}}' class="show-course-item" bindtap='navigateAction'>
           <view class="show-course-image">
-            <view class="preload-image"><image src='../assets/icon/cover.jpg' mode='widthFix'></image></view>
+            <view class="preload-image"></view>
             <view class="truly-image"><image src='{{item.courseCover}}' mode='widthFix'></image></view>
           </view>
           <view class="show-course-info">

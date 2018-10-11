@@ -1,10 +1,18 @@
 const app = getApp();
 let _this;
-let audio = app.globalData.backgroundAudio;
+let audio1 = app.globalData.backgroundAudio1;
+let audio2 = app.globalData.backgroundAudio2;
+let flag = false;
+// console.log(audio1, '背景音频');
+// audio1.autoplay = true;
+audio2.onPlay(() => {
+  flag = true;
+});
 
-// console.log(audio, '背景音频');
-// let audio = wx.createInnerAudioContext();
-// audio.autoplay = true;
+audio1.onEnded(() => {
+  console.log(e);
+  audio2.play();
+});
 
 Page({
   data: {
@@ -46,7 +54,7 @@ Page({
       success: function(res){
         // console.log(data);
         let requestData = res.data.requestData[0];
-        // audio.src = requestData.lessonAudioUrl;
+        // audio1.src = requestData.lessonAudioUrl;
         _this.setData({
           // lessonTitle: requestData.lessonTitle,
           // courseCover: requestData.courseCover,
@@ -54,7 +62,7 @@ Page({
         });
       }
     });*/
-    audio.onPlay(() => {
+    audio1.onPlay(() => {
       console.log('音频开始');
       _this.setData({
         isPlay: true
@@ -63,7 +71,7 @@ Page({
         wx.hideLoading();
       }, 300);*/
     });
-    console.log(audio, '音频');
+    console.log(audio1, '音频');
   },
   pauseAction: function(){
     console.log('暂停');
@@ -71,7 +79,11 @@ Page({
       isPlay: false
     });
     setTimeout(function(){
-      audio.pause();
+      if(!flag){
+        audio1.pause();
+      } else {
+        audio2.pause();
+      }
     }, 300);
   },
   playAction: function(){
@@ -79,7 +91,11 @@ Page({
     this.setData({
       isPlay: true
     });
-    audio.play();
+    if(!flag){
+      audio1.play();
+    } else {
+      audio2.play();
+    }
   },
   preAction: function(){
     console.log('上一个');

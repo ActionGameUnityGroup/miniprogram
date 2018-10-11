@@ -18,6 +18,16 @@ const mapChild = (list) => {
   return indexFileList;
 };
 
+/*const arrayBufferToBase64 = (buffer) => {
+  var binary = '';
+  var bytes = new Uint8Array(buffer);
+  var len = bytes.byteLength;
+  for (var i = 0; i < len; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return 'data:image/png;base64,'+window.btoa(binary);
+}*/
+
 class IndexSection extends Component{
   state = {
     previewVisible: false,
@@ -28,8 +38,17 @@ class IndexSection extends Component{
   UNSAFE_componentWillMount(){
     // console.log('插入前');
     let _this = this;
-    request('http://localhost:9000/api/banner/getBanner?page=index')
+    request('https://www.changdaolife.cn/api/banner/getBanner?page=index')
     .then(res => {
+      console.log(res, '回调');
+      /*const bannerList = [];
+      for(let index = 0; index < res.data.requestData.length; index++){
+        // console.log(res.data.requestData[index].url.data, 'item');
+        bannerList[index] = {
+          name: res.data.requestData[index].name,
+          url: arrayBufferToBase64(res.data.requestData[index].url.data)
+        }
+      }*/
       let list = mapChild(res.data.requestData[0].bannerList);
       localStorage.setItem('indexFileList', JSON.stringify(list));
       // console.info(list);
@@ -62,7 +81,7 @@ class IndexSection extends Component{
         <h1 style={{margin: 0, padding: '10px 0'}}>首页 Banner</h1>
         <div className={style["banner-content"]}>
           <Upload
-            action="http://localhost:9000/api/banner/setBanner?page=index"
+            action="https://www.changdaolife.cn/api/banner/setBanner?page=index"
             listType="picture-card"
             fileList={indexFileList}
             onPreview={this.handlePreview}
