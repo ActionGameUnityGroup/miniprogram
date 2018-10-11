@@ -11,7 +11,7 @@ class Banner{
     const list = await bannerModel.find({page: page}, '-_id -page');
     const bannerList = [];
     // const imagePath = path.resolve(__dirname, `../../public/image/banner/${page}`);
-    await for(let index = 0; index < list.length; index++){
+    for(let index = 0; index < list.length; index++){
       let file = fs.readFileSync(list[index].url, 'utf8');
       bannerList[index] = {name: list[index].name, url: file};
       if(bannerList.length >= list.length){
