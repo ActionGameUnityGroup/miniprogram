@@ -12,6 +12,7 @@ Page({
     };
   },
   data: {
+    // testImageUrl: '',
     bannerList: [],
     moduleList: [
       {moduleImage: '../assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '../Elements/elements?key=wood'},
@@ -55,59 +56,51 @@ Page({
     articleListWidth: 0
   },
   onLoad: function () {
-    // 页面渲染完之后马上运行的函数
-    /*wx.getSystemInfo({
-     success: function(info){
-       console.log(info);
-     }
-    });*/
     _this = this;
     wx.setNavigationBarTitle({
       title: '常道智慧生活'
     });
-    // const bannerList = wx.getStorageSync('bannerList');
-    // if(bannerList.length == 0){
-      wx.request({
-        url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
-        method: 'GET',
-        success: function(res){
-          console.log(res.errMsg);
-          _this.setData({
-            bannerList: res.data.requestData[0].bannerList
-          });
-          /*wx.setStorage({
-            key: 'bannerList',
-            data: res.data.requestData[0].bannerList
-          });*/
-        }
-      });
-    // }
-    // const audioList = wx.getStorageSync('audioList');
-    // if (audioList.length == 0) {
-      wx.request({
-        url: 'https://www.changdaolife.cn/api/course/getCourseList',
-        method: 'GET',
-        success: function(res){
-          console.log(res.data.requestData);
-          const resList = [];
-          if(res.data.requestData.courseList.length < 4){
-            for(var i = 0; i < 4; i++){
-              resList[i] = res.data.requestData.courseList[i];
-            }
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
+      method: 'GET',
+      success: function(res){
+        console.log(res.errMsg);
+        _this.setData({
+          bannerList: res.data.requestData[0].bannerList
+        });
+      }
+    });
+
+    /*wx.request({
+      url: 'https://www.changdaolife.cn/api/file/getFile',
+      method: 'GET',
+      success: function(res){
+        console.log(res.errMsg);
+        _this.setData({
+          testImageUrl: res.data.requestData.bannerList[0].url 
+        });
+      }
+    });*/
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/course/getCourseList',
+      method: 'GET',
+      success: function(res){
+        console.log(res.data.requestData);
+        const resList = [];
+        if(res.data.requestData.courseList.length < 4){
+          for(var i = 0; i < 4; i++){
+            resList[i] = res.data.requestData.courseList[i];
           }
-          console.log(resList);
-          _this.setData({
-            AudioList: resList,
-            articleList: resList,
-            courseList: res.data.requestData.courseList,
-          });
-          /*wx.setStorage({
-            key: 'audioList',
-            data: res.data.requestData
-          });*/
         }
-      });
-    // }
+        console.log(resList);
+        _this.setData({
+          AudioList: resList,
+          articleList: resList,
+          courseList: res.data.requestData.courseList,
+        });
+      }
+    });
     let height = app.globalData.systemInfo.windowHeight;
     _this = this;
     _this.setData({
