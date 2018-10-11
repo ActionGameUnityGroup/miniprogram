@@ -9,7 +9,9 @@ class Banner{
   async getBanner(ctx){
     const page = ctx.query.page;
     const data = await bannerModel.find({page: page}, '-_id -page');
-    if(data.length > 0){
+    ctx.body = formatData({bannerList: data});
+    ctx.type = 'text/json';
+    /*if(data.length > 0){
       const bannerList = [];
       const list = data[0].bannerList;
       // console.log(list, 'bannerlist');
@@ -27,7 +29,7 @@ class Banner{
     } else {
       ctx.body = formatData(data);
       ctx.type = 'text/json';
-    }
+    }*/
   }
 
   async setBanner(ctx){
@@ -52,7 +54,8 @@ class Banner{
         bannerList: [
           {
             name: fileStream.fileName,
-            url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
+            // url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
+            url: `https://www.changdaolife.cn/image/banner/${page}/${fileName}${fileType}`
           }
         ]
       };
@@ -76,7 +79,8 @@ class Banner{
       if (flag) {
         data[0].bannerList.push({
           name: fileStream.fileName,
-          url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
+          url: `https://www.changdaolife.cn/image/banner/${page}/${fileName}${fileType}`
+          // url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
         });
         console.log(data[0].bannerList);
         let res = await bannerModel.update({page: page}, {bannerList: data[0].bannerList}, {multi: true});
