@@ -6,7 +6,12 @@ const fs = require('fs');
 class File {
 
   async getFile(ctx){
-    ctx.body = formatData({});
+    let file = await fs.readFile('../../public/image/course201891515124cover.txt');
+    ctx.body = formatData({
+      bannerList: [
+        {name: "banner", url: file}
+      ]
+    });
   }
 
   /*async setFile(ctx){
