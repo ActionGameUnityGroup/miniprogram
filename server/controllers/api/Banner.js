@@ -9,19 +9,24 @@ class Banner{
   async getBanner(ctx){
     const page = ctx.query.page;
     const data = await bannerModel.find({page: page}, '-_id -page');
-    const bannerList = [];
-    const list = data[0].bannerList;
-    // console.log(list, 'bannerlist');
-    // const imagePath = path.resolve(__dirname, `../../public/image/banner/${page}`);
-    for(let index = 0; index < list.length; index++){
-      let file = fs.readFileSync(list[index].url);
-      // console.log(file, '文件编码');
-      bannerList[index] = {name: list[index].name, url: file};
-      if(bannerList.length >= list.length){
-        ctx.info(`${ctx.url}: ${bannerList}`);
-        ctx.body = formatData(bannerList);
-        ctx.type = 'text/json';
+    if(data.length > 0){
+      const bannerList = [];
+      const list = data[0].bannerList;
+      // console.log(list, 'bannerlist');
+      // const imagePath = path.resolve(__dirname, `../../public/image/banner/${page}`);
+      for(let index = 0; index < list.length; index++){
+        let file = fs.readFileSync(list[index].url);
+        // console.log(file, '文件编码');
+        bannerList[index] = {name: list[index].name, url: file};
+        if(bannerList.length >= list.length){
+          ctx.info(`${ctx.url}: ${bannerList}`);
+          ctx.body = formatData(bannerList);
+          ctx.type = 'text/json';
+        }
       }
+    } else {
+      ctx.body = formatData(data);
+      ctx.type = 'text/json';
     }
   }
 
