@@ -31,7 +31,7 @@ class Banner{
     // console.log('页面banner：', data);
     let fileStream = await upload(ctx);
     let date = new Date();
-    let fileName = `${date.getFullYear()}${date.getMonth()+1}${date.getData()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
+    let fileName = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
     console.log(fileStream, '上传的图片');
     fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}.txt`)));
     if (!data.length) {
