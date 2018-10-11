@@ -8,19 +8,21 @@ class Banner{
 
   async getBanner(ctx){
     const page = ctx.query.page;
-    const list = await bannerModel.find({page: page}, '-_id -page');
+    const data = await bannerModel.find({page: page}, '-_id -page');
     const bannerList = [];
+    const list = data[0].bannerList;
+    // console.log(list, 'bannerlist');
     // const imagePath = path.resolve(__dirname, `../../public/image/banner/${page}`);
     for(let index = 0; index < list.length; index++){
-      let file = fs.readFileSync(list[index].url, 'utf8');
+      let file = fs.readFileSync(list[index].url);
+      // console.log(file, '文件编码');
       bannerList[index] = {name: list[index].name, url: file};
       if(bannerList.length >= list.length){
-        ctx.info(`${ctx.url}: ${data}`);
-        ctx.body = formatData(data);
+        ctx.info(`${ctx.url}: ${bannerList}`);
+        ctx.body = formatData(bannerList);
         ctx.type = 'text/json';
       }
     }
-    // console.log(page);
   }
 
   async setBanner(ctx){
@@ -32,8 +34,11 @@ class Banner{
     let fileStream = await upload(ctx);
     let date = new Date();
     let fileName = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}${date.getHours()}${date.getMinutes()}${date.getSeconds()}`;
-    console.log(fileStream, '上传的图片');
-    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}.txt`)));
+    // console.log(fileStream, '上传的图片');
+    // console.log(fileStream.file, '文件');
+    let fileType = fileStream.fileName.substring(fileStream.fileName.indexOf('.'), fileStream.fileName.length);
+    // console.log(fileType, '文件类型');
+    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)));
     if (!data.length) {
       // 没数据
       console.log('没数据');
@@ -42,7 +47,7 @@ class Banner{
         bannerList: [
           {
             name: fileStream.fileName,
-            url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}.txt`)
+            url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
           }
         ]
       };
@@ -62,10 +67,11 @@ class Banner{
           break;
         }
       }
+      console.log(flag, '添加?');
       if (flag) {
         data[0].bannerList.push({
           name: fileStream.fileName,
-          url: `https://www.changdaolife.cn/image/${fileStream.fileName}`
+          url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}${fileType}`)
         });
         console.log(data[0].bannerList);
         let res = await bannerModel.update({page: page}, {bannerList: data[0].bannerList}, {multi: true});
@@ -79,6 +85,21 @@ class Banner{
     }
   }
 
+  /*
+  {
+            "name" : "系统排列·亲密关系",
+            "url" : "https://www.changdaolife.cn/image/banner/1.jpg"
+        }, 
+        {
+            "name" : "系统排列·金钱",
+            "url" : "https://www.changdaolife.cn/image/banner/2.jpg"
+        }, 
+        {
+            "name" : "照梦空间",
+            "url" : "https://www.changdaolife.cn/image/banner/3.jpg"
+        }
+   */
+
   async deletBanner(ctx){
     console.log('上传banner图');
     // console.log(ctx);
@@ -86,7 +107,7 @@ class Banner{
     let data = await bannerModel.find({page: page}, '-_id');
     // console.log('页面banner：', data);
     let fileStream = await upload(ctx);
-    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/${fileStream.fileName}`)));
+    fileStream.file.pipe(fs.createWriteStream(path.resolve(__dirname, `../../public/image/banner/${page}/${fileStream.fileName}`)));
     if (!data.length) {
       // 没数据
       console.log('没数据');
@@ -95,7 +116,7 @@ class Banner{
         bannerList: [
           {
             name: fileStream.fileName,
-            url: `https://www.changdaolife.cn/image/${fileStream.fileName}`
+            url: `https://www.changdaolife.cn/image/banner/${page}/${fileStream.fileName}`
           }
         ]
       };

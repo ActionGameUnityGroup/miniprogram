@@ -64,9 +64,9 @@ Page({
       url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
       method: 'GET',
       success: function(res){
-        console.log(res.errMsg);
+        console.log(res, '回调');
         _this.setData({
-          bannerList: res.data.requestData[0].bannerList
+          // bannerList: res.data.requestData[0].bannerList
         });
       }
     });

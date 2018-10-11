@@ -28,7 +28,7 @@ class IndexSection extends Component{
   UNSAFE_componentWillMount(){
     // console.log('插入前');
     let _this = this;
-    request('https://www.changdaolife.cn/api/banner/getBanner?page=index')
+    request('http://localhost:9000/api/banner/getBanner?page=index')
     .then(res => {
       let list = mapChild(res.data.requestData[0].bannerList);
       localStorage.setItem('indexFileList', JSON.stringify(list));
@@ -62,7 +62,7 @@ class IndexSection extends Component{
         <h1 style={{margin: 0, padding: '10px 0'}}>首页 Banner</h1>
         <div className={style["banner-content"]}>
           <Upload
-            action="https://www.changdaolife.cn/api/banner/setBanner?page=index"
+            action="http://localhost:9000/api/banner/setBanner?page=index"
             listType="picture-card"
             fileList={indexFileList}
             onPreview={this.handlePreview}

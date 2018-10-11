@@ -479,3 +479,180 @@ Mon Oct 08 2018 14:04:02 GMT+0800 (GMT+08:00)
 Mon Oct 08 2018 14:54:37 GMT+0800 (GMT+08:00)
 /api/banner/setBanner?page=index: [object Object]
 
+Thu Oct 11 2018 11:34:11 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:35:28 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:37:22 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:39:25 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:39:34 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011113925.txt' } ] }
+
+Thu Oct 11 2018 11:40:36 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011113925.txt' } ] }
+
+Thu Oct 11 2018 11:42:52 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011113925.txt' } ] }
+
+Thu Oct 11 2018 11:42:59 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:44:28 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:52:18 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011114428.txt' } ] }
+
+Thu Oct 11 2018 11:52:24 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:53:01 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:53:32 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 11:54:26 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:41:56 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:47:56 GMT+0800 (GMT+08:00)
+/api/banner/setBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:48:16 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011144756.jpg' } ] }
+
+Thu Oct 11 2018 14:49:25 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011144756.jpg' } ] }
+
+Thu Oct 11 2018 14:49:39 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: { bannerList:
+   [ { name: '1.jpg',
+       url:
+        'F:\\workspace\\miniprogram\\server\\public\\image\\banner\\index\\20181011144756.jpg' } ] }
+
+Thu Oct 11 2018 14:52:15 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:52:48 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:53:09 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:58:16 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:58:29 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:58:33 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 14:59:18 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:00:09 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:00:36 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:00:55 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:01:11 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:01:15 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:01:25 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:01:52 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:05:34 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:07:23 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:07:38 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:08:31 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:08:44 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:10:04 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:10:09 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:12:29 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:13:10 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:15:36 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:15:46 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:17:20 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:17:46 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:18:37 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:19:28 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:19:58 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:23:00 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:23:23 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
+Thu Oct 11 2018 15:23:45 GMT+0800 (GMT+08:00)
+/api/banner/getBanner?page=index: [object Object]
+
