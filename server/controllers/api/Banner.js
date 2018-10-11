@@ -9,7 +9,7 @@ class Banner{
   async getBanner(ctx){
     const page = ctx.query.page;
     const data = await bannerModel.find({page: page}, '-_id -page');
-    ctx.body = formatData({bannerList: data});
+    ctx.body = formatData(data);
     ctx.type = 'text/json';
     /*if(data.length > 0){
       const bannerList = [];
