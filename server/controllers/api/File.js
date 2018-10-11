@@ -6,7 +6,10 @@ const fs = require('fs');
 class File {
 
   async getFile(ctx){
-    let file = await fs.readFile('../../public/image/course201891515124cover.txt');
+    let publicPath = path.resolve(__dirname, '../../public/image');
+    console.log(publicPath);
+    let file = fs.readFileSync(`${publicPath}/course201891515124cover.txt`);
+    // let file = require('../../public/image/course201891515124cover.txt');
     ctx.body = formatData({
       bannerList: [
         {name: "banner", url: file}
