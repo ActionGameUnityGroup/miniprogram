@@ -42,7 +42,7 @@ class Banner{
         bannerList: [
           {
             name: fileStream.fileName,
-            url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}.txt`
+            url: path.resolve(__dirname, `../../public/image/banner/${page}/${fileName}.txt`)
           }
         ]
       };
