@@ -4,7 +4,9 @@ const {formatData} = require('./formatData');
 class Article{
   async getArticleList(ctx){
     const params = ctx.query;
+    console.log(params, '参数');
     const index = params.index || 0;
+    console.log(index, '下标');
     const data = await articleModel.find({}, '-_id')
                       .sort({articleTime: -1})
                       .skip(index * 5)
