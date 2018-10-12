@@ -1,6 +1,6 @@
-page { width: 100%; height: 100%; background: #fff; }
+page { padding: 0 30rpx; width: auto !important; height: 100%; background: #fff; }
 
-.activity-list{ display: block; padding: 0 30rpx; background: #fff; }
+.activity-list{ display: block; }
 
 .space {
   height: 13rpx;

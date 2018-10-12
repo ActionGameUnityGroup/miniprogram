@@ -6,7 +6,7 @@
     <block wx:if='{{item.isURL}}'>
       <view class="activity-item">
         <view class="preload-image"></view>
-        <view class="truly-image"><image mode='aspectFill' src='{{item.data}}'></image></view>
+        <view class="truly-image"><image mode='widthFix' src='{{item.data}}'></image></view>
       </view>
     </block>
     <block wx:else>

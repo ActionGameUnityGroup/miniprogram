@@ -10,6 +10,7 @@ const setActivityInfo = (list) => {
       info[i] = {data: list[i], isURL: false};
     }
   }
+  console.log(info, '列表');
   _this.setData({
     activityInfo: info,
   });
