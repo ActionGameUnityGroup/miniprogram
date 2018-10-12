@@ -11,6 +11,7 @@ class Article{
                       .sort({articleTime: -1})
                       .skip(index * 5)
                       .limit(5);
+    console.log(data, '课程列表');
     ctx.body = formatData({articleList: data});
     ctx.type = 'text/json';
   }
