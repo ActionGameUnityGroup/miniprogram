@@ -2,6 +2,7 @@ const {db, mongoose} = require('../mongodb/db');
 
 let articleSchema = new mongoose.Schema({
   articleName: String,
+  articleId: String,
   articleCover: String,
   imageFrom: String,
   articleFrom: String,

@@ -74,7 +74,7 @@
       <block wx:for='{{articleList}}' wx:key='index'>
         <block wx:if='{{item.courseCover !== undefined}}'>
           <swiper-item id='audio{{index}}'>
-            <view id='../Course/Course?courseId={{item.courseId}}' class="show-article-item" bindtap='navigateAction'>
+            <view id='../Article/Article?articleId={{item.articleId}}' class="show-article-item" bindtap='navigateAction'>
               <view class="show-article-image">
                 <view class="preload-image"></view>
                 <view class="truly-image"><image class="" src='{{item.courseCover}}' mode='scaleToFill'></image></view>

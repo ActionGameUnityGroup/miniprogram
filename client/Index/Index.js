@@ -96,11 +96,22 @@ Page({
         console.log(resList);
         _this.setData({
           AudioList: resList,
-          articleList: resList,
           courseList: res.data.requestData.courseList,
         });
       }
     });
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/article/getArticleList',
+      method: 'GET',
+      success: function(res){
+        console.log(res.data.requestData);
+        /*_this.setData({
+          articleList: resList,
+        });*/
+      }
+    });
+
     let height = app.globalData.systemInfo.windowHeight;
     _this = this;
     _this.setData({

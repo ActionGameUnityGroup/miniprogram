@@ -1,6 +1,7 @@
 {
   "pages":[
     "Index/Index",
+    "Article/Article",
     "WelfareActivity/WelfareActivity",
     "SignIn/SignIn",
     "PersonalInfo/personalInfo",
