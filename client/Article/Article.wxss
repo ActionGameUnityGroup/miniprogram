@@ -1,0 +1,10 @@
+page{ background: #fff; }
+
+.article-title{ display: block; width: 100%; text-align: center; font-size: 18px; }
+.article-info{ display: flex; justify-content: space-between; align-items: center; padding: 0 40rpx; font-size: 11px; color: rgb(191, 191, 191); }
+
+.article-item{ display: block; position: relative; margin: 30rpx auto 0; width: 95%; text-align: left; text-indent: 24px; background: #fff; color: #333; font-size: 12px; overflow: hidden; }
+/*.article-item .preload-image{  }*/
+.article-item .truly-image{ min-height: 300rpx; background: #fff; }
+
+.article-footer{ padding: 20rpx; }

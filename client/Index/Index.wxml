@@ -72,19 +72,19 @@
       display-multiple-items='{{4}}'
     >
       <block wx:for='{{articleList}}' wx:key='index'>
-        <block wx:if='{{item.courseCover !== undefined}}'>
+        <block wx:if='{{item.articleCover !== undefined}}'>
           <swiper-item id='audio{{index}}'>
             <view id='../Article/Article?articleId={{item.articleId}}' class="show-article-item" bindtap='navigateAction'>
               <view class="show-article-image">
                 <view class="preload-image"></view>
-                <view class="truly-image"><image class="" src='{{item.courseCover}}' mode='scaleToFill'></image></view>
+                <view class="truly-image"><image class="" src='{{item.articleCover}}' mode='scaleToFill'></image></view>
               </view>
-              <text class="show-article-name">{{item.courseTitle}}</text>
+              <text class="show-article-name">{{item.articleName}}</text>
             </view>
           </swiper-item>
         </block>
         <block wx:else><swiper-item></swiper-item></block>
-        <block wx:if='{{index == 4 && item.courseCover !== undefined}}'>
+        <block wx:if='{{index == 4 && item.articleCover !== undefined}}'>
           <swiper-item class="view-more-action">
             <text style='margin: 60rpx auto 0;'>查看更多</text>
             <text>View More</text>

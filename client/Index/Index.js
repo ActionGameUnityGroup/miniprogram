@@ -105,10 +105,20 @@ Page({
       url: 'https://www.changdaolife.cn/api/article/getArticleList',
       method: 'GET',
       success: function(res){
-        console.log(res.data.requestData);
-        /*_this.setData({
+        const resList = [];
+        if(res.data.requestData.articleList.length < 4){
+          for(var i = 0; i < 4; i++){
+            resList[i] = res.data.requestData.articleList[i];
+          }
+        }
+        console.log(res.data.requestData.articleList);
+        _this.setData({
           articleList: resList,
-        });*/
+        });
+        wx.setStorage({
+          key: 'articleList',
+          data: res.data.requestData.articleList
+        });
       }
     });
 
