@@ -7,20 +7,23 @@
     <view>发布时间: {{time}}</view>
   </view>
   <block wx:for='{{article}}' wx:key='index'>
-    <block wx:if='{{item.isURL}}'>
+    <block wx:if='{{item.isUrl}}'>
       <view class="article-item">
         <view class="preload-image"></view>
         <view class="truly-image"><image mode='widthFix' src='{{item.data}}'></image></view>
       </view>
     </block>
-    <block wx:elif='{{index == 0}}'>
+    <block wx:elif='{{item.isImportant}}'>
+      <view class='article-item-important'> {{item.data}} </view>
+    </block>
+    <block wx:else>
+      <view class='article-item'> {{item.data}} </view>
+    </block>
+    <block wx:if='{{index == 0}}'>
       <view class="article-from">
         <view>图片来源: {{imageFrom}}</view>
         <view>文章来源: {{articleFrom}}</view>
       </view>
-    </block>
-    <block wx:else>
-      <view class='article-item'> {{item.data}} </view>
     </block>
   </block>
   <view class="article-footer"></view>

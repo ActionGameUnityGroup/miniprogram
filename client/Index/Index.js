@@ -175,6 +175,7 @@ Page({
     });
   },
   navigateAction: function(e){
+    console.log(e.currentTarget.id);
     wx.navigateTo({
       url: e.currentTarget.id
     });
