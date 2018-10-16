@@ -40,7 +40,7 @@
 .show-article-item{ margin: 0 auto; width: 140rpx; }
 .show-article-image{ display: block; position: relative; margin: 0 auto; width: 140rpx; height: 165rpx; border-radius: 5rpx; background: #ddd; }
 .show-article-bottom-info{ margin: 0 auto; width: 140rpx; }
-.show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0 0; height: 1rem; text-align: center; font-size: 24rpx; word-wrap: break-word; overflow: hidden; }
+.show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0 0; height: 1rem; text-align: center; font-size: 24rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .show-article-info{ display: flex; justify-content: space-between; align-content: center; margin: 48rpx auto 20rpx; padding: 0 14rpx; }
 .show-article-ground, .show-article-visit{ display: inline-block; font-size: 17rpx; color: #9c9c9c; }
 .show-article-visit image{ margin-right: 9rpx; width: 27rpx; height: 16rpx; }
