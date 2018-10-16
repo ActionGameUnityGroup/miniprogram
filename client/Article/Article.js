@@ -12,19 +12,27 @@ Page({
   onLoad: function(options) {
     _this = this;
     console.log(options);
-    const articleList = wx.getStorageSync('articleList');
-    console.log(articleList, '文章列表');
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/article/getArticle?articleId='+options.articleId,
+      method: 'GET',
+      success: function(res){
+        console.log(res.data.requestData);
+        _this.setData({
+          title: res.data.requestData.article.articleName,
+          article: res.data.requestData.article.articleDetail,
+          browseTimes: res.data.requestData.article.browseTimes,
+          time: res.data.requestData.article.articleTime,
+          articleFrom: res.data.requestData.article.articleFrom,
+          imageFrom: res.data.requestData.article.imageFrom
+        });
+      }
+    });
+    // const articleList = wx.getStorageSync('articleList');
+    // console.log(articleList, '文章列表');
     // const list = [];
-    for(let article of articleList){
+    /*for(let article of articleList){
       if (options.articleId == article.articleId) {
         console.log(article);
-        /*for(let key = 0; key < article.articleDetail.length; key++){
-          if (article.articleDetail[key].includes('https://')) {
-            list[key] = {isURL: true, data: article.articleDetail[key]};
-          } else {
-            list[key] = {isURL: false, data: article.articleDetail[key]};
-          }
-        }*/
         _this.setData({
           title: article.articleName,
           article: article.articleDetail,
@@ -38,6 +46,6 @@ Page({
         });
         break;
       }
-    }
+    }*/
   },
 });

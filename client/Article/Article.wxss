@@ -1,6 +1,6 @@
 page{ background: #fff; }
 
-.article-title{ display: block; width: 100%; text-align: center; font-size: 22px; color: rgb(51, 51, 51); }
+.article-title{ display: block; padding: 0 40rpx; text-align: left; font-size: 22px; color: rgb(51, 51, 51); }
 .article-info{ display: flex; justify-content: space-between; align-items: center; padding: 0 40rpx; font-size: 11px; color: rgb(191, 191, 191); }
 .article-from{ display: flex; justify-content: space-around; align-items: center; margin-top: 20rpx; padding: 0 100rpx; font-size: 11px; color: rgb(191, 191, 191); }
 

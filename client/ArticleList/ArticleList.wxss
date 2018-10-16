@@ -7,7 +7,7 @@
 .list-content{ display: block; margin: 0 auto; width:94.6%; overflow: auto; }
 .article-item{ display: flex; justify-content: space-between; align-items: center; padding: 20rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
 .article-image{ display: block; width: 171rpx; height: 171rpx; border-radius: 15rpx; background: #ddd; }
-.article-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 445rpx; height: 171rpx; }
+.article-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 445rpx; /* height: 171rpx; */ }
 .aritcle-title{ display: block; font-size: 28rpx; color: #333; }
 .article-msg{ display: flex; justify-content: space-between; align-items: center; width: 100%; }
 .article-msg view:first-child image{ display: inline-block; vertical-align: middle; margin-right: 9rpx; width: 18rpx; height: 18rpx; }

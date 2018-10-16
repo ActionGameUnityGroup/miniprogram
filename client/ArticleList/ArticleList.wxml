@@ -22,15 +22,15 @@
     <view class="article-item">
       <image mode='widthFix' src='{{item.articleCover}}' class="article-image"></image>
       <view class="article-info">
-        <view class="aritcle-title"> {{item.aritcleName}} </view>
+        <view class="aritcle-title"> {{item.articleName}} </view>
         <view class="article-msg">
           <view>
             <image src='../assets/icon/miniprogram-icon-32.png' mode='widthFix'></image>
-            <text>{{item.updateTime}}</text>
+            <text>{{item.articleTime}}</text>
           </view>
           <view>
             <image src='../assets/icon/miniprogram-icon-31.png'></image>
-            <text> {{item.viewNumber}} </text>
+            <text> {{item.browseTimes}} </text>
           </view>
         </view>
       </view>
