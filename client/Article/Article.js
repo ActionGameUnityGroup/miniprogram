@@ -17,6 +17,9 @@ Page({
       method: 'GET',
       success: function(res){
         console.log(res.data.requestData);
+        wx.setNavigationBarTitle({
+          title: res.data.requestData.article.articleName
+        });
         _this.setData({
           title: res.data.requestData.article.articleName,
           article: res.data.requestData.article.articleDetail,
