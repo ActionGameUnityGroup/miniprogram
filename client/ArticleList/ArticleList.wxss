@@ -5,9 +5,9 @@
 .nav-item-active text{ border-color: #cd2b33; color: #cd2b33; }
 
 .list-content{ display: block; margin: 0 auto; width:94.6%; overflow: auto; }
-.article-item{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20rpx; padding: 20rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.article-item{ display: flex; justify-content: space-between; align-items: center; margin-bottom: 20rpx; padding: 20rpx; height: 171rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
 .article-item:last-child{ margin-bottom: 0; }
-.article-image{ display: block; width: 171rpx; height: 171rpx; border-radius: 15rpx; background: #ddd; }
+.article-image{ display: block; width: 171rpx; height: 100%; border-radius: 15rpx; background: #ddd; }
 .article-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; width: 445rpx;  height: 100%;  }
 .aritcle-title{ display: block; font-size: 28rpx; color: #333; }
 .article-msg{ display: flex; justify-content: space-between; align-items: center; width: 100%; }

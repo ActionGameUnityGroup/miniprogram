@@ -20,7 +20,7 @@
 <view class="list-content">
   <block wx:for='{{articleList}}' wx:key='index'>
     <view class="article-item">
-      <image mode='widthFix' src='{{item.articleCover}}' class="article-image"></image>
+      <image mode='scaleToFill' src='{{item.articleCover}}' class="article-image"></image>
       <view class="article-info">
         <view class="aritcle-title"> {{item.articleName}} </view>
         <view class="article-msg">
