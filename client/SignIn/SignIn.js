@@ -110,25 +110,69 @@ const setContinueDate = (signInfoList) => {
 Page({
   data: {
     sloganCover: '../assets/icon/miniprogram-icon-74.jpg',
-    currentMonth: '',
-    dateList: [],
-    currentDate: 0,
-    continuityDate: 0,
-    increasePoint: 5,
-    totalPoint: 0,
-    signSuccess: false,
-    signFailure: false,
-    signResText: '',
+    registerDays: 0,
+    signDays: 0,
     serialDays: 0,
-    integration: 5
+    mostSerialDays: 0,
+    currentYear: 2018,
+    currentMonth: 10,
+    week: [
+      {day: '一'},
+      {day: '二'},
+      {day: '三'},
+      {day: '四'},
+      {day: '五'},
+      {day: '六'},
+      {day: '日'},
+    ],
+    month: [],
+    fill: ['', '', ''],
+    slogan: 'sdlgkjslkgjew',
+    from: 'dsligjl',
+    integration: 2,
+    signSuccess: false
   },
   onLoad: function(){
     _this = this;
     wx.setNavigationBarTitle({
       title: '签到'
     });
-
-    setDate();
+    let date = new Date();
+    let currentYear = date.getFullYear();
+    let currentMonth = new Date(currentYear, date.getMonth() + 1, 0);
+    let startDay = new Date(currentYear, date.getMonth(), 1).getDay();
+    console.log(date.getMonth() + 1, '月份');
+    console.log(currentMonth.getDate(), '月天');
+    // console.log(, '星期');
+    // console.log(new Date(date.getFullYear(date), date.getMonth(date) + 2, 0).getDate());
+    // let startDay = date.getDay();
+    console.log(startDay);
+    let fill = startDay - 1;
+    console.log(fill, '填补');
+    // let currentMonth = new Date(date.getFullYear(date), date.getMonth(date) + 1, 0);
+    console.log(currentMonth.getDate());
+    let dateIndex = currentMonth.getDate() - 1;
+    let toDate = date.getDate() - 1;
+    let month = [];
+    for (var i = 0; i <= dateIndex; i++) {
+      month[i] = {date: i+1, isToday: false, isRegister: false, isPass: false};
+      if (i < 5) {
+        month[i].isRegister = true;
+      } else if (i == toDate) {
+        month[i].isToday = true;
+      } else if (i < toDate){
+        month[i].isPass = true;
+      }
+    }
+    /*console.log(month);
+    console.log(currentMonth.getDate());
+    console.log(date.getMonth(date));
+    console.log(date.getFullYear(date));
+    console.log(date.getFullYear(date));*/
+    this.setData({
+      month: month,
+      fill: fill
+    });
 
     wx.request({
       url: 'https://www.changdaolife.cn/api/banner/getBanner?page=signin',
@@ -144,93 +188,79 @@ Page({
       }
     });
 
-    wx.request({
-      url: 'https://www.changdaolife.cn/api/sign/getSignInfo',
-      method: 'GET',
-      header: {
-        'Authorization': wx.getStorageSync('openid')
-      },
-      success: function(res){
-        console.log(res.data.requestData.signInfo, '签到信息');
-        setContinueDate(res.data.requestData.signInfo);
-      }
-    });
-
   },
-  signInAction: function(){
-    console.log('签到');
-    /*this.setData({
+  signAction: function(){
+    console.log('打卡');
+    this.setData({
       signSuccess: true
-    });*/
+    });
+    console.log('签到');
     userSignIn();
+  },
+  shareAction: function(){
+    console.log('分享');
+  },
+  downloadAction: function(){
+    console.log('下载');
+    wx.downloadFile({
+      url: this.data.sloganCover
+    });
   },
   signCompleteAction: function(){
     this.setData({
       signSuccess: false,
       signFailure: false
     });
-  }
+  },
 });
 
 // Page({
 //   data: {
-//     registerDays: 0,
-//     signDays: 0,
+//     sloganCover: '../assets/icon/miniprogram-icon-74.jpg',
+//     currentMonth: '',
+//     dateList: [],
+//     currentDate: 0,
+//     continuityDate: 0,
+//     increasePoint: 5,
+//     totalPoint: 0,
+//     signSuccess: false,
+//     signFailure: false,
+//     signResText: '',
 //     serialDays: 0,
-//     mostSerialDays: 0,
-//     currentYear: 2018,
-//     currentMonth: 8,
-//     week: [
-//       {day: '日'},
-//       {day: '一'},
-//       {day: '二'},
-//       {day: '三'},
-//       {day: '四'},
-//       {day: '五'},
-//       {day: '六'},
-//     ],
-//     month: [],
-//     fill: ['', '', ''],
-//     slogan: 'sdlgkjslkgjew',
-//     from: 'dsligjl',
-//     integration: 2,
-//     signSuccess: false
+//     integration: 5
 //   },
 //   onLoad: function(){
+//     _this = this;
 //     wx.setNavigationBarTitle({
 //       title: '签到'
 //     });
-//     let date = new Date();
-//     // console.log(new Date(date.getFullYear(date), date.getMonth(date) + 2, 0).getDate());
-//     let startDay = date.getDay();
-//     // console.log(startDay);
-//     let fill = 7 - startDay;
-//     console.log(fill, '填补');
-//     let currentMonth = new Date(date.getFullYear(date), date.getMonth(date) + 1, 0);
-//     // console.log(currentMonth);
-//     let dateIndex = currentMonth.getDate() - 1;
-//     let month = [];
-//     for (var i = 0; i <= dateIndex; i++) {
-//       month[i] = {date: i+1, isToday: false, isRegister: false};
-//       if (i < 5) {
-//         month[i].isRegister = true;
-//       } else if (i == dateIndex) {
-//         month[i].isToday = true;
+
+//     setDate();
+
+//     wx.request({
+//       url: 'https://www.changdaolife.cn/api/sign/getSignInfo',
+//       method: 'GET',
+//       header: {
+//         'Authorization': wx.getStorageSync('openid')
+//       },
+//       success: function(res){
+//         console.log(res.data.requestData.signInfo, '签到信息');
+//         setContinueDate(res.data.requestData.signInfo);
 //       }
-//     }
-//     /*console.log(month);
-//     console.log(currentMonth.getDate());
-//     console.log(date.getMonth(date));
-//     console.log(date.getFullYear(date));
-//     console.log(date.getFullYear(date));*/
-//     this.setData({
-//       month: month
 //     });
+
 //   },
-//   signAction: function(){
-//     console.log('打卡');
-//     this.setData({
+//   signInAction: function(){
+//     console.log('签到');
+//     /*this.setData({
 //       signSuccess: true
+//     });*/
+//     userSignIn();
+//   },
+//   signCompleteAction: function(){
+//     this.setData({
+//       signSuccess: false,
+//       signFailure: false
 //     });
 //   }
 // });

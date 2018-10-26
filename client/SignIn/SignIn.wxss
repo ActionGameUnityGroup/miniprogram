@@ -1,4 +1,4 @@
-.slogan-content{ display: block; width: 100%; }
+/* .slogan-content{ display: block; width: 100%; }
 .slogan-content image{ display: block; width: 100%; }
 
 .date-content{ display: block; position: relative; top: -28rpx; z-index: 99999; margin: 0 auto; width: 92%; background: #fff; border-radius: 15rpx; overflow: hidden; }
@@ -16,37 +16,53 @@
 
 .sign-in-action{ width: 224rpx; height: 68rpx; text-align: center; line-height: 68rpx; color: #fff; font-size: 30rpx; background: -webkit-linear-gradient(#5fedda, #33cdc8); border-radius: 15rpx; }
 .sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; border-radius: 15rpx; overflow: hidden; }
+ */
 
-
-/* page{ position: relative; }
-.sign-record{ display: flex; justify-content: space-between; align-items: center; margin: 19rpx auto 0; width: 693rpx; border-radius: 15rpx; overflow: hidden; }
+page{ position: relative; }
+/* .sign-record{ display: flex; justify-content: space-between; align-items: center; margin: 19rpx auto 0; width: 693rpx; border-radius: 15rpx; overflow: hidden; }
 .sign-item{ display: block; padding: 25rpx 0; width: 25%; background: #fff; }
 .sign-item text{ display: block; text-align: center; font-size: 36rpx; color: #0e0e0e; }
 .sign-item text:last-child{ margin-top: 25rpx; font-size: 24rpx; }
-.sign-item:nth-child(3) text{ color: #31cbca; }
+.sign-item:nth-child(3) text{ color: #31cbca; } */
 
-.calendar-content{ display: block; margin: 16rpx auto 0; padding-bottom: 49rpx; width: 693rpx; border-radius: 15rpx; background: #fff; }
-.calendar-top{ display: flex; justify-content: space-between; align-items: center; padding: 0 25rpx; height: 87rpx; border-bottom: 1rpx solid #748592; }
-.calendar-top view{ font-size: 26rpx; color: #748592; }
+.sign-header{ display: block; position: absolute; width: 100%; height: 426rpx; overflow: hidden; }
+.sign-poster{ display: block; position: relative; width: 100%; height: 100%; }
+.sign-poster image{ display: block; width: 100%; height: 100%; }
+.sign-tools{ display: block; position: absolute; top: 24rpx; right: 30rpx; }
+.download-action, .share-action{ display: inline-block; vertical-align: middle; width: 48rpx; height: 46rpx; }
+.download-action image, .share-action image{ display: block; width: 100%; height: 100%; }
+.download-action{ margin-right: 25rpx; }
+
+.calendar-content{ display: block; position: relative; top: 348rpx; margin: 0 auto; padding-bottom: 25rpx; width: 693rpx; border-radius: 15rpx; background: #fff; }
+.calendar-top{ display: block; height: 87rpx; text-align: center; }
+/*.calendar-top view{ font-size: 26rpx; color: #748592; }*/
+.calendar-show-date{ padding: 35rpx 25rpx; font-size: 36rpx; color: #000; }
 .calendar-top view image{ width: 13rpx; height: 25rpx; }
 .calendar-top view:nth-child(2){ color: #0e0e0e; }
 .calendar-top view:first-child image{ transform: rotate(180deg); }
 
 .calendar-week{ display: flex; justify-content: space-between; align-items: center; padding: 40rpx 40rpx 10rpx; }
 .calendar-week text{ font-size: 26rpx; }
-.calendar-week text:first-child, .calendar-week text:last-child{ color: #fe4945; }
+/*.calendar-week text:first-child, .calendar-week text:last-child{ color: #fe4945; }*/
 
-.calendar-date{ display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; }
+.calendar-date{ display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; padding: 0 18rpx; }
 .fill-date{ width: 92rpx; height: 102rpx; }
-.date{ padding: 26rpx; }
-.empty-date{ width: 46rpx; height: 46rpx; }
-.date view{ width: 46rpx; height: 46rpx; text-align: center; line-height: 46rpx; border-radius: 10rem; color: #898989; font-size: 30rpx; }
-.today{ border: 2rpx solid #32ccc7; color: #060606 !important; }
+.date{ padding: 10rpx 19rpx; }
+.date:nth-child(7n-6){ padding-left: 6rpx; }
+.date:nth-child(7n){ padding-right: 6rpx; }
+.empty-date{ width: 60rpx; height: 60rpx; }
+.date view{ width: 60rpx; height: 60rpx; text-align: center; line-height: 60rpx; border-radius: 10rem; color: #292621; font-size: 28rpx; font-weight: bold; }
+.today{ border: 2rpx solid #ff6a69; color: #292621 !important; }
 .register-date{ background: #32ccc7; color: #fff !important; }
+.unregister-date{ background: #d3d3d3; color: #fff !important; }
 
-.calendar-slogan{ margin: 18rpx auto 0; width: 693rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.calendar-detail{ display: flex; justify-content: flex-start; align-items: center; margin: 30rpx; padding: 0 33rpx; }
+.point-item{ margin-right: 30rpx; }
+
+/* .calendar-slogan{ margin: 18rpx auto 0; width: 693rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
 .slogan-label{ display: inline-block; width: 84rpx; height: 36rpx; text-align: center; line-height: 36rpx; font-size: 24rpx; color: #33cbc7; background: #dafef7; border-radius: 15rpx; }
 .slogan-content{ padding: 25rpx 105rpx 0; text-align: left; line-height: 1.5; font-size: 30rpx; color: #737373; }
-.slogan-from{ padding: 30rpx 45rpx; text-align: right; font-size: 28rpx; color: #191919; }
+.slogan-from{ padding: 30rpx 45rpx; text-align: right; font-size: 28rpx; color: #191919; } */
 
-.sign-action{ margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; } */
+.sign-action{ position: absolute; bottom: 20rpx; left: 30rpx; margin: 15rpx auto 0; width: 693rpx; height: 80rpx; text-align: center; line-height: 80rpx; background: linear-gradient(225deg, #5fedda, #35cec7); color: #fff; font-size: 30rpx; border-radius: 50rpx; }
+.sign-success-content{ display: block; position: absolute; top: 12.5%; left: 12.5%; z-index: 9999; width: 75%; height: 50%; background: #fff; border-radius: 15rpx; overflow: hidden; }

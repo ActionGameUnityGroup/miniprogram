@@ -5,8 +5,9 @@ img{ display: block; width: 100%; }
 .header-right{ display: flex; justify-content: space-between; align-items: center; margin-right: 34px; height: 100%; }
 .user-info, .log-out{ display: flex; justify-content: space-between; align-items: center; height: 100%; }
 .user-info{ margin-right: 27px; }
-.user-info span, .log-out span{ display: inline-block; vertical-align: middle; margin-right: 4px; font-size: 7px; color: #f0f3fa; }
-.user-info span:first-child{ width: 24px; height: 24px; border-radius: 10rem; overflow: hidden; }
+/*.user-info span, .log-out span{ display: inline-block; vertical-align: middle; margin-right: 4px; font-size: 7px; color: #f0f3fa; }*/
+.user-info-name, .log-out span{ display: inline-block; vertical-align: middle; margin-right: 4px; font-size: 7px; color: #f0f3fa; }
+/*.user-info span:first-child{ width: 24px; height: 24px; border-radius: 10rem; overflow: hidden; }*/
 .log-out:hover{ cursor: pointer; }
 .log-out span:first-child{ width: 15px; height: 20px; }
-.user-info span:first-child img{ background: #f00; }
+/*.user-info span:first-child img{ background: #f00; }*/

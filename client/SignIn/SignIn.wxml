@@ -1,4 +1,4 @@
-<view class="slogan-content">
+<!-- <view class="slogan-content">
   <image mode='widthFix' src='{{sloganCover}}'></image>
 </view>
 
@@ -48,7 +48,7 @@
       <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: -webkit-linear-gradient(#ffdd75, #ffb253); border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
     </view>
   </view>
-</block>
+</block> -->
 
 <!-- <view class="sign-record">
   <view class="sign-item">
@@ -67,19 +67,33 @@
     <text> {{mostSerialDays}} </text>
     <text> 历史最高 </text>
   </view>
+</view> -->
+
+<view class="sign-header">
+  <view class="sign-poster">
+    <image mode='widthFix' src='{{sloganCover}}'></image>
+  </view>
+  <view class="sign-tools">
+    <view class="download-action" bindtap='downloadAction'>
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-79.png'></image>
+    </view>
+    <view class="share-action" bindtap='shareAction'>
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-78.png'></image>
+    </view>
+  </view>
 </view>
 
 <view class="calendar-content">
   <view class="calendar-top">
-    <view>
+    <!-- <view>
       <image mode='widthFix' src='../../assets/icon/miniprogram-icon-20.png'></image>
       <text>上一月</text>
-    </view>
-    <view>{{currentYear}}年{{currentMonth}}月</view>
-    <view>
+    </view> -->
+    <view class='calendar-show-date'> {{currentYear}}/{{currentMonth}} </view>
+    <!-- <view>
       <text>下一月</text>
       <image mode='widthFix' src='../../assets/icon/miniprogram-icon-20.png'></image>
-    </view>
+    </view> -->
   </view>
   <view class="calendar-bottom">
     <view class="calendar-week">
@@ -95,19 +109,59 @@
         <view class='date'>
           <view class='register-date' wx:if='{{item.isRegister}}'> {{item.date}} </view>
           <view class='today' wx:elif='{{item.isToday}}'> {{item.date}} </view>
+          <view class='unregister-date' wx:elif='{{item.isPass}}'> {{item.date}} </view>
           <view wx:else> {{item.date}} </view>
         </view>
       </block>
     </view>
+    <view class="calendar-detail">
+      <view class="point-item">
+        <text style='display: inline-block; vertical-align: middle; margin-right: 15rpx; width: 16rpx; height: 16rpx; border-radius: 5rem; background: #33cbc8;'></text>
+        <text style='display: inline-block; vertical-align: middle; color: #b0a99e; font-size: 24rpx;'> 已签到 </text>
+      </view>
+      <view class="point-item">
+        <text style='display: inline-block; vertical-align: middle; margin-right: 15rpx; width: 16rpx; height: 16rpx; border-radius: 5rem; background: #d3d3d3;'></text>
+        <text style='display: inline-block; vertical-align: middle; color: #b0a99e; font-size: 24rpx;'> 未签到 </text>
+      </view>
+      <view class="point-item">
+        <text style='display: inline-block; vertical-align: middle; margin-right: 15rpx; width: 12rpx; height: 12rpx; border-radius: 5rem; border: 2rpx solid #ff6a69;'></text>
+        <text style='display: inline-block; vertical-align: middle; color: #b0a99e; font-size: 24rpx;'> 已签到 </text>
+      </view>
+    </view>
   </view>
 </view>
 
-<view class="calendar-slogan">
+<!-- <view class="calendar-slogan">
   <view style='padding: 10rpx 26rpx 0;'>
     <text class="slogan-label"> 日签 </text>
   </view>
   <view class="slogan-content"> “{{slogan}}” </view>
   <view class="slogan-from"> —— 《{{from}}》 </view>
-</view>
+</view> -->
 
-<view class="sign-action" bindtap='signAction'> 今日打卡 </view> -->
+<view class="sign-action" bindtap='signAction'> 我要签到 </view>
+
+<block wx:if='{{signSuccess}}'>
+  <view style='display: block; position: absolute; top: 0; left: 0; z-index: 9999999; width: 100%; height: 100%; background: rgba(238, 238, 238, 0.7);'>
+    <view style='display: block; position: absolute;'></view>
+    <view class="sign-success-content">
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-62.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
+      <view style='margin-top: 69rpx; text-align: center; color: #323232; font-size: 36rpx;'> 签到成功 </view>
+      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{continuityDate}} </text>天</view>
+      <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: #62eedc; border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
+    </view>
+  </view>
+</block>
+<block wx:if='{{signFailure}}'>
+  <view style='display: block; position: absolute; top: 0; left: 0; z-index: 9999999; width: 100%; height: 100%; background: rgba(238, 238, 238, 0.7);'>
+    <view style='display: block; position: absolute;'></view>
+    <view class="sign-success-content">
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-77.png' style='display: block; margin: 79rpx auto 0; width: 112rpx; height: 112rpx;'></image>
+      <image mode='widthFix' src='../assets/icon/miniprogram-icon-66.png' style='display: block; margin: 17rpx auto 0; width: 108rpx; height: 6rpx;'></image>
+      <view style='margin-top: 69rpx; text-align: center; color: #323232; font-size: 36rpx;'> 你已经签过了哦~ </view>
+      <view style='margin-top: 29rpx; text-align: center; color: #323232; font-size: 26rpx;'>获得<text style='color: #fcb134;'> {{integration}} </text>积分，已连续签到<text style='color: #fcb134;'> {{continuityDate}} </text>天</view>
+      <view style='display: block; margin: 60rpx auto 0; width: 144rpx; height: 74rpx; text-align: center; line-height: 74rpx; background: -webkit-linear-gradient(#ffdd75, #ffb253); border-radius: 50rpx; color: #fff; font-size: 30rpx;' bindtap='signCompleteAction'> 好 </view>
+    </view>
+  </view>
+</block>

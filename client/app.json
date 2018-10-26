@@ -1,9 +1,9 @@
 {
   "pages":[
     "Index/Index",
+    "SignIn/SignIn",
     "Article/Article",
     "WelfareActivity/WelfareActivity",
-    "SignIn/SignIn",
     "PersonalInfo/personalInfo",
     "FeedBack/FeedBack",
     "UserInfo/UserInfo",
