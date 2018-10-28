@@ -71,16 +71,16 @@
 
 <view class="sign-header">
   <view class="sign-poster">
-    <image mode='widthFix' src='{{sloganCover}}'></image>
+    <image mode='aspectFill' src='{{sloganCover}}'></image>
   </view>
-  <view class="sign-tools">
+  <!-- <view class="sign-tools">
     <view class="download-action" bindtap='downloadAction'>
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-79.png'></image>
     </view>
-    <view class="share-action" bindtap='shareAction'>
+    <button open-type="share" class="share-action" bindtap='shareAction'>
       <image mode='widthFix' src='../assets/icon/miniprogram-icon-78.png'></image>
-    </view>
-  </view>
+    </button>
+  </view> -->
 </view>
 
 <view class="calendar-content">

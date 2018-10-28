@@ -2,9 +2,9 @@
   "pages":[
     "Index/Index",
     "SignIn/SignIn",
+    "PersonalInfo/personalInfo",
     "Article/Article",
     "WelfareActivity/WelfareActivity",
-    "PersonalInfo/personalInfo",
     "FeedBack/FeedBack",
     "UserInfo/UserInfo",
     "PublicWelfare/PublicWelfare",

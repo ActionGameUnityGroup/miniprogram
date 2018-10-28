@@ -29,11 +29,11 @@ page{ position: relative; }
 .sign-poster{ display: block; position: relative; width: 100%; height: 100%; }
 .sign-poster image{ display: block; width: 100%; height: 100%; }
 .sign-tools{ display: block; position: absolute; top: 24rpx; right: 30rpx; }
-.download-action, .share-action{ display: inline-block; vertical-align: middle; width: 48rpx; height: 46rpx; }
+.download-action, .share-action{ display: inline-block; vertical-align: middle; padding: 0; width: 48rpx; height: 46rpx; background: transparent; border: 0; }
 .download-action image, .share-action image{ display: block; width: 100%; height: 100%; }
 .download-action{ margin-right: 25rpx; }
 
-.calendar-content{ display: block; position: relative; top: 348rpx; margin: 0 auto; padding-bottom: 25rpx; width: 693rpx; border-radius: 15rpx; background: #fff; }
+.calendar-content{ display: block; position: relative; top: 368rpx; margin: 0 auto; padding-bottom: 25rpx; width: 693rpx; border-radius: 15rpx; background: #fff; }
 .calendar-top{ display: block; height: 87rpx; text-align: center; }
 /*.calendar-top view{ font-size: 26rpx; color: #748592; }*/
 .calendar-show-date{ padding: 35rpx 25rpx; font-size: 36rpx; color: #000; }

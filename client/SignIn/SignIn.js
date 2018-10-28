@@ -109,7 +109,7 @@ const setContinueDate = (signInfoList) => {
 
 Page({
   data: {
-    sloganCover: '../assets/icon/miniprogram-icon-74.jpg',
+    sloganCover: '/assets/icon/miniprogram-icon-74.jpg',
     registerDays: 0,
     signDays: 0,
     serialDays: 0,
@@ -164,11 +164,6 @@ Page({
         month[i].isPass = true;
       }
     }
-    /*console.log(month);
-    console.log(currentMonth.getDate());
-    console.log(date.getMonth(date));
-    console.log(date.getFullYear(date));
-    console.log(date.getFullYear(date));*/
     this.setData({
       month: month,
       fill: fill
@@ -189,6 +184,14 @@ Page({
     });
 
   },
+  onShareAppMessage: function(imageUrl){
+    return {
+      title: '日签海报',
+      path: '/SignIn/SignIn',
+      imageUrl: imageUrl
+    }
+    console.log('分享海报');
+  },
   signAction: function(){
     console.log('打卡');
     this.setData({
@@ -199,11 +202,54 @@ Page({
   },
   shareAction: function(){
     console.log('分享');
+    wx.showLoading({
+      title: '正在发起分享',
+      success: function(loading){
+        wx.downloadFile({
+          url: _this.data.sloganCover,
+          complete: function(file){
+            console.log(file);
+            setTimeout(function(){
+              wx.hideLoading();
+              _this.onShareAppMessage(file.tempFilePath);
+            }, 500);
+          }
+        });
+      }
+    });
+    // console.log(this);
+    // this.onShareAppMessage();
+    /*wx.showShareMenu({
+      success: function(res){
+        console.log(res);
+      }
+    });*/
   },
   downloadAction: function(){
     console.log('下载');
-    wx.downloadFile({
-      url: this.data.sloganCover
+    wx.showModal({
+      title: '是否下载该海报？',
+      content: '是否下载该海报？',
+      showCancel: true,
+      success: function(res){
+        console.log(res);
+        if(!res.cancel && res.confirm){
+          console.log('确定下载');
+          console.log(_this.data.sloganCover);
+          wx.downloadFile({
+            url: _this.data.sloganCover,
+            success: function(res){
+              console.log(res);
+              // console.log(res.tempFilePath);
+              wx.saveImageToPhotosAlbum({
+                filePath: res.tempFilePath
+              });
+            }
+          });
+        } else {
+          console.error('不下载');
+        }
+      }
     });
   },
   signCompleteAction: function(){
