@@ -13,10 +13,10 @@
         <text> {{identify}} </text>
       </view>
       <view class="header-action-content">
-        <view class="header-action-item">
+        <button open-type='contact' class="header-action-item" session-from='mini'>
           <image mode='aspectFit' src='../assets/icon/miniprogram-icon-34.png' style='width: 129rpx; height: 88rpx;'></image>
           <text> 报名入学 </text>
-        </view>
+        </button>
         <view class="header-action-item">
           <image mode='aspectFit' src='../assets/icon/miniprogram-icon-46.png' style='width: 131rpx; height: 88rpx;'></image>
           <text> 邀请好友 </text>
