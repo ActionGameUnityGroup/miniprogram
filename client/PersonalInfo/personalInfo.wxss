@@ -15,9 +15,15 @@
 .personal-info-identify text{ display: block; margin: 0 auto; width: 100%; text-align: center; color: #fff; font-size: 28rpx; }
 
 .header-action-content{ display: flex; justify-content: space-between; align-items: center; margin: 46rpx auto 0; width: 710rpx; background: #fff; border-radius: 15rpx; }
+<<<<<<< HEAD
 /*.header-action-content .button-hover{ border: 0; background: transparent; }*/
 .header-action-item{ display: block; position: static; margin: 30rpx 0; padding: 0; width: 354.5rpx; border: 0; border-radius: 0; background: transparent; }
+=======
+.header-action-item{ display: block; position: relative; margin: 30rpx 0; padding: 0; width: 354.5rpx; border: 0; background: transparent; }
+.header-action-item::after{ border: 0; }
+>>>>>>> 0fc720a2255911a897c590d00a52ca0520bb580b
 .header-action-item:last-child{ border-right: none; border-left: 1rpx solid #d6d6d6; }
+/*.button-hover{}*/
 .header-action-item image{ display: block; margin: 0 auto; }
 .header-action-item text{ display: block; margin: 17rpx auto 0; text-align: center; font-size: 28rpx; color: #eb6000; }
 

@@ -5,11 +5,7 @@ class Content extends Component{
   render(){
     return (
       <section className={style['page-section']} style={{width: this.props.width+'px', height: this.props.height+'px'}}>
-        {
-          React.Children.map(this.props.children, (child) => {
-            return child;
-          })
-        }
+        { this.props.children }
       </section>
     );
   }

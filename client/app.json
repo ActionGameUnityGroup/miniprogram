@@ -1,10 +1,10 @@
 {
   "pages":[
     "Index/Index",
-    "Article/Article",
-    "WelfareActivity/WelfareActivity",
     "SignIn/SignIn",
     "PersonalInfo/personalInfo",
+    "Article/Article",
+    "WelfareActivity/WelfareActivity",
     "FeedBack/FeedBack",
     "UserInfo/UserInfo",
     "PublicWelfare/PublicWelfare",
