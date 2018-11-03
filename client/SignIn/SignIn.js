@@ -130,7 +130,8 @@ Page({
     slogan: 'sdlgkjslkgjew',
     from: 'dsligjl',
     integration: 2,
-    signSuccess: false
+    signSuccess: false,
+    continuityDate: 0
   },
   onLoad: function(){
     _this = this;
