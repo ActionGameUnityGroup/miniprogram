@@ -157,17 +157,17 @@ Page({
     let month = [];
     for (var i = 0; i <= dateIndex; i++) {
       month[i] = {date: i+1, isToday: false, isRegister: false, isPass: false};
-      if (i < 5) {
-        month[i].isRegister = true;
-      } else if (i == toDate) {
+      if (i == toDate) {
         month[i].isToday = true;
       } else if (i < toDate){
         month[i].isPass = true;
       }
     }
     this.setData({
+      currentYear: currentYear,
+      currentMonth: date.getMonth() + 1,
       month: month,
-      fill: fill
+      fill: fill,
     });
 
     wx.request({
@@ -181,6 +181,18 @@ Page({
             // bannerList: res.data.requestData[0].bannerList
           });
         }
+      }
+    });
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/sign/getSignInfo',
+      method: 'GET',
+      header: {
+        'Authorization': wx.getStorageSync('openid')
+      },
+      success: function(res){
+        console.log(res.data.requestData.signInfo, '签到信息');
+        setContinueDate(res.data.requestData.signInfo);
       }
     });
 
@@ -283,18 +295,6 @@ Page({
 //     });
 
 //     setDate();
-
-//     wx.request({
-//       url: 'https://www.changdaolife.cn/api/sign/getSignInfo',
-//       method: 'GET',
-//       header: {
-//         'Authorization': wx.getStorageSync('openid')
-//       },
-//       success: function(res){
-//         console.log(res.data.requestData.signInfo, '签到信息');
-//         setContinueDate(res.data.requestData.signInfo);
-//       }
-//     });
 
 //   },
 //   signInAction: function(){
