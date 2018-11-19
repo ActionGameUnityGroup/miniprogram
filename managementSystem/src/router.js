@@ -12,7 +12,7 @@ import React from 'react';
 import dynamic from 'dva/dynamic'
 import { Route, Switch, routerRedux } from 'dva/router';
 import { LocaleProvider } from 'antd';
-import IndexPage from './routes/IndexPage';
+// import IndexPage from './routes/IndexPage';
 import Page from './layout/Page';
 import enUS from 'antd/lib/locale-provider/en_US';
 const { ConnectedRouter } = routerRedux;
@@ -20,37 +20,37 @@ const routes = [
   {
     path: '/',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/IndexPage'),
+    component: () => import('./routes/Index'),
   },
   {
     path: '/module',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/ModulePage'),
+    component: () => import('./routes/Module'),
   },
   {
     path: '/userList',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/UserListPage'),
+    component: () => import('./routes/UserList'),
   },
   {
     path: '/course',
     models: () => [import('./models/course')],
-    component: () => import('./routes/CoursePage'),
+    component: () => import('./routes/Course'),
   },
   {
     path: '/shop',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/ShopPage'),
+    component: () => import('./routes/Shop'),
   },
   {
     path: '/setting',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/SettingPage'),
+    component: () => import('./routes/Setting'),
   },
   {
     path: '/login',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/LoginPage'),
+    component: () => import('./routes/Login'),
   },
 ];
 

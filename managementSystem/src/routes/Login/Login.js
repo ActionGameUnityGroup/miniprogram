@@ -36,7 +36,7 @@ class LoginSection extends Component{
   }
 
   handleLogin(){
-    let [username, password, _this] = [this.state.username, this.state.password, this];
+    let [username, password] = [this.state.username, this.state.password];
     if(username&&password){
       // console.log('有');
       request(

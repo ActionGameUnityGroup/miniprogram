@@ -65,7 +65,6 @@ class AddLesson extends Component {
             paddingBottom: 53,
             textAlign: 'center'
           }}
-          placement="right"
           width={300}
           onClose={this.props.onHandelCancel}
           visible={this.props.isVisible}

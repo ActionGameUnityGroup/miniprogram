@@ -93,13 +93,13 @@ class UpdateLesson extends Component {
 
     // const { previewVisible, previewImage, courseCoverList, dataSource } = this.state;
     const lessonList = [];
-    const props = {
+    /*const props = {
       name: 'file',
       action: '//jsonplaceholder.typicode.com/posts/',
       headers: {
         authorization: 'authorization-text',
       }
-    };
+    };*/
 
     return (
       <div>
@@ -113,7 +113,6 @@ class UpdateLesson extends Component {
             paddingBottom: 53,
             textAlign: 'center'
           }}
-          placement="right"
           width={700}
           onClose={this.props.onCancelAddCourse}
           visible={this.props.isVisible}

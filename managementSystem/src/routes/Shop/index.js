@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'dva';
-import ModuleSection from './Module/ModuleSection';
+// import PageSection from '../components/PageSection/PageSection';
 
 const ModulePage = () => {
   return (
-    <ModuleSection/>
+    <div>积分商城</div>
   );
 };
 

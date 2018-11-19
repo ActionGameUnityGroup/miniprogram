@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import CourseSection from './Course/CourseSection';
+import CourseSection from './CourseSection';
 
 const ModulePage = ({dispatch, courseList}) => {
 

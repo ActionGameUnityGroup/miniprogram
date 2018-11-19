@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import LoginSection from './Login/Login';
+import LoginSection from './Login';
 
 function LoginPage({dispatch}){
 

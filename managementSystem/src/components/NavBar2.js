@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'antd';
-import { Link } from 'react-router-dom';
 
 class NavBar2 extends Component {
 
@@ -13,7 +12,7 @@ class NavBar2 extends Component {
 
   render() {
     return (
-      <div style={{ height: this.props.height - 1, background: '#001529', borderTop: '1px solid #b4b4b4' }}>
+      <div style={{width: 220, height: this.props.height - 1, background: '#001529' }}>
         <Menu
           defaultSelectedKeys={this.props.selectKey}
           mode="vertical"

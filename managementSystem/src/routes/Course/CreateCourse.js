@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import { Drawer, Input, Select, DatePicker, Upload, Modal, Icon, Button, message } from 'antd';
+import { Drawer, Input, /*Select, DatePicker,*/ Upload, Modal, Icon, Button, message } from 'antd';
 import request from '../../utils/request';
 
-const { Option } = Select;
+// const { Option } = Select;
 
-const mapChild = (list) => {
+/*const mapChild = (list) => {
   let courseCoverist = [];
   list.forEach((child, index) => {
     courseCoverist.push({uid: index, name: child.name, status: 'done', url: child.url});
   });
   return courseCoverist;
-};
+};*/
 
 class CreateCourse extends Component {
 
@@ -21,7 +21,7 @@ class CreateCourse extends Component {
   };
 
   addCourse = () => {
-    let _this = this;
+    // let _this = this;
     let [author, courseTitle, courseDetail] = [this.state.author, this.state.courseTitle, this.state.courseDetail];
     request(
       'https://www.changdaolife.cn/api/course/setCourse',
@@ -68,7 +68,7 @@ class CreateCourse extends Component {
   }
 
   render() {
-    const { previewVisible, previewImage, courseCoverist, dataSource } = this.state;
+    const { previewVisible, previewImage, courseCoverist, /*dataSource*/ } = this.state;
     return (
       <div>
         <Drawer
@@ -80,7 +80,6 @@ class CreateCourse extends Component {
             overflow: 'auto',
             paddingBottom: 53,
           }}
-          placement="right"
           width={600}
           onClose={this.props.onCancelAddCourse}
           visible={this.props.isVisible}

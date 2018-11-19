@@ -27,7 +27,7 @@ class CourseSection extends Component{
     });
   }
 
-  componentWillUpdate(){
+  UNSAFE_componentWillUpdate(){
     console.log('即将更新');
   }
 

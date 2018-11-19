@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'dva';
-import PageSection from '../components/PageSection/PageSection';
+// import PageSection from '../components/PageSection/PageSection';
 
 const ModulePage = () => {
   return (

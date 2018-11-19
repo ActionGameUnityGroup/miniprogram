@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'dva';
-import PageSection from '../components/PageSection/PageSection';
+import ModuleSection from './ModuleSection';
 
 const ModulePage = () => {
   return (
-    <div>设置</div>
+    <ModuleSection/>
   );
 };
 
