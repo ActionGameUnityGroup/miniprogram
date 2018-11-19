@@ -13,7 +13,7 @@ import dynamic from 'dva/dynamic'
 import { Route, Switch, routerRedux } from 'dva/router';
 import { LocaleProvider } from 'antd';
 import IndexPage from './routes/IndexPage';
-import Page from './routes/Page';
+import Page from './layout/Page';
 import enUS from 'antd/lib/locale-provider/en_US';
 const { ConnectedRouter } = routerRedux;
 const routes = [
@@ -59,7 +59,7 @@ function RouterConfig({ history, app }) {
 
     <ConnectedRouter history={history}>
       <LocaleProvider locale={enUS}>
-        <Page>
+        <Page history={history}>
           <Switch>
             {
               routes.map(({path, ...dynamics}, key) => (
