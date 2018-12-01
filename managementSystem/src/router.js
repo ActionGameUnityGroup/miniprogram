@@ -23,12 +23,12 @@ const routes = [
     component: () => import('./routes/Index'),
   },
   {
-    path: '/module',
+    path: '/element',
     models: () => [import('./models/admin')],
-    component: () => import('./routes/Module'),
+    component: () => import('./routes/Module/Element/Element'),
   },
   {
-    path: '/userList',
+    path: '/user',
     models: () => [import('./models/admin')],
     component: () => import('./routes/UserList'),
   },
