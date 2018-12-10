@@ -1,7 +1,5 @@
 const {mongoose, db} = require('../mongodb/db');
 
-console.log('模型内连接数据库');
-
 let courseSchema = new mongoose.Schema({
     courseCover: String,
     author: String,

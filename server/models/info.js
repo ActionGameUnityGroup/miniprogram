@@ -1,6 +1,4 @@
 const {mongoose, db} = require('../app/db');
-console.log(mongoose, 'ose');
-console.log(db, 'db');
 
 let infoSchema = new mongoose.Schema({
   userId: Number,

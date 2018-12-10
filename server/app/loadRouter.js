@@ -10,7 +10,7 @@ const addController = (router, controller) => {
         ctx.status = 200;
       });
     } else if(URL.startsWith('POST ')) {
-      console.log(fileName, 'POST路径');
+      // console.log(fileName, 'POST路径');
       router.post(fileName, controller[URL]);
     }
   }
@@ -30,7 +30,7 @@ const loadController = (router, rootPath) => {
 
 
 module.exports = (router, rootPath) => {
-  console.log(rootPath, '根目录');
+  // console.log(rootPath, '根目录');
   // const path = rootPath + '/controllers';
   loadController(router, rootPath);
   return router.routes();

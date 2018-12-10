@@ -1,5 +1,4 @@
 const Test = require('../../controllers/pages/test');
-console.log(Test, 2);
 
 module.exports = {
   'GET /test': async (ctx) => {
