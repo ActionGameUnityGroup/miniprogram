@@ -1,11 +1,13 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const config = require('../config');
 
-const DBURI = 'mongodb://changdao:dreamplus2018changdao@120.78.177.45:12888/NaturalRules';
+const DBURI = `mongodb://${config.username}:${config.password}@${config.ip}:${config.port}/${config.tablename}`;
+console.log(DBURI);
 mongoose.connect(DBURI);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function(callback){ console.log('数据库连接成功'); });
+db.on('error', function(){ console.error('connection error:'); });
+db.once('open', function(callback){ console.log('已连接数据库'); });
 
 module.exports = {
   mongoose: mongoose,

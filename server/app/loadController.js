@@ -12,7 +12,6 @@ const routeController = (router, controller) => {
 const loadController = (router) => {
   let path = './controllers';
   fs.readdirSync(path).map((childDir) => {
-    console.log(childDir);
     fs.readdirSync(childDir).map((fileName) => {
       let controller = require(fileName);
       routeController(router, controller);
