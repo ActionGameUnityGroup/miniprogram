@@ -1,11 +1,7 @@
 /server/node_modules/
-<<<<<<< HEAD
 /server/log
 /server/.idea
-=======
-/server/log/*
 /server/config
->>>>>>> 4d54040063dc8e9bee904300511fd50c42f5b6be
 /server2/
 /cnode-api/
 /egg-server/
