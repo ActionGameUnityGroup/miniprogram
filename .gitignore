@@ -1,6 +1,9 @@
 /server/node_modules/
 /server/log
+/server/.idea
 /server2/
+/cnode-api/
+/egg-server/
 # /client/
 /managementSystem/node_modules
 # /server/public/audio/
