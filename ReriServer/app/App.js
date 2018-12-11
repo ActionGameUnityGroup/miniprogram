@@ -2,7 +2,11 @@ const Koa = require('koa');
 const fs = require('fs');
 const error = require('./os/error');
 const render = require('./os/render');
-const koaBetterBody = require('koa-better-body');
+const controller = require('./os/controller');
+const router = require('./os/router');
+const body = require('./os/body');
+const bodyParser = require('./os/body-parser');
+// const koaBetterBody = require('koa-better-body');
 
 class App {
   constructor(){
@@ -29,12 +33,12 @@ class App {
     _this.app.use(error());
     _this.app.use(render());
 
-    _this.app.use(koaBetterBody())
-    /*_this.app.use(function * () {
-      console.log(this.request.body)    // if buffer or text
-      console.log(this.request.files)   // if multipart or urlencoded
-      console.log(this.request.fields)  // if json
-    });*/
+    _this.app.use(controller(_this));
+    _this.app.use(router(_this));
+    _this.app.use(body({multipart: true}));
+    _this.app.use(bodyParser());
+
+    // _this.app.use(koaBetterBody())
 
     fs.readdirSync(pluginPath).map(pluginName => {
       const plugin = require(`${pluginPath}/${pluginName}`);

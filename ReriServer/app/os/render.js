@@ -15,9 +15,10 @@ const renderPath = (pageURL) => {
 module.exports = () => {
   return async (ctx, next) => {
     ctx.render = async (pageName) => {
-      const viewRootPath = path.resolve(__dirname, '../views');
+      const viewRootPath = path.resolve(__dirname, '../view');
       let page = await renderPath(`${viewRootPath}/${pageName}.html`);
       ctx.body = page;
+      ctx.type = 'text/html';
     };
     await next();
   };

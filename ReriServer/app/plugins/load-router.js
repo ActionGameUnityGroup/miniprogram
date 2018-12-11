@@ -1,4 +1,4 @@
-const fs = require('fs');
+/*const fs = require('fs');
 const path = require('path');
 const Router = require('koa-router');
 const router = new Router();
@@ -20,7 +20,7 @@ const addController = (controller) => {
 };
 
 const loadController = (rootPath) => {
-  const path = rootPath + '/routes';
+  const path = rootPath + '/route';
   fs.readdirSync(path).map((dir) => {
     fs.readdirSync(`${path}/${dir}`).map((controllerItem) => {
       let controller = require(`${path}/${dir}/${controllerItem}`);
@@ -33,4 +33,10 @@ module.exports = () => {
   const rootPath = path.resolve(__dirname, '..');
   loadController(rootPath);
   return router.routes();
-}
+}*/
+
+module.exports = () => {
+  return async (ctx, next) => {
+    await next();
+  };
+};

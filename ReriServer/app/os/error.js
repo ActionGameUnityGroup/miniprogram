@@ -13,7 +13,7 @@ module.exports = () => {
       console.log('\nthis is an Error Message↓\n');
       console.error(e.message);
       console.log('\n==========Render Error==========');
-      ctx.body = e.message;
+      ctx.body = 'server happends a problem';
       ctx.status = 500;
     }
   };
