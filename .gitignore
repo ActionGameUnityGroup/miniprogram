@@ -1,8 +1,11 @@
 /server/node_modules/
-/server/log/*
+/server/log
+/server/.idea
 /server/config
 /server2/
 /ReriServer/node_modules/
+/cnode-api/
+/egg-server/
 # /client/
 /managementSystem/node_modules
 # /server/public/audio/
