@@ -2,6 +2,7 @@
 /server/log/*
 /server/config
 /server2/
+/ReriServer/node_modules/
 # /client/
 /managementSystem/node_modules
 # /server/public/audio/

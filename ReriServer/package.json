@@ -15,6 +15,7 @@
     "content-type": "^1.0.4",
     "crypto": "^1.0.1",
     "koa": "^2.5.0",
+    "koa-better-body": "^3.0.4",
     "koa-cors": "0.0.16",
     "koa-router": "^7.4.0",
     "koa-xml-body": "^2.0.0",
