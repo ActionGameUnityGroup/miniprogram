@@ -1,6 +1,7 @@
 const Koa = require('koa');
 const fs = require('fs');
-const error = require('./os/error');
+// const error = require('./os/error');
+const log4js = require('./os/log4js');
 const render = require('./os/render');
 const controller = require('./os/controller');
 const router = require('./os/router');
@@ -20,7 +21,6 @@ class App {
     const _this = this;
 
     _this.app.use(async (ctx, next) => {
-      console.log(ctx.method, ctx.url);
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
       ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
@@ -30,7 +30,18 @@ class App {
       await next();
     });
 
-    _this.app.use(error());
+    _this.app.use(async (ctx, next) => {
+      const start = new Date();
+      await next();
+      const ms = new Date() - start;
+      log4js.responseLogger(ctx, ms);
+    });
+
+    _this.app.on('error', (err, ctx) => {
+      log4js.errorLogger(ctx, err);
+      ctx.body = err.message;
+    });
+
     _this.app.use(render());
 
     _this.app.use(controller(_this));
