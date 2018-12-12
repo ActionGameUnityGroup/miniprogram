@@ -1,0 +1,128 @@
+[2018-12-12T09:36:46.492] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:5:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:39:54.690] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:40:19.283] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:46:46.801] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:46:56.792] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:47:26.039] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:48:37.822] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }
+[2018-12-12T09:49:02.935] [ERROR] error - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: undefined,
+  err:
+   TypeError: files.map is not a function
+       at upload (F:\workspace\miniprogram\ReriServer\app\controller\api.js:6:11)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:45:18)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:346:16
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:44:32)
+       at F:\workspace\miniprogram\ReriServer\node_modules\koa-router\node_modules\koa-compose\index.js:36:12
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-router\lib\router.js:351:31)
+       at dispatch (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:42:32)
+       at next (F:\workspace\miniprogram\ReriServer\node_modules\koa-compose\index.js:43:18)
+       at F:\workspace\miniprogram\ReriServer\app\os\controller.js:7:11 }

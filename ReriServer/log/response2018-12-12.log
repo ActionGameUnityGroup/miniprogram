@@ -1,0 +1,486 @@
+[2018-12-12T09:33:57.947] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 5,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:33:58.078] [INFO] response - { method: 'GET',
+  url: '/favicon.ico',
+  body: {},
+  costTime: 1,
+  response:
+   { status: 404,
+     message: 'Not Found',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS' },
+     body: undefined } }
+[2018-12-12T09:34:05.506] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: 8,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：undefined' } } }
+[2018-12-12T09:35:45.751] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: 11,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:46:36.572] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 1,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:51:37.216] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: 11,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:52:10.233] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: 20,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:52:33.071] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { files: [File] } },
+  costTime: 10,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:52:46.560] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 1,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:53:04.062] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: { files: '[object FileList]' }, files: {} },
+  costTime: 7,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:53:32.607] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 4,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:53:39.141] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: { files: '{"0":{},"1":{}}' }, files: {} },
+  costTime: 3,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:53:39.184] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: { files: '{"0":{},"1":{}}' }, files: {} },
+  costTime: 0,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:54:27.770] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 4,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:54:36.782] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: { files: '[{},{}]' }, files: {} },
+  costTime: 4,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:55:09.988] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: { files: '[{},{}]' }, files: {} },
+  costTime: 7,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:55:14.594] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 1,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:55:20.946] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body:
+   { fields: { files: '[object File],[object File]' }, files: {} },
+  costTime: 0,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:56:51.819] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 0,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:57:57.474] [INFO] response - { method: 'GET',
+  url: '/upload',
+  body: {},
+  costTime: 4,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/html; charset=utf-8' },
+     body:
+      ReadStream {
+        _readableState: [ReadableState],
+        readable: true,
+        _events: [Object],
+        _eventsCount: 2,
+        _maxListeners: undefined,
+        path:
+         'F:\\workspace\\miniprogram\\ReriServer\\app\\view/upload.html',
+        fd: null,
+        flags: 'r',
+        mode: 438,
+        start: undefined,
+        end: Infinity,
+        autoClose: true,
+        pos: undefined,
+        bytesRead: 0,
+        closed: false } } }
+[2018-12-12T09:58:08.116] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { file0: [File], file1: [File] } },
+  costTime: 25,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T09:59:46.252] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { file0: [File], file1: [File] } },
+  costTime: 23,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T10:00:06.957] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { file0: [File], file1: [File] } },
+  costTime: 24,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T10:12:59.033] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { file0: [File], file1: [File] } },
+  costTime: 29,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }
+[2018-12-12T10:13:36.111] [INFO] response - { method: 'POST',
+  url: '/api/v1/upload',
+  body: { fields: {}, files: { file0: [File], file1: [File] } },
+  costTime: 19,
+  response:
+   { status: 200,
+     message: 'OK',
+     header:
+      { 'access-control-allow-origin': '*',
+        'access-control-allow-headers':
+         'Content-Type, Content-Length, Authorization, Accept, X-Requested-With',
+        'access-control-allow-methods': 'PUT, POST, GET, DELETE, OPTIONS',
+        'content-type': 'text/json; charset=utf-8' },
+     body: { status: 200, message: '上传的文件：[object Object]' } } }

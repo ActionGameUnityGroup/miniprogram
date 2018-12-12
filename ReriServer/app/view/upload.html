@@ -5,7 +5,7 @@
   <title>Hello World!</title>
 </head>
 <body>
-  <input type="file"/>
+  <input type="file" multiple />
   <button>上传文件</button>
   <script>
     (function(){
@@ -14,7 +14,12 @@
         let files = document.querySelector('input').files;
         console.log(files);
         let form = new FormData();
-        form.append('files', files[0]);
+        // form.append('files', [...files]);
+        for(var index = 0; index < files.length; index++){
+          form.append(`file${index}`, files[index]);
+        }
+        /*files.map((file, index) => {
+        });*/
         fetch('/api/v1/upload', {
           method: 'POST',
           body: form,

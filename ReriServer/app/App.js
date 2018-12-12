@@ -42,12 +42,12 @@ class App {
       ctx.body = err.message;
     });
 
+    _this.app.use(body({ multipart: true }));
+    _this.app.use(bodyParser());
     _this.app.use(render());
 
     _this.app.use(controller(_this));
     _this.app.use(router(_this));
-    _this.app.use(body({multipart: true}));
-    _this.app.use(bodyParser());
 
     // _this.app.use(koaBetterBody())
 
