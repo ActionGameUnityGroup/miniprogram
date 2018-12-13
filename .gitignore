@@ -4,6 +4,7 @@
 /server/config
 /server2/
 /ReriServer/node_modules/
+/ReriServer/log/
 /cnode-api/
 /egg-server/
 # /client/

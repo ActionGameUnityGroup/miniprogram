@@ -15,7 +15,7 @@ Page({
     // testImageUrl: '',
     bannerList: [],
     moduleList: [
-      {moduleImage: '../assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '../Elements/elements?key=wood'},
+      /*{moduleImage: '../assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '../Elements/elements?key=wood'},
       {moduleImage: '../assets/icon/miniprogram-icon-23.png', moduleName: '火元素', moduleUrl: '../Elements/elements?key=fire'},
       {moduleImage: '../assets/icon/miniprogram-icon-30.png', moduleName: '土元素', moduleUrl: '../Elements/elements?key=earth'},
       {moduleImage: '../assets/icon/miniprogram-icon-24.png', moduleName: '金元素', moduleUrl: '../Elements/elements?key=gold'},
@@ -24,7 +24,7 @@ Page({
       {moduleImage: '../assets/icon/miniprogram-icon-26.png', moduleName: '疗愈', moduleUrl: '../Health/Health'},
       {moduleImage: '../assets/icon/miniprogram-icon-22.png', moduleName: '会员', moduleUrl: '../Member/member'},
       {moduleImage: '../assets/icon/miniprogram-icon-21.png', moduleName: '公益', moduleUrl: '../PublicWelfare/PublicWelfare'},
-      {moduleImage: '../assets/icon/miniprogram-icon-28.png', moduleName: '签到', moduleUrl: '../SignIn/SignIn'},
+      {moduleImage: '../assets/icon/miniprogram-icon-28.png', moduleName: '签到', moduleUrl: '../SignIn/SignIn'},*/
     ],
     AudioList: [
       /*{audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
@@ -64,10 +64,10 @@ Page({
       url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
       method: 'GET',
       success: function(res){
-        console.log(res.data.requestData[0].bannerList, '回调');
-        _this.setData({
+        console.log(res.data, '回调');
+        /*_this.setData({
           bannerList: res.data.requestData[0].bannerList
-        });
+        });*/
       }
     });
 

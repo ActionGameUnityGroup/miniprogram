@@ -1,4 +1,4 @@
-.head-banner{ display: block; width: 100%; height: 378rpx; }
+.head-banner{ display: block; width: 100%; height: 425rpx; }
 .banner-list{ width: 100%; height: 100%; }
 .banner-item{ display: block; width: 100%; }
 
@@ -14,20 +14,23 @@
 }
 .module-item{ margin-top: 47rpx; width: 20%; }
 .module-item image{ display: block; margin: 0 auto; width: 110rpx; height: 110rpx; overflow: hidden; }
-.module-item text{ display: block; margin: 17rpx auto 0; text-align: center; font-size: 24rpx; color: #000; }
+.module-item text{ display: block; margin: 14rpx auto 0; text-align: center; font-size: 28rpx; color: #000; }
 
-.show-content{ margin: 13rpx auto 0; width: 100%; background: #fff; }
+.show-content{ margin: 22rpx auto 0; width: 100%; background: #fff; }
 .show-content:last-child{ margin-bottom: 50rpx; }
-.show-list-content{ display: block; width: 100%; overflow-x: auto; }
-.show-title{ display: flex; justify-content: space-between; align-content: center; position: relative; padding: 0 26rpx; height: 74rpx; }
+.show-list-content{ display: block; padding-bottom: 42rpx; width: 100%; height: 170rpx; }
+.show-title{ display: block; padding: 22rpx 0 0; text-align: center; height: 127rpx; }
+.title1{ display: block; margin: 0 auto; width: 147rpx; height: 65rpx; }
+.title2{ display: block; margin: 0 auto; width: 176rpx; height: 64rpx; }
+.title3{ display: block; margin: 0 auto; width: 159rpx; height: 68rpx; }
 .show-title-background{ display: block; position: absolute; left: 0; top: 0; z-index: 2; width: 100%; }
 .show-title-name{ display: block; position: relative; z-index: 1; width: 100%; text-align: center; line-height: 74rpx; font-size: 30rpx; font-weight: bold; color: #cd2c31; }
 .show-more-action{ display: flex; justify-content: space-between; align-items: center; position: absolute; right: 36rpx; top: 0; z-index: 3; }
 .show-more-action text{ display: block; line-height: 74rpx; font-size: 28rpx; color: #5a5a5a; }
 
-.show-audio-list{ /* display: flex; justify-content: space-around; align-items: center; */ position: relative; margin-top: 11rpx; height: 185rpx; }
-.show-audio-item{ margin: 0 auto; width: 140rpx; }
-.show-audio-item image{ background: #ddd; }
+.show-audio-list{ display: block; position: relative; margin: 11rpx auto 0; height: 100%; }
+.show-audio-item{ display: inline-block; vertical-align: middle; }
+.show-audio-item image{ display: block; margin: 0 auto; width: 215rpx; height: 170rpx; background: #ddd; }
 .show-audio-image { display: block; position: relative; margin: 0 auto; width: 140rpx; border-radius: 15rpx; }
 .show-audio-image:last-child{ margin: 22rpx 0 0; width: 180rpx; height: 109rpx; }
 .show-audio-image .truly-image{ min-height: 100rpx;/* max-height: 140rpx; */ }
@@ -36,11 +39,19 @@
 .view-more-action text{ display: block; color: #000; font-size: 24rpx; }
 .view-more-action text:last-child{ font-size: 16rpx; }
 
-.show-article-list{ display: flex; justify-content: space-around; align-items: center; margin-top: 22rpx; height: 220rpx; }
-.show-article-item{ margin: 0 auto; width: 140rpx; }
-.show-article-image{ display: block; position: relative; margin: 0 auto; width: 140rpx; height: 140rpx; border-radius: 5rpx; background: #ddd; }
-.show-article-bottom-info{ margin: 0 auto; width: 140rpx; }
-.show-article-name{ display: block; margin: 0 auto; padding: 10rpx 0 0; height: 1rem; text-align: center; font-size: 24rpx; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.show-article-list{ display: block; margin: 57rpx auto 0; width: 100%; }
+.lastest-course-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 41rpx; width: 95%; }
+.lastest-course-item:nth-child(2){ margin-bottom: 25rpx !important; }
+.lastest-course-cover{ display: block; margin: 0 auto; width: 242rpx; height: 170rpx; overflow: hidden; }
+.lastest-course-cover image{ display: block; width: 100%; height: 100%; border-radius: 5rpx; background: #ddd; }
+.lastest-course-info{ display: block; margin: 0 auto; width: 452rpx; }
+.main-title,
+.sub-title{ display: -webkit-box; margin: 0 auto; text-align: left; line-height: 1.2; font-size: 24rpx; color: #b1aeae; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.main-title{ margin: 5rpx auto 13rpx; font-size: 28rpx; color: #000; -webkit-line-clamp: 1; }
+.sub-title{ height: 60rpx; }
+.course-tutor{ display: inline-block; margin-top: 15rpx; width: 118rpx; height: 34rpx; text-align: center; line-height: 34rpx; background: #ffbe10; color: #fff; font-size: 20rpx; }
+.check-more-operation{ display: block; text-align: center; line-height: 81rpx; border-top: .73rpx solid #bfbfbf; color: #bcbcbc; font-size: 28rpx; }
+
 .show-article-info{ display: flex; justify-content: space-between; align-content: center; margin: 48rpx auto 20rpx; padding: 0 14rpx; }
 .show-article-ground, .show-article-visit{ display: inline-block; font-size: 17rpx; color: #9c9c9c; }
 .show-article-visit image{ margin-right: 9rpx; width: 27rpx; height: 16rpx; }
