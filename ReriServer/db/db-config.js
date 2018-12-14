@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const config = require('../config');
+const config = require('../config/default.config');
 
 const DBURI = `mongodb://${config.username}:${config.password}@${config.ip}:${config.port}/${config.tablename}`;
 mongoose.connect(DBURI);

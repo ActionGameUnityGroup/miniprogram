@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-class Api {
+/*class Api {
   async upload(ctx){
     const files = ctx.request.body.files;
     const rootDirectory = path.resolve(__dirname, '../../public/');
@@ -30,8 +30,14 @@ class Api {
     ctx.body = {status: 200, message: `上传的文件：${files}`};
     ctx.type = 'text/json';
   }
-};
+};*/
+
+const v1 = {};
+
+fs.readdirSync(__dirname + '/v1').map(file => {
+  v1[file.substring(0, file.length - 3)] = require(__dirname+'/v1/'+file);
+});
 
 module.exports = {
-  v1: new Api()
+  v1: v1
 };
