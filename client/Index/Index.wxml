@@ -51,9 +51,6 @@
   <view class="show-content">
     <view class="show-title">
       <image src='/assets/icon/title1.png' class='title1' mode='widthFix'></image>
-      <!-- <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
-      <text class="show-title-name">音频 · 分享</text>
-      <view class="show-more-action"><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view> -->
     </view>
     <view class="show-list-content">
       <swiper
@@ -87,9 +84,6 @@
   <view class="show-content">
     <view class="show-title">
       <image src='/assets/icon/title2.png' class='title2' mode='widthFix'></image>
-      <!-- <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
-      <text class="show-title-name">文章 · 推荐</text>
-      <view class="show-more-action" bindtap='moreArticleAction'><text>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view> -->
     </view>
     <view class="show-article-list">
       <view class="lastest-course-item">
@@ -109,49 +103,29 @@
         </view>
       </view>
       <view class="check-more-operation">查看更多></view>
-      <!-- <block wx:for='{{articleList}}' wx:key='index'> -->
-        <!-- <block wx:if='{{item.articleCover !== undefined}}'>
-          <swiper-item id='audio{{index}}'>
-            <view id='../Article/Article?articleId={{item.articleId}}' class="show-article-item" bindtap='navigateAction'>
-              <view class="show-article-image">
-                <view class="preload-image"></view>
-                <view class="truly-image"><image class="" src='{{item.articleCover}}' mode='scaleToFill'></image></view>
-              </view>
-              <text class="show-article-name">{{item.articleName}}</text>
-            </view>
-          </swiper-item>
-        </block> -->
-        <!-- <block wx:else><swiper-item></swiper-item></block>
-        <block wx:if='{{index == 4 && item.articleCover !== undefined}}'>
-          <swiper-item class="view-more-action">
-            <text style='margin: 60rpx auto 0;'>查看更多</text>
-            <text>View More</text>
-          </swiper-item>
-        </block> -->
-      <!-- </block> -->
     </view>
   </view>
 
   <view class="show-content">
     <view class="show-title">
-      <image src='../assets/icon/miniprogram-icon-60.png' mode='widthFix' class='show-title-background'></image>
-      <text class="show-title-name">课程 · 最新</text>
-      <view class="show-more-action"><text bindtap='moreCourseAction'>更多</text><image mode='widthFix' src='../assets/icon/miniprogram-icon-20.png' style='margin-left: 18rpx; width: 13rpx;'></image></view>
+      <image src='/assets/icon/title3.png' class='title3' mode='widthFix'></image>
     </view>
-    <view class="show-course-list">
-      <block wx:for='{{courseList}}' wx:key='index'>
-        <view id='../Course/Course?courseId={{item.courseId}}' class="show-course-item" bindtap='navigateAction'>
-          <view class="show-course-image">
-            <view class="preload-image"></view>
-            <view class="truly-image"><image src='{{item.courseCover}}' mode='widthFix'></image></view>
-          </view>
-          <view class="show-course-info">
-            <text class="show-course-name">{{item.courseTitle}}</text>
-            <text class="show-course-describe">{{item.courseDetail}}</text>
-            <!-- <text class="show-course-latest">已更新{{item.currentCourse}}期</text> -->
+    <view class="tutor-list">
+      <view id='../Course/Course?courseId={{item.courseId}}' class="tutor-item" bindtap='navigateAction'>
+        <view class="tutor-image">
+          <image src='{{item.courseCover}}' mode='widthFix'></image>
+        </view>
+        <view class="tutor-info">
+          <view class="tutor-name">杨仁起</view>
+          <view class="tutor-introduction">常道文化资深导师；中国战略型人才库心灵导师/师资；中国智慧教育“十三五”重点课程—幸福家庭研究与实践子课题组组长家族系统排列师；心理咨询师</view>
+          <view class="tutor-label">
+            <text class="tutor-label-item">灵性成长</text>
+            <text class="tutor-label-item">系统排列</text>
+            <text class="tutor-label-item">人际关系</text>
+            <text class="tutor-label-item">能量疗愈</text>
           </view>
         </view>
-      </block>
+      </view>
     </view>
   </view>
 
