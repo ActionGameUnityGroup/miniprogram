@@ -11,26 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect-history-api-fallback": "^1.5.0",
-    "content-type": "^1.0.4",
-    "crypto": "^1.0.1",
     "koa": "^2.5.0",
-    "koa-better-body": "^3.0.4",
-    "koa-cors": "0.0.16",
-    "koa-router": "^7.4.0",
-    "koa-xml-body": "^2.0.0",
-    "mime": "^2.3.1",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.2",
-    "wechat-crypto": "0.0.2",
-    "xml2js": "^0.4.19"
+    "koa-router": "^7.4.0"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
-    "busboy": "^0.2.14",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-multer": "^1.0.2",
     "mongoose": "^5.0.16"
   }
 }

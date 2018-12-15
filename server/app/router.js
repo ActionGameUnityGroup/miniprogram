@@ -3,14 +3,12 @@ const Router = require('koa-router');
 const router = new Router();
 
 module.exports = (app) => {
-  const { Controller } = app;
+  const { Page, Api } = app.Controller;
 
-  console.log(Controller);
-
-  router.get('/', Controller.Page.index);
-  router.get('/upload', Controller.Page.upload);
-  router.post('/api/v1/upload', Controller.Api.v1.upload);
-  router.get('/api/v1/formatDate', Controller.Api.v1.formatDate);
+  router.get('/', Page.index);
+  router.get('/upload', Page.upload);
+  router.get('/api/v0/banner/getBanner', Api.v0.Banner.getBanner);
+  router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
 
   return router.routes();
 

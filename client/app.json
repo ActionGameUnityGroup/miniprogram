@@ -1,6 +1,7 @@
 {
   "pages":[
     "Index/Index",
+    "CourseDetail/CourseDetail",
     "TutorIntroduction/TutorIntroduction",
     "FreeClassDetail/FreeClassDetail",
     "FreeClass/FreeClass",

@@ -16,15 +16,15 @@
 
 <view class="nav-bar">
   <view id='/Index/Index' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='/assets/icon/home.png' style='width: 94rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/home.png'></image>
     <text> 首页 </text>
   </view>
   <view class="nav-bar-item">
-    <image mode='aspectFit' src='/assets/icon/course-active.png' style='width: 55rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/course-active.png'></image>
     <text> 年课 </text>
   </view>
   <view id='/PersonalInfo/personalInfo' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='/assets/icon/my.png' style='width: 43rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/my.png'></image>
     <text> 我的 </text>
   </view>
 </view>

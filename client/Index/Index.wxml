@@ -31,19 +31,19 @@
       { moduleImage: '/assets/icon/free-class.png', moduleName: '免费好课', moduleUrl: '' },
      -->
     <view id='/Registration/Registration' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 62rpx; height: 54rpx'></image>
+      <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 70rpx; height: 60rpx'></image>
       <text> 现场报名 </text>
     </view>
     <view id='/Syllabus/syllabusMenu' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/syllabus.png' style='width: 58rpx; height: 54rpx'></image>
+      <image mode='widthFix' src='/assets/icon/syllabus.png' style='padding-top: 6rpx; width: 60rpx; height: 55rpx'></image>
       <text> 课程表 </text>
     </view>
-    <view id='' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/latest-course.png' style='width: 57rpx; height: 54rpx'></image>
+    <view id='/CourseDetail/CourseDetail' class="module-item" bindtap='navigateAction'>
+      <image mode='widthFix' src='/assets/icon/latest-course.png' style='padding-top: 11rpx; width: 55rpx; height: 52rpx'></image>
       <text> 最新课程 </text>
     </view>
     <view id='/FreeClass/FreeClass' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/free-class.png' style='width: 69rpx; height: 54rpx'></image>
+      <image mode='widthFix' src='/assets/icon/free-class.png' style='padding-top: 6rpx; width: 70rpx; height: 55rpx'></image>
       <text> 免费好课 </text>
     </view>
   </view>
@@ -61,17 +61,17 @@
         display-multiple-items='{{3}}'
       >
         <swiper-item>
-          <view class="show-audio-item" id='/RegistrationDetail/RegistrationDetail' bindtap='navigateAction'>
+          <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
             <image src='' mode='widthFix'></image>
           </view>
         </swiper-item>
         <swiper-item>
-          <view class="show-audio-item" id='/RegistrationDetail/RegistrationDetail' bindtap='navigateAction'>
+          <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
             <image src='' mode='widthFix'></image>
           </view>
         </swiper-item>
         <swiper-item>
-          <view class="show-audio-item" id='/RegistrationDetail/RegistrationDetail' bindtap='navigateAction'>
+          <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
             <image src='' mode='widthFix'></image>
           </view>
         </swiper-item>
@@ -123,7 +123,7 @@
           <view class="course-tutor">导师: 杨凡</view>
         </view>
       </view>
-      <view class="check-more-operation" id='/Syllabus/syllabusMenu' bindtap='navigateAction'>查看更多></view>
+      <view class="check-more-operation" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>查看更多></view>
       <!-- <block wx:for='{{articleList}}' wx:key='index'> -->
         <!-- <block wx:if='{{item.articleCover !== undefined}}'>
           <swiper-item id='audio{{index}}'>
@@ -192,15 +192,15 @@
 
 <view class="nav-bar">
   <view class="nav-bar-item">
-    <image mode='aspectFit' src='/assets/icon/home-active.png' style='width: 49rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/home-active.png'></image>
     <text> 首页 </text>
   </view>
   <view class="nav-bar-item" bindtap='redirectToSyllabusMenu'>
-    <image mode='aspectFit' src='/assets/icon/course.png' style='width: 50rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/course.png'></image>
     <text> 年课 </text>
   </view>
   <view class="nav-bar-item" bindtap='redirectToPersonalInfo'>
-    <image mode='aspectFit' src='/assets/icon/my.png' style='width: 49rpx'></image>
+    <image mode='aspectFit' src='/assets/icon/my.png'></image>
     <text> 我的 </text>
   </view>
 </view>

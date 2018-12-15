@@ -13,7 +13,12 @@ Page({
   },
   data: {
     // testImageUrl: '',
-    bannerList: [],
+    bannerList: [
+      { url: '/assets/icon/banner1.jpg', },
+      { url: '/assets/icon/banner2.jpg', },
+      { url: '/assets/icon/banner3.jpg', },
+      { url: '/assets/icon/banner4.jpg', },
+    ],
     moduleList: [
       /*{moduleImage: '/assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '/Elements/elements?key=wood'},
       {moduleImage: '/assets/icon/miniprogram-icon-23.png', moduleName: '火元素', moduleUrl: '/Elements/elements?key=fire'},

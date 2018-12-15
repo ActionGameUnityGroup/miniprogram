@@ -55,15 +55,15 @@
 
 <view class="nav-bar">
   <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/home.png' style='width: 94rpx'></image>
+    <image mode='aspectFit' src='../assets/icon/home.png'></image>
     <text> 首页 </text>
   </view>
   <view id='../Syllabus/syllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/course.png' style='width: 55rpx'></image>
+    <image mode='aspectFit' src='../assets/icon/course.png'></image>
     <text> 课程表 </text>
   </view>
   <view class="nav-bar-item">
-    <image mode='aspectFit' src='../assets/icon/my-active.png' style='width: 43rpx'></image>
+    <image mode='aspectFit' src='../assets/icon/my-active.png'></image>
     <text> 我的 </text>
   </view>
 </view>

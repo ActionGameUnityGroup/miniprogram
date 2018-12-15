@@ -1,4 +1,4 @@
-const mime = require('mime');
+/*const mime = require('mime');
 const fs = require('fs');
 const path = require('path');
 
@@ -14,4 +14,9 @@ module.exports = function(){
     }
     await next();
   };
-};
+};*/
+module.exports = () => {
+  return async (ctx, next) => {
+    await next();
+  }
+}
