@@ -1,10 +1,8 @@
 /server/node_modules/
-/server/node_modules/
+/server/db/
+/server/log/
 /server2/
 /server3/
-# /ReriServer/log
-/ReriServer/config
-# /ReriServer/db
 /cnode-api/
 /egg-server/
 # /client/
