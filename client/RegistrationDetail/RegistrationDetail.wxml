@@ -1,0 +1,39 @@
+<view class="registration-detail-content">
+  <view class="activity-cover"><image mode='widthFix' src=''></image></view>
+  <view class="activity-content">
+    <view class="activity-title">2天能量疗愈|将负面情绪转化为生命资源，变废为宝，活出热情与自爱！</view>
+    <view class="activity-autor">
+      <text>杨仁起</text>
+      <text>杨凡</text>
+    </view>
+    <view class="activity-registration-info">
+      <view class="registration-info-title">报名信息</view>
+      <view class="registration-info-content">
+        <view class="registration-info-item">
+          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/city.png'></image></view>
+          <view class="registration-info-name">城市</view>
+          <view class="registration-info-value">深圳</view>
+        </view>
+        <view class="registration-info-item">
+          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/price.png'></image></view>
+          <view class="registration-info-name">费用</view>
+          <view class="registration-info-value">￥2980.00</view>
+        </view>
+        <view class="registration-info-item">
+          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/time.png'></image></view>
+          <view class="registration-info-name">时间</view>
+          <view class="registration-info-value">2019年01月05—06日 9:00—19:00</view>
+        </view>
+        <view class="registration-info-item">
+          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/location.png'></image></view>
+          <view class="registration-info-name">地点</view>
+          <view class="registration-info-value">福田区石厦地铁站新天世纪商务中心A座2106</view>
+        </view>
+      </view>
+    </view>
+    <view class="activity-image-content">
+      <view class="activity-image-item"><image mode='widthFix' src='widthFix'></image></view>
+    </view>
+    <view class="registration-operation">报名入学</view>
+  </view>
+</view>

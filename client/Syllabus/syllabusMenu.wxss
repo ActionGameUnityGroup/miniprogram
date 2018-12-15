@@ -1,11 +1,13 @@
-page{ background: #fff; }
-.title-view{ display: flex; flex-direction: row; align-items: center; padding: 4.1% 4.26% 0; height: 3.3%; }
+page{ padding-top: 24rpx; width: 100%; height: calc(100% - 24rpx); background: #f5f5f5; }
 
-.title-line{ height: 2rpx; background: gray; width: 165rpx; }
+/* .title-view{ display: flex; flex-direction: row; align-items: center; padding: 4.1% 4.26% 0; height: 3.3%; } */
 
-.title-icon{ margin-left: 54rpx; margin-right: 42rpx; width: 40rpx; height: 40rpx; /*background: gray;*/ }
+/* .title-line{ height: 2rpx; background: gray; width: 165rpx; } */
 
-.scroll-view{ padding: 27rpx 33rpx 0; }
+/* .title-icon{ margin-left: 54rpx; margin-right: 42rpx; width: 40rpx; height: 40rpx; /*background: gray; } */
+.syllabus-content{ display: block; margin: 0 auto; width: 97.3%; height: calc(100% - 104rpx); }
+.scroll-view{ display: block; margin: 0 auto 21rpx; width: 100%; height: 408rpx; }
+.scroll-view image{ display: block; width: 100%; height: 100%; background: #bfbfbf; }
 
 .date-view{ display: flex; flex-direction: row;/* align-content: center; */ align-items: center; margin-top: 35rpx; }
 

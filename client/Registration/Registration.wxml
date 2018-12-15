@@ -1,0 +1,43 @@
+<view class="registration-content">
+  <view class="registration-item" bindtap='redirectAction' id='/RegistrationDetail/RegistrationDetail'>
+    <view class="registration-cover"><image mode='widthFix' src=''></image></view>
+    <view class="registration-info">
+      <view class="registration-info-title">能量疗愈|如何将负面情绪....</view>
+      <view class="registration-info-bottom">
+        <view class="registration-info-bottom-left">
+          <view class="registration-info-tutor">导师： 杨仁起 杨凡</view>
+          <view class="registration-info-date">开课时间： 2019-01-05</view>
+        </view>
+        <view class="registration-operation">报名</view>
+      </view>
+    </view>
+  </view>
+  <view class="registration-item" bindtap='redirectAction' id='/RegistrationDetail/RegistrationDetail'>
+    <view class="registration-cover"><image mode='widthFix' src=''></image></view>
+    <view class="registration-info">
+      <view class="registration-info-title">能量疗愈|如何将负面情绪....</view>
+      <view class="registration-info-bottom">
+        <view class="registration-info-bottom-left">
+          <view class="registration-info-tutor">导师： 杨仁起 杨凡</view>
+          <view class="registration-info-date">开课时间： 2019-01-05</view>
+        </view>
+        <view class="registration-operation">报名</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="nav-bar">
+  <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='../assets/icon/home.png' style='width: 94rpx'></image>
+    <text> 首页 </text>
+  </view>
+  <view id='../Syllabus/syllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='../assets/icon/course.png' style='width: 55rpx'></image>
+    <text> 课程表 </text>
+  </view>
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='../assets/icon/my-active.png' style='width: 43rpx'></image>
+    <text> 我的 </text>
+  </view>
+</view>

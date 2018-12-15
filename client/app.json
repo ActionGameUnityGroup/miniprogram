@@ -1,8 +1,14 @@
 {
   "pages":[
     "Index/Index",
-    "SignIn/SignIn",
+    "TutorIntroduction/TutorIntroduction",
+    "FreeClassDetail/FreeClassDetail",
+    "FreeClass/FreeClass",
+    "RegistrationDetail/RegistrationDetail",
+    "Registration/Registration",
     "PersonalInfo/personalInfo",
+    "Syllabus/syllabusMenu",
+    "SignIn/SignIn",
     "Article/Article",
     "WelfareActivity/WelfareActivity",
     "FeedBack/FeedBack",
@@ -27,7 +33,6 @@
     "Elements/elements",
     "ScoreMarket/GoodsPage/goods",
     "WatchHistory/watchHistory",
-    "Syllabus/syllabusMenu",
     "Member/member",
     "ScoreMarket/scoreMarket",
     "Class/Class",
@@ -36,6 +41,7 @@
 "requiredBackgroundModes": ["audio"],
   "window":{
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "常道文化"
   }
 }

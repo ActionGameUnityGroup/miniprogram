@@ -32,7 +32,7 @@ Page({
     let height = app.globalData.systemInfo.windowHeight;
     console.log(height);
     this.setData({
-      contentHeight: height*(1 - .074 - .083)
+      contentHeight: height
     });
     wx.setNavigationBarTitle({
       title: '课程表',

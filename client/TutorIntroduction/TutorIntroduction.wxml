@@ -1,0 +1,25 @@
+<view class="tutor-introduction-content">
+  <view class="introduction-label">
+    <text>杨仁起</text>
+    <view class="bottom-background"></view>
+  </view>
+  <view class="introduction-cover"><image mode='widthFix' src=''></image></view>
+  <view class="introduction-honor">
+    <view class="honor-name">常道文化资深导师</view>
+    <view class="honor-name">中国战略型人才库心灵导师/师资</view>
+    <view class="honor-name">中国智慧教育“十三五”重点课题</view>
+    <view class="honor-name">一幸福家庭研究与实践子课题组组长</view>
+    <view class="honor-name">家族系统排列师</view>
+    <view class="honor-name">心里咨询师</view>
+  </view>
+  <view class="introduction-label">
+    <text>导师介绍</text>
+    <view class="bottom-background"></view>
+  </view>
+  <view class="introduction-list">
+    <view class="introduction-item">杨仁起老师学习儒释道文化，融汇了自然运行法则、系统排列、能量疗愈、心理学等手法，从不同的角度，引领你探索自己、看清自己、找回真正的自己。他的疗愈风格既有润物细无声的空间感，又呈现出清晰的方向和前进的动力。</view>
+    <view class="introduction-item">杨仁起老师学习儒释道文化，融汇了自然运行法则、系统排列、能量疗愈、心理学等手法，从不同的角度，引领你探索自己、看清自己、找回真正的自己。他的疗愈风格既有润物细无声的空间感，又呈现出清晰的方向和前进的动力。</view>
+    <view class="introduction-item">杨仁起老师学习儒释道文化，融汇了自然运行法则、系统排列、能量疗愈、心理学等手法，从不同的角度，引领你探索自己、看清自己、找回真正的自己。他的疗愈风格既有润物细无声的空间感，又呈现出清晰的方向和前进的动力。</view>
+    <view class="introduction-item">杨仁起老师学习儒释道文化，融汇了自然运行法则、系统排列、能量疗愈、心理学等手法，从不同的角度，引领你探索自己、看清自己、找回真正的自己。他的疗愈风格既有润物细无声的空间感，又呈现出清晰的方向和前进的动力。</view>
+  </view>
+</view>

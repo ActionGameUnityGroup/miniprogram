@@ -1,0 +1,22 @@
+<view class="free-class-content">
+  <view class="free-class-cover"><image mode='widthFix' src=''></image></view>
+  <view class="free-class-controller">
+    <view class="progress-bar-content">
+      <view class="progress-bar-current">00:00</view>
+      <view class="progress-bar">
+        <progress activeColor='#ffbe10' />
+        <view class="progress-point"></view>
+      </view>
+      <view class="progress-bar-total">04:27</view>
+    </view>
+    <view class="controller-content">
+      <view class="previous-operation"><image mode='widthFix' src='/assets/icon/previous.png'></image></view>
+      <view class="pause-operation"><image mode='widthFix' src='/assets/icon/pause.png'></image></view>
+      <view class="next-operation"><image mode='widthFix' src='/assets/icon/next.png'></image></view>
+    </view>
+  </view>
+  <view class="free-class-image-content">
+    <view class="free-class-image-item"><image mode='widthFix' src=''></image></view>
+    <view class="free-class-image-item"><image mode='widthFix' src=''></image></view>
+  </view>
+</view>

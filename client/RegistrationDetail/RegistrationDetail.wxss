@@ -1,0 +1,28 @@
+page{ width: 100%; height: 100%; background: #fff; }
+
+.registration-detail-content{ display: block; width: 100%; height: 100%; overflow: auto; }
+.activity-cover{ display: block; width: 100%; height: 495rpx; }
+.activity-cover image{ display: block; width: 100%; height: 100%; background: #d2d2d2; }
+.activity-content{ display: block; padding-top: 33rpx; background: #fff; }
+.activity-title{ display: block; padding: 0 30rpx; width: 566rpx; text-align: left; line-height: 42rpx; font-size: 30rpx; color: #000; }
+.activity-autor{ display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; margin: 38rpx auto 0; width: 92%; line-height: 1; }
+.activity-autor text{ display: block; margin-right: 16rpx; font-size: 22rpx; color: #747474; }
+
+.activity-registration-info{ display: block; margin: 57rpx auto 0; }
+.registration-info-title{ display: block; padding: 0 30rpx 41rpx; text-align: left; border-bottom: 1rpx solid #bfbfbf; font-size: 30rpx; color: #000; }
+.registration-info-content{ display: block; }
+.registration-info-item{ display: flex; justify-content: flex-start; align-items: center; padding: 0 28rpx; height: 82rpx; border-bottom: 1rpx solid #bfbfbf; }
+.registration-info-icon{ display: block; margin-right: 30rpx; }
+.registration-info-icon image{ display: block; width: 100%; height: 100%; }
+.registration-info-item:nth-child(1) .registration-info-icon{ width: 42rpx; height: 39rpx; }
+.registration-info-item:nth-child(2) .registration-info-icon{ width: 38rpx; height: 38rpx; }
+.registration-info-item:nth-child(3) .registration-info-icon{ width: 38rpx; height: 38rpx; }
+.registration-info-item:nth-child(4) .registration-info-icon{ width: 33rpx; height: 39rpx; }
+.registration-info-name{ display: block; margin-right: 46rpx; color: #000; font-size: 24rpx; }
+.registration-info-value{ display: block; color: #626262; font-size: 20rpx; }
+
+.activity-image-content{ display: block; margin-top: 65rpx; }
+.activity-image-item{ display: block; width: 100%; }
+.activity-image-item image{ display: block; width: 100%; background: #d0d0d0; }
+
+.registration-operation{ display: block; width: 100%; height: 90rpx; text-align: center; line-height: 90rpx; background: #ffbe10; color: #fff; font-size: 36rpx; }

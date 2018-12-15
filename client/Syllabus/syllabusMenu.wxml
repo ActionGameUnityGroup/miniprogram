@@ -1,43 +1,30 @@
-<view class='title-view'>
+<!-- <view class='title-view'>
   <view class='title-line'></view>
-  <image class='title-icon' mode='widthFix' src='../assets/icon/miniprogram-icon-13.png'></image>
+  <image class='title-icon' mode='widthFix' src='/assets/icon/miniprogram-icon-13.png'></image>
   <text style='font-size:40rpx; margin-right:54rpx;'>课程预告</text>
   <view class='title-line'></view>  
-</view>
+</view> -->
+<view></view>
 
-<view style='margin-top:2.5%; height: {{contentHeight}}px; overflow: auto;'>
-  <view class="syllabus-content">
-    <block wx:for="{{syllabueses}}" wx:key="index" wx:for-item="item">
-      <view class='scroll-view'>
-        <view class='date-view'>
-          <text class='remain-text'>{{item.startTime.timeRemain + "天后"}}</text>
-          <text class='date-text'>{{item.startTime.month + "月" + item.startTime.day + "日 " + item.startTime.hour + ":" + item.startTime.min}}</text>
-        </view>
-
-        <view class='content-view' bindtap='onClickCource'>
-          <image class='mainIcon' src='{{item.image}}'></image>
-          <view class='right-content'>
-            <text style='color:#010101; font-size:26rpx'>{{item.title}}</text>
-            <text style='color:#727272; font-size:18rpx; margin-top:15rpx;'>{{item.content}}</text>
-            <text style='color:#9b9594; font-size:20rpx; margin-top:22rpx;'>{{item.times + "次学习"}}</text>
-          </view>
-        </view>
-      </view>
-    </block>
-  </view>
+<view class="syllabus-content">
+  <block wx:for="{{syllabueses}}" wx:key="index" wx:for-item="item">
+    <view class='scroll-view'>
+      <image mode='widthFix' src=''></image>
+    </view>
+  </block>
 </view>
 
 <view class="nav-bar">
-  <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-5.png' style='width: 94rpx'></image>
+  <view id='/Index/Index' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='/assets/icon/home.png' style='width: 94rpx'></image>
     <text> 首页 </text>
   </view>
   <view class="nav-bar-item">
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-1.png' style='width: 55rpx'></image>
-    <text> 课程表 </text>
+    <image mode='aspectFit' src='/assets/icon/course-active.png' style='width: 55rpx'></image>
+    <text> 年课 </text>
   </view>
-  <view id='../PersonalInfo/personalInfo' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-3.png' style='width: 43rpx'></image>
+  <view id='/PersonalInfo/personalInfo' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='/assets/icon/my.png' style='width: 43rpx'></image>
     <text> 我的 </text>
   </view>
 </view>
