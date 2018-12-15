@@ -2,7 +2,7 @@
 /server
 /server2/
 /ReriServer/node_modules/
-/ReriServer/log/*
+/ReriServer/log
 /ReriServer/config
 /ReriServer/db
 /cnode-api/
