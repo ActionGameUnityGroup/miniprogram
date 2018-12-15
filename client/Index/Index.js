@@ -13,12 +13,7 @@ Page({
   },
   data: {
     // testImageUrl: '',
-    bannerList: [
-      { url: '/assets/icon/banner1.jpg', },
-      { url: '/assets/icon/banner2.jpg', },
-      { url: '/assets/icon/banner3.jpg', },
-      { url: '/assets/icon/banner4.jpg', },
-    ],
+    bannerList: [],
     moduleList: [
       /*{moduleImage: '/assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '/Elements/elements?key=wood'},
       {moduleImage: '/assets/icon/miniprogram-icon-23.png', moduleName: '火元素', moduleUrl: '/Elements/elements?key=fire'},
@@ -66,13 +61,13 @@ Page({
       title: '常道智慧生活'
     });
     wx.request({
-      url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
+      url: 'https://www.changdaolife.cn/api/v0/banner/getBanner?page=index',
       method: 'GET',
       success: function(res){
         console.log(res.data, '回调');
-        /*_this.setData({
-          bannerList: res.data.requestData[0].bannerList
-        });*/
+        _this.setData({
+          bannerList: res.data.data[0].bannerList,
+        });
       }
     });
 

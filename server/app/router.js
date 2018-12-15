@@ -7,7 +7,7 @@ module.exports = (app) => {
 
   router.get('/', Page.index);
   router.get('/upload', Page.upload);
-  router.get('/api/v0/banner/getBanner', Api.v0.Banner.getBanner);
+  router.get('/api/v0/banner/getBannerList', Api.v0.Banner.getBannerList);
   router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
 
   return router.routes();
