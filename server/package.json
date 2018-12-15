@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "koa": "^2.5.0",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^3.0.6"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
