@@ -1,6 +1,7 @@
 /server/node_modules/
 /server/db/
 /server/log/
+/server/config/
 /server2/
 /server3/
 /cnode-api/
