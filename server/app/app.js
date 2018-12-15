@@ -1,21 +1,22 @@
 const Koa = require('koa');
 const fs = require('fs');
-const log4js = require('./os/log4js');
-const render = require('./os/render');
-const controller = require('./os/controller');
-const router = require('./router');
-const body = require('./os/body');
-const koaStatic = require('./os/static');
-const bodyParser = require('./os/body-parser');
-const db = require('../db/db-config');
+const log4js = require(`${__dirname}/os/log4js`);
+const render = require(`${__dirname}/os/render`);
+const controller = require(`${__dirname}/os/controller`);
+const router = require(`${__dirname}/router`);
+const body = require(`${__dirname}/os/body`);
+const koaStatic = require(`${__dirname}/os/static`);
+const bodyParser = require(`${__dirname}/os/body-parser`);
 const path = require('path');
+const rootDirectory = path.resolve(__dirname, '..');
+const db = require(`${rootDirectory}/db/db-config`);
 
 class App {
   constructor(){
     this.app = new Koa();
 
     const pluginPath = `${__dirname}/plugins`;
-    const publicDirectory = path.resolve(__dirname, '../public');
+    const publicDirectory = `${rootDirectory}/public`;
     const _this = this;
 
     _this.app.use(async (ctx, next) => {

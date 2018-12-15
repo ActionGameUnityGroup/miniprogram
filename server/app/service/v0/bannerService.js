@@ -1,7 +1,7 @@
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const bannerModel = require(`${rootDirectory}/model/v0/bannerModel`);
-const { formatDataSuccess, formatDataFail } = require('../formatData');
+const { formatDataSuccess, formatDataFail } = require(`${rootDirectory}/service/formatData`);
 
 class BannerService{
 	async getBanner(ctx){
