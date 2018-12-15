@@ -1,7 +1,7 @@
 /server/node_modules/
-/server
+/server/node_modules/
 /server2/
-/ReriServer/node_modules/
+/server3/
 # /ReriServer/log
 /ReriServer/config
 # /ReriServer/db

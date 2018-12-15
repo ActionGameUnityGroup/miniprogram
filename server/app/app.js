@@ -1,21 +1,21 @@
 const Koa = require('koa');
-const app = new Koa();
-const Router = require('koa-router');
-const router = new Router();
-const loadRouter = require('./loadRouter');
-const koaBody = require('koa-body');
-const bodyParser = require('koa-bodyparser');
-const path = require('path');
-// const static = require('koa-static');
-const bindConsole = require('./bindConsole');
-const staticFile = require('./static-file');
-const error = require('./error');
-
-const env = process.env.NODE_ENV == 'production';
+const fs = require('fs');
+const log4js = require('./os/log4js');
+const render = require('./os/render');
+const controller = require('./os/controller');
+const router = require('./router');
+const body = require('./os/body');
+const bodyParser = require('./os/body-parser');
 
 class App {
   constructor(){
-    app.use(async (ctx, next) => {
+    this.app = new Koa();
+
+    const pluginPath = `${__dirname}/plugins`;
+    const _this = this;
+
+    _this.app.use(async (ctx, next) => {
+      console.log(ctx.method, ctx.url);
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
       ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
@@ -25,24 +25,33 @@ class App {
       await next();
     });
 
-    const rootPath = path.resolve(__dirname, '..');
+    _this.app.use(async (ctx, next) => {
+      const start = new Date();
+      await next();
+      const ms = new Date() - start;
+      log4js.responseLogger(ctx, ms);
+    });
 
-    app.use(error());
+    _this.app.on('error', (err, ctx) => {
+      log4js.errorLogger(ctx, err);
+      ctx.body = err.message;
+    });
 
-    app.use(bindConsole());
+    _this.app.use(body({ multipart: true }));
+    _this.app.use(bodyParser());
+    _this.app.use(render());
 
-    app.use(staticFile(rootPath));
+    _this.app.use(controller(_this));
+    _this.app.use(router(_this));
 
-    app.use(bodyParser());
+    fs.readdirSync(pluginPath).map(pluginName => {
+      const plugin = require(`${pluginPath}/${pluginName}`);
+      _this.app.use(plugin());
+    });
 
-    app.use(koaBody());
-
-    app.use(loadRouter(router, rootPath));
-
-    this.app = app;
   }
 
-  listen(port, f){
+  listen(port, f = function(){}){
     this.app.listen(port, f());
   }
 
