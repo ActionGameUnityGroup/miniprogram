@@ -2,15 +2,15 @@ const path = require('path');
 const dbDirectory = path.resolve(__dirname, '../../../db');
 const { db, mongoose } = require(`${dbDirectory}/db-config`);
 
-const kurseSchema = new mongoose.Schema({
-	kurseId: String,
+const courseSchema = new mongoose.Schema({
+	courseId: String,
   cover: String,
   title: String,
   authorList: Array,
-  kurseInfo: Array,
-  kurseDetailList: Array,
-}, {collection: 'Kurse', versionKey: false});
+  courseInfo: Array,
+  courseDetailList: Array,
+}, {collection: 'Course', versionKey: false});
 
-const kurseModel = db.model('kurse', kurseSchema);
+const courseModel = db.model('course', courseSchema);
 
-module.exports = kurseModel;
+module.exports = courseModel;

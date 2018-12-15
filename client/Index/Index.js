@@ -70,7 +70,7 @@ Page({
     });
 
     wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/kurse/getKurseList',
+      url: 'https://www.changdaolife.cn/api/v0/course/getKurseList',
       method: 'GET',
       success: function(res){
         _this.setData({

@@ -60,7 +60,14 @@
         class="show-audio-list"
         display-multiple-items='{{3}}'
       >
-        <swiper-item>
+        <block wx:for='{{kurseList}}' wx:key='index'>
+          <swiper-item>
+            <view class="show-audio-item" id='/CourseDetail/CourseDetail?courseId={{item.courseId}}' bindtap='navigateAction'>
+              <image src='{{item.courseCover}}' mode='widthFix'></image>
+            </view>
+          </swiper-item>
+        </block>
+        <!-- <swiper-item>
           <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
             <image src='' mode='widthFix'></image>
           </view>
@@ -69,12 +76,7 @@
           <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
             <image src='' mode='widthFix'></image>
           </view>
-        </swiper-item>
-        <swiper-item>
-          <view class="show-audio-item" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>
-            <image src='' mode='widthFix'></image>
-          </view>
-        </swiper-item>
+        </swiper-item> -->
         <!-- <block wx:for='{{AudioList}}' wx:key='index'>
           <block wx:if='{{item.courseCover !== undefined}}'>
             <swiper-item>
