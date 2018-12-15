@@ -49,6 +49,7 @@ Page({
       {courseCoverUrl: '/assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
       {courseCoverUrl: '/assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},*/
     ],
+    kurseList: [],
     showAudioWidth: 180 * 7 + 19 * 6,
     contentHeight: 0,
     navHeight: 0,
@@ -57,16 +58,23 @@ Page({
   },
   onLoad: function () {
     _this = this;
-    wx.setNavigationBarTitle({
-      title: '常道智慧生活'
-    });
     wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/banner/getBanner?page=index',
+      url: 'https://www.changdaolife.cn/api/v0/banner/getBannerList?page=index',
       method: 'GET',
       success: function(res){
         console.log(res.data, '回调');
         _this.setData({
           bannerList: res.data.data[0].bannerList,
+        });
+      }
+    });
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/v0/kurse/getKurseList',
+      method: 'GET',
+      success: function(res){
+        _this.setData({
+          kurseList: res.data.data[0].kurseList,
         });
       }
     });

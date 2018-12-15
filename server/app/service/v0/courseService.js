@@ -1,14 +1,14 @@
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
-const tutorModel = require(`${rootDirectory}/model/v0/tutorModel`);
+const courseModel = require(`${rootDirectory}/model/v0/courseModel`);
 const { formatDataSuccess, formatDataFail } = require(`${rootDirectory}/service/formatData`);
 
-class TutorService{
+class CourseService{
 
-	async getTutorList(ctx){
+	async getKurseList(ctx){
 		let response;
 		try{
-			let data = await tutorModel.find({}, '-_id');
+			let data = await courseModel.find({}, '-_id').limit(3);
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);
@@ -17,11 +17,10 @@ class TutorService{
 		return response;
 	}
 
-	async getTutorInfo(ctx){
-		const { tutorId } = ctx.request.query || '';
+	async getLastestList(ctx){
 		let response;
 		try{
-			let data = await tutorModel.find({tutorId: tutorId}, '-_id');
+			let data = await courseModel.find({}, '-_id').sort({}).limit(2);
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);
@@ -32,4 +31,4 @@ class TutorService{
 
 }
 
-module.exports = new TutorService();
+module.exports = new CourseService();
