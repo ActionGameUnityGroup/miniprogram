@@ -1,4 +1,4 @@
-const App = require('./app/App');
+const App = require(`${__dirname}/app/App`);
 const app = new App();
 
 app.listen(9000, () => {
