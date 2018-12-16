@@ -22,10 +22,10 @@ class CourseService{
 		let response;
 		try{
 			if(page === 'index' || page === ''){
-				let data = await courseModel.find({key: 'lastCourse'}, '-_id').sort({courseId: -1}).limit(2);
+				let data = await courseModel.find({key: 'lastestCourse'}, '-_id').sort({courseId: -1}).limit(2);
 				response = formatDataSuccess(data);
 			} else {
-				let data = await courseModel.find({key: 'lastCourse'}, '-_id').sort({courseId: -1});
+				let data = await courseModel.find({key: 'lastestCourse'}, '-_id').sort({courseId: -1});
 				response = formatDataSuccess(data);
 			}
 		} catch(e){
@@ -38,7 +38,7 @@ class CourseService{
 	async getAllCourse(ctx){
 		let response;
 		try{
-			let data = await courseModel.find({}, '-_id');
+			let data = await courseModel.find({key: ''}, '-_id');
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);
