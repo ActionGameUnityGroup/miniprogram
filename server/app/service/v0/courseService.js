@@ -38,7 +38,7 @@ class CourseService{
 	async getAllCourse(ctx){
 		let response;
 		try{
-			let data = await courseModel.find({key: ''}, '-_id');
+			let data = await courseModel.find({}, '-_id');
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);
@@ -52,6 +52,18 @@ class CourseService{
 		let response;
 		try{
 			let data = await courseModel.find({courseId: courseId}, '-_id');
+			response = formatDataSuccess(data);
+		} catch(e){
+			response = formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}
+
+	async getUnexpireCourse(ctx){
+		let response;
+		try{
+			let data = await courseModel.find({isExpire: false});
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);

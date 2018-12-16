@@ -28,6 +28,12 @@ class Course{
 		ctx.type = 'text/json';
 	}
 
+	async getUnexpireCourse(ctx){
+		const response = await courseService.getUnexpireCourse(ctx);
+		ctx.body = response;
+		ctx.type = 'text/json';
+	}
+
 }
 
 module.exports = new Course();

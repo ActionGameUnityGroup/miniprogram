@@ -14,6 +14,7 @@ module.exports = (app) => {
   router.get('/api/v0/course/getLastestList', Api.v0.Course.getLastestList);
   router.get('/api/v0/course/getAllCourse', Api.v0.Course.getAllCourse);
   router.get('/api/v0/course/getCourseInfo', Api.v0.Course.getCourseInfo);
+  router.get('/api/v0/course/getUnexpireCourse', Api.v0.Course.getUnexpireCourse);
   router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
 
   return router.routes();
