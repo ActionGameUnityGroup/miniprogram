@@ -18,7 +18,7 @@ class CourseService{
 	}
 
 	async getLastestList(ctx){
-		let { page } = ctx.request.body || '';
+		let { page } = ctx.request.query || '';
 		let response;
 		try{
 			if(page === 'index' || page === ''){
