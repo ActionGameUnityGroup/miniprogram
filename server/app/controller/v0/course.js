@@ -16,6 +16,18 @@ class Course{
 		ctx.type = 'text/json';
 	}
 
+	async getAllCourse(ctx){
+		const response = await courseService.getAllCourse(ctx);
+		ctx.body = response;
+		ctx.type = 'text/json';
+	}
+
+	async getCourseInfo(ctx){
+		const response = await courseService.getCourseInfo(ctx);
+		ctx.body = response;
+		ctx.type = 'text/json';
+	}
+
 }
 
 module.exports = new Course();

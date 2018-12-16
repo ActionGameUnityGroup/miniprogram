@@ -12,6 +12,8 @@ module.exports = (app) => {
   router.get('/api/v0/tutor/getTutorInfo', Api.v0.Tutor.getTutorInfo);
   router.get('/api/v0/course/getKurseList', Api.v0.Course.getKurseList);
   router.get('/api/v0/course/getLastestList', Api.v0.Course.getLastestList);
+  router.get('/api/v0/course/getAllCourse', Api.v0.Course.getAllCourse);
+  router.get('/api/v0/course/getCourseInfo', Api.v0.Course.getCourseInfo);
   router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
 
   return router.routes();

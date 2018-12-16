@@ -35,6 +35,31 @@ class CourseService{
 		return response;
 	}
 
+	async getAllCourse(ctx){
+		let response;
+		try{
+			let data = await courseModel.find({}, '-_id');
+			response = formatDataSuccess(data);
+		} catch(e){
+			response = formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}
+
+	async getCourseInfo(ctx){
+		const { courseId } = ctx.request.query;
+		let response;
+		try{
+			let data = await courseModel.find({courseId: courseId}, '-_id');
+			response = formatDataSuccess(data);
+		} catch(e){
+			response = formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}
+
 }
 
 module.exports = new CourseService();
