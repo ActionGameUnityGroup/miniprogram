@@ -50,6 +50,7 @@ Page({
       {courseCoverUrl: '/assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},*/
     ],
     kurseList: [],
+    tutorList: [],
     showAudioWidth: 180 * 7 + 19 * 6,
     contentHeight: 0,
     navHeight: 0,
@@ -73,9 +74,19 @@ Page({
       url: 'https://www.changdaolife.cn/api/v0/course/getKurseList',
       method: 'GET',
       success: function(res){
-        _this.setData({
-          kurseList: res.data.data[0].kurseList,
-        });
+        if(res.data.data.length < 3){
+          let kurseList = res.data.data;
+          for(let index = res.data.data.length; index < 3; index++){
+            kurseList.push({});
+          }
+          _this.setData({
+            kurseList: kurseList,
+          });
+        } else {
+          _this.setData({
+            kurseList: res.data.data,
+          });
+        }
       }
     });
 
@@ -110,23 +121,22 @@ Page({
     });
 
     wx.request({
-      url: 'https://www.changdaolife.cn/api/article/getArticleList',
+      url: 'https://www.changdaolife.cn/api/v0/tutor/getTutorList',
       method: 'GET',
       success: function(res){
-        const resList = [];
-        if(res.data.requestData.articleList.length < 4){
-          for(var i = 0; i < 4; i++){
-            resList[i] = res.data.requestData.articleList[i];
+        if(res.data.data.length < 3){
+          let tutorList = res.data.data;
+          for(let index = res.data.data.length; index < 5; index++){
+            tutorList.push({});
           }
+          _this.setData({
+            tutorList: res.data.data,
+          });
+        } else {
+          _this.setData({
+            tutorList: res.data.data,
+          });
         }
-        console.log(res.data.requestData.articleList);
-        _this.setData({
-          articleList: resList,
-        });
-        wx.setStorage({
-          key: 'articleList',
-          data: res.data.requestData.articleList
-        });
       }
     });
 

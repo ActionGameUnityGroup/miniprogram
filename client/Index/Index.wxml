@@ -63,7 +63,7 @@
         <block wx:for='{{kurseList}}' wx:key='index'>
           <swiper-item>
             <view class="show-audio-item" id='/CourseDetail/CourseDetail?courseId={{item.courseId}}' bindtap='navigateAction'>
-              <image src='{{item.courseCover}}' mode='widthFix'></image>
+              <image src='{{item.cover}}' mode='widthFix'></image>
             </view>
           </swiper-item>
         </block>
@@ -154,38 +154,18 @@
       <image src='/assets/icon/title3.png' class='title3' mode='widthFix'></image>
     </view>
     <swiper class="tutor-group-list" display-multiple-items='{{5}}'>
-      <swiper-item>
-        <view id='/TutorIntroduction/TutorIntroduction' class="tutor-group-item" bindtap='navigateAction'>
-          <view class="tutor-group-image">
-            <image mode='widthFix' src=''></image>
+      <block wx:for='{{tutorList}}' wx:key='index'>
+        <swiper-item>
+          <view id='/TutorIntroduction/TutorIntroduction?tutorId={{item.tutorId}}' class="tutor-group-item" bindtap='navigateAction'>
+            <view class="tutor-group-image">
+              <image mode='widthFix' src='{{item.cover}}'></image>
+            </view>
+            <view class="tutor-group-name">
+              <text>{{item.name}}</text>
+            </view>
           </view>
-          <view class="tutor-group-name">
-            <text>杨仁起</text>
-          </view>
-        </view>
-      </swiper-item>
-      <swiper-item>
-        <view id='/TutorIntroduction/TutorIntroduction' class="tutor-group-item" bindtap='navigateAction'>
-          <view class="tutor-group-image">
-            <image mode='widthFix' src=''></image>
-          </view>
-          <view class="tutor-group-name">
-            <text>杨仁起</text>
-          </view>
-        </view>
-      </swiper-item>
-      <swiper-item>
-        <view id='/TutorIntroduction/TutorIntroduction' class="tutor-group-item" bindtap='navigateAction'>
-          <view class="tutor-group-image">
-            <image mode='widthFix' src=''></image>
-          </view>
-          <view class="tutor-group-name">
-            <text>杨仁起</text>
-          </view>
-        </view>
-      </swiper-item>
-      <swiper-item></swiper-item>
-      <swiper-item></swiper-item>
+        </swiper-item>
+      </block>
     </swiper>
   </view>
 
