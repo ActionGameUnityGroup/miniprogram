@@ -18,10 +18,16 @@ class CourseService{
 	}
 
 	async getLastestList(ctx){
+		let { page } = ctx.request.body || '';
 		let response;
 		try{
-			let data = await courseModel.find({}, '-_id').sort({}).limit(2);
-			response = formatDataSuccess(data);
+			if(page === 'index' || page === ''){
+				let data = await courseModel.find({}, '-_id').sort({courseId: -1}).limit(2);
+				response = formatDataSuccess(data);
+			} else {
+				let data = await courseModel.find({}, '-_id').sort({courseId: -1});
+				response = formatDataSuccess(data);
+			}
 		} catch(e){
 			response = formatDataFail(e.message);
 			ctx.throw(500);
