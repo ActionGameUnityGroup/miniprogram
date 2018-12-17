@@ -17,9 +17,9 @@ Page({
       url: 'https://www.changdaolife.cn/api/v0/course/getUnexpireCourse',
       method: 'GET',
       success: function(res){
-        // console.log();
         let syllabusList = res.data.data.map(syllabus => {
           syllabus.loaded = false;
+          syllabus.show = false;
           return syllabus;
         });
         _this.setData({
@@ -41,9 +41,19 @@ Page({
     });
   },
   imageLoaded: function(e){
-    const key = e.currentTarget.id;
-    const { syllabusList } = this.data;
-    syllabusList[key].onLoad = true;
-    this.setData({ syllabusList });
-  }
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].loaded = true;
+    data[name] = list;
+    this.setData(data);
+  },
+  thumbLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].show = true;
+    data[name] = list;
+    this.setData(data);
+  },
 })

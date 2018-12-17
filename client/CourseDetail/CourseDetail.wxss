@@ -2,8 +2,8 @@ Page{ width: 100%; height: 100%; overflow: auto; background: #fff; }
 .course-detail-content{ display: block; width: 100%; height: 100%; }
 .course-detail-item{ display: flex; justify-content: space-between; align-items: center; padding: 30rpx 13rpx; border-bottom: 1rpx solid #d0d0d0; }
 .course-detail-item:last-child{ border: 0; }
-.course-detail-cover{ display: block; position: relative; margin-right: 14rpx; width: 240rpx; background: #ddd; }
-.course-detail-cover image{ display: block; width: 100%; height: 143rpx; }
+.course-detail-cover{ display: block; position: relative; margin-right: 14rpx; width: 240rpx; }
+.course-detail-cover image{ display: block; width: 100%; height: auto; }
 .course-detail-info{ display: block; width: 469rpx; }
 .course-detail-title{ display: -webkit-box; margin-bottom: 18rpx; width: 100%; text-align: left; line-height: 1.2; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; font-size: 28rpx; color: #000; }
 .course-detail-describe{ display: -webkit-box; width: 100%; line-height: 1.2; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; font-size: 24rpx; color: #6f6f6f; }
