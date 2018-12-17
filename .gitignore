@@ -4,6 +4,7 @@
 /server/config/
 /server2/
 /server3/
+/ReriServer/
 /static-file-server/node_modules
 /static-file-server/log
 /cnode-api/

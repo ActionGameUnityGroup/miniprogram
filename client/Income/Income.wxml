@@ -28,7 +28,7 @@
           <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}'></image>
         </view>
         <view class="course-info">
-          <text> {{item.courseTitle}} </text>
+          <text> {{item.mainTitle}} </text>
           <text> 佣金比例: {{item.commissionRate}}% </text>
           <text> 收益: {{item.income}}元 </text>
         </view>
