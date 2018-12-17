@@ -96,7 +96,7 @@ Page({
         }
       }
     });
-    /*wx.login({
+    wx.login({
       success: function(res){
         console.log(res);
         wx.getUserInfo({
@@ -110,8 +110,6 @@ Page({
                 iv: encodeURIComponent(e.iv)
               },
               success: function(info){
-                console.log(info);
-                console.log(wx);
                 wx.setStorage({
                   key: 'openid', 
                   data: info.data.requestData.openid
@@ -121,7 +119,7 @@ Page({
           }
         });
       }
-    });*/
+    });
   },
   bannerLoaded: function(e){
     let key = e.currentTarget.id;
