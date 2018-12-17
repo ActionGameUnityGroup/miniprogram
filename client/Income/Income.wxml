@@ -10,7 +10,7 @@
     </view>
     <view class="cash-action">
       <text> 立即提现 </text>
-      <image mode='widthFix' src='../assets/icon/miniprogram-icon-68.png' style='width: 13rpx; height: 25rpx;'></image>
+      <image mode='widthFix' src='/assets/icon/miniprogram-icon-68.png' style='width: 13rpx; height: 25rpx;'></image>
     </view>
   </view>
 </view>
@@ -20,10 +20,13 @@
     <text> 收益历史 </text>
     <text> 历史总收益: {{totalIncome}} 元 </text>
   </view>
-  <view class="income-history-content" style='height: {{courseHeight}}px;'>
+  <view class="income-history-content">
     <block wx:for='{{courseList}}' wx:key='index'>
       <view class="income-history-item">
-        <image mode='widthFix' src='{{item.courseCoverUrl}}'></image>
+        <view class="income-history-cover">
+          <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='courseCoverLoaded' id='{{index}}'></image>
+          <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}'></image>
+        </view>
         <view class="course-info">
           <text> {{item.courseTitle}} </text>
           <text> 佣金比例: {{item.commissionRate}}% </text>

@@ -2,38 +2,48 @@ const app = getApp();
 
 Page({
   data: {
-    incomeBalance: 3585.01,
-    todayIncome: 75.00,
-    totalIncome: 526.00,
+    incomeBalance: '0.00',
+    todayIncome: '0.00',
+    totalIncome: '0.00',
     courseList: [
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
-      {courseCoverUrl: '', courseTitle: '如何改变观念 —— 活出更精彩的人生', commissionRate: 30, income: 35},
+      {
+        cover: 'https://www.changdaolife.cn/image/lastestCourse/course2/course-cover.jpg',
+        thumb: 'https://www.changdaolife.cn/image/lastestCourse/course2/thumbnil-cover.jpg',
+        loaded: false,
+        mainTitle: '丰盛之门·力量之源 | 梦想实现的决定因素，不是埋头苦干，而是找到你的力量之源',
+        commissionRate: 20,
+        income: 796
+      },
+      {
+        cover: 'https://www.changdaolife.cn/image/lastestCourse/course3/course-cover.jpg',
+        thumb: 'https://www.changdaolife.cn/image/lastestCourse/course3/thumbnil-cover.jpg',
+        loaded: false,
+        mainTitle: '丰盛之门 爱的旅程 |  如何在关系花园里绽放你独一无二的爱与力量',
+        commissionRate: 20,
+        income: 796
+      },
+      {
+        cover: 'https://www.changdaolife.cn/image/lastestCourse/course4/course-cover.jpg',
+        thumb: 'https://www.changdaolife.cn/image/lastestCourse/course4/thumbnil-cover.jpg',
+        loaded: false,
+        mainTitle: '能量疗愈 |  如何将负面情绪转化为生命资源，变废为宝，活出热情与自爱',
+        commissionRate: 20,
+        income: 596
+      },
+      {
+        cover: 'https://www.changdaolife.cn/image/lastestCourse/course1/course-cover.jpg',
+        thumb: 'https://www.changdaolife.cn/image/lastestCourse/course1/thumbnil-cover.jpg',
+        loaded: false,
+        mainTitle: '系统结构疗愈 | 这个世界有一个奥秘：看不见的系统力量影响着生命互动的行为',
+        commissionRate: 20,
+        income: 596
+      },
     ],
-    courseHeight: 0
   },
-  onLoad: function(){
-    wx.setNavigationBarTitle({
-      title: '我的收益'
-    });
-    this.setData({
-      incomeBalance: this.data.incomeBalance.toFixed(2),
-      todayIncome: this.data.todayIncome.toFixed(2),
-      totalIncome: this.data.totalIncome.toFixed(2)
-    });
-    // console.log(app);
-    let height = app.globalData.systemInfo.windowHeight;
-    console.log(height);
-    this.setData({
-      courseHeight: height - 212
-    });
+  onLoad: function(){},
+  courseCoverLoaded: function(e){
+    const key = e.currentTarget.id;
+    const { spreadCourseList } = this.data;
+    spreadCourseList[key].loaded = true;
   }
 });

@@ -1,88 +1,49 @@
-// Syllabus/syllabusMenu.js
 const app = getApp();
+let _this;
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    syllabueses: [
-      {
-        startTime: { timeRemain: 5, month: 6, day:5, hour:19, min: 30}, 
-        image: "",
-        title:"如何转变观念",
-        content:"深度解读",
-        times:"5",
-      },
-      {
-        startTime: { timeRemain: 5, month: 6, day: 5, hour: 19, min: 30 },
-        image: "",
-        title: "如何转变观念",
-        content: "深度解读",
-        times: "5",
-      }
-    ],
-    contentHeight: 0
+    syllabusList: [],
+    showNavBar: true,
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    let height = app.globalData.systemInfo.windowHeight;
-    console.log(height);
-    this.setData({
-      contentHeight: height
+  onLoad: function(option){
+    _this = this;
+    if(option.from == 'module'){
+      _this.setData({
+        showNavBar: false,
+      });
+    }
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/v0/course/getUnexpireCourse',
+      method: 'GET',
+      success: function(res){
+        // console.log();
+        let syllabusList = res.data.data.map(syllabus => {
+          syllabus.loaded = false;
+          return syllabus;
+        });
+        _this.setData({
+          syllabusList: syllabusList,
+        });
+      }
     });
-    wx.setNavigationBarTitle({
-      title: '课程表',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+  },
+  onShareAppMessage: function(){},
+  navigateOperation: function(e) {
+    const { id } = e.currentTarget;
+    wx.navigateTo({
+      url: `/RegistrationDetail/RegistrationDetail?courseId=${id}`
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function(){},
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function(){},
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function(){},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function(){},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function(){},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function(){},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function(){},
-
-  onClickCource: function() {
-    console.log("Click cource");
-  },
-  redirectAction: function(e){
+  redirectOperation: function(e){
     wx.redirectTo({
       url: e.currentTarget.id
     });
+  },
+  imageLoaded: function(e){
+    const key = e.currentTarget.id;
+    const { syllabusList } = this.data;
+    syllabusList[key].onLoad = true;
+    this.setData({ syllabusList });
   }
 })

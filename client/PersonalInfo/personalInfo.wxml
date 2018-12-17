@@ -1,25 +1,10 @@
 <view style='height: calc(100% - 104rpx); overflow: auto;'>
-  <!-- <view bindtap='navigateAction' id='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></view> -->
   <view class="personal-info-header">
-    <!-- <view class="header-background"><image mode='widthFix' src='{{headerBackground}}'></image></view> -->
     <view class="header-info">
       <view class="personal-info-avatar">
         <image src='{{avatar}}' mode='aspectFit'></image>
       </view>
       <view class="personal-info-name"> {{userName}} </view>
-      <!-- <view class="personal-info-identify">
-        <text> {{identify}} </text>
-      </view> -->
-      <!-- <view class="header-action-content">
-        <button open-type='contact' class="header-action-item" session-from='mini'>
-          <image mode='aspectFit' src='../assets/icon/miniprogram-icon-34.png' style='width: 129rpx; height: 88rpx;'></image>
-          <text> 报名入学 </text>
-        </button>
-        <view class="header-action-item">
-          <image mode='aspectFit' src='../assets/icon/miniprogram-icon-46.png' style='width: 131rpx; height: 88rpx;'></image>
-          <text> 邀请好友 </text>
-        </view>
-      </view> -->
     </view>
   </view>
 
@@ -58,9 +43,9 @@
     <image mode='aspectFit' src='../assets/icon/home.png'></image>
     <text> 首页 </text>
   </view>
-  <view id='../Syllabus/syllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
+  <view id='../Syllabus/SyllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
     <image mode='aspectFit' src='../assets/icon/course.png'></image>
-    <text> 课程表 </text>
+    <text> 年课 </text>
   </view>
   <view class="nav-bar-item">
     <image mode='aspectFit' src='../assets/icon/my-active.png'></image>
@@ -68,4 +53,4 @@
   </view>
 </view>
 
-<!-- <button open-type='getUserInfo' bindtap='getInfoAction' style="position: absolute; top: 529rpx;"> 获取用户数据 </button> -->
+<!-- <button open-type='getUserInfo' bindtap='getInfoAction'> 获取用户数据 </button> -->

@@ -1,16 +1,5 @@
-  page{ background: #fff; }
-.incone-content{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 33rpx auto 0;
-  padding: 0 30rpx;
-  width: 584rpx;
-  height: 261rpx;
-  background: -webkit-linear-gradient(left top, #ffaf4f, #fee079);
-  box-shadow: 0rpx 0rpx 13rpx rgba(249, 161, 61, .51);
-  border-radius: 15rpx;
-}
+page{ width: 100%; height: 100%; background: #fff; overflow: auto; }
+.incone-content{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto; padding: 33rpx 30rpx 0; width: 584rpx; height: 261rpx; background: -webkit-linear-gradient(left top, #ffaf4f, #fee079); box-shadow: 0rpx 0rpx 13rpx rgba(249, 161, 61, .51); border-radius: 15rpx; }
 .income-balance{ height: 100%; }
 .income-balance text{ display: block; margin-top: 44rpx; color: #fff; font-size: 36rpx; }
 .income-balance text:last-child{ margin-top: 45rpx; font-size: 58rpx; }
@@ -31,7 +20,8 @@
 .income-history-content{ display: block; width: 100%; overflow: auto; }
 .income-history-item{ display: flex; justify-content: space-between; align-items: center; padding: 21rpx 7.5%; width: 85%; border-bottom: .5rpx solid #ddd; }
 .income-history-item:last-child{ border-bottom: none; }
-.income-history-item image{ display: block; width: 161rpx; height: 125rpx; background: #ddd; }
+.income-history-cover{ display: block; position: relative; }
+.income-history-cover image{ display: block; width: 161rpx; height: 125rpx; background: #ddd; }
 .course-info{ display: flex; flex-direction: column; justify-content: space-between; align-items: center; width: 70%; }
-.course-info text{ display: block; width: 100%; text-align: left; font-size: 24rpx; color: #565656; }
+.course-info text{ display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; width: 100%; text-align: left; font-size: 24rpx; color: #565656; }
 .course-info text:last-child{ text-align: right; color: #f76541; }

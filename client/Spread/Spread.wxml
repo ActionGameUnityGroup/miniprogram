@@ -1,5 +1,5 @@
 <view class="spread-content">
-  <view class="spread-background"><image mode='widthFix' src='../assets/icon/miniprogram-icon-76.png'></image></view>
+  <view class="spread-background"><image mode='widthFix' src='/assets/icon/miniprogram-icon-76.png'></image></view>
   <view class="user-info">
     <image mode='widthFix' src='{{userAvatar}}'></image>
     <text> {{nickName}} </text>
@@ -11,7 +11,7 @@
         <view style='font-size: 48rpx; color: #f5663f;'>
           <text style='font-size: 30rpx; color: #f5663f;'>￥</text>{{totalIncome}}
         </view>
-        <view style='font-size: 24rpx; color: #f5663f;' bindtap='cashAction'> 立即提现> </view>
+        <view style='font-size: 24rpx; color: #f5663f;' bindtap='cashOperation'> 立即提现> </view>
       </view>
       <view class="spread-income-item">
         <view style='display: flex; justify-content: space-around; align-items: center; width: 50%; font-size: 24rpx; color: #707070;'>
@@ -33,13 +33,16 @@
 <view class="announcement-content">
   <block wx:for='{{spreadCourseList}}' wx:key='index'>
     <view class="announcement-item">
-      <image mode='widthFix' src='{{item.courseCoverUrl}}'></image>
-      <view class="announcement-info">
-        <text> {{item.courseName}} </text>
-        <text> 佣金比例: {{item.commissionRate}}% </text>
-        <text style='color: #cf292e;'> 预计收益: {{item.expectIncome}}元 </text>
+      <view class="announcement-cover">
+        <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='courseCoverLoaded' id='{{index}}'></image>
+        <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}'></image>
       </view>
-      <view class="spread-action" bindtap='spreadAction'> 推广 </view>
+      <view class="announcement-info">
+        <text> {{item.mainTitle}} </text>
+        <text> 佣金比例: {{item.commissionRate}}% </text>
+        <text style='color: #cf292e;'> 预计收益: {{item.income}}元 </text>
+      </view>
+      <view class="spread-action" bindtap='spreadOperation'> 推广 </view>
     </view>
   </block>
 </view>

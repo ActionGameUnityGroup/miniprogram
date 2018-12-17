@@ -1,5 +1,5 @@
 <view class="registration-content">
-  <view class="registration-item" bindtap='redirectAction'>
+  <!-- <view class="registration-item" bindtap='redirectAction'>
     <view class="registration-cover"><image mode='widthFix' src=''></image></view>
     <view class="registration-info">
       <view class="registration-info-title">能量疗愈|如何将负面情绪....</view>
@@ -14,5 +14,5 @@
       <view class="registration-info-tutor">导师： 杨仁起 杨凡</view>
       <view class="registration-info-date">开课时间： 2019-01-05</view>
     </view>
-  </view>
+  </view> -->
 </view>

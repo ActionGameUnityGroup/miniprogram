@@ -1,24 +1,16 @@
-const app = getApp()
+const app = getApp();
+let _this;
 
 Page({
   data: {
-
+    freeClassList: [],
   },
-  onLoad: function () {
-    const height = app.globalData.systemInfo.windowHeight;
-    this.setData({
-      contentHeight: height*(1 - .083)
-    });
-
+  onLoad: function() {
+    _this = this;
   },
-  redirectAction: function(e){
-    wx.redirectTo({
-      url: '/FeedBackDetail/FeedBackDetail'
-    });
-  },
-  navigateAction: function(e){
+  navigateOperation: function(e){
     wx.navigateTo({
-      url: e.currentTarget.id
+      url: '/FreeClassDetail/FreeClassDetail'
     });
   }
 });

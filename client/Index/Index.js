@@ -15,11 +15,6 @@ Page({
     kurseList: [],
     lastestList: [],
     tutorList: [],
-    // showAudioWidth: 180 * 7 + 19 * 6,
-    // contentHeight: 0,
-    // navHeight: 0,
-    // audioListWidth: 0,
-    // articleListWidth: 0
   },
   onLoad: function () {
     _this = this;
@@ -27,9 +22,12 @@ Page({
       url: 'https://www.changdaolife.cn/api/v0/banner/getBannerList?page=index',
       method: 'GET',
       success: function(res){
-        console.log(res.data, '回调');
+        let bannerList = res.data.data[0].bannerList.map(banner => {
+          banner.loaded = false;
+          return banner;
+        });
         _this.setData({
-          bannerList: res.data.data[0].bannerList,
+          bannerList: bannerList,
         });
       }
     });
@@ -38,28 +36,38 @@ Page({
       url: 'https://www.changdaolife.cn/api/v0/course/getKurseList',
       method: 'GET',
       success: function(res){
-        if(res.data.data.length < 3){
-          let kurseList = res.data.data;
-          for(let index = res.data.data.length; index < 3; index++){
+        let kurseList = res.data.data.map(kurse => {
+          kurse.loaded = false;
+          return kurse;
+        });
+        if(kurseList.length < 3){
+          for(let index = kurseList.length; index < 3; index++){
             kurseList.push({});
           }
+          console.log(kurseList);
           _this.setData({
             kurseList: kurseList,
           });
         } else {
+          console.log(kurseList);
           _this.setData({
-            kurseList: res.data.data,
+            kurseList: kurseList,
           });
         }
       }
     });
 
     wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/course/getLastestList',
+      url: 'https://www.changdaolife.cn/api/v0/course/getLastestList?page=index',
       method: 'GET',
       success: function(res){
+        let lastestList = res.data.data.map(lastest => {
+          lastest.loaded = false;
+          return lastest;
+        });
+        console.log(lastestList);
         _this.setData({
-          lastestList: res.data.data,
+          lastestList: lastestList,
         });
       }
     });
@@ -68,22 +76,27 @@ Page({
       url: 'https://www.changdaolife.cn/api/v0/tutor/getTutorList',
       method: 'GET',
       success: function(res){
-        if(res.data.data.length < 3){
-          let tutorList = res.data.data;
-          for(let index = res.data.data.length; index < 5; index++){
+        let tutorList = res.data.data.map(tutor => {
+          tutor.loaded = false;
+          return tutor;
+        });
+        if(tutorList.length < 3){
+          for(let index = tutorList.length; index < 5; index++){
             tutorList.push({});
           }
+          console.log(tutorList);
           _this.setData({
-            tutorList: res.data.data,
+            tutorList: tutorList,
           });
         } else {
+          console.log(tutorList);
           _this.setData({
-            tutorList: res.data.data,
+            tutorList: tutorList,
           });
         }
       }
     });
-    wx.login({
+    /*wx.login({
       success: function(res){
         console.log(res);
         wx.getUserInfo({
@@ -108,22 +121,49 @@ Page({
           }
         });
       }
-    });
-    console.log(app);
+    });*/
   },
-  moreArticleAction: function(){
-    wx.navigateTo({
-      url: '/ArticleList/ArticleList'
+  bannerLoaded: function(e){
+    let key = e.currentTarget.id;
+    let { bannerList } = this.data;
+    bannerList[key].loaded = true;
+    this.setData({
+      bannerList: bannerList,
+    });
+  },
+  kurseLoaded: function(e){
+    let key = e.currentTarget.id;
+    let { kurseList } = this.data;
+    kurseList[key].loaded = true;
+    this.setData({
+      kurseList: kurseList,
+    });
+  },
+  lastestLoaded: function(e){
+    let key = e.currentTarget.id;
+    let { lastestList } = this.data;
+    lastestList[key].loaded = true;
+    this.setData({
+      lastestList: lastestList,
+    });
+  },
+  tutorLoaded: function(e){
+    let key = e.currentTarget.id;
+    let { tutorList } = this.data;
+    tutorList[key].loaded = true;
+    console.log(tutorList);
+    this.setData({
+      tutorList: tutorList,
     });
   },
   redirectToSyllabusMenu: function(){
     wx.redirectTo({
-      url: '/Syllabus/syllabusMenu'
+      url: '/Syllabus/SyllabusMenu'
     });
   },
   redirectToPersonalInfo: function(){
     wx.redirectTo({
-      url: '/PersonalInfo/personalInfo'
+      url: '/PersonalInfo/PersonalInfo'
     });
   },
   navigateAction: function(e){

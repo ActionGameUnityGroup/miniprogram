@@ -1,21 +1,20 @@
-<!-- <view class='title-view'>
-  <view class='title-line'></view>
-  <image class='title-icon' mode='widthFix' src='/assets/icon/miniprogram-icon-13.png'></image>
-  <text style='font-size:40rpx; margin-right:54rpx;'>课程预告</text>
-  <view class='title-line'></view>  
-</view> -->
-<view></view>
+<view style='height: 24rpx;'></view>
 
-<view class="syllabus-content">
-  <block wx:for="{{syllabueses}}" wx:key="index" wx:for-item="item">
-    <view class='scroll-view'>
-      <image mode='widthFix' src=''></image>
+<scroll-view
+  scroll-y='{{true}}'
+  class="syllabus-content"
+  style='height: {{showNavBar ? "calc(100% - 128rpx)" : "calc(100% - 24rpx)"}};'
+>
+  <block wx:for="{{syllabusList}}" wx:key="index">
+    <view class='scroll-view' bindtap='navigateOperation' id='{{item.courseId}}'>
+      <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='{{imageLoaded}}' id='{{index}}' />
+      <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}' />
     </view>
   </block>
-</view>
+</scroll-view>
 
-<view class="nav-bar">
-  <view id='/Index/Index' class="nav-bar-item" bindtap='redirectAction'>
+<view class="nav-bar" wx:if='{{showNavBar}}'>
+  <view id='/Index/Index' class="nav-bar-item" bindtap='redirectOperation'>
     <image mode='aspectFit' src='/assets/icon/home.png'></image>
     <text> 首页 </text>
   </view>
@@ -23,7 +22,7 @@
     <image mode='aspectFit' src='/assets/icon/course-active.png'></image>
     <text> 年课 </text>
   </view>
-  <view id='/PersonalInfo/personalInfo' class="nav-bar-item" bindtap='redirectAction'>
+  <view id='/PersonalInfo/PersonalInfo' class="nav-bar-item" bindtap='redirectOperation'>
     <image mode='aspectFit' src='/assets/icon/my.png'></image>
     <text> 我的 </text>
   </view>

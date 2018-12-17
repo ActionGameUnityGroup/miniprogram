@@ -1,6 +1,14 @@
 .head-banner{ display: block; width: 100%; height: 425rpx; }
 .banner-list{ width: 100%; height: 100%; }
-.banner-item{ display: block; width: 100%; }
+.banner-item{ display: block; position: relative; width: 100%; }
+.banner-item image{ display: block; width: 100%; height: auto; }
+@keyframes fadeIn {
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
+}
+.fade-in{
+  animation: fadeIn 1s both;
+}
 
 .module-content{ display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; margin: 16rpx 0 0; padding: 47rpx 22rpx 49rpx; height: 140rpx; background: #fff; border-radius: 10rpx; }
 .module-item{ width: 20%; }
@@ -20,8 +28,8 @@
 .show-more-action text{ display: block; line-height: 74rpx; font-size: 28rpx; color: #5a5a5a; }
 
 .show-audio-list{ display: block; position: relative; margin: 11rpx auto 0; padding: 0 21rpx; height: 170rpx; }
-.show-audio-item{ display: block; margin: 0 auto; width: 215rpx; height: 170rpx; }
-.show-audio-item image{ display: block; margin: 0 auto; width: 100%; height: 100%; }
+.show-audio-item{ display: block; position: relative; margin: 0 auto; }
+.show-audio-item image{ display: block; margin: 0 auto; width: 215rpx; height: auto; }
 .view-more-action{ display: block; text-align: center; }
 .view-more-action text{ display: block; color: #000; font-size: 24rpx; }
 .view-more-action text:last-child{ font-size: 16rpx; }
@@ -29,14 +37,15 @@
 .show-article-list{ display: block; margin: 0 auto; width: 100%; }
 .lastest-course-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 41rpx; width: 95%; }
 .lastest-course-item:nth-child(2){ margin-bottom: 25rpx !important; }
-.lastest-course-cover{ display: block; margin: 0 auto; width: 242rpx; height: 170rpx; overflow: hidden; }
-.lastest-course-cover image{ display: block; width: 100%; height: 100%; border-radius: 5rpx; background: #ddd; }
-.lastest-course-info{ display: block; margin: 0 auto; width: 452rpx; }
+.lastest-course-cover{ display: block; position: relative; margin-right: 17rpx; width: 242rpx; overflow: hidden; }
+.lastest-course-cover image{ display: block; width: 100%; height: auto; border-radius: 5rpx; }
+.lastest-course-info{ display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin: 0 auto; width: 452rpx; height: 100%; }
 .main-title,
-.sub-title{ display: -webkit-box; margin: 0 auto; text-align: left; line-height: 1.2; font-size: 24rpx; color: #b1aeae; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
-.main-title{ margin: 5rpx auto 20rpx; font-size: 28rpx; color: #000; -webkit-line-clamp: 1; }
-.sub-title{ max-height: 60rpx; }
-.course-tutor{ display: inline-block; margin-top: 15rpx; width: 118rpx; height: 34rpx; text-align: center; line-height: 34rpx; background: #ffbe10; color: #fff; font-size: 20rpx; }
+.sub-title{ display: -webkit-box; margin: 0 auto; width: 100%; text-align: left; line-height: 1.2; font-size: 24rpx; color: #b1aeae; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; }
+.main-title{ margin: 5rpx auto 20rpx; width: 100%; text-align: left; font-size: 28rpx; color: #000; -webkit-line-clamp: 1; }
+.sub-title{ max-height: 48rpx; }
+.course-tutor{ display: inline-flex; justify-content: flex-start; align-items: center; margin-top: 15rpx; padding: 0 13rpx; height: 34rpx; text-align: center; line-height: 34rpx; background: #ffbe10; color: #fff; font-size: 20rpx; }
+.course-tutor text{ display: block; margin-left: 7rpx; }
 .check-more-operation{ display: block; text-align: center; line-height: 81rpx; border-top: .73rpx solid #bfbfbf; color: #bcbcbc; font-size: 28rpx; }
 
 .show-article-info{ display: flex; justify-content: space-between; align-content: center; margin: 48rpx auto 20rpx; padding: 0 14rpx; }
@@ -46,6 +55,6 @@
 .tutor-group-list{ display: flex; justify-content: space-between; align-items: center; padding: 0 26rpx 58rpx; height: 150rpx; }
 .tutor-group-item{ display: block; margin: 0 auto; width: 110rpx; text-align: center; }
 .tutor-group-image{ position: relative; width: 110rpx; height: 110rpx; }
-.tutor-group-image image{ display: block; margin: 0 auto; width: 100%; height: 100%; border-radius: 100rpx; }
+.tutor-group-image image{ display: block; margin: 0 auto; width: 100%; height: auto; border-radius: 100rpx; }
 .tutor-group-name{ display: block; margin-bottom: 12rpx; }
 .tutor-group-name text{ display: block; margin: 0 auto; font-size: 26rpx; color: #000; }

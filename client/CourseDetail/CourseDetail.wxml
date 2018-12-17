@@ -1,18 +1,20 @@
 <view class="course-detail-content">
-  <view class="course-detail-item" bindtap='navigateOperation'>
-    <view class="course-detail-cover"><image mode='widthFix' src=''></image></view>
-    <view class="course-detail-info">
-      <view class="course-detail-title">能量疗愈|如何将负面情绪......</view>
-      <view class="course-detail-describe">理论体验+分析讲解+实践落地</view>
-      <view class="course-detail-label">导师： 杨仁起 杨凡</view>
+  <block wx:for='{{courseList}}' wx:key='index'>
+    <view class="course-detail-item" bindtap='navigateOperation' id='{{item.courseId}}'>
+      <view class="course-detail-cover fade-in">
+        <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='imageLoaded' id='{{index}}'></image>
+        <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}'></image>
+      </view>
+      <view class="course-detail-info">
+        <view class="course-detail-title">{{item.mainTitle}}</view>
+        <view class="course-detail-describe">{{item.subTitle}}</view>
+        <view class="course-detail-label">
+          导师：
+          <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
+            <text class='label-item'> {{author}} </text>
+          </block>
+        </view>
+      </view>
     </view>
-  </view>
-  <view class="course-detail-item" bindtap='navigateOperation'>
-    <view class="course-detail-cover"><image mode='widthFix' src=''></image></view>
-    <view class="course-detail-info">
-      <view class="course-detail-title">能量疗愈|如何将负面情绪......</view>
-      <view class="course-detail-describe">理论体验+分析讲解+实践落地</view>
-      <view class="course-detail-label">导师： 杨仁起 杨凡</view>
-    </view>
-  </view>
+  </block>
 </view>

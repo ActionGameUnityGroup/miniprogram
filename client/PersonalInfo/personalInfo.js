@@ -1,5 +1,6 @@
 //获取应用实例
 const app = getApp()
+let _this;
 
 Page({
   data: {
@@ -13,7 +14,7 @@ Page({
       {moduleImg: '/assets/icon/my-inviter.png', moduleName: '我的邀请人', moduleUrl: '/MyInivitation/MyInivitation'},
       {moduleImg: '/assets/icon/my-sign.png', moduleName: '我的打卡', moduleUrl: '/Message/Message'},
       {moduleImg: '/assets/icon/my-course.png', moduleName: '我的课程', moduleUrl: '/MyCourse/MyCourse'},
-      {moduleImg: '/assets/icon/my-collection.png', moduleName: '我的收藏', moduleUrl: '/HomeWork/HomeWork'},
+      {moduleImg: '/assets/icon/my-collection.png', moduleName: '我的收藏', moduleUrl: '/Collection/Collection'},
       {moduleImg: '/assets/icon/online-consult.png', moduleName: '在线咨询', isContact: true},
       {moduleImg: '/assets/icon/phone-consult.png', moduleName: '电话咨询', isCall: true},
       {moduleImg: '/assets/icon/feedback.png', moduleName: '意见反馈', moduleUrl: '/FeedBack/FeedBack'},
@@ -21,11 +22,7 @@ Page({
     contentHeight: 0
   },
   onLoad: function () {
-    // 页面渲染完之后马上运行的函数
-    wx.setNavigationBarTitle({
-      title: '我的'
-    });
-    const _this = this;
+    _this = this;
     const height = app.globalData.systemInfo.windowHeight;
     this.setData({
       contentHeight: height*(1 - .083)
@@ -40,7 +37,7 @@ Page({
       }
     });
 
-    wx.request({
+    /*wx.request({
       url: 'https://www.changdaolife.cn/api/user/getUserInfo',
       method: 'GET',
       header: {
@@ -53,7 +50,7 @@ Page({
           identify: res.data.requestData[0].userid
         });
       }
-    });
+    });*/
 
   },
   callAction: function(){
@@ -70,12 +67,12 @@ Page({
     wx.navigateTo({
       url: e.currentTarget.id
     });
-  }
-  /*getInfoAction: function(){
+  },
+  getInfoAction: function(){
     wx.getUserInfo({
       success: function(info){
         console.log(info);
       }
     });
-  }*/
+  }
 });

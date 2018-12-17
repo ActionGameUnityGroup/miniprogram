@@ -4,6 +4,8 @@
 /server/config/
 /server2/
 /server3/
+/static-file-server/node_modules
+/static-file-server/log
 /cnode-api/
 /config/
 /egg-server/
