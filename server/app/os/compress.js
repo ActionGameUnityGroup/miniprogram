@@ -1,2 +1,2 @@
 const compress = require('koa-compress');
-module.exports = conpress;
+module.exports = compress;
