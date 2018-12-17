@@ -5,6 +5,7 @@ const render = require(`${__dirname}/os/render`);
 const controller = require(`${__dirname}/os/controller`);
 const router = require(`${__dirname}/router`);
 const body = require(`${__dirname}/os/body`);
+const compress = require(`${__dirname}/os/compress`);
 const koaStatic = require(`${__dirname}/os/static`);
 const bodyParser = require(`${__dirname}/os/body-parser`);
 const path = require('path');
@@ -44,7 +45,7 @@ class App {
     _this.app.use(body({ multipart: true }));
     _this.app.use(bodyParser());
     _this.app.use(render());
-
+    _this.app.use(compress({threshold: 2048}));
     _this.app.use(controller(_this));
     _this.app.use(router(_this));
     console.log(publicDirectory);

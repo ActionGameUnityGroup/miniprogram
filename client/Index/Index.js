@@ -98,7 +98,6 @@ Page({
     });
     wx.login({
       success: function(res){
-        console.log(res);
         wx.getUserInfo({
           success: function(e){
             wx.request({
