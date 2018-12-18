@@ -1,7 +1,7 @@
 page{ width: 100%; height: 100%; background: #f5f5f5; }
 .syllabus-content{ display: block; margin: 0 auto; width: 97.3%; }
-.scroll-view{ display: block; position: relative; margin: 0 auto 21rpx; width: 100%; height: 408rpx; }
-.scroll-view image{ display: block; width: 100%; height: 100%; background: #bfbfbf; }
+.scroll-view{ display: block; position: relative; margin: 0 auto 21rpx; width: 100%; }
+.scroll-view image{ display: block; width: 100%; height: auto; }
 
 .date-view{ display: flex; flex-direction: row;/* align-content: center; */ align-items: center; margin-top: 35rpx; }
 

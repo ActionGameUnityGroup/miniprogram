@@ -18,17 +18,17 @@ Page({
   },
   onLoad: function () {
     _this = this;
+
     wx.request({
       url: 'https://www.changdaolife.cn/api/v0/banner/getBannerList?page=index',
       method: 'GET',
       success: function(res){
         let bannerList = res.data.data[0].bannerList.map(banner => {
           banner.loaded = false;
+          banner.show = false;
           return banner;
         });
-        _this.setData({
-          bannerList: bannerList,
-        });
+        _this.setData({ bannerList });
       }
     });
 
@@ -38,6 +38,7 @@ Page({
       success: function(res){
         let kurseList = res.data.data.map(kurse => {
           kurse.loaded = false;
+          kurse.show = false;
           return kurse;
         });
         if(kurseList.length < 3){
@@ -45,14 +46,10 @@ Page({
             kurseList.push({});
           }
           console.log(kurseList);
-          _this.setData({
-            kurseList: kurseList,
-          });
+          _this.setData({ kurseList });
         } else {
           console.log(kurseList);
-          _this.setData({
-            kurseList: kurseList,
-          });
+          _this.setData({ kurseList });
         }
       }
     });
@@ -63,12 +60,10 @@ Page({
       success: function(res){
         let lastestList = res.data.data.map(lastest => {
           lastest.loaded = false;
+          lastest.show = false;
           return lastest;
         });
-        console.log(lastestList);
-        _this.setData({
-          lastestList: lastestList,
-        });
+        _this.setData({ lastestList });
       }
     });
 
@@ -78,6 +73,7 @@ Page({
       success: function(res){
         let tutorList = res.data.data.map(tutor => {
           tutor.loaded = false;
+          tutor.show = false;
           return tutor;
         });
         if(tutorList.length < 3){
@@ -85,17 +81,14 @@ Page({
             tutorList.push({});
           }
           console.log(tutorList);
-          _this.setData({
-            tutorList: tutorList,
-          });
+          _this.setData({ tutorList });
         } else {
           console.log(tutorList);
-          _this.setData({
-            tutorList: tutorList,
-          });
+          _this.setData({ tutorList });
         }
       }
     });
+
     wx.login({
       success: function(res){
         wx.getUserInfo({
@@ -120,38 +113,21 @@ Page({
       }
     });
   },
-  bannerLoaded: function(e){
-    let key = e.currentTarget.id;
-    let { bannerList } = this.data;
-    bannerList[key].loaded = true;
-    this.setData({
-      bannerList: bannerList,
-    });
+  imageLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].loaded = true;
+    data[name] = list;
+    this.setData(data);
   },
-  kurseLoaded: function(e){
-    let key = e.currentTarget.id;
-    let { kurseList } = this.data;
-    kurseList[key].loaded = true;
-    this.setData({
-      kurseList: kurseList,
-    });
-  },
-  lastestLoaded: function(e){
-    let key = e.currentTarget.id;
-    let { lastestList } = this.data;
-    lastestList[key].loaded = true;
-    this.setData({
-      lastestList: lastestList,
-    });
-  },
-  tutorLoaded: function(e){
-    let key = e.currentTarget.id;
-    let { tutorList } = this.data;
-    tutorList[key].loaded = true;
-    console.log(tutorList);
-    this.setData({
-      tutorList: tutorList,
-    });
+  thumbLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].show = true;
+    data[name] = list;
+    this.setData(data);
   },
   redirectToSyllabusMenu: function(){
     wx.redirectTo({

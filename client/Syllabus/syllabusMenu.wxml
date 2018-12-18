@@ -7,8 +7,23 @@
 >
   <block wx:for="{{syllabusList}}" wx:key="index">
     <view class='scroll-view' bindtap='navigateOperation' id='{{item.courseId}}'>
-      <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='{{imageLoaded}}' id='{{index}}' />
-      <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}' />
+      <image
+        wx:if='{{item.show}}'
+        class='{{item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.url}}'
+        bindload='imageLoaded'
+        data-index='{{index}}'
+        data-name='syllabusList'
+      />
+      <image
+        class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.thumb}}'
+        bindload='thumbLoaded'
+        data-index='{{index}}'
+        data-name='syllabusList'
+      />
     </view>
   </block>
 </scroll-view>

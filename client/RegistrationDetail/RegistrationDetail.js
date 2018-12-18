@@ -3,7 +3,8 @@ let _this;
 
 Page({
   data: {
-    courseInfo: {},
+    courseInfo: [],
+    courseDetailList: [],
   },
   onLoad: function (option) {
     const { courseId } = option;
@@ -12,15 +13,17 @@ Page({
       url: `https://www.changdaolife.cn/api/v0/course/getCourseInfo?courseId=${courseId}`,
       method: 'GET',
       success: function(res){
-        // console.log(res.data.data[0], '回调');
-        let courseDetailList = res.data.data[0].courseDetailList.map(courseDetail => {
+        let list = res.data.data[0].courseDetailList.map(courseDetail => {
           courseDetail.loaded = false;
+          courseDetail.show = false;
           return courseDetail;
         });
-        let courseInfo = res.data.data[0];
-        courseInfo.courseDetailList = courseDetailList;
+        let [courseInfo, courseDetailList] = [res.data.data, list];
+        courseInfo[0].loaded = false;
+        courseInfo[0].show = false;
         _this.setData({
           courseInfo: courseInfo,
+          courseDetailList: courseDetailList,
         });
       }
     });
@@ -30,16 +33,21 @@ Page({
       url: e.currentTarget.id
     });
   },
-  bannerLoaded: function(){
-    const { courseInfo } =this.data;
-    courseInfo.loaded = true;
-    this.setData({ courseInfo });
+  imageLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].loaded = true;
+    data[name] = list;
+    this.setData(data);
   },
-  courseDetailLoaded: function(e){
-    const { courseInfo } =this.data;
-    const key = e.currentTarget.id;
-    courseInfo.courseDetailList[key].loaded = true;
-    this.setData({ courseInfo });
+  thumbLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].show = true;
+    data[name] = list;
+    this.setData(data);
   },
   navigateAction: function(e){
     wx.navigateTo({

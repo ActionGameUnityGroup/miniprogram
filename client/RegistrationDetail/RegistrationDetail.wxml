@@ -1,61 +1,92 @@
 <scroll-view scroll-y='{{true}}' class="registration-detail-content">
-  <view class="activity-cover fade-in">
-    <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{courseInfo.cover}}' bindload='bannerLoaded'></image>
-    <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{courseInfo.thumb}}'></image>
-  </view>
-  <view class="activity-content">
-    <view class="activity-title">{{courseInfo.mainTitle}}</view>
-    <view class="activity-autor">
-      <block wx:for='{{courseInfo.authorList}}' wx:for-item='author' wx:key='index'>
-        <text>{{author}}</text>
-      </block>
+  <block wx:for='{{courseInfo}}' wx:key='courseIndex'>
+    <view class="activity-cover fade-in">
+      <image
+        wx:if='{{item.show}}'
+        class='{{item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.cover}}'
+        bindload='imageLoaded'
+        data-index='{{index}}'
+        data-name='courseInfo'
+      />
+      <image
+        class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.thumb}}'
+        bindload='thumbLoaded'
+        data-index='{{index}}'
+        data-name='courseInfo'
+      />
     </view>
-    <view class="activity-registration-info">
-      <view class="registration-info-title">报名信息</view>
-      <view class="registration-info-content">
-        <view class="registration-info-item">
-          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/city.png'></image></view>
-          <view class="registration-info-name">城市</view>
-          <view class="registration-info-value">
-            <block wx:if='{{courseInfo.courseInfo[0].city != ""}}'>{{courseInfo.courseInfo[0].city}}</block>
-            <block wx:else>待定</block>
+    <view class="activity-content">
+      <view class="activity-title">{{item.mainTitle}}</view>
+      <view class="activity-autor">
+        <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='index'>
+          <text>{{author}}</text>
+        </block>
+      </view>
+      <view class="activity-registration-info">
+        <view class="registration-info-title">报名信息</view>
+        <view class="registration-info-content">
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/city.png'></image></view>
+            <view class="registration-info-name">城市</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.courseInfo[0].city != ""}}'>{{item.courseInfo[0].city}}</block>
+              <block wx:else>待定</block>
+            </view>
           </view>
-        </view>
-        <view class="registration-info-item">
-          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/price.png'></image></view>
-          <view class="registration-info-name">费用</view>
-          <view class="registration-info-value">
-            <block wx:if='{{courseInfo.courseInfo[0].expenses != ""}}'>￥{{courseInfo.courseInfo[0].expenses}}元</block>
-            <block wx:else>待定</block>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/price.png'></image></view>
+            <view class="registration-info-name">费用</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.courseInfo[0].expenses != ""}}'>￥{{item.courseInfo[0].expenses}}元</block>
+              <block wx:else>待定</block>
+            </view>
           </view>
-        </view>
-        <view class="registration-info-item">
-          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/time.png'></image></view>
-          <view class="registration-info-name">时间</view>
-          <view class="registration-info-value">
-            <block wx:if='{{courseInfo.courseInfo[0].date != ""}}'>{{courseInfo.courseInfo[0].date}}</block>
-            <block wx:else>待定</block>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/time.png'></image></view>
+            <view class="registration-info-name">时间</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.courseInfo[0].date != ""}}'>{{item.courseInfo[0].date}}</block>
+              <block wx:else>待定</block>
+            </view>
           </view>
-        </view>
-        <view class="registration-info-item">
-          <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/location.png'></image></view>
-          <view class="registration-info-name">地点</view>
-          <view class="registration-info-value">
-            <block wx:if='{{courseInfo.courseInfo[0].venue != ""}}'>{{courseInfo.courseInfo[0].venue}}</block>
-            <block wx:else>待定</block>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/location.png'></image></view>
+            <view class="registration-info-name">地点</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.courseInfo[0].venue != ""}}'>{{item.courseInfo[0].venue}}</block>
+              <block wx:else>待定</block>
+            </view>
           </view>
         </view>
       </view>
+      <view class="activity-image-content">
+        <block wx:for='{{courseDetailList}}' wx:for-item='courseDetail' wx:key='index'>
+          <view class="activity-image-item">
+            <image
+              wx:if='{{courseDetail.show}}'
+              class='{{courseDetail.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{courseDetail.cover}}'
+              bindload='imageLoaded'
+              data-index='{{index}}'
+              data-name='courseDetailList'
+            />
+            <image
+              class='{{!courseDetail.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{courseDetail.thumb}}'
+              bindload='thumbLoaded'
+              data-index='{{index}}'
+              data-name='courseDetailList'
+            />
+          </view>
+        </block>
+      </view>
     </view>
-    <view class="activity-image-content">
-      <block wx:for='{{courseInfo.courseDetailList}}' wx:for-item='courseDetail' wx:key='index'>
-        <view class="activity-image-item">
-          <image mode='widthFix' class='{{courseDetail.loaded ? "image-top" : "image-bottom"}}' src='{{courseDetail.cover}}' bindload='courseDetailLoaded' id='{{index}}' />
-          <image mode='widthFix' class='{{!courseDetail.loaded ? "image-top" : "image-bottom"}}' src='{{courseDetail.thumb}}' />
-        </view>
-      </block>
-      <!-- <view class="activity-image-item"><image mode='widthFix' src='{{item.courseDetail}}'></image></view> -->
-    </view>
-  </view>
+  </block>
 </scroll-view>
 <view class="registration-operation">报名入学</view>

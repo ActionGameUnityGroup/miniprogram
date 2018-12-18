@@ -11,7 +11,7 @@ page{ background: #fff; overflow: auto; }
 .spread-income-content{ padding: 0 30rpx; }
 .spread-income-item{ display: flex; justify-content: space-between; align-items: center; padding: 0 30rpx; height: 116rpx; }
 
-.announcement-content{ display: block; margin: 0 auto; width: 694rpx; }
+.announcement-content{ display: block; margin: 0 auto; width: 694rpx; height: calc(100% - 618rpx); }
 .announcement-item{ display: flex; justify-content: space-between; align-items: center; padding: 35rpx 0; border-bottom: 1rpx solid #959595; }
 .announcement-item:last-child{ border-bottom: none; }
 .announcement-cover{ display: block; position: relative; }

@@ -16,8 +16,23 @@
     >
       <block wx:for='{{bannerList}}' wx:key='index'>
         <swiper-item class="banner-item fade-in">
-          <image class='{{item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.url}}' bindload='bannerLoaded' id='{{index}}'></image>
-          <image class='{{!item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.thumb}}'></image>
+          <image
+            wx:if='{{item.show}}'
+            class='{{item.loaded ? "image-top" : "image-bottom"}}'
+            mode='widthFix'
+            src='{{item.url}}'
+            bindload='imageLoaded'
+            data-index='{{index}}'
+            data-name='bannerList'
+          />
+          <image
+            class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+            mode='widthFix'
+            src='{{item.thumb}}'
+            bindload='thumbLoaded'
+            data-index='{{index}}'
+            data-name='bannerList'
+          />
         </swiper-item>
       </block>
     </swiper>
@@ -59,8 +74,23 @@
               bindtap='navigateAction'
               wx:if='{{item.loaded != undefined}}'
             >
-              <image class='{{item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.cover}}' bindload='kurseLoaded' id='{{index}}'></image>
-              <image class='{{!item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.thumb}}'></image>
+              <image
+                wx:if='{{item.show}}'
+                class='{{item.loaded ? "image-top" : "image-bottom"}}'
+                mode='widthFix'
+                src='{{item.url}}'
+                bindload='imageLoaded'
+                data-index='{{index}}'
+                data-name='kurseList'
+              />
+              <image
+                class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+                mode='widthFix'
+                src='{{item.thumb}}'
+                bindload='thumbLoaded'
+                data-index='{{index}}'
+                data-name='kurseList'
+              />
             </view>
           </swiper-item>
         </block>
@@ -76,8 +106,23 @@
       <block wx:for='{{lastestList}}' wx:key='index'>
         <view class="lastest-course-item" id='/RegistrationDetail/RegistrationDetail?courseId={{item.courseId}}' bindtap='navigateAction'>
           <view class="lastest-course-cover fade-in">
-            <image class='{{item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.cover}}' bindload='lastestLoaded' id='{{index}}' />
-            <image class='{{!item.loaded ? "image-top" : "image-bottom"}}' mode='widthFix' src='{{item.thumb}}' />
+            <image
+              wx:if='{{item.show}}'
+              class='{{item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.url}}'
+              bindload='imageLoaded'
+              data-index='{{index}}'
+              data-name='lastestList'
+            />
+            <image
+              class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.thumb}}'
+              bindload='thumbLoaded'
+              data-index='{{index}}'
+              data-name='lastestList'
+            />
           </view>
           <view class="lastest-course-info">
             <view class="main-title">{{item.mainTitle}}</view>

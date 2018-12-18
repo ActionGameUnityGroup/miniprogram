@@ -30,12 +30,27 @@
   <text style='margin-right: 15rpx; font-size: 30rpx; color: #0f0f0f;'>公告</text>
   *课程佣金比例按公告发布为准
 </view>
-<view class="announcement-content">
+<scroll-view scroll-y='{{true}}' class="announcement-content">
   <block wx:for='{{spreadCourseList}}' wx:key='index'>
     <view class="announcement-item">
       <view class="announcement-cover">
-        <image mode='widthFix' class='{{item.loaded ? "image-top" : "image-bottom"}}' src='{{item.cover}}' bindload='courseCoverLoaded' id='{{index}}'></image>
-        <image mode='widthFix' class='{{!item.loaded ? "image-top" : "image-bottom"}}' src='{{item.thumb}}'></image>
+        <image
+          wx:if='{{item.show}}'
+          class='{{item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.url}}'
+          bindload='imageLoaded'
+          data-index='{{index}}'
+          data-name='spreadCourseList'
+        />
+        <image
+          class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.thumb}}'
+          bindload='thumbLoaded'
+          data-index='{{index}}'
+          data-name='spreadCourseList'
+        />
       </view>
       <view class="announcement-info">
         <text> {{item.mainTitle}} </text>
@@ -45,4 +60,4 @@
       <view class="spread-action" bindtap='spreadOperation'> 推广 </view>
     </view>
   </block>
-</view>
+</scroll-view>

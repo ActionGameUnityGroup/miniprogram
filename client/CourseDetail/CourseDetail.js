@@ -12,7 +12,8 @@ Page({
       method: 'GET',
       success: function(res){
         let courseList = res.data.data.map(course => {
-          course.onLoad = false;
+          course.loaded = false;
+          course.show = false;
           return course;
         })
         _this.setData({
@@ -22,10 +23,20 @@ Page({
   	});
   },
   imageLoaded: function(e){
-    let key = e.currentTarget.id;
-    let { courseList } =this.data;
-    courseList[key].onLoad = true;
-    this.setData({ courseList });
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].loaded = true;
+    data[name] = list;
+    this.setData(data);
+  },
+  thumbLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].show = true;
+    data[name] = list;
+    this.setData(data);
   },
   navigateOperation: (e) => {
   	const { id } = e.currentTarget;
