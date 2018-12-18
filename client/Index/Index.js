@@ -15,6 +15,7 @@ Page({
     kurseList: [],
     lastestList: [],
     tutorList: [],
+    hasUserInfo: false,
   },
   onLoad: function () {
     _this = this;
@@ -89,11 +90,30 @@ Page({
       }
     });
 
+    /*wx.getSetting({
+      success(res){
+        console.log(res)
+        if(!res.authSetting['scope.userInfo']){
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success: function(res){
+              console.log(res);
+            }
+          });
+        }
+      }
+    });*/
+
     wx.login({
-      success: function(res){
+      success(res){
+        console.log(res);
         wx.getUserInfo({
-          success: function(e){
-            wx.request({
+          success(infoRes){
+            console.log(infoRes);
+            if(infoRes){
+              _this.setData({hasUserInfo: true})
+            }
+            /*wx.request({
               url: 'https://www.changdaolife.cn/api/user/login',
               method: 'GET',
               data: {
@@ -107,11 +127,12 @@ Page({
                   data: info.data.requestData.openid
                 });
               }
-            });
+            });*/
           }
         });
       }
     });
+
   },
   imageLoaded: function(e){
     let data = {};

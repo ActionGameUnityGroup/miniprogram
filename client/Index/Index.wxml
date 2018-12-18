@@ -38,6 +38,8 @@
     </swiper>
   </view>
 
+  <!-- <button wx:if='{{!hasUserInfo}}' open-type="getUserInfo" >获取信息</button> -->
+
   <view class="module-content">
     <view id='/Registration/Registration?from=module' class="module-item" bindtap='navigateAction'>
       <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 70rpx; height: 60rpx'></image>

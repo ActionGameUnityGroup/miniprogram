@@ -48,7 +48,6 @@ class App {
     _this.app.use(compress({threshold: 2048}));
     _this.app.use(controller(_this));
     _this.app.use(router(_this));
-    console.log(publicDirectory);
     _this.app.use(koaStatic(publicDirectory));
 
     fs.readdirSync(pluginPath).map(pluginName => {

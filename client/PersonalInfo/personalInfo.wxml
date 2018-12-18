@@ -2,9 +2,11 @@
   <view class="personal-info-header">
     <view class="header-info">
       <view class="personal-info-avatar">
-        <image src='{{avatar}}' mode='aspectFit'></image>
+        <!-- <image src='{{avatar}}' mode='aspectFit'></image> -->
+        <open-data type="userAvatarUrl" />
       </view>
-      <view class="personal-info-name"> {{userName}} </view>
+      <!-- <view class="personal-info-name"> {{userName}} </view> -->
+      <view class="personal-info-name"><open-data type="userNickName" /></view>
     </view>
   </view>
 

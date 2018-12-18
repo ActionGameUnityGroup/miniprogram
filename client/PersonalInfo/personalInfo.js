@@ -19,17 +19,17 @@ Page({
       {moduleImg: '/assets/icon/phone-consult.png', moduleName: '电话咨询', isCall: true},
       {moduleImg: '/assets/icon/feedback.png', moduleName: '意见反馈', moduleUrl: '/FeedBack/FeedBack'},
     ],
-    contentHeight: 0
+    // contentHeight: 0
   },
   onLoad: function () {
     _this = this;
-    const height = app.globalData.systemInfo.windowHeight;
+    // const height = app.globalData.systemInfo.windowHeight;
     this.setData({
-      contentHeight: height*(1 - .083)
+      // contentHeight: height*(1 - .083)
     });
     wx.getUserInfo({
       success: function(res){
-        console.log(res.userInfo);
+        console.log(res.userInfo, 32);
         _this.setData({
           userName: res.userInfo.nickName,
           avatar: res.userInfo.avatarUrl,
