@@ -1,5 +1,5 @@
 const path = require('path');
-const rootDirectory = path.resolve(__dirname, '../../');
+const rootDirectory = path.resolve(__dirname, '../../../');
 const tutorService = require(`${rootDirectory}/service/v0/tutorService`);
 
 class Tutor{
