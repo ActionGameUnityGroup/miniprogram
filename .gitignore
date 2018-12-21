@@ -10,6 +10,8 @@
 /cnode-api/
 /config/
 /egg-server/
+/client-taro/
+/taroConvert/
 # /client/
 /managementSystem/node_modules
 # /server/public/audio/
