@@ -13,7 +13,4 @@ fs.readdirSync(__dirname + '/v1').map(fileName => {
   v1[module.constructor.name] = module;
 });
 
-module.exports = {
-  v0: v0,
-  v1: v1
-};
+module.exports = { v0, v1, };

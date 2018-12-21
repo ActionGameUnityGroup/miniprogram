@@ -1,7 +1,7 @@
 class Upload{
   async uploadFile(ctx) {
     const files = ctx.request.body.files;
-    const rootDirectory = path.resolve(__dirname, '../../public/');
+    const rootDirectory = path.resolve(__dirname, '../../../public/');
     let flag = false;
     for(let fileKey in files){
       console.log(files[fileKey]);
