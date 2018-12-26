@@ -12,7 +12,11 @@
 /egg-server/
 # /client/
 /managementSystem/node_modules
+/managementSystem/src/
 # /server/public/audio/
 /Slider/
 /Node/
 /welfare
+/client-mobile/
+/client2
+/taroConvert
