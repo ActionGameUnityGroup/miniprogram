@@ -77,11 +77,11 @@ Page({
           tutor.show = false;
           return tutor;
         });
-        if(tutorList.length < 3){
+        if(tutorList.length < 5){
           for(let index = tutorList.length; index < 5; index++){
             tutorList.push({});
           }
-          console.log(tutorList);
+          console.log(tutorList, '导师列表');
           _this.setData({ tutorList });
         } else {
           console.log(tutorList);
