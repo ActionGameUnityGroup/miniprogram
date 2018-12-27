@@ -42,20 +42,20 @@
 
   <view class="module-content">
     <view id='/Registration/Registration?from=module' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 70rpx; height: 60rpx'></image>
+      <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 86rpx; height: 74rpx'></image>
       <text> 现场报名 </text>
     </view>
     <view id='/Syllabus/SyllabusMenu?from=module' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/syllabus.png' style='padding-top: 6rpx; width: 60rpx; height: 55rpx'></image>
+      <image mode='widthFix' src='/assets/icon/syllabus.png' style='width: 83rpx; height: 77rpx'></image>
       <text> 课程表 </text>
     </view>
     <view id='/CourseDetail/CourseDetail?from=module' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/latest-course.png' style='padding-top: 11rpx; width: 55rpx; height: 52rpx'></image>
+      <image mode='widthFix' src='/assets/icon/latest-course.png' style='width: 86rpx; height: 80rpx'></image>
       <text> 最新课程 </text>
     </view>
     <view id='/FreeClass/FreeClass?from=module' class="module-item" bindtap='navigateAction'>
-      <image mode='widthFix' src='/assets/icon/free-class.png' style='padding-top: 6rpx; width: 70rpx; height: 55rpx'></image>
-      <text> 免费好课 </text>
+      <image mode='widthFix' src='/assets/icon/vip.png' style='width: 86rpx; height: 84rpx'></image>
+      <text> 加入会员 </text>
     </view>
   </view>
 

@@ -6,14 +6,12 @@
   0%{ opacity: 0; }
   100%{ opacity: 1; }
 }
-.fade-in{
-  animation: fadeIn 1s both;
-}
+.fade-in{ animation: fadeIn 1s both; }
 
 .module-content{ display: flex; justify-content: space-between; align-content: center; flex-wrap: wrap; margin: 16rpx 0 0; padding: 47rpx 22rpx 49rpx; height: 140rpx; background: #fff; border-radius: 10rpx; }
 .module-item{ width: 20%; }
-.module-item image{ display: block; margin: 0 auto; width: 110rpx; height: 110rpx; overflow: hidden; }
-.module-item text{ display: block; margin: 12rpx auto 0; text-align: center; font-size: 28rpx; color: #000; }
+.module-item image{ display: block; margin: 0 auto; width: 110rpx; height: auto; overflow: hidden; }
+.module-item text{ display: block; margin: 0 auto; text-align: center; font-size: 28rpx; color: #000; }
 
 .show-content{ margin: 22rpx auto 0; width: 100%; background: #fff; }
 .show-content:last-child{ margin-bottom: 10rpx; }
