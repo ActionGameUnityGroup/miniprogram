@@ -12,7 +12,7 @@ Page({
   },
   data: {
     bannerList: [],
-    kurseList: [],
+    // kurseList: [],
     lastestList: [],
     tutorList: [],
     hasUserInfo: false,
@@ -33,7 +33,7 @@ Page({
       }
     });
 
-    wx.request({
+    /*wx.request({
       url: 'https://www.changdaolife.cn/api/v0/course/getKurseList',
       method: 'GET',
       success: function(res){
@@ -53,7 +53,7 @@ Page({
           _this.setData({ kurseList });
         }
       }
-    });
+    });*/
 
     wx.request({
       url: 'https://www.changdaolife.cn/api/v0/course/getLastestList?page=index',

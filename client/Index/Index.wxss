@@ -13,10 +13,13 @@
 .module-item image{ display: block; margin: 0 auto; width: 110rpx; height: auto; overflow: hidden; }
 .module-item text{ display: block; margin: 0 auto; text-align: center; font-size: 28rpx; color: #000; }
 
-.show-content{ margin: 22rpx auto 0; width: 100%; background: #fff; }
+.show-content{ margin: 22rpx auto 0; width: 100%; }
+.f5-background{ background: #f5f5f5; }
+.ff-background{ background: #fff; }
 .show-content:last-child{ margin-bottom: 10rpx; }
-.show-list-content{ display: block; padding-bottom: 42rpx; width: 100%; }
-.show-title{ display: block; padding: 22rpx 0 40rpx; text-align: center; }
+.show-list-content{ display: flex; justify-content: space-between; align-items: center; padding: 0 20rpx; }
+.show-title{ display: flex; justify-content: space-between; align-items: center; padding: 31rpx 29rpx 34rpx; }
+.show-title text{ display: block; font-size: 28rpx; color: #333; }
 .title1{ display: block; margin: 0 auto; width: 175.2rpx; height: 76.8rpx; }
 .title2{ display: block; margin: 0 auto; width: 211.2rpx; height: 76.8rpx; }
 .title3{ display: block; margin: 0 auto; width: 190.8rpx; height: 81.6rpx; }
@@ -25,26 +28,26 @@
 .show-more-action{ display: flex; justify-content: space-between; align-items: center; position: absolute; right: 36rpx; top: 0; z-index: 3; }
 .show-more-action text{ display: block; line-height: 74rpx; font-size: 28rpx; color: #5a5a5a; }
 
-.show-audio-list{ display: block; position: relative; margin: 11rpx auto 0; padding: 0 21rpx; height: 170rpx; }
-.show-audio-item{ display: block; position: relative; margin: 0 auto; }
-.show-audio-item image{ display: block; margin: 0 auto; width: 215rpx; height: auto; }
+.show-audio-list{ display: block; position: relative; margin: 20rpx 0; padding: 0 20rpx; height: 162rpx; }
+.show-audio-item{ display: block; position: relative; width: 225rpx; }
+.show-audio-item image{ display: block; margin: 0 auto; width: 100%; height: auto; }
 .view-more-action{ display: block; text-align: center; }
 .view-more-action text{ display: block; color: #000; font-size: 24rpx; }
 .view-more-action text:last-child{ font-size: 16rpx; }
 
 .show-article-list{ display: block; margin: 0 auto; width: 100%; }
-.lastest-course-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 41rpx; width: 95%; }
+.lastest-course-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 41rpx; width: 91.5%; }
 .lastest-course-item:nth-child(2){ margin-bottom: 25rpx !important; }
-.lastest-course-cover{ display: block; position: relative; margin-right: 17rpx; width: 242rpx; overflow: hidden; }
+.lastest-course-cover{ display: block; position: relative; margin-right: 3%; width: 31%; overflow: hidden; }
 .lastest-course-cover image{ display: block; width: 100%; height: auto; border-radius: 5rpx; }
-.lastest-course-info{ display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin: 0 auto; width: 452rpx; height: 100%; }
+.lastest-course-info{ display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; margin: 0 auto; width: 66%; }
 .main-title,
 .sub-title{ display: -webkit-box; margin: 0 auto; width: 100%; text-align: left; line-height: 1.2; font-size: 24rpx; color: #b1aeae; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; }
 .main-title{ margin: 5rpx auto 20rpx; width: 100%; text-align: left; font-size: 28rpx; color: #000; -webkit-line-clamp: 1; }
 .sub-title{ max-height: 48rpx; }
 .course-tutor{ display: inline-flex; justify-content: flex-start; align-items: center; margin-top: 15rpx; padding: 0 13rpx; height: 34rpx; text-align: center; line-height: 34rpx; background: #ffbe10; color: #fff; font-size: 20rpx; }
 .course-tutor text{ display: block; margin-left: 7rpx; }
-.check-more-operation{ display: block; text-align: center; line-height: 81rpx; border-top: .73rpx solid #bfbfbf; color: #bcbcbc; font-size: 28rpx; }
+.check-more-operation{ display: block; padding-right: 8rpx; font-size: 24rpx; color: #a5a5a5; }
 
 .show-article-info{ display: flex; justify-content: space-between; align-content: center; margin: 48rpx auto 20rpx; padding: 0 14rpx; }
 .show-article-ground, .show-article-visit{ display: inline-block; font-size: 17rpx; color: #9c9c9c; }

@@ -59,50 +59,25 @@
     </view>
   </view>
 
-  <view class="show-content">
-    <view class="show-title">
-      <image src='/assets/icon/title1.png' class='title1' mode='widthFix'></image>
-    </view>
+  <view class="show-content f5-background">
+    <!-- <view class="show-title"><image src='/assets/icon/title1.png' class='title1' mode='widthFix'></image></view> -->
     <view class="show-list-content">
-      <swiper
-        class="show-audio-list"
-        display-multiple-items='{{3}}'
-      >
-        <block wx:for='{{kurseList}}' wx:key='index'>
-          <swiper-item>
-            <view
-              class="show-audio-item fade-in"
-              id='/CourseDetail/CourseDetail?courseId={{item.courseId}}'
-              bindtap='navigateAction'
-              wx:if='{{item.loaded != undefined}}'
-            >
-              <image
-                wx:if='{{item.show}}'
-                class='{{item.loaded ? "image-top" : "image-bottom"}}'
-                mode='widthFix'
-                src='{{item.url}}'
-                bindload='imageLoaded'
-                data-index='{{index}}'
-                data-name='kurseList'
-              />
-              <image
-                class='{{!item.loaded ? "image-top" : "image-bottom"}}'
-                mode='widthFix'
-                src='{{item.thumb}}'
-                bindload='thumbLoaded'
-                data-index='{{index}}'
-                data-name='kurseList'
-              />
-            </view>
-          </swiper-item>
-        </block>
-      </swiper>
+      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=1' bindtap='navigateAction'>
+        <image mode='widthFix' src='/assets/icon/series1.png' />
+      </view>
+      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=2' bindtap='navigateAction'>
+        <image mode='widthFix' src='/assets/icon/series2.png' />
+      </view>
+      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=3' bindtap='navigateAction'>
+        <image mode='widthFix' src='/assets/icon/series3.png' />
+      </view>
     </view>
   </view>
 
-  <view class="show-content">
+  <view class="show-content ff-background">
     <view class="show-title">
-      <image src='/assets/icon/title2.png' class='title2' mode='widthFix'></image>
+      <text>最新课程</text>
+      <view class="check-more-operation" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>查看更多></view>
     </view>
     <view class="show-article-list">
       <block wx:for='{{lastestList}}' wx:key='index'>
@@ -129,17 +104,36 @@
           <view class="lastest-course-info">
             <view class="main-title">{{item.mainTitle}}</view>
             <view class="sub-title">{{item.subTitle}}</view>
-            <view class="course-tutor">导师: <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'><text>{{author}}</text></block></view>
+            <!-- <view class="course-tutor">导师: <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'><text>{{author}}</text></block></view> -->
           </view>
         </view>
       </block>
-      <view class="check-more-operation" id='/CourseDetail/CourseDetail' bindtap='navigateAction'>查看更多></view>
     </view>
   </view>
 
-  <view class="show-content">
+  <view class="show-content ff-background">
     <view class="show-title">
-      <image src='/assets/icon/title3.png' class='title3' mode='widthFix'></image>
+      <text>常道导师团</text>
+    </view>
+    <swiper class="tutor-group-list" display-multiple-items='{{5}}'>
+      <block wx:for='{{tutorList}}' wx:key='index'>
+        <swiper-item>
+          <view id='/TutorIntroduction/TutorIntroduction?tutorId={{item.tutorId}}' class="tutor-group-item" bindtap='navigateAction'>
+            <view class="tutor-group-image fade-in">
+              <image mode='widthFix' src='{{item.cover}}'/>
+            </view>
+            <view class="tutor-group-name">
+              <text>{{item.name}}</text>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="show-content ff-background">
+    <view class="show-title">
+      <text>常道讲师团</text>
     </view>
     <swiper class="tutor-group-list" display-multiple-items='{{5}}'>
       <block wx:for='{{tutorList}}' wx:key='index'>
