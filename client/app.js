@@ -47,5 +47,25 @@ App({
     systemInfo: null,
     backgroundAudio1: null,
     backgroundAudio2: null
-  }
+  },
+  request: function(url, options = {method: 'GET'}, fn){
+    /**
+      @Description 自定义请求方法
+      @params url- String 请求路由
+      @params options Object 请求参数
+      @return 请求回调
+      */
+    wx.request({
+      url: url,
+      ...options,
+      success: function(res){
+        console.log(res);
+        fn(res.data);
+      },
+      fail: function(err) {
+        console.log(err);
+        fn(err);
+      },
+    });
+  },
 })

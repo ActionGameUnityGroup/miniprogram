@@ -62,13 +62,13 @@
   <view class="show-content f5-background">
     <!-- <view class="show-title"><image src='/assets/icon/title1.png' class='title1' mode='widthFix'></image></view> -->
     <view class="show-list-content">
-      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=1' bindtap='navigateAction'>
+      <view class="show-audio-item fade-in" id='/Rich/Rich' bindtap='navigateAction'>
         <image mode='widthFix' src='/assets/icon/series1.png' />
       </view>
       <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=2' bindtap='navigateAction'>
         <image mode='widthFix' src='/assets/icon/series2.png' />
       </view>
-      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=3' bindtap='navigateAction'>
+      <view class="show-audio-item fade-in" id='/Shemer/Shemer' bindtap='navigateAction'>
         <image mode='widthFix' src='/assets/icon/series3.png' />
       </view>
     </view>

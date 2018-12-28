@@ -1,6 +1,8 @@
 {
   "pages":[
     "Index/Index",
+    "Rich/Rich",
+    "Shemer/Shemer",
     "Collection/Collection",
     "PersonalInfo/PersonalInfo",
     "Income/Income",
