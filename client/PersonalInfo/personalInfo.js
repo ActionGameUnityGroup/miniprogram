@@ -12,7 +12,7 @@ Page({
       {moduleImg: '/assets/icon/my-income.png', moduleName: '我的收益', moduleUrl: '/Income/Income'},
       {moduleImg: '/assets/icon/spread-center.png', moduleName: '推广中心', moduleUrl: '/Spread/Spread'},
       {moduleImg: '/assets/icon/my-inviter.png', moduleName: '我的邀请人', moduleUrl: '/MyInivitation/MyInivitation'},
-      {moduleImg: '/assets/icon/my-sign.png', moduleName: '我的打卡', moduleUrl: '/Message/Message'},
+      {moduleImg: '/assets/icon/my-sign.png', moduleName: '我的优惠券', moduleUrl: '/MyCoupon/MyCoupon'},
       {moduleImg: '/assets/icon/my-course.png', moduleName: '我的课程', moduleUrl: '/MyCourse/MyCourse'},
       {moduleImg: '/assets/icon/my-collection.png', moduleName: '我的收藏', moduleUrl: '/Collection/Collection'},
       {moduleImg: '/assets/icon/online-consult.png', moduleName: '在线咨询', isContact: true},

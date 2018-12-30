@@ -1,0 +1,38 @@
+<blcok wx:if='{{!couponList.length}}'>
+  <view class="empty-image"><image mode='widthFix' src='../assets/icon/miniprogram-icon-75.jpg'></image></view>
+</blcok>
+<block wx:else>
+  <scroll-view class="coupon-content" scroll-y>
+    <block wx:for='{{couponList}}' wx:key='index'>
+      <view class="coupon-item">
+        <image class="coupon-cover" mode='widthFix' src='{{item.couponCover}}'></image>
+        <view class="coupon-info">
+          <view> {{item.couponContent}} </view>
+          <view>
+            <text>{{item.couponDetail}}</text>
+            <text> {{item.couponDate}} </text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</block>
+
+<!-- <view></view>
+
+<view class="coupon-content">
+  <block wx:for='{{couponList}}' wx:key='index'>
+    <view class="coupon-item">
+      <image class="coupon-cover" mode='widthFix' src='{{item.couponCover}}'></image>
+      <view class="coupon-info">
+        <view> {{item.couponContent}} </view>
+        <view>
+          <text>{{item.couponDetail}}</text>
+          <text> {{item.couponDate}} </text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<view></view> -->

@@ -53,5 +53,8 @@ Page({
     wx.navigateTo({
       url: e.currentTarget.id
     });
+  },
+  signUp: function(){
+    console.log('下单');
   }
 });
