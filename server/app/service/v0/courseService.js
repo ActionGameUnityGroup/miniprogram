@@ -63,7 +63,7 @@ class CourseService{
 	async getUnexpireCourse(ctx){
 		let response;
 		try{
-			let data = await courseModel.find({isExpire: false}, '-_id cover thumb courseId').sort({courseId: 1});
+			let data = await courseModel.find({isExpire: false}, '-_id').sort({courseId: 1});
 			response = formatDataSuccess(data);
 		} catch(e){
 			response = formatDataFail(e.message);
