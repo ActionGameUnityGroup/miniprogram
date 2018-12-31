@@ -1,17 +1,17 @@
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const tutorModel = require(`${rootDirectory}/model/v0/tutorModel`);
-const { formatDataSuccess, formatDataFail } = require(`${rootDirectory}/service/formatData`);
+const formatData = require(`${rootDirectory}/service/formatData`);
 
-class TutorService{
+class TutorService extends formatData{
 
 	async getTutorList(ctx){
 		let response;
 		try{
 			let data = await tutorModel.find({}, '-_id');
-			response = formatDataSuccess(data);
+			response = this.formatDataSuccess(data);
 		} catch(e){
-			response = formatDataFail(e.message);
+			response = this.formatDataFail(e.message);
 			ctx.throw(500);
 		}
 		return response;
@@ -22,9 +22,9 @@ class TutorService{
 		let response;
 		try{
 			let data = await tutorModel.find({tutorId: tutorId}, '-_id');
-			response = formatDataSuccess(data);
+			response = this.formatDataSuccess(data);
 		} catch(e){
-			response = formatDataFail(e.message);
+			response = this.formatDataFail(e.message);
 			ctx.throw(500);
 		}
 		return response;

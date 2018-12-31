@@ -24,6 +24,11 @@ Page({
       courseList: courseList,
     });
 	},
+	navigateOperation: function(e){
+		wx.navigateTo({
+			url: `/RegistrationDetail/RegistrationDetail?courseId=${e.currentTarget.id}`,
+		});
+	},
 	changeTabContent: function(e){
 		const _this = this;
 		const { id } = e.currentTarget;

@@ -1,9 +1,9 @@
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const bannerModel = require(`${rootDirectory}/model/v0/bannerModel`);
-const { formatDataSuccess, formatDataFail } = require(`${rootDirectory}/service/formatData`);
+const formatData = require(`${rootDirectory}/service/formatData`);
 
-class BannerService{
+class BannerService extends formatData{
 	async getBannerList(ctx){
 		const params = ctx.request.query;
 		const reqPage = params.page;
@@ -11,9 +11,9 @@ class BannerService{
 
 		try{
 			let data = await bannerModel.find({page: reqPage});
-			response = formatDataSuccess(data);
+			response = this.formatDataSuccess(data);
 		} catch(e){
-			response = formatDataFail(e.message);
+			response = this.formatDataFail(e.message);
 			ctx.throw(500);
 		}
 

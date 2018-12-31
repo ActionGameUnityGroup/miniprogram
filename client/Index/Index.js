@@ -33,28 +33,6 @@ Page({
       }
     });
 
-    /*wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/course/getKurseList',
-      method: 'GET',
-      success: function(res){
-        let kurseList = res.data.data.map(kurse => {
-          kurse.loaded = false;
-          kurse.show = false;
-          return kurse;
-        });
-        if(kurseList.length < 3){
-          for(let index = kurseList.length; index < 3; index++){
-            kurseList.push({});
-          }
-          console.log(kurseList);
-          _this.setData({ kurseList });
-        } else {
-          console.log(kurseList);
-          _this.setData({ kurseList });
-        }
-      }
-    });*/
-
     wx.request({
       url: 'https://www.changdaolife.cn/api/v0/course/getLastestList?page=index',
       method: 'GET',
@@ -110,9 +88,9 @@ Page({
         wx.getUserInfo({
           success(infoRes){
             console.log(infoRes);
-            if(infoRes){
+            /*if(infoRes){
               _this.setData({hasUserInfo: true})
-            }
+            }*/
             /*wx.request({
               url: 'https://www.changdaolife.cn/api/user/login',
               method: 'GET',

@@ -1,5 +1,4 @@
 const app = getApp();
-// let _this;
 
 Page({
 	data: {
@@ -30,12 +29,12 @@ Page({
 			rhythm: function(){ this.setData({ isRhythm: true, isSlient: false, }); },
 			slient: function(){ this.setData({ isRhythm: false, isSlient: true, }); },
 		};
-
 		const action = actions[id];
-
-		console.log(action);
-
 		action.call(this);
-
-	}
+	},
+	navigateOperation: function(e){
+		wx.navigateTo({
+			url: `/RegistrationDetail/RegistrationDetail?courseId=${e.currentTarget.id}`,
+		});
+	},
 });

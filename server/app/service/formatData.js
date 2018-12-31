@@ -1,20 +1,18 @@
-const formatDataSuccess = (data) => {
-  return {
-    errMsg: '',
-    status: 'request:ok',
-    data: data,
-  };
-};
+class FormatData{
+  formatDataSuccess(data) {
+    return {
+      errMsg: '',
+      status: 'request:ok',
+      data: data,
+    };
+  }
+  formatDataFail(errMsg) {
+    return {
+      errMsg: errMsg,
+      status: 'request:fail',
+      info: [],
+    };
+  }
+}
 
-const formatDataFail = (errMsg) => {
-  return {
-    errMsg: errMsg,
-    status: 'request:fail',
-    info: [],
-  };
-};
-
-module.exports = {
-  formatDataSuccess: formatDataSuccess,
-  formatDataFail: formatDataFail,
-};
+module.exports = FormatData;

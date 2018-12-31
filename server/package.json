@@ -15,7 +15,8 @@
     "koa-compress": "^3.0.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
-    "log4js": "^3.0.6"
+    "log4js": "^3.0.6",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
