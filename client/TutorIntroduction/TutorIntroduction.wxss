@@ -5,7 +5,7 @@ Page{ width: 100%; height: 100%; background: #fff; overflow: auto; }
 .bottom-background{ display: block; position: absolute; bottom: 0; z-index: 1; width: 100%; height: 20rpx; background: #ffbe10; }
 
 .introduction-cover{ display: block; margin: 40rpx auto 0; width: 100%; }
-.introduction-cover image{ display: block; width: 100%; height: 364rpx; }
+.introduction-cover image{ display: block; width: 100%; }
 
 .introduction-honor{ display: block; margin: 52rpx auto 0; width: 100%; text-align: left; }
 .honor-name{ display: block; line-height: 48rpx; font-size: 24rpx; color: #000; }

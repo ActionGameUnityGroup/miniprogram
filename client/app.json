@@ -1,6 +1,8 @@
 {
   "pages":[
     "Index/Index",
+    "HotList/HotList",
+    "Syllabus/SyllabusMenu",
     "MyCoupon/MyCoupon",
     "Rich/Rich",
     "Shemer/Shemer",
@@ -13,7 +15,6 @@
     "FreeClass/FreeClass",
     "RegistrationDetail/RegistrationDetail",
     "Registration/Registration",
-    "Syllabus/SyllabusMenu",
     "SignIn/SignIn",
     "Article/Article",
     "WelfareActivity/WelfareActivity",

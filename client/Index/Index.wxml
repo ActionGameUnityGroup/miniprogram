@@ -45,7 +45,7 @@
       <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 86rpx; height: 74rpx'></image>
       <text> 现场报名 </text>
     </view>
-    <view id='/Syllabus/SyllabusMenu?from=module' class="module-item" bindtap='navigateAction'>
+    <view id='/HotList/HotList' class="module-item" bindtap='navigateAction'>
       <image mode='widthFix' src='/assets/icon/syllabus.png' style='width: 83rpx; height: 77rpx'></image>
       <text> 课程表 </text>
     </view>
