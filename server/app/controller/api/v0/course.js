@@ -28,6 +28,12 @@ class Course{
 		ctx.type = 'text/json';
 	}
 
+	async getHotList(ctx){
+		const response = await courseService.getHotList(ctx);
+		ctx.body = response;
+		ctx.type = 'text/json';
+	}
+
 }
 
 module.exports = new Course();
