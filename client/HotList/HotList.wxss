@@ -6,7 +6,7 @@ page{ width: 100%; height: 100%; background: #f5f5f5; }
 .course-activity-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 20rpx; padding: 0 23rpx 0 30rpx; height: 107rpx; background: #fff; border-radius: 20rpx; box-shadow: 3rpx 3rpx 18rpx rgba(54, 188, 245, .2); }
 .course-activity-info, .course-activity-head{ display: block; }
 .course-activity-title{ display: block; font-size: 26rpx; color: #000; }
-.course-activity-detail{ display: flex; justify-content: center; align-items: center; margin: 16rpx 0 0 10rpx; font-size: 22rpx; color: #696969; }
+.course-activity-detail{ display: flex; justify-content: flex-start; align-items: center; margin: 16rpx 0 0 10rpx; font-size: 22rpx; color: #696969; }
 .course-activity-detail text{ margin-right: 81rpx; }
 .course-activity-head image{ display: inline-block; vertical-align: middle; position: relative; left: -12rpx; width: 56rpx; height: auto; }
 .course-activity-head image:first-child{ left: 0; }

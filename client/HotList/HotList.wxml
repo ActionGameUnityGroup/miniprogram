@@ -8,18 +8,23 @@
     <image mode='widthFix' src='/assets/icon/syllabus-content-title.png' />
   </view>
   <view class="list-section">
-    <block wx:for="{{syllabusList}}" wx:key="index">
+    <block wx:for="{{hotList}}" wx:key="index">
       <view class="course-activity-item">
         <view class="course-activity-info">
-          <view class="course-activity-title">《能量疗愈》</view>
+          <view class="course-activity-title">
+            <block wx:for='{{item.activityName}}' wx:for-item='title' wx:key='titleKey'>
+              <text>《{{title}}》</text>
+            </block>
+          </view>
           <view class="course-activity-detail">
             <text>01月05-06日</text>
             <text>深圳</text>
           </view>
         </view>
         <view class="course-activity-head">
-          <image mode='widthFix' src='/assets/icon/head1.png'></image>
-          <image mode='widthFix' src='/assets/icon/head2.png'></image>
+          <block wx:for='{{item.activityAuthorList}}' wx:for-item='author' wx:key='authorIndex'>
+            <image mode='widthFix' src='{{author}}' />
+          </block>
         </view>
       </view>
     </block>

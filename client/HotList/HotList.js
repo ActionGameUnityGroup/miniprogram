@@ -3,21 +3,21 @@ let _this;
 
 Page({
   data: {
-    syllabusList: [],
+    hotList: [],
     showNavBar: true,
   },
   onLoad: function(){
     _this = this;
     wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/course/getUnexpireCourse',
+      url: 'https://www.changdaolife.cn/api/v0/activity/getHotList',
       method: 'GET',
       success: function(res){
-        let syllabusList = res.data.data.map(syllabus => {
+        let hotList = res.data.data.map(syllabus => {
           syllabus.loaded = false;
           syllabus.show = false;
           return syllabus;
         });
-        _this.setData({ syllabusList, });
+        _this.setData({ hotList, });
       }
     });
   },
