@@ -1,9 +1,6 @@
 <view></view>
 
-<scroll-view
-  scroll-y='{{true}}'
-  class="list-content"
->
+<scroll-view scroll-y='{{true}}' class="list-content">
   <view class="list-title">
     <image mode='widthFix' src='/assets/icon/syllabus-content-title.png' />
   </view>
@@ -17,8 +14,8 @@
             </block>
           </view>
           <view class="course-activity-detail">
-            <text>01月05-06日</text>
-            <text>深圳</text>
+            <text>{{item.activityDate}}</text>
+            <text>{{item.activityPlace}}</text>
           </view>
         </view>
         <view class="course-activity-head">
