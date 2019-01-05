@@ -16,6 +16,12 @@ class Course{
 		ctx.type = 'text/json';
 	}
 
+	async getCourseList(ctx){
+		const response = await courseService.getCourseList(ctx);
+		ctx.body = response;
+		ctx.type = 'text/json';
+	}
+
 	async getCourseInfo(ctx){
 		const response = await courseService.getCourseInfo(ctx);
 		ctx.body = response;

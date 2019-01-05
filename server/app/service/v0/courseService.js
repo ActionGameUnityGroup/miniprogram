@@ -35,6 +35,19 @@ class CourseService extends formatData{
 		return response;
 	}
 
+	async getCourseList(ctx){
+		const type = ctx.request.query.type || '';
+		let response;
+		try{
+			let data = await courseModel.find({type: type}, '-_id -isExpire').sort({courseId: 1});
+			response = this.formatDataSuccess(data);
+		} catch(e){
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}
+
 	async getCourseInfo(ctx){
 		const { courseId } = ctx.request.query;
 		let response;
