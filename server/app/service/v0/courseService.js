@@ -39,7 +39,7 @@ class CourseService extends formatData{
 		const type = ctx.request.query.type || '';
 		let response;
 		try{
-			let data = await courseModel.find({type: type}, '-_id -isExpire').sort({courseId: 1});
+			let data = await courseModel.find({type: type}, '-_id -isExpire');
 			response = this.formatDataSuccess(data);
 		} catch(e){
 			response = this.formatDataFail(e.message);
