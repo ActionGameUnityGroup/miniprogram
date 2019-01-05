@@ -8,7 +8,7 @@ Page({
   onLoad: function(options){
   	_this = this;
   	wx.request({
-  		url: 'https://www.changdaolife.cn/api/v0/course/getLastestList?page=all',
+  		url: 'https://www.changdaolife.cn/api/v0/course/getCourseList?type=nineType',
       method: 'GET',
       success: function(res){
         let courseList = res.data.data.map(course => {
