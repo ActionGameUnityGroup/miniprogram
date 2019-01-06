@@ -33,7 +33,7 @@
             <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/city.png'></image></view>
             <view class="registration-info-name">城市</view>
             <view class="registration-info-value">
-              <block wx:if='{{item.courseInfo[0].city != ""}}'>{{item.courseInfo[0].city}}</block>
+              <block wx:if='{{item.city != ""}}'>{{item.city}}</block>
               <block wx:else>待定</block>
             </view>
           </view>
@@ -41,7 +41,7 @@
             <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/price.png'></image></view>
             <view class="registration-info-name">费用</view>
             <view class="registration-info-value">
-              <block wx:if='{{item.courseInfo[0].expenses != ""}}'>￥{{item.courseInfo[0].expenses}}元</block>
+              <block wx:if='{{item.expenses != ""}}'>￥{{item.expenses}}元</block>
               <block wx:else>待定</block>
             </view>
           </view>
@@ -49,7 +49,7 @@
             <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/time.png'></image></view>
             <view class="registration-info-name">时间</view>
             <view class="registration-info-value">
-              <block wx:if='{{item.courseInfo[0].date != ""}}'>{{item.courseInfo[0].date}}</block>
+              <block wx:if='{{item.date != ""}}'>{{item.date}}</block>
               <block wx:else>待定</block>
             </view>
           </view>
@@ -57,7 +57,7 @@
             <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/location.png'></image></view>
             <view class="registration-info-name">地点</view>
             <view class="registration-info-value">
-              <block wx:if='{{item.courseInfo[0].venue != ""}}'>{{item.courseInfo[0].venue}}</block>
+              <block wx:if='{{item.venue != ""}}'>{{item.venue}}</block>
               <block wx:else>待定</block>
             </view>
           </view>
