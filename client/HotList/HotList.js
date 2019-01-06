@@ -8,18 +8,17 @@ Page({
   },
   onLoad: function(){
     _this = this;
-    wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/activity/getHotList',
-      method: 'GET',
-      success: function(res){
-        let hotList = res.data.data.map(syllabus => {
-          syllabus.loaded = false;
-          syllabus.show = false;
-          return syllabus;
-        });
-        _this.setData({ hotList, });
-      }
+    app.request('https://www.changdaolife.cn/api/v0/activity/getHotList', {
+      method: 'GET'
+    }, this.render);
+  },
+  render: function(res){
+    let hotList = res.data.map(hotItem => {
+      hotItem.loaded = false;
+      hotItem.show = false;
+      return hotItem;
     });
+    _this.setData({ hotList, });
   },
   onShareAppMessage: function(){},
   navigateOperation: function(e) {
