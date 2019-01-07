@@ -26,7 +26,7 @@ class CourseService extends formatData{
 	async getAllCourse(ctx){
 		let response;
 		try{
-			let data = await courseModel.find({}, '-_id -key -isExpire');
+			let data = await courseModel.find({}, '-_id -key -isExpire').sort({date: 1});
 			response = this.formatDataSuccess(data);
 		} catch(e){
 			response = this.formatDataFail(e.message);
