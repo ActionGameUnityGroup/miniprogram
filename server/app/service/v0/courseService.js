@@ -10,7 +10,7 @@ class CourseService extends formatData{
 		let response;
 		try{
 			if(page === 'index' || page === ''){
-				let data = await courseModel.find({key: 'lastestCourse', isExpire: false}, '-_id -key -isExpire').sort({time: 1}).limit(4);
+				let data = await courseModel.find({isExpire: false}, '-_id -key -isExpire').sort({time: 1}).limit(4);
 				response = this.formatDataSuccess(data);
 			} else {
 				let data = await courseModel.find({key: 'lastestCourse'}, '-_id -key -isExpire').sort({courseId: -1});
