@@ -10,7 +10,7 @@ class CourseService extends formatData{
 		let response;
 		try{
 			if(page === 'index' || page === ''){
-				let data = await courseModel.find({key: 'lastestCourse', isExpire: false}, '-_id -key -isExpire').sort({courseId: 1}).limit(2);
+				let data = await courseModel.find({key: 'lastestCourse', isExpire: false}, '-_id -key -isExpire').sort({date: 1}).limit(4);
 				response = this.formatDataSuccess(data);
 			} else {
 				let data = await courseModel.find({key: 'lastestCourse'}, '-_id -key -isExpire').sort({courseId: -1});
@@ -52,7 +52,7 @@ class CourseService extends formatData{
 		const { courseId } = ctx.request.query;
 		let response;
 		try{
-			let data = await courseModel.find({courseId: courseId}, '-_id -key -isExpire').sort({courseId: 1});
+			let data = await courseModel.find({courseId: courseId}, '-_id -key -isExpire').sort({date: 1});
 			response = this.formatDataSuccess(data);
 		} catch(e){
 			response = this.formatDataFail(e.message);
@@ -64,7 +64,7 @@ class CourseService extends formatData{
 	async getUnexpireCourse(ctx){
 		let response;
 		try{
-			let data = await courseModel.find({isExpire: false}, '-_id').sort({courseId: 1});
+			let data = await courseModel.find({isExpire: false}, '-_id').sort({date: 1});
 			response = this.formatDataSuccess(data);
 		} catch(e){
 			response = this.formatDataFail(e.message);
