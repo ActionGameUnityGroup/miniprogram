@@ -1,0 +1,25 @@
+page{ display: block; width: 100%; height: 100%; background: #ebebeb; overflow: hidden; }
+image{ display: block; width: 100%; height: auto; }
+.pay-content{ display: block; padding: 16rpx 20rpx 0; height: calc(100% - 234rpx); }
+.pay-info-content{ display: block; padding: 20rpx 20rpx 0; border-radius: 15rpx; background: #fff; }
+.pay-info-title{ display: block; padding-top: 23rpx; text-align: left; color: #000; font-size: 30rpx; }
+.course-info{ display: flex; justify-content: space-between; align-items: center; margin-top: 20rpx; padding-bottom: 75rpx; width: 100%; }
+.course-info-cover{ display: block; width: 240rpx; height: 140rpx; background: #ebebeb; }
+.course-info-message{ display: block; width: 57%; }
+.course-message-title{ display: block; margin-top: 10rpx; text-align: left; height: 60rpx; line-height: 1; font-size: 28rpx; color: #000; }
+.course-message-price{ display: block; margin-top: 10rpx; text-align: left; height: 60rpx; line-height: 1; font-size: 24rpx; font-weight: bold; color: #ff7200; }
+.coupon-content{ display: flex; justify-content: space-between; align-items: center; padding-right: 13rpx; height: 105rpx; font-size: 28rpx; color: #b1b1b1; }
+.pay-price-content{ display: flex; justify-content: flex-end; align-items: center; height: 125rpx; font-size: 30rpx; font-weight: bold; color: #ff7200; }
+
+.pay-tips-content{ display: block; margin-top: 20rpx; padding: 22rpx; background: #fff; border-radius: 15rpx; }
+.pay-tips-title{ display: flex; justify-content: space-between; align-items: center; padding: 16rpx 0; }
+.pay-tips-title-name{ display: flex; justify-content: space-between; align-items: center; }
+.pay-tips-title-name-logo{ display: block; margin-right: 17rpx; width: 54rpx; }
+.pay-tips-title-name-text{ display: block; font-size: 28rpx; color: #000; }
+.pay-tips-notes{ display: block; margin: 37rpx 0 48rpx; font-size: 26rpx; color: #ff7200; }
+.pay-tips-notes-title,
+.pay-tips-notes-content{ display: block; line-height: 1.5; }
+
+.confirm-payment-operation{ display: block; margin: 74rpx auto 56rpx; width: 88%; height: 88rpx; text-align: center; line-height: 88rpx; background: #ffbe10; border-radius: 50rpx; color: #000; font-size: 34rpx; }
+
+.border-bottom{ border-bottom: 1rpx solid #f3f3f3; }

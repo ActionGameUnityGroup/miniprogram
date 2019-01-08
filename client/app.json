@@ -1,6 +1,7 @@
 {
   "pages":[
     "Index/Index",
+    "Pay/Pay",
     "HotList/HotList",
     "Syllabus/SyllabusMenu",
     "MyCoupon/MyCoupon",
