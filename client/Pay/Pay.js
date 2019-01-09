@@ -7,6 +7,7 @@ Page({
     mainTitle: '',
     expenses: '00.00',
     totalExpenses: '00.00',
+    cover2: '',
   },
   onLoad: function (options) {
     const { courseId } = options;
@@ -15,8 +16,8 @@ Page({
       url: `https://www.changdaolife.cn/api/v0/course/getCourseInfo?courseId=${courseId}`,
       method: 'GET',
       success: function(res){
-        let { mainTitle, expenses } = res.data.data[0];
-        _this.setData({ mainTitle, expenses });
+        let { mainTitle, expenses, cover2, } = res.data.data[0];
+        _this.setData({ mainTitle, expenses, cover2, totalExpenses: expenses, });
       }
     });
   },

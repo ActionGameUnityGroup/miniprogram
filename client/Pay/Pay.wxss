@@ -6,7 +6,7 @@ image{ display: block; width: 100%; height: auto; }
 .course-info{ display: flex; justify-content: space-between; align-items: center; margin-top: 20rpx; padding-bottom: 75rpx; width: 100%; }
 .course-info-cover{ display: block; width: 240rpx; height: 140rpx; background: #ebebeb; }
 .course-info-message{ display: block; width: 57%; }
-.course-message-title{ display: block; margin-top: 10rpx; text-align: left; height: 60rpx; line-height: 1; font-size: 28rpx; color: #000; }
+.course-message-title{ display: block; margin-top: 10rpx; text-align: left; line-height: 1; font-size: 28rpx; color: #000; }
 .course-message-price{ display: block; margin-top: 10rpx; text-align: left; height: 60rpx; line-height: 1; font-size: 24rpx; font-weight: bold; color: #ff7200; }
 .coupon-content{ display: flex; justify-content: space-between; align-items: center; padding-right: 13rpx; height: 105rpx; font-size: 28rpx; color: #b1b1b1; }
 .pay-price-content{ display: flex; justify-content: flex-end; align-items: center; height: 125rpx; font-size: 30rpx; font-weight: bold; color: #ff7200; }
