@@ -89,4 +89,4 @@
     </view>
   </block>
 </scroll-view>
-<view class="registration-operation" bindtap='signUp'>报名入学</view>
+<view class="registration-operation" bindtap='navigateOperation' id='/Pay/Pay?courseId={{courseId}}'>报名入学</view>

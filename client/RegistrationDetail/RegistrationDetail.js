@@ -5,6 +5,7 @@ Page({
   data: {
     courseInfo: [],
     courseDetailList: [],
+    courseId: '',
   },
   onLoad: function (option) {
     const { courseId } = option;
@@ -22,8 +23,9 @@ Page({
         courseInfo[0].loaded = false;
         courseInfo[0].show = false;
         _this.setData({
-          courseInfo: courseInfo,
-          courseDetailList: courseDetailList,
+          courseInfo,
+          courseDetailList,
+          courseId,
         });
       }
     });
@@ -49,12 +51,10 @@ Page({
     data[name] = list;
     this.setData(data);
   },
-  navigateAction: function(e){
+  navigateOperation: function(e){
+    const { courseInfo } = this.data;
     wx.navigateTo({
-      url: e.currentTarget.id
+      url: e.currentTarget.id,
     });
-  },
-  signUp: function(){
-    console.log('下单');
   }
 });

@@ -4,8 +4,8 @@
     <view class="course-info border-bottom">
       <view class="course-info-cover"><image mode='widthFix' src='' /></view>
       <view class="course-info-message">
-        <view class="course-message-title"> 课程标题 </view>
-        <view class="course-message-price"> ￥00.00 </view>
+        <view class="course-message-title"> {{mainTitle}} </view>
+        <view class="course-message-price"> ￥{{expenses}} </view>
       </view>
     </view>
     <view class="coupon-content border-bottom">
@@ -14,7 +14,7 @@
     </view>
     <view class="pay-price-content">
       <text> 总计： ￥ </text>
-      <text> 00.00 </text>
+      <text> {{totalExpenses}} </text>
     </view>
   </view>
   <view class="pay-tips-content">
@@ -32,4 +32,4 @@
   </view>
 </scrill-view>
 
-<view class="confirm-payment-operation"> 确认支付 </view>
+<view class="confirm-payment-operation" bindtap='confirmPaymentOperation'> 确认支付 </view>
