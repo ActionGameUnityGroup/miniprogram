@@ -1,14 +1,14 @@
-<view class="tab-bar">
-  <view class="{{isDoor ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='door'>丰盛之门</view>
-  <view class="{{isRoad ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='road'>丰盛之道</view>
-  <view class="{{isSource ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='source'>丰盛之源</view>
-</view>
-<scroll-view scroll-y='{{true}}'>
+<scroll-view scroll-y='{{true}}' class='rich-content-scroll'>
+  <view class="tab-bar">
+    <view class="{{isDoor ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='door'>丰盛之门</view>
+    <view class="{{isRoad ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='road'>丰盛之道</view>
+    <view class="{{isSource ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='source'>丰盛之源</view>
+  </view>
   <block wx:if='{{isDoor}}'>
-    <view class='shemer-content'>
+    <view class='rich-content'>
       <block wx:for='{{courseList}}' wx:key='index'>
-        <view class="shemer-item" bindtap='navigateOperation' id='{{item.courseId}}'>
-          <view class="shemer-cover">
+        <view class="rich-item" bindtap='navigateOperation' id='{{item.courseId}}'>
+          <view class="rich-cover">
             <image
               wx:if='{{item.show}}'
               class='{{item.loaded ? "image-top" : "image-bottom"}}'
@@ -27,10 +27,10 @@
               data-name='courseList'
             />
           </view>
-          <view class="shemer-info">
-            <view class="shemer-title">{{item.mainTitle}}</view>
-            <view class="shemer-describe">{{item.subTitle}}</view>
-            <view class="shemer-label">
+          <view class="rich-info">
+            <view class="rich-title">{{item.mainTitle}}</view>
+            <view class="rich-describe">{{item.subTitle}}</view>
+            <view class="rich-label">
               导师：
               <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
                 <text class='label-item'> {{author}} </text>
@@ -42,9 +42,9 @@
     </view>
   </block>
   <block wx:if='{{isRoad}}'>
-    <view calss='shemer-content'></view>
+    <view calss='rich-content'></view>
   </block>
   <block wx:if='{{isSource}}'>
-    <view calss='shemer-content'></view>
+    <view calss='rich-content'></view>
   </block>
 </scroll-view>

@@ -9,7 +9,7 @@ Page({
   	courseList: [],
 	},
 	onLoad: function(){
-		app.request('https://www.changdaolife.cn/api/v0/course/getLastestList?page=shemer', {
+		app.request('https://www.changdaolife.cn/api/v0/course/getCourseList?type=rich', {
 			method: 'GET'
 		}, this.renderData);
 	},

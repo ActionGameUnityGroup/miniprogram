@@ -38,8 +38,6 @@
     </swiper>
   </view>
 
-  <!-- <button wx:if='{{!hasUserInfo}}' open-type="getUserInfo" >获取信息</button> -->
-
   <view class="module-content">
     <view id='/Registration/Registration?from=module' class="module-item" bindtap='navigateAction'>
       <image mode='widthFix' src='/assets/icon/tickets.png' style='width: 86rpx; height: 74rpx'></image>
@@ -60,12 +58,11 @@
   </view>
 
   <view class="show-content f5-background">
-    <!-- <view class="show-title"><image src='/assets/icon/title1.png' class='title1' mode='widthFix'></image></view> -->
     <view class="show-list-content">
       <view class="show-audio-item fade-in" id='/Rich/Rich' bindtap='navigateAction'>
         <image mode='widthFix' src='/assets/icon/series1.png' />
       </view>
-      <view class="show-audio-item fade-in" id='/CourseDetail/CourseDetail?courseType=2' bindtap='navigateAction'>
+      <view class="show-audio-item fade-in" id='/NineType/NineType?courseType=2' bindtap='navigateAction'>
         <image mode='widthFix' src='/assets/icon/series2.png' />
       </view>
       <view class="show-audio-item fade-in" id='/Shemer/Shemer' bindtap='navigateAction'>
@@ -136,7 +133,7 @@
       <text>常道讲师团</text>
     </view>
     <swiper class="tutor-group-list" display-multiple-items='{{5}}'>
-      <block wx:for='{{tutorList}}' wx:key='index'>
+      <block wx:for='{{lecturerList}}' wx:key='index'>
         <swiper-item>
           <view id='/TutorIntroduction/TutorIntroduction?tutorId={{item.tutorId}}' class="tutor-group-item" bindtap='navigateAction'>
             <view class="tutor-group-image fade-in">

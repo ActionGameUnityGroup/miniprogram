@@ -14,7 +14,7 @@ Page({
       });
     }
     wx.request({
-      url: 'https://www.changdaolife.cn/api/v0/course/getLastestList',
+      url: 'https://www.changdaolife.cn/api/v0/course/getUnexpireCourse',
       method: 'GET',
       success: function(res){
         let courseList = res.data.data.map(course => {

@@ -12,9 +12,9 @@ Page({
   },
   data: {
     bannerList: [],
-    // kurseList: [],
     lastestList: [],
     tutorList: [],
+    lecturerList: [],
     hasUserInfo: false,
   },
   onLoad: function () {

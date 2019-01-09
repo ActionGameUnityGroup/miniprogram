@@ -1,6 +1,8 @@
 {
   "pages":[
     "Index/Index",
+    "NineType/NineType",
+    "LastestCourse/LastestCourse",
     "HotList/HotList",
     "Syllabus/SyllabusMenu",
     "MyCoupon/MyCoupon",

@@ -29,7 +29,7 @@
                 <text>{{author}}</text>
               </block>
             </view>
-            <view class="registration-info-date">开课时间： {{item.courseInfo.date}}</view>
+            <view class="registration-info-date">开课时间： {{item.date}}</view>
           </view>
           <view class="registration-operation">报名</view>
         </view>
