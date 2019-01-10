@@ -10,6 +10,8 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res);
+        // this.request('https://www.changdaolife.cn/api/v0/user/login', {method: 'POST', data: JSON.stringify({code: res.code})});
       }
     })
     // 获取用户信息

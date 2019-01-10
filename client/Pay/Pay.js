@@ -23,5 +23,18 @@ Page({
   },
   confirmPaymentOperation: function(){
     console.log('确认支付');
+    wx.requestPayment({
+      timeStamp: '',
+      nonceStr: '',
+      package: '',
+      signType: 'MD5',
+      paySign: '',
+      success(res) {
+        console.log(res);
+      },
+      fail(res) {
+        console.log(res);
+      },
+    });
   },
 });

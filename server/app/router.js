@@ -6,6 +6,7 @@ module.exports = (app) => {
   const { Page, Api } = app.Controller;
 
   router.get('/', Page.index);
+  router.post('/api/v0/user/login', Api.v0.User.login);
   router.get('/api/v0/user/getUserInfo', Api.v0.User.getUserInfo);
   // router.get('/upload', Page.upload);
   router.get('/api/v0/banner/getBannerList', Api.v0.Banner.getBannerList);

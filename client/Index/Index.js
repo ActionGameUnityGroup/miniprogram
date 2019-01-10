@@ -82,35 +82,6 @@ Page({
       }
     });*/
 
-    wx.login({
-      success(res){
-        console.log(res);
-        wx.getUserInfo({
-          success(infoRes){
-            console.log(infoRes);
-            /*if(infoRes){
-              _this.setData({hasUserInfo: true})
-            }*/
-            /*wx.request({
-              url: 'https://www.changdaolife.cn/api/user/login',
-              method: 'GET',
-              data: {
-                code: res.code,
-                encryptedData: encodeURIComponent(e.encryptedData),
-                iv: encodeURIComponent(e.iv)
-              },
-              success: function(info){
-                wx.setStorage({
-                  key: 'openid', 
-                  data: info.data.requestData.openid
-                });
-              }
-            });*/
-          }
-        });
-      }
-    });
-
   },
   imageLoaded: function(e){
     let data = {};
