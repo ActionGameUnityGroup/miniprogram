@@ -1,18 +1,13 @@
 const path = require('path');
 // const request = require('request');
-const rootDirectory = path.resolve(__dirname, '../../');
+const rootDirectory = path.resolve(__dirname, '../../../');
 const config = require(`${rootDirectory}/config/miniprogram.config.js`);
-const userModel = require(`${rootDirectory}/model/v0/userModel`);
-const formatData = require(`${rootDirectory}/service/formatData`);
-const request = require(`${rootDirectory}/service/request`);
+const userModel = require(`${rootDirectory}/app/model/v0/userModel`);
+const formatData = require(`${rootDirectory}/app/service/formatData`);
+const request = require(`${rootDirectory}/app/service/request`);
 const WXBizDataCrypt = require(`${__dirname}/WXBizDataCrypt`);
 
 class UserService extends formatData{
-
-	constructor(){
-		this.appid = 'wxba59a2c0824fd1db';
-		this.
-	}
 
   async login(ctx){
     /*
@@ -21,6 +16,7 @@ class UserService extends formatData{
     let response;
     try {
       let params = ctx.request.body;
+      console.log(ctx.request.header);
       /*let res = await request({
         hostname: `api.weixin.qq.com`,
         path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
