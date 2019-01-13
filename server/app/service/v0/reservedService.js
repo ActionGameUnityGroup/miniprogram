@@ -18,14 +18,32 @@ class reservedService extends formatData{
 	}
 
 	async setReservedInfo(ctx){
-		const { openId, name, mobile, profession, city, email, gender, } = ctx.request.body || '';
 		let response;
 		try{
-			let data = await reservedModel.find({openId: openId}, '-_id');
-			response = this.formatDataSuccess(data);
+			const { openId, name, mobile, profession, city, email, gender, courseId, } = ctx.request.body || '';
+			if(!openId || !name || !mobile || !profession || !city || !gender) {
+				console.log('something wrong...');
+				throw new Error('报名失败！请正确填写信息！');
+			}
+			let newReservedInfo = new reservedModel({
+				openId,
+				name,
+				mobile,
+				profession,
+				city,
+				email,
+				gender,
+				courseId,
+			});
+			let res = await newReservedInfo.save();
+			if(res){
+				response = this.formatDataSuccess('报名成功！');
+			} else {
+				console.log('something wrong...');
+				throw new Error('报名失败！');
+			}
 		} catch(e){
 			response = this.formatDataFail(e.message);
-			ctx.throw(500);
 		}
 		return response;
 	}
