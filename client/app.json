@@ -1,6 +1,7 @@
 {
   "pages":[
     "Index/Index",
+    "EntryBlank/EntryBlank",
     "NineType/NineType",
     "LastestCourse/LastestCourse",
     "Pay/Pay",

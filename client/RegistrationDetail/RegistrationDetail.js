@@ -52,9 +52,30 @@ Page({
     this.setData(data);
   },
   navigateOperation: function(e){
-    const { courseInfo } = this.data;
-    wx.navigateTo({
-      url: e.currentTarget.id,
-    });
+    const { courseId, courseInfo } = this.data;
+    const openId = wx.getStorageSync('openid');
+    const { isSpread, expenses, unifieldPrice, mainTitle, } = courseInfo[0];
+    let money = '0';
+    if(isSpread){
+      money = expenses;
+    } else {
+      money = unifieldPrice;
+    }
+    let courseName = mainTitle;
+    app.request(
+      'https://www.changdaolife.cn/api/v0/order/generateOrder',
+      {
+        method: 'POST',
+        data: JSON.stringify({ courseId, openId, courseName, money, }),
+      },
+      function(res){
+        console.log(res);
+        if(res.status.includes('ok')){
+          wx.navigateTo({
+            url: e.currentTarget.id,
+          });
+        }
+      }
+    );
   }
 });

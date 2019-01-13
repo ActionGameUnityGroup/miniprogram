@@ -68,19 +68,29 @@ Page({
       }
     });
 
-    /*wx.getSetting({
+    // 登录
+    wx.login({
       success(res){
-        console.log(res)
-        if(!res.authSetting['scope.userInfo']){
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success: function(res){
-              console.log(res);
-            }
-          });
-        }
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log(res);
+        app.request(
+          'https://www.changdaolife.cn/api/v0/user/login',
+          {
+            method: 'POST',
+            data: JSON.stringify({code: res.code})
+          },
+          function(res){
+            console.log(res.data);
+            wx.setStorageSync('openid', res.data.openid);
+          },
+        );
+        wx.getUserInfo({
+          success(userInfo){
+            console.log(userInfo);
+          }
+        });
       }
-    });*/
+    });
 
   },
   imageLoaded: function(e){

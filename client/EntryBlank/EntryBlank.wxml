@@ -1,0 +1,121 @@
+<scrill-view scroll-y='{{true}}' class="entry-blank-content">
+  <view class="entry-blank-title">
+    <image mode='widthFix' src='/assets/icon/entry-blank-title.png' />
+  </view>
+
+  <view class="entry-blank-tips red-color">*请填写下面的表单报名*</view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text class='red-color'>*</text><text>Name 姓名：</text></view>
+    <view class="entry-info-content">
+      <view class='entry-info-input entry-item-content'>
+        <input
+          type="text"
+          value='{{name}}'
+          placeholder='点击此处输入您的信息'
+          placeholder-class='entry-info-input-placeholder'
+          bindinput='inputOperation'
+          id='name'
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text class='red-color'>*</text><text>Gender 性别：</text></view>
+    <view class="entry-info-content">
+      <view
+        class='entry-info-radio entry-item-content margin-bottom-10'
+        bindtap='selectGenderOperation'
+        id='maleChecked'
+      >
+        <text> 男 </text>
+        <block wx:if='{{maleChecked}}'>
+          <image mode='widthFix' src='/assets/icon/radio-icon-checked.png' />
+        </block>
+        <block wx:else>
+          <image mode='widthFix' src='/assets/icon/radio-icon.png' />
+        </block>
+      </view>
+      <view
+        class='entry-info-radio entry-item-content'
+        bindtap='selectGenderOperation'
+        id='femaleChecked'
+      >
+        <text> 女 </text>
+        <block wx:if='{{femaleChecked}}'>
+          <image mode='widthFix' src='/assets/icon/radio-icon-checked.png' />
+        </block>
+        <block wx:else>
+          <image mode='widthFix' src='/assets/icon/radio-icon.png' />
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text class='red-color'>*</text><text>Mobile 手机：</text></view>
+    <view class="entry-info-content">
+      <view class='entry-info-input entry-item-content'>
+        <input
+          type="text"
+          value='{{mobile}}'
+          placeholder='点击此处输入您的信息'
+          placeholder-class='entry-info-input-placeholder'
+          bindinput='inputOperation'
+          id='mobile'
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text class='red-color'>*</text><text>Pfofession 职业：</text></view>
+    <view class="entry-info-content">
+      <view class='entry-info-input entry-item-content'>
+        <input
+          type="text"
+          value='{{profession}}'
+          placeholder='点击此处输入您的信息'
+          placeholder-class='entry-info-input-placeholder'
+          bindinput='inputOperation'
+          id='profession'
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text class='red-color'>*</text><text>City 城市：</text></view>
+    <view class="entry-info-content">
+      <view class='entry-info-input entry-item-content'>
+        <input
+          type="text"
+          value='{{city}}'
+          placeholder='点击此处输入您的信息'
+          placeholder-class='entry-info-input-placeholder'
+          bindinput='inputOperation'
+          id='city'
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="entry-info-item">
+    <view class="entry-info-title"><text>Email 邮件：</text></view>
+    <view class="entry-info-content">
+      <view class='entry-info-input entry-item-content'>
+        <input
+          type="text"
+          value='{{email}}'
+          placeholder='点击此处输入您的信息'
+          placeholder-class='entry-info-input-placeholder'
+          bindinput='inputOperation'
+          id='email'
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-operation" bindtap='submitOperation'> 确认提交 </view>
+</scrill-view>
