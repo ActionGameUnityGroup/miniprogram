@@ -2,7 +2,7 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const orderModel = require(`${rootDirectory}/model/v0/orderModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
-const wxpay = require(`${rootDirectory}/app/service/utils`);
+const wxpay = require(`${rootDirectory}/service/utils`);
 
 class orderService extends formatData{
 
