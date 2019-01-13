@@ -23,6 +23,9 @@ Page({
   },
   confirmPaymentOperation: function(){
     console.log('确认支付');
+    /*app.request(
+      'https://www.changdaolife.cn/'
+    )*/
     wx.requestPayment({
       timeStamp: '',
       nonceStr: '',
