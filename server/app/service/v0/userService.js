@@ -16,7 +16,8 @@ class UserService extends formatData{
     let response;
     try {
       let params = ctx.request.body;
-      console.log(ctx.request.header);
+      const clientIP = ctx.request.header['x-forwarded-for'];
+      console.log(`client's ip: ${clientIP}`);
       /*let res = await request({
         hostname: `api.weixin.qq.com`,
         path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
