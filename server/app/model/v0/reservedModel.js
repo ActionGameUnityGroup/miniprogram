@@ -3,7 +3,7 @@ const dbDirectory = path.resolve(__dirname, '../../../db');
 const { db, mongoose } = require(`${dbDirectory}/db-config`);
 
 const reservedSchema = new mongoose.Schema({
-	openid: String,
+	openId: String,
 	name: String,
 	mobile: String,
 	profession: String,
