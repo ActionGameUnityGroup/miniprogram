@@ -20,8 +20,8 @@ class reservedService extends formatData{
 	async setReservedInfo(ctx){
 		let response;
 		try{
-			console.log(ctx.request);
-			const { openId, name, mobile, profession, city, email, gender, courseId, } = ctx.request.body || '';
+			console.log(ctx.request.body);
+			const { openId, name, mobile, profession, city, email, gender, courseId, } = ctx.request.body;
 			console.log(openId, name, mobile, profession, city, email, gender, courseId);
 			if(!openId || !name || !mobile || !profession || !city || !gender) {
 				console.log('something wrong...');
