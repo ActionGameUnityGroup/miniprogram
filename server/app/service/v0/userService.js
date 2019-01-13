@@ -38,10 +38,10 @@ class UserService extends formatData{
         let user = await userModel.find({ openid, }, '-_id');
         if (user.length) {
           // 数据库有
-          response = this.formatDataSuccess(res);
+          response = this.formatDataSuccess({ openid });
         } else {
           this.register(openid);
-          response = this.formatDataSuccess(res);
+          response = this.formatDataSuccess({ openid });
         }
       }
     } catch(e) {
