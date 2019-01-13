@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema({
   orderId: String,
   courseId: String,
   courseName: String,
-  money: Number,
+  money: String,
   orderTime: Number,
   payTime: Number,
   confirmTime: Number,
