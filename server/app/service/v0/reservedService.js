@@ -38,6 +38,7 @@ class reservedService extends formatData{
 				courseId,
 			});
 			let res = await newReservedInfo.save();
+			console.log(res);
 			if(res){
 				response = this.formatDataSuccess('报名成功！');
 			} else {
