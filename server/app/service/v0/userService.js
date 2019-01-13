@@ -35,15 +35,13 @@ class UserService extends formatData{
       console.log(res, 'response');
       if(!res.errcode){
         const { openid, session_key } = res;
-        console.log(openid, 'openid');
-        console.log(session_key, 'session_key');
         let user = await userModel.find({ openid, }, '-_id');
         if (user.length) {
           // 数据库有
-          response = this.formatDataSuccess(openid);
+          response = this.formatDataSuccess(res);
         } else {
           this.register(openid);
-          response = this.formatDataSuccess(openid);
+          response = this.formatDataSuccess(res);
         }
       }
     } catch(e) {
