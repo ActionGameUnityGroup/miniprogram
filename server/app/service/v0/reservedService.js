@@ -21,6 +21,7 @@ class reservedService extends formatData{
 		let response;
 		try{
 			const { openId, name, mobile, profession, city, email, gender, courseId, } = ctx.request.body || '';
+			console.log(openId, name, mobile, profession, city, email, gender, courseId);
 			if(!openId || !name || !mobile || !profession || !city || !gender) {
 				console.log('something wrong...');
 				throw new Error('报名失败！请正确填写信息！');
