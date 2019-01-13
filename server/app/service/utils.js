@@ -1,22 +1,37 @@
 const xmlreader = require("xmlreader");
 const fs = require("fs");
 
+const raw = (args) => {
+  let keys = Object.keys(args);
+  keys = keys.sort();
+  let newArgs = {};
+  keys.forEach(function (key) {
+    newArgs[key] = args[key];
+  });
+  let string = '';
+  for (let k in newArgs) {
+    string += '&' + k + '=' + newArgs[k];
+  }
+  string = string.substr(1);
+  return string;
+}
+
 class WXPay {
 
   //把金额转为分
   getmoney(money) {
     return parseFloat(money) * 100;
-  },
+  }
 
   // 随机字符串产生函数
   createNonceStr() {
     return Math.random().toString(36).substr(2, 15);
-  },
+  }
 
   // 时间戳产生函数  
   createTimeStamp() {
     return parseInt(new Date().getTime() / 1000) + '';
-  },
+  }
 
   //签名加密算法
   paysignjsapi(appid, body, mch_id, nonce_str, notify_url, out_trade_no, spbill_create_ip, total_fee, trade_type, mchkey) {
@@ -38,7 +53,7 @@ class WXPay {
     console.log('string=', string);
     const crypto = require('crypto');
     return crypto.createHash('md5').update(string, 'utf8').digest('hex').toUpperCase();
-  },
+  }
 
   //签名加密算法,第二次的签名
   paysignjsapifinal(appid,mch_id,prepayid,noncestr,timestamp,mchkey) {
@@ -57,7 +72,7 @@ class WXPay {
     console.log('stringstringstring=', string);
     let crypto = require('crypto');
     return crypto.createHash('md5').update(string, 'utf8').digest('hex').toUpperCase();
-  },
+  }
 
   getXMLNodeValue(xml) {
     xmlreader.read(xml, function (errors, response) {
@@ -72,21 +87,6 @@ class WXPay {
     });
   }
 
-}
-
-function raw(args) {
-  let keys = Object.keys(args);
-  keys = keys.sort();
-  let newArgs = {};
-  keys.forEach(function (key) {
-    newArgs[key] = args[key];
-  });
-  let string = '';
-  for (let k in newArgs) {
-    string += '&' + k + '=' + newArgs[k];
-  }
-  string = string.substr(1);
-  return string;
 }
 
 module.exports = new WXPay();
