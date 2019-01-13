@@ -39,12 +39,12 @@ class reservedService extends formatData{
 			});
 			let res = await newReservedInfo.save();
 			console.log(res);
-			if(res){
-				response = this.formatDataSuccess('报名成功！');
+			response = this.formatDataSuccess('报名成功！');
+			/*if(res){
 			} else {
 				console.log('something wrong...');
 				throw new Error('报名失败！');
-			}
+			}*/
 		} catch(e){
 			response = this.formatDataFail(e.message);
 		}
