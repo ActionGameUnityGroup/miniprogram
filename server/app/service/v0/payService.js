@@ -35,11 +35,11 @@ class PayService extends formatData{
       trade_type  交易类型*/
     let response;
     //首先拿到前端传过来的参数
-    let { orderId, money, openId, } = ctx.request.body;
-    console.log(orderId, money, openId);
+    let { orderId, money, openid, } = ctx.request.body;
+    console.log(orderId, money, openid);
     try{
-      const { appid, appsecret, mch_id, mch_key, } = config;
-      console.log(appid, appsecret, mch_id, mch_key);
+      const { appid, mch_id, secret_key, } = config;
+      console.log(appid, mch_id, secret_key);
       /*let nonce_str = wxpay.createNonceStr();
       let timestamp = wxpay.createTimeStamp();
       let body = '测试微信支付';
@@ -62,7 +62,7 @@ class PayService extends formatData{
         spbill_create_ip: ctx.request.ip.replace(/::ffff:/g, ''),
         notify_url: 'https://www.changdaolife.cn/api/v0/pay/receivePaymentInfo',
         trade_type: 'JSAPI', //小程序支付必须
-        openid: openId,
+        openid: openid,
       };
 
 /*
@@ -79,11 +79,23 @@ trade_type=JSAPI
 key=5fb3f9c59ed54b36206dd07288620d7d
  */
 
+/*
+  appid
+  body
+  mch_id
+  nonce_str
+  notify_url
+  out_trade_no
+  spbill_create_ip
+  total_fee
+  trade_type
+*/
 
       /*const objStr = await this.objTostring(order);
       const preSign = `${objStr}key=${appsecret}`;
       console.log(preSign);*/
-      let preSign = `appid=${order.appid}&attach=${order.attach}&body=${order.body}&mch_id=${order.mch_id}&nonce_str=${order.nonce_str}&notify_url=${order.notify_url}&openid=${order.openid}&out_trade_no=${order.out_trade_no}&spbill_create_ip=${order.spbill_create_ip}&total_fee=${order.total_fee}&trade_type=${order.trade_type}`;
+      let preSign = `appid=${order.appid}&attach=${order.attach}&body=${order.body}&mch_id=${order.mch_id}&nonce_str=${order.nonce_str}&notify_url=${order.notify_url}&openid=${order.openid}&out_trade_no=${order.out_trade_no}&spbill_create_ip=${order.spbill_create_ip}&total_fee=${order.total_fee}&trade_type=${order.trade_type}&key=${secret_key}`;
+      console.log(preSign, '预报名');
       order.sign = await crypto.createHash('md5').update(preSign, 'utf8').digest('hex').toUpperCase();
       console.log('签名： ', order.sign);
 
