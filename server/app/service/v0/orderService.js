@@ -40,7 +40,7 @@ class orderService extends formatData{
       });
       let res = await newOrder.save();
       console.log(res, '保存');
-      response = this.formatDataSuccess({newOrder.orderId, orderId.money});
+      response = this.formatDataSuccess({orderId, money});
     } catch(e){
       response = this.formatDataFail(e.message);
     }
