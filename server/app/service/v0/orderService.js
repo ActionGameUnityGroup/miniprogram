@@ -27,7 +27,8 @@ class orderService extends formatData{
       console.log(courseList.length);
       console.log(courseList);
       const time = new Date().getTime();
-      const orderId = uuid.v1();
+      const orderId = `changdao${time}`;
+      // const orderId = uuid.v1();
       const newOrder = new orderModel({
         orderId: orderId,
         courseId: courseId,
