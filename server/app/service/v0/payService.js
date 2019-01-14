@@ -1,12 +1,13 @@
 const path = require('path');
 const request = require('request');
-const xmlreader = require('xmlreader');
+const parseString  = require('xml2js').parseString;
 const crypto = require('crypto');
 const uuid = require('uuid');
 const rootDirectory = path.resolve(__dirname, '../../../');
 const config = require(`${rootDirectory}/config/miniprogram.config.js`);
 const orderModel = require(`${rootDirectory}/app/model/v0/orderModel`);
 const formatData = require(`${rootDirectory}/app/service/formatData`);
+const xmlParser = require(`${rootDirectory}/app/service/xmlParser`);
 
 class PayService extends formatData{
 
@@ -35,7 +36,6 @@ class PayService extends formatData{
     //首先拿到前端传过来的参数
     let { orderId, money, openid, } = ctx.request.body;
     console.log(orderId, money, openid);
-    const { formatDataSuccess, formatDataFail } = this;
     try{
       const { appid, mch_id, secret_key, } = config;
       console.log(appid, mch_id, secret_key);
@@ -115,35 +115,60 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       console.log('formData===', formData);
 
-      await request({ url: url, method: 'POST', body: formData }, async (err, res, body) => {
-        if(!err && res.statusCode == 200){
-          console.log(body);
-          xmlreader.read(body.toString("utf-8"), function (error, xmlResponse) {
-            if (null !== error) {
-              console.log(error)
-              return;
-            }
-            console.log(xmlResponse.xml.return_code.text(), 'return_code');
-            console.log(xmlResponse.xml.return_msg.text(), 'return_code');
-            let timeStamp = `${new Date().getTime() / 1000}`;
-            let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id.text()}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`
-            let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
-            response = formatDataSuccess({
-              timeStamp: timeStamp,
-              nonceStr: order.nonce_str,
-              package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
-              signType: 'MD5',
-              paySign: paySign,
-            });
-            /*console.log('长度===', xmlResponse.xml.prepay_id.text().length);
-            var prepay_id = xmlResponse.xml.prepay_id.text();
-            console.log('解析后的prepay_id==', prepay_id);*/
-            //将预支付订单和其他信息一起签名后返回给前端
-            // let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
-            // res.json({'appId':appid,'partnerId':mchid,'prepayId':prepay_id,'nonceStr':nonce_str,'timeStamp':timestamp,'package':'Sign=WXPay','sign':finalsign});
-          });
-        }
+      let res = await request({ url: url, method: 'POST', body: formData });
+      console.log(res.body, 'response body');
+
+      let xmlResponse = await xmlParser.xmlToJson(res.body);
+      console.log(xmlResponse.xml, 'xmlResponse');
+      let timeStamp = `${new Date().getTime() / 1000}`;
+      let paySignString = `appId=${appid}&nonceStr=${xmlResponse.xml.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+      let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+      response = this.formatDataSuccess({
+        timeStamp: timeStamp,
+        nonceStr: order.nonce_str,
+        package: `prepay_id=${xmlResponse.xml.prepay_id}`,
+        signType: 'MD5',
+        paySign: paySign,
       });
+      /*let xmlResponse = await parseString(res.body, {explicitArray : false}, function (err, result) {
+        console.dir(result);
+        let timeStamp = `${new Date().getTime() / 1000}`;
+        let paySignString = `appId=${appid}&nonceStr=${result.nonce_str}&package=prepay_id=${result.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+        let paySign = crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+        response = formatDataSuccess({
+          timeStamp: timeStamp,
+          nonceStr: order.nonce_str,
+          package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
+          signType: 'MD5',
+          paySign: paySign,
+        });
+      });*/
+      // console.log(xmlResponse);
+
+      // xmlreader.read(res.body.toString("utf-8"), function (error, xmlResponse) {
+      //   if (null !== error) {
+      //     console.log(error)
+      //     return;
+      //   }
+      //   console.log(xmlResponse.xml.return_code.text(), 'return_code');
+      //   console.log(xmlResponse.xml.return_msg.text(), 'return_code');
+      //   let timeStamp = `${new Date().getTime() / 1000}`;
+      //   let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id.text()}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`
+      //   let paySign = crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+      //   response = formatDataSuccess({
+      //     timeStamp: timeStamp,
+      //     nonceStr: order.nonce_str,
+      //     package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
+      //     signType: 'MD5',
+      //     paySign: paySign,
+      //   });
+      //   /*console.log('长度===', xmlResponse.xml.prepay_id.text().length);
+      //   var prepay_id = xmlResponse.xml.prepay_id.text();
+      //   console.log('解析后的prepay_id==', prepay_id);*/
+      //   //将预支付订单和其他信息一起签名后返回给前端
+      //   // let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
+      //   // res.json({'appId':appid,'partnerId':mchid,'prepayId':prepay_id,'nonceStr':nonce_str,'timeStamp':timestamp,'package':'Sign=WXPay','sign':finalsign});
+      // });
 
       // 检查回调
       // let xmlResponse = await xmlreader.read(res.body.toString("utf-8"));
@@ -167,11 +192,14 @@ key=5fb3f9c59ed54b36206dd07288620d7d
       //将预支付订单和其他信息一起签名后返回给前端
       let finalsign = wxpay.paysignjsapifinal(appid, mch_id, prepay_id, nonce_str, timestamp, mch_key);*/
     } catch(e){
+      console.log(e.message, 'something wrong...');
       response = this.formatDataFail(e.message);
       ctx.throw(500);
     }
     return response;
   }
+
+  async setSignature(appid, nonce_str, prepay_id, signType, timeStamp, secret_key){}
 
   async receivePaymentInfo(ctx){
     console.log(ctx.request.body);
