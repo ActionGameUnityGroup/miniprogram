@@ -58,7 +58,7 @@ class PayService extends formatData{
         body: '测试微信支付',
         out_trade_no: orderId,
         total_fee: Number(money) * 100,
-        spbill_create_ip: ctx.request.ip.replace(/::ffff:/g, ''),
+        spbill_create_ip: ctx.request.header['x-forwarded-for'] || ctx.request.ip.replace(/::ffff:/g, ''),
         notify_url: 'https://www.changdaolife.cn/api/v0/pay/receivePaymentInfo',
         trade_type: 'JSAPI', //小程序支付必须
         openid: openid,
@@ -120,7 +120,7 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       let xmlResponse = await xmlParser.xmlToJson(res.body);
       console.log(xmlResponse.xml, 'xmlResponse');
-      let timeStamp = `${new Date().getTime() / 1000}`;
+      let timeStamp = parseInt(new Date().getTime() / 1000);
       let paySignString = `appId=${appid}&nonceStr=${xmlResponse.xml.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
       let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
       response = this.formatDataSuccess({
