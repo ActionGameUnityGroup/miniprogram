@@ -1,6 +1,7 @@
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const orderModel = require(`${rootDirectory}/model/v0/orderModel`);
+const courseModel = require(`${rootDirectory}/model/v0/courseModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
 const uuid = require('uuid');
 
@@ -22,6 +23,9 @@ class orderService extends formatData{
     let response;
     try{
       const { openId, courseId, courseName, money, } = ctx.request.body;
+      const courseList = await courseModel.find({courseId: courseId}, '-_id');
+      console.log(courseList.length);
+      console.log(courseList);
       const time = new Date().getTime();
       const orderId = uuid.v1();
       const newOrder = new orderModel({
@@ -36,7 +40,7 @@ class orderService extends formatData{
       });
       let res = await newOrder.save();
       console.log(res, '保存');
-      response = this.formatDataSuccess('下单成功！');
+      response = this.formatDataSuccess({newOrder.orderId, orderId.money});
     } catch(e){
       response = this.formatDataFail(e.message);
     }
