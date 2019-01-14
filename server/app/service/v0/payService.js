@@ -7,8 +7,6 @@ const rootDirectory = path.resolve(__dirname, '../../../');
 const config = require(`${rootDirectory}/config/miniprogram.config.js`);
 const orderModel = require(`${rootDirectory}/app/model/v0/orderModel`);
 const formatData = require(`${rootDirectory}/app/service/formatData`);
-// const request = require(`${rootDirectory}/app/service/request`);
-// const wxpay = require(`${rootDirectory}/app/service/utils`);
 
 class PayService extends formatData{
 
@@ -37,6 +35,7 @@ class PayService extends formatData{
     //首先拿到前端传过来的参数
     let { orderId, money, openid, } = ctx.request.body;
     console.log(orderId, money, openid);
+    const { formatDataSuccess, formatDataFail } = this;
     try{
       const { appid, mch_id, secret_key, } = config;
       console.log(appid, mch_id, secret_key);
@@ -79,27 +78,21 @@ trade_type=JSAPI
 key=5fb3f9c59ed54b36206dd07288620d7d
  */
 
-/*
-  appid
-  body
-  mch_id
-  nonce_str
-  notify_url
-  out_trade_no
-  spbill_create_ip
-  total_fee
-  trade_type
-*/
+      /*appid
+        body
+        mch_id
+        nonce_str
+        notify_url
+        out_trade_no
+        spbill_create_ip
+        total_fee
+        trade_type*/
 
-      /*const objStr = await this.objTostring(order);
-      const preSign = `${objStr}key=${appsecret}`;
-      console.log(preSign);*/
       let preSign = `appid=${order.appid}&attach=${order.attach}&body=${order.body}&mch_id=${order.mch_id}&nonce_str=${order.nonce_str}&notify_url=${order.notify_url}&openid=${order.openid}&out_trade_no=${order.out_trade_no}&spbill_create_ip=${order.spbill_create_ip}&total_fee=${order.total_fee}&trade_type=${order.trade_type}&key=${secret_key}`;
-      console.log(preSign, '预报名');
       order.sign = await crypto.createHash('md5').update(preSign, 'utf8').digest('hex').toUpperCase();
       console.log('签名： ', order.sign);
 
-      // let sign = wxpay.paysignjsapi(appid, appsecret, mch_id, nonce_str, mch_key).trim();
+      let url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
 
       //组装xml数据
       // appid
@@ -122,27 +115,6 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       console.log('formData===', formData);
 
-      /*const res = await request.postAsync({
-        url: url,
-        body: formData
-      });*/
-
-      /*let res = await request({
-        url: url,
-        method: 'POST',
-        body: formData,
-      });*/
-
-      // console.log(res, 'response');
-      /*let res = await request({
-        hostname: 'api.mch.weixin.qq.com',
-        port: 443,
-        path: '/pay/unifiedorder',
-        method: 'POST',
-        body: formData,
-      });*/
-
-      let url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
       await request({ url: url, method: 'POST', body: formData }, function(err, res, body){
         if(!err && res.statusCode == 200){
           console.log(body);
@@ -153,6 +125,16 @@ key=5fb3f9c59ed54b36206dd07288620d7d
             }
             console.log(xmlResponse.xml.return_code.text(), 'return_code');
             console.log(xmlResponse.xml.return_msg.text(), 'return_code');
+            let timeStamp = `${new Date().getTime() / 1000}`;
+            let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id.text()}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`
+            let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+            response = formatDataSuccess({
+              timeStamp: timeStamp,
+              nonceStr: order.nonce_str,
+              package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
+              signType: 'MD5',
+              paySign: paySign,
+            });
             /*console.log('长度===', xmlResponse.xml.prepay_id.text().length);
             var prepay_id = xmlResponse.xml.prepay_id.text();
             console.log('解析后的prepay_id==', prepay_id);*/

@@ -2,7 +2,7 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const orderModel = require(`${rootDirectory}/model/v0/orderModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
-const wxpay = require(`${rootDirectory}/service/utils`);
+const uuid = require('uuid');
 
 class orderService extends formatData{
 
@@ -22,8 +22,7 @@ class orderService extends formatData{
     let response;
     try{
       const { openId, courseId, courseName, money, } = ctx.request.body;
-      const time = new Date().getTime();
-      const orderId = `${time}${wxpay.createNonceStr()}`;
+      const orderId = uuid.v1();
       const newOrder = new orderModel({
         orderId: orderId,
         courseId: courseId,
