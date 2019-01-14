@@ -115,7 +115,7 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       console.log('formData===', formData);
 
-      await request({ url: url, method: 'POST', body: formData }, function(err, res, body){
+      await request({ url: url, method: 'POST', body: formData }, async function(err, res, body){
         if(!err && res.statusCode == 200){
           console.log(body);
           xmlreader.read(body.toString("utf-8"), function (error, xmlResponse) {
@@ -127,7 +127,7 @@ key=5fb3f9c59ed54b36206dd07288620d7d
             console.log(xmlResponse.xml.return_msg.text(), 'return_code');
             let timeStamp = `${new Date().getTime() / 1000}`;
             let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id.text()}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`
-            let paySign = crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+            let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
             response = formatDataSuccess({
               timeStamp: timeStamp,
               nonceStr: order.nonce_str,
