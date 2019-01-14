@@ -115,7 +115,7 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       console.log('formData===', formData);
 
-      await request({ url: url, method: 'POST', body: formData }, async function(err, res, body){
+      await request({ url: url, method: 'POST', body: formData }, async (err, res, body) => {
         if(!err && res.statusCode == 200){
           console.log(body);
           xmlreader.read(body.toString("utf-8"), function (error, xmlResponse) {
