@@ -69,7 +69,9 @@ Page({
         data: JSON.stringify({ courseId, openId, courseName, money, }),
       },
       function(res){
-        console.log(res);
+        console.log(res.data);
+        wx.setStorageSync('orderId', res.data.orderId);
+        wx.setStorageSync('money', res.data.money);
         if(res.status.includes('ok')){
           wx.navigateTo({
             url: e.currentTarget.id,

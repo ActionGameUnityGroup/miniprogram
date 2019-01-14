@@ -39,6 +39,10 @@ class PayService extends formatData{
     try{
       const { appid, mch_id, secret_key, } = config;
       console.log(appid, mch_id, secret_key);
+      let orderList = await orderModel.find({orderId: orderId}, '-_id');
+      console.log(orderList, '订单列表');
+      console.log(orderList[0], '订单信息');
+      console.log(orderList[0].attach, '订单名称');
       /*let nonce_str = wxpay.createNonceStr();
       let timestamp = wxpay.createTimeStamp();
       let body = '测试微信支付';
@@ -58,7 +62,7 @@ class PayService extends formatData{
         body: '测试微信支付',
         out_trade_no: orderId,
         total_fee: Number(money) * 100,
-        spbill_create_ip: ctx.request.header['x-forwarded-for'] || ctx.request.ip.replace(/::ffff:/g, ''),
+        spbill_create_ip: ctx.request.ip.replace(/::ffff:/g, ''),
         notify_url: 'https://www.changdaolife.cn/api/v0/pay/receivePaymentInfo',
         trade_type: 'JSAPI', //小程序支付必须
         openid: openid,
