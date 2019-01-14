@@ -22,6 +22,7 @@ class orderService extends formatData{
     let response;
     try{
       const { openId, courseId, courseName, money, } = ctx.request.body;
+      const time = new Date().getTime();
       const orderId = uuid.v1();
       const newOrder = new orderModel({
         orderId: orderId,
