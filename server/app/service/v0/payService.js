@@ -89,6 +89,7 @@ key=5fb3f9c59ed54b36206dd07288620d7d
         trade_type*/
 
       let preSign = `appid=${order.appid}&attach=${order.attach}&body=${order.body}&mch_id=${order.mch_id}&nonce_str=${order.nonce_str}&notify_url=${order.notify_url}&openid=${order.openid}&out_trade_no=${order.out_trade_no}&spbill_create_ip=${order.spbill_create_ip}&total_fee=${order.total_fee}&trade_type=${order.trade_type}&key=${secret_key}`;
+      console.log(secret_key, '密钥');
       order.sign = await crypto.createHash('md5').update(preSign, 'utf8').digest('hex').toUpperCase();
       console.log('签名： ', order.sign);
 
@@ -194,7 +195,6 @@ key=5fb3f9c59ed54b36206dd07288620d7d
     } catch(e){
       console.log(e.message, 'something wrong...');
       response = this.formatDataFail(e.message);
-      ctx.throw(500);
     }
     return response;
   }
@@ -204,6 +204,14 @@ key=5fb3f9c59ed54b36206dd07288620d7d
   async receivePaymentInfo(ctx){
     console.log(ctx.request.body);
     console.log(ctx.request.query);
+    console.log('收到支付回调信息');
+    let response;
+    try{
+      response = this.formatDataSuccess('信息已记录！');
+    }catch(e){
+      response = this.formatDataFail('信息无法记录！');
+    }
+    return response;
   }
 
 }
