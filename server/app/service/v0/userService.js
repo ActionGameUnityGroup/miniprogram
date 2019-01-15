@@ -34,6 +34,7 @@ class UserService extends formatData{
       if(!res.errcode){
         const { openid, session_key } = res;
         let user = await userModel.find({ openid, }, '-_id');
+        console.log(user, '用户');
         if (user.length) {
           // 数据库有
           response = this.formatDataSuccess({ openid });
@@ -50,9 +51,11 @@ class UserService extends formatData{
     return response;
   }
 
-  async register(openid){
-  	const pc = new WXBizDataCrypt(config.appid, res.session_key);
+  async register(openid, session_key){
+  	const pc = new WXBizDataCrypt(config.appid, session_key);
+    console.log(pc, 'pc');
 	  const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
+    console.log(data, '解析完毕');
 	  const save = {
 	    unionid: data.unionid || '',
 	    // userid: createUserId(new Date().getTime()),
