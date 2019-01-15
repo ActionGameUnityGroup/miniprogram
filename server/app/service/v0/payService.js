@@ -39,11 +39,23 @@ class PayService extends formatData{
     console.log(orderId, money, openid);
     try{
       const { appid, mch_id, secret_key, } = config;
-      console.log(appid, mch_id, secret_key);
+      console.log(appid, '小程序ID');
+      console.log(mch_id, '订单ID');
+      console.log(secret_key, '商户密钥');
       let orderList = await orderModel.find({orderId: orderId}, '-_id');
       console.log(orderList, '订单列表');
       console.log(orderList[0], '订单信息');
       console.log(orderList[0].attach, '订单名称');
+      /*let nonce_str = wxpay.createNonceStr();
+      let timestamp = wxpay.createTimeStamp();
+      let body = '测试微信支付';
+      let out_trade_no = orderId;
+      let total_fee = wxpay.getmoney(money);
+      let spbill_create_ip = ctx.request.header['x-forwarded-for'] || '';
+      console.log(spbill_create_ip, '终端IP');
+      let notify_url = 'https://www.changdaolife.cn/api/v0/pay/receivePaymentInfo';
+      let trade_type = 'JSAPI';*/
+      // console.log(`APP传过来的参数是: ${orderId}-----${money}-----${appid}-----${appsecret}-----${mch_id}-----${mch_key}`);
       let order = {
         appid: appid,
         mch_id: mch_id,
@@ -58,6 +70,20 @@ class PayService extends formatData{
         trade_type: 'JSAPI', //小程序支付必须
         openid: openid,
       };
+
+/*
+appid=wxba59a2c0824fd1db
+body=测试微信支付
+mch_id=1522061141
+nonce_str=5d9b3f15a038481b9a985a711f78e0ab
+notify_url=https://www.changdaolife.cn/api/v0/pay/receivePaymentInfo
+openid=owLC84lbLCkG0nhZNu6pq7ZYakws
+out_trade_no=154736535580628jcnf7p4hh
+spbill_create_ip=127.0.0.1
+total_fee=1
+trade_type=JSAPI
+key=5fb3f9c59ed54b36206dd07288620d7d
+ */
 
       /*appid
         body
@@ -112,6 +138,67 @@ class PayService extends formatData{
         signType: 'MD5',
         paySign: paySign,
       });
+      /*let xmlResponse = await parseString(res.body, {explicitArray : false}, function (err, result) {
+        console.dir(result);
+        let timeStamp = `${new Date().getTime() / 1000}`;
+        let paySignString = `appId=${appid}&nonceStr=${result.nonce_str}&package=prepay_id=${result.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+        let paySign = crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+        response = formatDataSuccess({
+          timeStamp: timeStamp,
+          nonceStr: order.nonce_str,
+          package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
+          signType: 'MD5',
+          paySign: paySign,
+        });
+      });*/
+      // console.log(xmlResponse);
+
+      // xmlreader.read(res.body.toString("utf-8"), function (error, xmlResponse) {
+      //   if (null !== error) {
+      //     console.log(error)
+      //     return;
+      //   }
+      //   console.log(xmlResponse.xml.return_code.text(), 'return_code');
+      //   console.log(xmlResponse.xml.return_msg.text(), 'return_code');
+      //   let timeStamp = `${new Date().getTime() / 1000}`;
+      //   let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id.text()}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`
+      //   let paySign = crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+      //   response = formatDataSuccess({
+      //     timeStamp: timeStamp,
+      //     nonceStr: order.nonce_str,
+      //     package: `prepay_id=${xmlResponse.xml.prepay_id.text()}`,
+      //     signType: 'MD5',
+      //     paySign: paySign,
+      //   });
+      //   /*console.log('长度===', xmlResponse.xml.prepay_id.text().length);
+      //   var prepay_id = xmlResponse.xml.prepay_id.text();
+      //   console.log('解析后的prepay_id==', prepay_id);*/
+      //   //将预支付订单和其他信息一起签名后返回给前端
+      //   // let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
+      //   // res.json({'appId':appid,'partnerId':mchid,'prepayId':prepay_id,'nonceStr':nonce_str,'timeStamp':timestamp,'package':'Sign=WXPay','sign':finalsign});
+      // });
+
+      // 检查回调
+      // let xmlResponse = await xmlreader.read(res.body.toString("utf-8"));
+      /*await xmlreader.read(res.body.toString("utf-8"), function (error, xmlResponse) {
+        if (null !== error) {
+          console.log(error);
+          throw new Error(error)
+        }
+        console.log(xmlResponse, 'xmlResponse');
+        console.log('长度===', xmlResponse.xml.prepay_id.text().length);
+        var prepay_id = xmlResponse.xml.prepay_id.text();
+        console.log('解析后的prepay_id==',prepay_id);
+        //将预支付订单和其他信息一起签名后返回给前端
+        let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
+        response = this.formatDataSuccess({'appId': appid, 'partnerId': mchid, 'prepayId': prepay_id, 'nonceStr': nonce_str, 'timeStamp': timestamp, 'package': 'Sign=WXPay', 'sign': finalsign});
+      });*/
+      /*console.log(xmlResponse, 'xml');
+      console.log('长度===', xmlResponse.xml.prepay_id.text().length);
+      var prepay_id = xmlResponse.xml.prepay_id.text();
+      console.log('解析后的prepay_id==', prepay_id);
+      //将预支付订单和其他信息一起签名后返回给前端
+      let finalsign = wxpay.paysignjsapifinal(appid, mch_id, prepay_id, nonce_str, timestamp, mch_key);*/
     } catch(e){
       console.log(e.message, 'something wrong...');
       response = this.formatDataFail(e.message);
