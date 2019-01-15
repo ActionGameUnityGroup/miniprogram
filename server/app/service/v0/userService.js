@@ -33,7 +33,7 @@ class UserService extends formatData{
       console.log(res, 'response');
       if(!res.errcode){
         const { openid, session_key } = res;
-        let user = await userModel.find({ openid, }, '-_id');
+        let user = await userModel.find({ openId: openid }, '-_id');
         console.log(user, '用户');
         if (user.length) {
           // 数据库有
