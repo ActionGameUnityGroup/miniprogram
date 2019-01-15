@@ -27,9 +27,7 @@ class UserService extends formatData{
         }
       });*/
       let res = await request({
-        hostname: 'api.weixin.qq.com',
-        port: 443,
-        path: `/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
+        url: `https://api.weixin.qq.com/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
         method: 'GET'
       });
       console.log(res, 'response');
