@@ -12,6 +12,7 @@
 /egg-server/
 /client-taro/
 /taroConvert/
+/app
 # /client/
 /managementSystem/node_modules
 /managementSystem/src/
