@@ -129,8 +129,10 @@ key=5fb3f9c59ed54b36206dd07288620d7d
       let xmlResponse = await xmlParser.xmlToJson(body);
       console.log(xmlResponse.xml, 'xmlResponse');
       let timeStamp = `${parseInt(new Date().getTime() / 1000)}`;
-      let paySignString = `appId=${appid}&nonceStr=${xmlResponse.xml.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+      let paySignString = `appId=${appid}&timeStamp=${timeStamp}&nonceStr=${xmlResponse.xml.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&key=${secret_key}`;
+      console.log(paySignString, '二次签名String');
       let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+      console.log(paySign, '二次签名');
       response = this.formatDataSuccess({
         timeStamp: timeStamp,
         nonceStr: order.nonce_str,
