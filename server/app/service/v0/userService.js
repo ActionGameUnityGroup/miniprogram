@@ -37,40 +37,60 @@ class UserService extends formatData{
           // 数据库有
           response = this.formatDataSuccess({ openid });
         } else {
-          this.register(openid, session_key);
-          response = this.formatDataSuccess({ openid });
+          let flag = await this.register(openid, session_key);
+          if(flag){
+            response = this.formatDataSuccess({ openid });
+          } else {
+            response = this.formatDataSuccess({ msg: '注册失败', openid, });
+          }
         }
       }
     } catch(e) {
       console.log(e.message);
       response = this.formatDataFail(e.message);
-      ctx.throw(500);
     }
     return response;
   }
 
-  async register(openid, session_key){
+  async register(openId){
     console.log(session_key);
-  	const pc = new WXBizDataCrypt(config.appid, session_key);
-    console.log(pc, 'pc');
+    // const pc = new WXBizDataCrypt(config.appid, session_key);
+    // console.log(pc, 'pc');
     // if(!)
-	  const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
-    console.log(data, '解析完毕');
-	  const save = {
-	    unionid: data.unionid || '',
-	    // userid: createUserId(new Date().getTime()),
-	    userid: '',
-	    openid: data.openId || '',
-	    avatar: data.avatarUrl || '',
-	    nickname: data.nickName || '',
-	    gender: data.gender || 0,
-	    language: data.language || '',
-	    city: data.city || '',
-	    province: data.province || '',
-	    country: data.country || ''
-	  };
-	  const User = new userModel(save);
-	  let saveInfo = await User.save();
+    // const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
+    // console.log(data, '解析完毕');
+    /*const save = {
+      unionid: data.unionid || '',
+      // userid: createUserId(new Date().getTime()),
+      userid: '',
+      openid: data.openId || '',
+      avatar: data.avatarUrl || '',
+      nickname: data.nickName || '',
+      gender: data.gender || 0,
+      language: data.language || '',
+      city: data.city || '',
+      province: data.province || '',
+      country: data.country || ''
+    };*/
+    try {
+      const save = {
+        unionid: '',
+        userid: '',
+        openid: openId || '',
+        avatar: '',
+        nickname: '',
+        gender: 0,
+        language: '',
+        city: '',
+        province: '',
+        country: '',
+      };
+      const User = new userModel(save);
+      let saveInfo = await User.save();
+      return true;
+    } catch(e) {
+      return false;
+    }
   }
 
   async getUserInfo(ctx){
