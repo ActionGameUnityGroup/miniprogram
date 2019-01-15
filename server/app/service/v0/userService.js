@@ -16,8 +16,6 @@ class UserService extends formatData{
     let response;
     try {
       let params = ctx.request.body;
-      const clientIP = ctx.request.header['x-forwarded-for'];
-      console.log(`client's ip: ${clientIP}`);
       /*let res = await request({
         hostname: `api.weixin.qq.com`,
         path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
@@ -33,7 +31,7 @@ class UserService extends formatData{
       console.log(res, 'response');
       if(!res.errcode){
         const { openid, session_key } = res;
-        let user = await userModel.find({ openId: openid }, '-_id');
+        let user = await userModel.find({ openid: openid }, '-_id');
         console.log(user, '用户');
         if (user.length) {
           // 数据库有
