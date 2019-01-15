@@ -1,5 +1,5 @@
 const path = require('path');
-const request = require('request');
+// const request = require('request');
 const parseString  = require('xml2js').parseString;
 const crypto = require('crypto');
 const uuid = require('uuid');
@@ -7,6 +7,7 @@ const rootDirectory = path.resolve(__dirname, '../../../');
 const config = require(`${rootDirectory}/config/miniprogram.config.js`);
 const orderModel = require(`${rootDirectory}/app/model/v0/orderModel`);
 const formatData = require(`${rootDirectory}/app/service/formatData`);
+const request = require(`${rootDirectory}/app/service/request`);
 const xmlParser = require(`${rootDirectory}/app/service/xmlParser`);
 
 class PayService extends formatData{
@@ -120,8 +121,8 @@ key=5fb3f9c59ed54b36206dd07288620d7d
 
       console.log('formData===', formData);
 
-      let res = await request({ url: url, method: 'POST', body: formData });
-      console.log(res.body, 'response body');
+      let body = await request({ url: url, method: 'POST', body: formData });
+      console.log(body, 'response body');
 
       let xmlResponse = await xmlParser.xmlToJson(res.body);
       console.log(xmlResponse.xml, 'xmlResponse');
