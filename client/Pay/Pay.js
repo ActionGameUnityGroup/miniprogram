@@ -23,21 +23,29 @@ Page({
   },
   confirmPaymentOperation: function(){
     console.log('确认支付');
-    /*app.request(
-      'https://www.changdaolife.cn/'
-    )*/
-    wx.requestPayment({
-      timeStamp: '',
-      nonceStr: '',
-      package: '',
-      signType: 'MD5',
-      paySign: '',
-      success(res) {
-        console.log(res);
+    const [ orderId, money, openid ] = [ wx.getStorageSync('orderId'), wx.getStorageSync('money'), wx.getStorageSync('openid') ];
+    app.request(
+      'https://www.changdaolife.cn/api/v0/pay/payment',
+      {
+        method: 'POST',
+        data: JSON.stringify({orderId, money, openid}),
       },
-      fail(res) {
+      function(res){
         console.log(res);
-      },
-    });
+        wx.requestPayment({
+          timeStamp: res.data.timeStamp,
+          nonceStr: res.data.nonceStr,
+          package: res.data.package,
+          signType: res.data.signType,
+          paySign: res.data.paySign,
+          success(res) {
+            console.log(res);
+          },
+          fail(res) {
+            console.log(res);
+          },
+        });
+      }
+    )
   },
 });

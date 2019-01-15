@@ -13,11 +13,11 @@ const { db, mongoose } = require(`${dbDirectory}/db-config`);
  * @param {String} openId 用户openid
  * 
 */
-
 const orderSchema = new mongoose.Schema({
   orderId: String,
   courseId: String,
-  courseName: String,
+  attach: String,
+  detail: String,
   money: String,
   orderTime: Number,
   payTime: Number,
