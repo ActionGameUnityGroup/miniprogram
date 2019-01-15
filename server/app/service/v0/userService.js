@@ -53,7 +53,6 @@ class UserService extends formatData{
   }
 
   async register(openId){
-    console.log(session_key);
     // const pc = new WXBizDataCrypt(config.appid, session_key);
     // console.log(pc, 'pc');
     // if(!)
