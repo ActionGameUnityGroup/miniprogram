@@ -39,7 +39,7 @@ class UserService extends formatData{
           // 数据库有
           response = this.formatDataSuccess({ openid });
         } else {
-          this.register(openid);
+          this.register(openid, session_key);
           response = this.formatDataSuccess({ openid });
         }
       }
