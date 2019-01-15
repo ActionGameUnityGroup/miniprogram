@@ -7,23 +7,49 @@
 >
   <block wx:for="{{syllabusList}}" wx:key="index">
     <view class='scroll-view' bindtap='navigateOperation' id='{{item.courseId}}'>
-      <image
-        wx:if='{{item.show}}'
-        class='{{item.loaded ? "image-top" : "image-bottom"}}'
-        mode='widthFix'
-        src='{{item.cover3}}'
-        bindload='imageLoaded'
-        data-index='{{index}}'
-        data-name='syllabusList'
-      />
-      <image
-        class='{{!item.loaded ? "image-top" : "image-bottom"}}'
-        mode='widthFix'
-        src='{{item.thumb3}}'
-        bindload='thumbLoaded'
-        data-index='{{index}}'
-        data-name='syllabusList'
-      />
+      <view class="scroll-view-cover">
+        <image
+          wx:if='{{item.show}}'
+          class='{{item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.cover3}}'
+          bindload='imageLoaded'
+          data-index='{{index}}'
+          data-name='syllabusList'
+        />
+        <image
+          class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.thumb3}}'
+          bindload='thumbLoaded'
+          data-index='{{index}}'
+          data-name='syllabusList'
+        />
+      </view>
+      <view class="scroll-view-info">
+        <view class="scroll-view-info-top">
+          <view class="scroll-view-info-label">
+            <image mode='widthFix' src='/assets/icon/syllabus-label.png' />
+          </view>
+          <view class="scroll-view-info-title"> 《{{item.mainTitle}}》 </view>
+        </view>
+        <view class="scroll-view-info-bottom">
+          <view class="scroll-view-info-msg">
+            <view class="info-msg-location-icon"><image mode='widthFix' src='/assets/icon/location-icon.png' /></view>
+            <view class="info-msg-location"> {{item.city}} </view>
+            <text> | </text>
+            <view class="info-msg-author-content">
+              <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
+                <view> {{author}} </view>
+              </block>
+            </view>
+          </view>
+          <view class="scroll-view-price">
+            <block wx:if='{{item.isSpread}}'> 现推广价{{item.expenses}}元/人 </block>
+            <block wx:else> {{item.unifieldPrice}}元/人 </block>
+          </view>
+        </view>
+      </view>
     </view>
   </block>
 </scroll-view>
