@@ -32,7 +32,7 @@ class UserService extends formatData{
       let body = JSON.parse(res);
       console.log(body, 'body');
       if(!body.errcode){
-        const { openid, session_key } = res;
+        const { openid, session_key } = body;
         console.log(openid, body.openid, 'openid');
         console.log(session_key, body.session_key, 'session_key');
         let user = await userModel.find({ openid: openid }, '-_id');
