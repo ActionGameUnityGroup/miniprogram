@@ -29,6 +29,7 @@ class UserService extends formatData{
         method: 'GET'
       });
       console.log(res, 'response');
+      console.log(typeof res, 'response type');
       if(!res.errcode){
         const { openid, session_key } = res;
         console.log(openid, res.openid, 'openid');
