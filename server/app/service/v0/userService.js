@@ -32,15 +32,19 @@ class UserService extends formatData{
       if(!res.errcode){
         const { openid, session_key } = res;
         let user = await userModel.find({ openid: openid }, '-_id');
-        console.log(user, '用户');
+        console.log(!user.length, '没有');
         if (user.length) {
           // 数据库有
+          console.log('有');
           response = this.formatDataSuccess({ openid });
         } else {
+          console.log('没有');
           let flag = await this.register(openid, session_key);
           if(flag){
+            console.log('注册成功');
             response = this.formatDataSuccess({ openid });
           } else {
+            console.log('注册失败');
             response = this.formatDataSuccess({ msg: '注册失败', openid, });
           }
         }
