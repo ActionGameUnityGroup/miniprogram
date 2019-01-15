@@ -29,11 +29,12 @@ class UserService extends formatData{
         method: 'GET'
       });
       console.log(res, 'response');
-      console.log(typeof res, 'response type');
-      if(!res.errcode){
+      let body = JSON.parse(res);
+      console.log(body, 'body');
+      if(!body.errcode){
         const { openid, session_key } = res;
-        console.log(openid, res.openid, 'openid');
-        console.log(session_key, res.session_key, 'session_key');
+        console.log(openid, body.openid, 'openid');
+        console.log(session_key, body.session_key, 'session_key');
         let user = await userModel.find({ openid: openid }, '-_id');
         console.log(!user.length, '没有');
         if (user.length) {

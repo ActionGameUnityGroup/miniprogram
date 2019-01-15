@@ -6,7 +6,7 @@ module.exports = function(options){
       if(err) {
         reject(err);
       } else if(res.statusCode == 200){
-        resolve(JSON.parse(body));
+        resolve(body);
       }
     });
   });
