@@ -130,14 +130,22 @@ key=5fb3f9c59ed54b36206dd07288620d7d
       console.log(xmlResponse.xml, 'xmlResponse');
       let timeStamp = `${parseInt(new Date().getTime() / 1000)}`;
       console.log(typeof timeStamp);
-      let paySignString = `appId=${appid}&nonceStr=${(uuid.v4()).replace(/-/g, '')}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+      /*
+      appId
+      nonceStr
+      package
+      signType
+      timeStamp
+      key
+       */
+      let paySignString = `appId=${appid}&nonceStr=${order.nonce_str.toUpperCase()}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
       console.log(paySignString, '二次签名String');
       let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
       console.log(paySign, '二次签名');
       response = this.formatDataSuccess({
         appId: appid,
         timeStamp: timeStamp,
-        nonceStr: order.nonce_str,
+        nonceStr: order.nonce_str.toUpperCase(),
         package: `prepay_id=${xmlResponse.xml.prepay_id}`,
         signType: 'MD5',
         paySign: paySign,
