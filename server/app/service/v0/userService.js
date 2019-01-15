@@ -50,8 +50,10 @@ class UserService extends formatData{
   }
 
   async register(openid, session_key){
+    console.log(session_key);
   	const pc = new WXBizDataCrypt(config.appid, session_key);
     console.log(pc, 'pc');
+    if(!)
 	  const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
     console.log(data, '解析完毕');
 	  const save = {
