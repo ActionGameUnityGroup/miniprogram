@@ -120,8 +120,4 @@
 
   <view class="submit-operation" bindtap='submitOperation'> 确认提交 </view>
 </scroll-view>
-<<<<<<< HEAD
 <view></view>
-=======
-<view></view>
->>>>>>> 06afb84ddc70d55635d72391a472dd5f77b450f0
