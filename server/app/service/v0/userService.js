@@ -16,8 +16,6 @@ class UserService extends formatData{
     let response;
     try {
       let params = ctx.request.body;
-      const clientIP = ctx.request.header['x-forwarded-for'];
-      console.log(`client's ip: ${clientIP}`);
       /*let res = await request({
         hostname: `api.weixin.qq.com`,
         path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
@@ -27,49 +25,79 @@ class UserService extends formatData{
         }
       });*/
       let res = await request({
-        hostname: 'api.weixin.qq.com',
-        port: 443,
-        path: `/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
+        url: `https://api.weixin.qq.com/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
         method: 'GET'
       });
       console.log(res, 'response');
-      if(!res.errcode){
-        const { openid, session_key } = res;
-        let user = await userModel.find({ openid, }, '-_id');
+      let body = JSON.parse(res);
+      console.log(body, 'body');
+      if(!body.errcode){
+        const { openid, session_key } = body;
+        console.log(openid, body.openid, 'openid');
+        console.log(session_key, body.session_key, 'session_key');
+        let user = await userModel.find({ openid: openid }, '-_id');
+        console.log(!user.length, '没有');
         if (user.length) {
           // 数据库有
+          console.log('有');
           response = this.formatDataSuccess({ openid });
         } else {
-          this.register(openid);
-          response = this.formatDataSuccess({ openid });
+          console.log('没有');
+          let flag = await this.register(openid, session_key);
+          if(flag){
+            console.log('注册成功');
+            response = this.formatDataSuccess({ openid });
+          } else {
+            console.log('注册失败');
+            response = this.formatDataSuccess({ msg: '注册失败', openid, });
+          }
         }
       }
     } catch(e) {
       console.log(e.message);
       response = this.formatDataFail(e.message);
-      ctx.throw(500);
     }
     return response;
   }
 
-  async register(openid){
-  	const pc = new WXBizDataCrypt(config.appid, res.session_key);
-	  const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
-	  const save = {
-	    unionid: data.unionid || '',
-	    // userid: createUserId(new Date().getTime()),
-	    userid: '',
-	    openid: data.openId || '',
-	    avatar: data.avatarUrl || '',
-	    nickname: data.nickName || '',
-	    gender: data.gender || 0,
-	    language: data.language || '',
-	    city: data.city || '',
-	    province: data.province || '',
-	    country: data.country || ''
-	  };
-	  const User = new userModel(save);
-	  let saveInfo = await User.save();
+  async register(openId){
+    // const pc = new WXBizDataCrypt(config.appid, session_key);
+    // console.log(pc, 'pc');
+    // if(!)
+    // const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
+    // console.log(data, '解析完毕');
+    /*const save = {
+      unionid: data.unionid || '',
+      // userid: createUserId(new Date().getTime()),
+      userid: '',
+      openid: data.openId || '',
+      avatar: data.avatarUrl || '',
+      nickname: data.nickName || '',
+      gender: data.gender || 0,
+      language: data.language || '',
+      city: data.city || '',
+      province: data.province || '',
+      country: data.country || ''
+    };*/
+    try {
+      const save = {
+        unionid: '',
+        userid: '',
+        openid: openId || '',
+        avatar: '',
+        nickname: '',
+        gender: 0,
+        language: '',
+        city: '',
+        province: '',
+        country: '',
+      };
+      const User = new userModel(save);
+      let saveInfo = await User.save();
+      return true;
+    } catch(e) {
+      return false;
+    }
   }
 
   async getUserInfo(ctx){

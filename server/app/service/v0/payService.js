@@ -39,13 +39,15 @@ class PayService extends formatData{
     console.log(orderId, money, openid);
     try{
       const { appid, mch_id, secret_key, } = config;
-      console.log(appid, mch_id, secret_key);
+      console.log(appid, '小程序ID');
+      console.log(mch_id, '订单ID');
+      console.log(secret_key, '商户密钥');
       let orderList = await orderModel.find({orderId: orderId}, '-_id');
       console.log(orderList, '订单列表');
       console.log(orderList[0], '订单信息');
       console.log(orderList[0].attach, '订单名称');
-      /*let nonce_str = wxpay.createNonceStr();
-      let timestamp = wxpay.createTimeStamp();
+      /*let nonce_str = wxpay.createnonceStr();
+      let timeStamp = wxpay.createtimeStamp();
       let body = '测试微信支付';
       let out_trade_no = orderId;
       let total_fee = wxpay.getmoney(money);
@@ -124,12 +126,24 @@ key=5fb3f9c59ed54b36206dd07288620d7d
       let body = await request({ url: url, method: 'POST', body: formData });
       console.log(body, 'response body');
 
-      let xmlResponse = await xmlParser.xmlToJson(res.body);
+      let xmlResponse = await xmlParser.xmlToJson(body);
       console.log(xmlResponse.xml, 'xmlResponse');
-      let timeStamp = parseInt(new Date().getTime() / 1000);
-      let paySignString = `appId=${appid}&nonceStr=${xmlResponse.xml.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+      let timeStamp = `${parseInt(new Date().getTime() / 1000)}`;
+      console.log(typeof timeStamp);
+      /*
+      appId
+      nonceStr
+      package
+      signType
+      timeStamp
+      key
+       */
+      let paySignString = `appId=${appid}&nonceStr=${order.nonce_str}&package=prepay_id=${xmlResponse.xml.prepay_id}&signType=MD5&timeStamp=${timeStamp}&key=${secret_key}`;
+      console.log(paySignString, '二次签名String');
       let paySign = await crypto.createHash('md5').update(paySignString, 'utf8').digest('hex').toUpperCase();
+      console.log(paySign, '二次签名');
       response = this.formatDataSuccess({
+        appId: appid,
         timeStamp: timeStamp,
         nonceStr: order.nonce_str,
         package: `prepay_id=${xmlResponse.xml.prepay_id}`,
@@ -172,8 +186,8 @@ key=5fb3f9c59ed54b36206dd07288620d7d
       //   var prepay_id = xmlResponse.xml.prepay_id.text();
       //   console.log('解析后的prepay_id==', prepay_id);*/
       //   //将预支付订单和其他信息一起签名后返回给前端
-      //   // let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
-      //   // res.json({'appId':appid,'partnerId':mchid,'prepayId':prepay_id,'nonceStr':nonce_str,'timeStamp':timestamp,'package':'Sign=WXPay','sign':finalsign});
+      //   // let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timeStamp,mchkey);
+      //   // res.json({'appId':appid,'partnerId':mchid,'prepayId':prepay_id,'nonceStr':nonce_str,'timeStamp':timeStamp,'package':'Sign=WXPay','sign':finalsign});
       // });
 
       // 检查回调
@@ -188,15 +202,15 @@ key=5fb3f9c59ed54b36206dd07288620d7d
         var prepay_id = xmlResponse.xml.prepay_id.text();
         console.log('解析后的prepay_id==',prepay_id);
         //将预支付订单和其他信息一起签名后返回给前端
-        let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timestamp,mchkey);
-        response = this.formatDataSuccess({'appId': appid, 'partnerId': mchid, 'prepayId': prepay_id, 'nonceStr': nonce_str, 'timeStamp': timestamp, 'package': 'Sign=WXPay', 'sign': finalsign});
+        let finalsign = wxpay.paysignjsapifinal(appid,mch_id,prepay_id,nonce_str,timeStamp,mchkey);
+        response = this.formatDataSuccess({'appId': appid, 'partnerId': mchid, 'prepayId': prepay_id, 'nonceStr': nonce_str, 'timeStamp': timeStamp, 'package': 'Sign=WXPay', 'sign': finalsign});
       });*/
       /*console.log(xmlResponse, 'xml');
       console.log('长度===', xmlResponse.xml.prepay_id.text().length);
       var prepay_id = xmlResponse.xml.prepay_id.text();
       console.log('解析后的prepay_id==', prepay_id);
       //将预支付订单和其他信息一起签名后返回给前端
-      let finalsign = wxpay.paysignjsapifinal(appid, mch_id, prepay_id, nonce_str, timestamp, mch_key);*/
+      let finalsign = wxpay.paysignjsapifinal(appid, mch_id, prepay_id, nonce_str, timeStamp, mch_key);*/
     } catch(e){
       console.log(e.message, 'something wrong...');
       response = this.formatDataFail(e.message);

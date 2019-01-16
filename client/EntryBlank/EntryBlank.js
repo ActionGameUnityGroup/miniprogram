@@ -73,20 +73,22 @@ Page({
         gender = 'female';
       }
       const openId = wx.getStorageSync('openid');
+      let body = JSON.stringify({
+        openId,
+        name,
+        mobile,
+        profession,
+        city,
+        email,
+        gender,
+        courseId,
+      });
+      console.log(body);
       app.request(
         'https://www.changdaolife.cn/api/v0/reserved/setReservedInfo',
         {
           method: 'POST',
-          data: JSON.stringify({
-            openId,
-            name,
-            mobile,
-            profession,
-            city,
-            email,
-            gender,
-            courseId,
-          }),
+          data: body,
         },
         function(res){
           console.log(res);
