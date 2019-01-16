@@ -42,7 +42,7 @@
             <view class="registration-info-name">费用</view>
             <view class="registration-info-value">
               <block wx:if='{{item.expenses != ""}}'>
-                <block wx:if='{{item.isSpread || item.unifieldPrice != 0}}'>
+                <block wx:if='{{item.isSpread}}'>
                   全国统一价￥{{item.unifieldPrice}}元，现推广价￥{{item.expenses}}元
                 </block>
                 <block wx:else>￥{{item.unifieldPrice}}元</block>
