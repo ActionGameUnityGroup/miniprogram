@@ -31,9 +31,19 @@
           <view class="scroll-view-info-label">
             <image mode='widthFix' src='/assets/icon/syllabus-label.png' />
           </view>
-          <view class="scroll-view-info-title"> 《{{item.mainTitle}}》 </view>
+          <view class="scroll-view-info-msg">
+            <view class="info-msg-location-icon"><image mode='widthFix' src='/assets/icon/location-icon.png' /></view>
+            <view class="info-msg-location"> {{item.city}} </view>
+            <text> | </text>
+            <view class="info-msg-author-content">
+              <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
+                <view> {{author}} </view>
+              </block>
+            </view>
+          </view>
+          <!-- <view class="scroll-view-info-title"> 《{{item.mainTitle}}》 </view> -->
         </view>
-        <view class="scroll-view-info-bottom">
+        <!-- <view class="scroll-view-info-bottom">
           <view class="scroll-view-info-msg">
             <view class="info-msg-location-icon"><image mode='widthFix' src='/assets/icon/location-icon.png' /></view>
             <view class="info-msg-location"> {{item.city}} </view>
@@ -48,7 +58,7 @@
             <block wx:if='{{item.isSpread}}'> 现推广价{{item.expenses}}元/人 </block>
             <block wx:else> {{item.unifieldPrice}}元/人 </block>
           </view>
-        </view>
+        </view> -->
       </view>
     </view>
   </block>

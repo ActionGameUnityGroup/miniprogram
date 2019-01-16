@@ -1,8 +1,10 @@
 <view class="spread-content">
   <view class="spread-background"><image mode='widthFix' src='/assets/icon/miniprogram-icon-76.png'></image></view>
   <view class="user-info">
-    <image mode='widthFix' src='{{userAvatar}}'></image>
-    <text> {{nickName}} </text>
+    <view class="user-info-image"><open-data type='userAvatarUrl' /></view>
+    <view class="user-info-text"><open-data type='userNickName' /></view>
+    <!-- <image mode='widthFix' src='{{userAvatar}}'></image>
+    <text> {{nickName}} </text> -->
   </view>
   <view class="spread-income">
     <view class="spread-income-title"> 累积推广收益 </view>

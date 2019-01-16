@@ -6,7 +6,7 @@ Page({
     todayIncome: '0.00',
     totalIncome: '0.00',
     courseList: [
-      {
+      /*{
         cover: 'https://www.changdaolife.cn/public/image/lastestCourse/course2/course-cover.jpg',
         thumb: 'https://www.changdaolife.cn/public/image/lastestCourse/course2/thumbnil-cover.jpg',
         loaded: false,
@@ -41,7 +41,7 @@ Page({
         mainTitle: '系统结构疗愈 | 这个世界有一个奥秘：看不见的系统力量影响着生命互动的行为',
         commissionRate: 20,
         income: 596
-      },
+      },*/
     ],
   },
   onLoad: function(){},
