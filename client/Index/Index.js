@@ -73,20 +73,20 @@ Page({
       success(res){
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         console.log(res);
-        app.request(
-          'https://www.changdaolife.cn/api/v0/user/login',
-          {
-            method: 'POST',
-            data: JSON.stringify({code: res.code})
-          },
-          function(res){
-            console.log(res.data);
-            wx.setStorageSync('openid', res.data.openid);
-          },
-        );
         wx.getUserInfo({
-          success(userInfo){
-            console.log(userInfo);
+          complete(userInfo){
+            console.log(userInfo, 'complete');
+            app.request(
+              'https://www.changdaolife.cn/api/v0/user/login',
+              {
+                method: 'POST',
+                data: JSON.stringify({code: res.code})
+              },
+              function(res){
+                console.log(res.data);
+                wx.setStorageSync('openid', res.data.openid);
+              },
+            );
           }
         });
       }
@@ -111,7 +111,7 @@ Page({
   },
   redirectToSyllabusMenu: function(){
     wx.redirectTo({
-      url: '/Syllabus/SyllabusMenu'
+      url: '/Syllabus/Syllabus'
     });
   },
   redirectToPersonalInfo: function(){

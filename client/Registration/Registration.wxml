@@ -1,4 +1,6 @@
-<view class="registration-content" style='height: {{showNavBar ? "calc(100% - 104rpx)" : "100%"}};'>
+<view></view>
+
+<scroll-view class="registration-content" scroll-y='{{true}}' style='height: {{showNavBar ? "calc(100% - 104rpx)" : "100%"}};'>
   <block wx:for='{{courseList}}' wx:key='index'>
     <view class="registration-item" bindtap='navigateAction' id='/RegistrationDetail/RegistrationDetail?courseId={{item.courseId}}'>
       <view class="registration-cover">
@@ -36,7 +38,7 @@
       </view>
     </view>
   </block>
-</view>
+</scroll-view>
 
 <view class="nav-bar" wx:if='{{showNavBar}}'>
   <view id='/Index/Index' class="nav-bar-item" bindtap='redirectAction'>
