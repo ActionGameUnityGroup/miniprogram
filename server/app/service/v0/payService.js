@@ -100,8 +100,8 @@ class PayService extends formatData{
 
   async receivePaymentInfo(ctx){
     const { body, query, } = ctx.request;
-    console.log(body);
-    console.log(query);
+    console.log(body, 'body');
+    console.log(query, 'query');
     let xmlResponse = await xmlParser.xmlToJson(body);
     console.log(xmlResponse);
     console.log('收到支付回调信息');
