@@ -22,29 +22,26 @@ class orderService extends formatData{
   async generateOrder(ctx){
     let response;
     try{
-      const { openId, courseId, courseName, money, } = ctx.request.body;
-      const courseList = await courseModel.find({courseId: courseId}, '-_id');
-      console.log(courseList[0], '课程信息');
-      console.log(courseList[0].mainTitle, '课程名称');
-      console.log(courseList[0].expenses, '价格1');
-      console.log(courseList[0].unifieldPrice, '价格2');
+      const { openId, courseId, } = ctx.request.body;
+      const courseItem = await courseModel.find({ courseId: courseId, }, '-_id courseId')[0];
+      if(!courseItem){
+        return new Error('该课程目前暂时无法下单！');
+      }
       const time = new Date().getTime();
       const orderId = `changdao${time}`;
-      // const orderId = uuid.v1();
       const newOrder = new orderModel({
         orderId: orderId,
-        courseId: courseList[0].courseId,
-        attach: courseList[0].mainTitle,
-        detail: courseList[0].subTitle,
-        money: courseList[0].expenses,
+        courseId: courseItem.courseId,
+        attach: courseItem.mainTitle,
+        detail: courseItem.subTitle,
+        money: courseItem.expenses,
         orderTime: time,
         payTime: 0,
         confirmTime: 0,
         openId: openId,
       });
       let res = await newOrder.save();
-      console.log(res, '保存');
-      response = this.formatDataSuccess({orderId, money: courseList[0].expenses});
+      response = this.formatDataSuccess({orderId, money: courseItem.expenses});
     } catch(e){
       response = this.formatDataFail(e.message);
     }

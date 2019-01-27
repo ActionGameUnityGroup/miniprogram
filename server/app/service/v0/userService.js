@@ -26,24 +26,23 @@ class UserService extends formatData{
       });*/
       let res = await request({
         url: `https://api.weixin.qq.com/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
-        method: 'GET'
+        method: 'GET',
       });
-      console.log(res, 'response');
       let body = JSON.parse(res);
-      console.log(body, 'body');
       if(!body.errcode){
         const { openid, session_key } = body;
-        console.log(openid, body.openid, 'openid');
-        console.log(session_key, body.session_key, 'session_key');
         let user = await userModel.find({ openid: openid }, '-_id');
-        console.log(!user.length, '没有');
         if (user.length) {
           // 数据库有
           console.log('有');
           response = this.formatDataSuccess({ openid });
         } else {
           console.log('没有');
-          let flag = await this.register(openid, session_key);
+          const { encryptedData, iv } = params;
+          if(!encryptedData || !iv){
+            return new Error('请先授权！');
+          }
+          let flag = await this.register({ openid, session_key, encryptedData, iv, });
           if(flag){
             console.log('注册成功');
             response = this.formatDataSuccess({ openid });
@@ -60,30 +59,28 @@ class UserService extends formatData{
     return response;
   }
 
-  async register(openId){
-    // const pc = new WXBizDataCrypt(config.appid, session_key);
-    // console.log(pc, 'pc');
-    // if(!)
-    // const data = pc.decryptData(`${decodeURIComponent(query.encryptedData)}`, `${decodeURIComponent(query.iv)}`);
-    // console.log(data, '解析完毕');
-    /*const save = {
-      unionid: data.unionid || '',
-      // userid: createUserId(new Date().getTime()),
-      userid: '',
-      openid: data.openId || '',
-      avatar: data.avatarUrl || '',
-      nickname: data.nickName || '',
-      gender: data.gender || 0,
-      language: data.language || '',
-      city: data.city || '',
-      province: data.province || '',
-      country: data.country || ''
-    };*/
+  async register(registryInfo){
     try {
+      const pc = new WXBizDataCrypt(config.appid, registryInfo.session_key);
+      console.log(pc, 'pc');
+      const data = pc.decryptData(`${decodeURIComponent(registryInfo.encryptedData)}`, `${decodeURIComponent(registryInfo.iv)}`);
+      console.log(data, '解析完毕');
       const save = {
+        unionid: data.unionid || '',
+        userid: '',
+        openid: data.openId || '',
+        avatar: data.avatarUrl || '',
+        nickname: data.nickName || '',
+        gender: data.gender || 0,
+        language: data.language || '',
+        city: data.city || '',
+        province: data.province || '',
+        country: data.country || ''
+      };
+      /*const save = {
         unionid: '',
         userid: '',
-        openid: openId || '',
+        openid: registryInfo.openid || '',
         avatar: '',
         nickname: '',
         gender: 0,
@@ -91,7 +88,7 @@ class UserService extends formatData{
         city: '',
         province: '',
         country: '',
-      };
+      };*/
       const User = new userModel(save);
       let saveInfo = await User.save();
       return true;
