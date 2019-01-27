@@ -99,15 +99,15 @@ class PayService extends formatData{
   }
 
   async receivePaymentInfo(ctx){
-    const { body, query, } = ctx.request;
-    console.log(body, 'body');
-    console.log(query, 'query');
-    let xmlResponse = await xmlParser.xmlToJson(body);
-    console.log(xmlResponse);
-    console.log('收到支付回调信息');
     let response;
     try{
+      const { openId, orderId, } = ctx.request.body;
+      if(!openId || !orderId){
+        throw new Error('信息不足，无法记录！');
+      }
+      const updateRes = await orderModel.update({ openId: openId, orderId: orderId, }, {payTime: new Date().getTime(), }, {multi: true,});
       response = this.formatDataSuccess('信息已记录！');
+      if(Object.keys(body).length){}
     }catch(e){
       response = this.formatDataFail('信息无法记录！');
     }

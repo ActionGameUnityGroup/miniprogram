@@ -54,24 +54,15 @@ Page({
   navigateOperation: function(e){
     const { courseId, courseInfo } = this.data;
     const openId = wx.getStorageSync('openid');
-    const { isSpread, expenses, unifieldPrice, mainTitle, } = courseInfo[0];
-    let money = '0';
-    if(isSpread){
-      money = expenses;
-    } else {
-      money = unifieldPrice;
-    }
-    let courseName = mainTitle;
+    const { isSpread, expenses, } = courseInfo[0];
     app.request(
       'https://www.changdaolife.cn/api/v0/order/generateOrder',
       {
         method: 'POST',
-        data: JSON.stringify({ courseId, openId, courseName, money, }),
+        data: JSON.stringify({ courseId, openId, }),
       },
       function(res){
         console.log(res.data);
-        wx.setStorageSync('orderId', res.data.orderId);
-        wx.setStorageSync('money', res.data.money);
         if(res.status.includes('ok')){
           wx.navigateTo({
             url: e.currentTarget.id,

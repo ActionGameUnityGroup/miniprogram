@@ -72,19 +72,28 @@ Page({
     wx.login({
       success(res){
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res);
         wx.getUserInfo({
           complete(userInfo){
-            console.log(userInfo, 'complete');
+            let data = {code: res.code};
+            if(userInfo.errMsg.includes('ok')){
+              const encryptedData = encodeURIComponent(userInfo.encryptedData);
+              const iv = encodeURIComponent(userInfo.iv);
+              data = {...data, encryptedData, iv, };
+            }
             app.request(
               'https://www.changdaolife.cn/api/v0/user/login',
               {
                 method: 'POST',
-                data: JSON.stringify({code: res.code})
+                data: JSON.stringify(data),
               },
               function(res){
-                console.log(res.data);
-                wx.setStorageSync('openid', res.data.openid);
+                if(res.status.includes('ok')){
+                  wx.setStorageSync('openid', res.data.openid);
+                } else {
+                  wx.showToast({
+                    title: res.errMsg,
+                  });
+                }
               },
             );
           }

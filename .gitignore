@@ -16,6 +16,7 @@
 # /client/
 /managementSystem/node_modules
 /managementSystem/src/
+/managementSystem2
 # /server/public/audio/
 /Slider/
 /Node/
@@ -25,3 +26,7 @@
 /taroConvert
 /assets
 /app.rar
+/server4nodejs
+/server4nodejs.zip
+/.gitignore
+/prettier-test
