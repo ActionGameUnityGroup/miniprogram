@@ -26,6 +26,7 @@ class PayService extends formatData{
     try{
       const { appid, mch_id, secret_key, } = config;
       let orderItem = await orderModel.find({orderId: orderId}, '-_id')[0];
+      console.log(orderItem, 'order');
       if(!orderItem){
         return new Error('没有该订单!');
       }
