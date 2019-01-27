@@ -23,7 +23,8 @@ class orderService extends formatData{
     let response;
     try{
       const { openId, courseId, } = ctx.request.body;
-      const courseItem = await courseModel.find({ courseId: courseId, }, '-_id courseId')[0];
+      const courseList = await courseModel.find({ courseId: courseId, }, '-_id courseId');
+      const courseItem = courseList[0]
       if(!courseItem){
         throw new Error('该课程目前暂时无法下单！');
       }
