@@ -23,7 +23,7 @@ class orderService extends formatData{
     let response;
     try{
       const { openId, courseId, } = ctx.request.body;
-      const courseList = await courseModel.find({ courseId: courseId, }, '-_id courseId');
+      const courseList = await courseModel.find({ courseId: courseId, }, '-_id');
       console.log(courseList);
       const courseItem = courseList[0];
       if(!courseItem){
