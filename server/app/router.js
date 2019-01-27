@@ -12,6 +12,7 @@ module.exports = (app) => {
   router.post('/api/v0/order/generateOrder', Api.v0.Order.generateOrder);
   router.post('/api/v0/pay/payment', Api.v0.Pay.payment);
   router.get('/api/v0/pay/receivePaymentInfo', Api.v0.Pay.receivePaymentInfo);
+  router.post('/api/v0/pay/receivePaymentInfo', Api.v0.Pay.receivePaymentInfo);
   // router.get('/upload', Page.upload);
   router.get('/api/v0/banner/getBannerList', Api.v0.Banner.getBannerList);
   router.get('/api/v0/tutor/getTutorList', Api.v0.Tutor.getTutorList);
