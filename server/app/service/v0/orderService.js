@@ -25,7 +25,7 @@ class orderService extends formatData{
       const { openId, courseId, } = ctx.request.body;
       const courseItem = await courseModel.find({ courseId: courseId, }, '-_id courseId')[0];
       if(!courseItem){
-        return new Error('该课程目前暂时无法下单！');
+        throw new Error('该课程目前暂时无法下单！');
       }
       const time = new Date().getTime();
       const orderId = `changdao${time}`;

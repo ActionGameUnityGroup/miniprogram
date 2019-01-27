@@ -40,7 +40,7 @@ class UserService extends formatData{
           console.log('没有');
           const { encryptedData, iv } = params;
           if(!encryptedData || !iv){
-            return new Error('请先授权！');
+            throw new Error('请先授权！');
           }
           let flag = await this.register({ openid, session_key, encryptedData, iv, });
           if(flag){
