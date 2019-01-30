@@ -99,7 +99,7 @@ Page({
           } else {
             wx.showToast({
               title: res.errMsg,
-              image: '/assets/icon/warning.png',
+              // image: '/assets/icon/warning.png',
               duration: 3000,
             });
           }
