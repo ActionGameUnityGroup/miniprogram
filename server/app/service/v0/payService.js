@@ -23,6 +23,8 @@ class PayService extends formatData{
   async payment(ctx){
     let response;
     let { orderId, openid, } = ctx.request.body;
+    console.log(orderId);
+    console.log(ctx.request.body);
     try{
       const { appid, mch_id, secret_key, } = config;
       let orderList = await orderModel.find({orderId: orderId}, '-_id');
