@@ -64,6 +64,7 @@ Page({
       function(res){
         console.log(res.data);
         if(res.status.includes('ok')){
+          wx.setStorageSync('orderId', res.data.orderId);
           wx.navigateTo({
             url: e.currentTarget.id,
           });
