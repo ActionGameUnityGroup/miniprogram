@@ -1,6 +1,6 @@
 const path = require('path');
-const dbDirectory = path.resolve(__dirname, '../../../db');
-const { db, mongoose } = require(`${dbDirectory}/db-config`);
+const dbDirectory = path.resolve(__dirname, '../../../config');
+const { db, mongoose } = require(`${dbDirectory}/config.db`);
 
 /**
  * @param {String} orderId 订单id

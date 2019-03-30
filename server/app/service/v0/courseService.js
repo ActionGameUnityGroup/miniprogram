@@ -5,6 +5,22 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class CourseService extends formatData{
 
+	async checkCourseValidate(){
+		try{
+			const courseList = await courseModel.find({}, '-_id');
+			const time = new Date().getTime();
+			courseList.map((course, key) => {
+				if(course.time > time) {
+					course.isExpire = false;
+				} else {
+					course.isExpire = true;
+				}
+			});
+		}catch(e){
+			console.log(e.message);
+		}
+	}
+
 	async getLastestList(ctx){
 		let { page } = ctx.request.query || '';
 		let response;

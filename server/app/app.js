@@ -10,7 +10,7 @@ const koaStatic = require(`${__dirname}/os/static`);
 const bodyParser = require(`${__dirname}/os/body-parser`);
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '..');
-const db = require(`${rootDirectory}/db/db-config`);
+const db = require(`${rootDirectory}/config/config.db`);
 
 class App {
   constructor(){

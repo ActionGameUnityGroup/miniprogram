@@ -15,6 +15,7 @@ module.exports = (app) => {
   router.post('/api/v0/pay/receivePaymentInfo', Api.v0.Pay.receivePaymentInfo);
   // router.get('/upload', Page.upload);
   router.get('/api/v0/banner/getBannerList', Api.v0.Banner.getBannerList);
+  router.post('/api/v0/banner/upload', Api.v0.Banner.upload);
   router.get('/api/v0/tutor/getTutorList', Api.v0.Tutor.getTutorList);
   router.get('/api/v0/tutor/getTutorInfo', Api.v0.Tutor.getTutorInfo);
   router.get('/api/v0/course/getLastestList', Api.v0.Course.getLastestList);
@@ -24,6 +25,7 @@ module.exports = (app) => {
   router.get('/api/v0/course/getUnexpireCourse', Api.v0.Course.getUnexpireCourse);
   router.get('/api/v0/activity/getHotList', Api.v0.Activity.getHotList);
   // router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
+  router.post('/api/v1/admin/login', Api.v1.Admin.login);
 
   return router.routes();
 

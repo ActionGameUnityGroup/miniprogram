@@ -8,6 +8,11 @@ class Banner{
 		ctx.body = response;
 		ctx.type = 'text/json';
 	}
+  async upload(ctx){
+    const response = await bannerService.upload(ctx);
+    ctx.body = response;
+    ctx.type = 'text/json';
+  }
 }
 
 module.exports = new Banner();
