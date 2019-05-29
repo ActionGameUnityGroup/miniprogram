@@ -17,7 +17,7 @@ class App {
     this.app = new Koa();
 
     const pluginPath = `${__dirname}/plugins`;
-    const publicDirectory = `${rootDirectory}/public`;
+    const publicDirectory = `${rootDirectory}/`;
     const _this = this;
 
     _this.app.use(async (ctx, next) => {
