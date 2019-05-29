@@ -12,6 +12,38 @@ class BannerService extends formatData{
 
 		try{
 			let data = await bannerModel.find({}, '-_id').sort({weight: -1});
+			response = this.formatDataSuccess([{bannerList: data}]);
+		} catch(e){
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+
+		return response;
+	}
+
+	async getBannerItem(ctx){
+		// const params = ctx.request.query;
+		// const reqPage = params.page;
+		let response;
+
+		try{
+			let data = await bannerModel.find({}, '-_id').sort({weight: -1});
+			response = this.formatDataSuccess([{bannerList: data}]);
+		} catch(e){
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+
+		return response;
+	}
+
+	async updateBanner(ctx){
+		// const params = ctx.request.query;
+		// const reqPage = params.page;
+		let response;
+
+		try{
+			let data = await bannerModel.find({}, '-_id').sort({weight: -1});
 			console.log(data);
 			response = this.formatDataSuccess([{bannerList: data}]);
 		} catch(e){

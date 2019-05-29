@@ -3,19 +3,33 @@ const rootDirectory = path.resolve(__dirname, '../../');
 const courseModel = require(`${rootDirectory}/model/v0/courseModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
 
-class CourseService extends formatData{
+class CourseService extends formatData {
 
-	async checkCourseValidate(){
+	async getCourseList () {
+		let response;
+		try {
+			const data = await courseModel.find({}, '-_id');
+			response = data;
+		}catch (e) {
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}
+
+	/*async checkCourseValidate(){
 		try{
 			const courseList = await courseModel.find({}, '-_id');
 			const time = new Date().getTime();
-			courseList.map((course, key) => {
+			const newcourseList = courseList.map((course, key) => {
 				if(course.time > time) {
 					course.isExpire = false;
 				} else {
 					course.isExpire = true;
 				}
+				return course;
 			});
+			courseModel.update()
 		}catch(e){
 			console.log(e.message);
 		}
@@ -88,6 +102,18 @@ class CourseService extends formatData{
 		}
 		return response;
 	}
+
+	async getAllCourseList(ctx){
+		let response;
+		try{
+			let data = await courseModel.find({}, '-_id').sort({time: 1});
+			response = this.formatDataSuccess(data);
+		} catch(e){
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+		return response;
+	}*/
 
 }
 

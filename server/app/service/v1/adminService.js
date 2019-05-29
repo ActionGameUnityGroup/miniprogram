@@ -17,9 +17,7 @@ class AdminService extends formatData{
     let response;
     try {
       let params = JSON.parse(ctx.request.body);
-      console.log(params);
       let adminInfo = await adminModel.find({username: params.username, password: params.password}, '-_id -username -password');
-      console.log(adminInfo);
       if(adminInfo.length){
         response = this.formatDataSuccess({
           token: adminInfo[0].token,

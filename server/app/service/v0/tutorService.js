@@ -3,32 +3,49 @@ const rootDirectory = path.resolve(__dirname, '../../');
 const tutorModel = require(`${rootDirectory}/model/v0/tutorModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
 
-class TutorService extends formatData{
+class TutorService extends formatData {
 
-	async getTutorList(ctx){
-		let response;
-		try{
-			let data = await tutorModel.find({}, '-_id');
+	async getTutorList (ctx) {
+		let response,
+				query = ctx.request.query;
+		try {
+			let type = query.type || '',
+					params = {};
+			if (type) {
+				params['type'] = type;
+			}
+			let data = await tutorModel.find(params, '-_id');
 			response = this.formatDataSuccess(data);
-		} catch(e){
+		} catch (e) {
 			response = this.formatDataFail(e.message);
 			ctx.throw(500);
 		}
 		return response;
 	}
 
-	async getTutorInfo(ctx){
+	async getTutorInfo (ctx) {
 		const { tutorId } = ctx.request.query || '';
 		let response;
-		try{
-			let data = await tutorModel.find({tutorId: tutorId}, '-_id');
+		try {
+			let data = await tutorModel.find({ tutorId }, '-_id');
 			response = this.formatDataSuccess(data);
-		} catch(e){
+		} catch(e) {
 			response = this.formatDataFail(e.message);
 			ctx.throw(500);
 		}
 		return response;
 	}
+
+	/*async getTeachingAssistant (ctx) {
+		let response;
+		try {
+			let data = await TeachingAssistant.find({}, '-_id');
+			response = this.formatData(data);
+		} catch (e) {
+			response = this.formatDataFail(e.message);
+			ctx.throw(500);
+		}
+	}*/
 
 }
 

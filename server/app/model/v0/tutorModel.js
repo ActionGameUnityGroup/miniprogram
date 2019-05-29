@@ -1,14 +1,15 @@
 const path = require('path');
 const dbDirectory = path.resolve(__dirname, '../../../config');
-const { db, mongoose } = require(`${dbDirectory}/config.db`);
+const { db, mongoose } = require(`${dbDirectory}/config.db.js`);
 
 const tutorSchema = new mongoose.Schema({
-	tutorId: String,
-  cover: String,
-  introductionCover: String,
+  tutorId: String,
+  avatar: String,
   name: String,
-  honnorList: Array,
-  introductionList: Array,
+  title: Array,
+  type: String,
+  charactersIntro: Array,
+  personalIdentification: Array,
 }, {collection: 'Tutor', versionKey: false});
 
 const tutorModel = db.model('tutor', tutorSchema);

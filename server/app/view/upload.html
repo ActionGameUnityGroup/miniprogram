@@ -16,11 +16,11 @@
         let form = new FormData();
         // form.append('files', [...files]);
         for(var index = 0; index < files.length; index++){
-          form.append(`file${index}`, files[index]);
+          form.append('image', files[index]);
         }
         /*files.map((file, index) => {
         });*/
-        fetch('/api/v1/upload', {
+        fetch('/api/v0/upload/image', {
           method: 'POST',
           body: form,
         })
