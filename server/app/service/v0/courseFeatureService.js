@@ -30,8 +30,8 @@ class courseFeatureService extends formatData {
       if (!id) {
         throw new Error('缺少课程特色ID！');
       }
+      await courseFeatureModel.update({ id: id }, { $inc: { viewCount: 1 } }, { multi: false });
       const data = await courseFeatureModel.find({ id: id }, '-_id');
-      await courseFeatureModel.update({ id: id }, { viewCount: date[0].viewCount + 1 });
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
