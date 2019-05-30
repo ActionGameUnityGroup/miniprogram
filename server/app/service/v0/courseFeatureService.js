@@ -8,11 +8,16 @@ class courseFeatureService extends formatData {
   async getCourseFeatureList (ctx) {
     let response;
     try {
-      const data = await courseFeatureModel.find({}, '-_id').limit(3);
+      let number = ctx.request.query.number,
+          size = ctx.request.query.size;
+      if (!number && !size) {
+        throw new Error('请添加查询页数和查询数量');
+      }
+      const data = await courseFeatureModel.find({}, '-_id').limit(size).skip(count);
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
-      ctx.throw(500);
+      // ctx.throw(400);
     }
     return response;
   }
@@ -26,7 +31,7 @@ class courseFeatureService extends formatData {
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
-      ctx.throw(500);
+      // ctx.throw(400);
     }
     return response;
   }

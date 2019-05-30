@@ -3,6 +3,7 @@ class FormatData{
     return {
       errMsg: '',
       status: 'request:ok',
+      code: 200,
       data: data,
     };
   }
@@ -10,7 +11,8 @@ class FormatData{
     return {
       errMsg: errMsg,
       status: 'request:fail',
-      info: [],
+      code: 400
+      // info: [],
     };
   }
 }
