@@ -17,6 +17,6 @@ const courseFeatureSchema = new mongoose.Schema({
   content: Array
 }, {collection: 'CourseFeature', versionKey: false});
 
-const courseFeature = db.model('course', courseFeatureSchema);
+const courseFeature = db.model('courseFeature', courseFeatureSchema);
 
 module.exports = courseFeature;
