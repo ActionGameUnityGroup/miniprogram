@@ -5,11 +5,11 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class courseFeatureService extends formatData {
 
-  async getCourseFeatureList () {
+  async getCourseFeatureList (ctx) {
     let response;
     try {
       const data = await courseFeatureModel.find({}, '-_id').limit(3);
-      response = data;
+      response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
       ctx.throw(500);
@@ -17,12 +17,13 @@ class courseFeatureService extends formatData {
     return response;
   }
 
-  async getCourseFeatureInfo () {
+  async getCourseFeatureInfo (ctx) {
     let response;
     try {
       let { id } = ctx.request.query;
-      const data = await courseFeatureModel.find({ id }, '-_id');
-      response = data;
+      console.log(id);
+      const data = await courseFeatureModel.find({ id: id }, '-_id');
+      response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
       ctx.throw(500);
