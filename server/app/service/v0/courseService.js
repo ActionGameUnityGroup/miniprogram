@@ -5,14 +5,38 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class CourseService extends formatData {
 
-	async getCourseList () {
+	async getCourseList (ctx) {
 		let response;
 		try {
-			const data = await courseModel.find({}, '-_id');
-			response = data;
+			const queryParams = {};
+			let { type, number, size } = ctx.request.query;
+			if (type) {
+				queryParams['type'] = type;
+			}
+			if (!number || !size) {
+				throw new Error('请添加分页查询参数');
+			}
+			const data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1);
+			response = this.formatDataSuccess(data);
 		}catch (e) {
 			response = this.formatDataFail(e.message);
-			ctx.throw(500);
+		}
+		return response;
+	}
+
+	async getCourseInfo (ctx) {
+		let response;
+		try {
+			const queryParams = {};
+			let { courseId } = ctx.request.query;
+			if (!courseId) {
+				throw new Error('缺少课程ID');
+			}
+			queryParams['courseId'] = courseId;
+			const data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1);
+			response = this.formatDataSuccess(data);
+		}catch (e) {
+			response = this.formatDataFail(e.message);
 		}
 		return response;
 	}
