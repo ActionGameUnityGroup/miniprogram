@@ -35,6 +35,8 @@ module.exports = (app) => {
 
   router.post('/api/v0/upload/image', Api.v0.Upload.image);
 
+  router.get('/api/v0/assistant/getAssistantList', Api.v0.Assistant.getAssistantList);
+
   return router.routes();
 
 };
