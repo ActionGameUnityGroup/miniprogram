@@ -1,4 +1,5 @@
 const Koa = require('koa');
+const Session = require('koa-session');
 const fs = require('fs');
 const log4js = require(`${__dirname}/os/log4js`);
 const render = require(`${__dirname}/os/render`);
@@ -11,6 +12,7 @@ const bodyParser = require(`${__dirname}/os/body-parser`);
 const path = require('path');
 const rootDirectory = path.resolve(__dirname, '..');
 const db = require(`${rootDirectory}/config/config.db`);
+const sessionConfig = require(`${rootDirectory}/config/session.config`);
 
 class App {
   constructor(){
@@ -19,6 +21,13 @@ class App {
     const pluginPath = `${__dirname}/plugins`;
     const publicDirectory = `${rootDirectory}/`;
     const _this = this;
+
+    _this.app.use(Session(sessionConfig, _this.app));
+
+    _this.app.use(async (ctx, next) => {
+      console.log(ctx.session);
+      await next();
+    });
 
     _this.app.use(async (ctx, next) => {
       console.log(ctx.method, ctx.url);
