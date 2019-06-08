@@ -10,11 +10,15 @@ class TutorService extends formatData {
 				query = ctx.request.query;
 		try {
 			let type = query.type || '',
-					params = {};
+					params = {},
+					sortParams = {sort: 1};
 			if (type) {
 				params['type'] = type;
+				if (type === 'contribution') {
+					sortParams.sort = -1;
+				}
 			}
-			let data = await tutorModel.find(params, '-_id');
+			let data = await tutorModel.find(params, '-_id').sort(sortParams);
 			response = this.formatDataSuccess(data);
 		} catch (e) {
 			response = this.formatDataFail(e.message);
