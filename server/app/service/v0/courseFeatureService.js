@@ -13,7 +13,7 @@ class courseFeatureService extends formatData {
       if (!number && !size) {
         throw new Error('请添加查询页数和查询数量');
       }
-      const data = await courseFeatureModel.find({}, '-_id').limit(size * 1).skip((number * 1) - 1);
+      const data = await courseFeatureModel.find({}, '-_id').limit(size * 1).skip((number * 1) - 1).sort({ srot: -1 });
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
