@@ -21,10 +21,10 @@ module.exports = (app) => {
   router.get('/api/v0/courseFeature/getCourseFeatureList', Api.v0.CourseFeature.getCourseFeatureList);
   router.get('/api/v0/courseFeature/getCourseFeatureInfo', Api.v0.CourseFeature.getCourseFeatureInfo);
   router.get('/api/v0/course/getCourseList', Api.v0.Course.getCourseList);
+  router.get('/api/v0/course/getCourseInfo', Api.v0.Course.getCourseInfo);
   /*router.get('/api/v0/course/getLastestList', Api.v0.Course.getLastestList);
   router.get('/api/v0/course/getAllCourse', Api.v0.Course.getAllCourse);
   router.get('/api/v0/course/getCourseList', Api.v0.Course.getCourseList);
-  router.get('/api/v0/course/getCourseInfo', Api.v0.Course.getCourseInfo);
   router.get('/api/v0/course/getUnexpireCourse', Api.v0.Course.getUnexpireCourse);*/
   router.get('/api/v0/activity/getHotList', Api.v0.Activity.getHotList);
   // router.post('/api/v1/upload', Api.v1.Upload.uploadFile);

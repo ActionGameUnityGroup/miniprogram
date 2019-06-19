@@ -33,7 +33,7 @@ class CourseService extends formatData {
 				throw new Error('缺少课程ID');
 			}
 			queryParams['courseId'] = courseId;
-			const data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1);
+			const data = await courseModel.find(queryParams, '-_id');
 			response = this.formatDataSuccess(data);
 		}catch (e) {
 			response = this.formatDataFail(e.message);
