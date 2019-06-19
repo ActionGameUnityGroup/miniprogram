@@ -9,6 +9,11 @@ class Course{
 		ctx.body = response;
 	}
 
+	async getCourseInfo (ctx) {
+		const response = await courseService.getCourseInfo(ctx);
+		ctx.body = response;
+	}
+
 	/*async getLastestList (ctx) {
 		const response = await courseService.getLastestList(ctx);
 		ctx.body = response;
@@ -21,11 +26,6 @@ class Course{
 
 	async getCourseList (ctx) {
 		const response = await courseService.getCourseList(ctx);
-		ctx.body = response;
-	}
-
-	async getCourseInfo (ctx) {
-		const response = await courseService.getCourseInfo(ctx);
 		ctx.body = response;
 	}
 

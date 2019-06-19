@@ -9,9 +9,9 @@ class CourseService extends formatData {
 		let response;
 		try {
 			const queryParams = {};
-			let { type, number, size } = ctx.request.query;
-			if (type) {
-				queryParams['type'] = type;
+			let { category, number, size } = ctx.request.query;
+			if (category) {
+				queryParams['category'] = category;
 			}
 			if (!number || !size) {
 				throw new Error('请添加分页查询参数');
