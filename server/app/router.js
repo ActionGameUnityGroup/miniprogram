@@ -37,6 +37,8 @@ module.exports = (app) => {
 
   router.get('/api/v0/assistant/getAssistantList', Api.v0.Assistant.getAssistantList);
 
+  router.get('/api/v0/share/getShareList', Api.v0.Share.getShareList);
+
   return router.routes();
 
 };

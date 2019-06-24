@@ -53,7 +53,7 @@ logger.errorLogger = (ctx, error, resTime) => {
 }
 
 logger.responseLogger = (ctx, resTime) => {
-	if (ctx) {
+	if(ctx) {
 		responseLogger.info(formatResponse(ctx, resTime));
 	}
 }

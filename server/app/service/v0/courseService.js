@@ -5,7 +5,7 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class CourseService extends formatData {
 
-	async getCourseList (ctx) {
+	async getCourseList(ctx) {
 		let response;
 		try {
 			const queryParams = {};
@@ -24,7 +24,7 @@ class CourseService extends formatData {
 		return response;
 	}
 
-	async getCourseInfo (ctx) {
+	async getCourseInfo(ctx) {
 		let response;
 		try {
 			const queryParams = {};

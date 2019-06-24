@@ -15,7 +15,7 @@ const imageType = new Map([
 
 class UploadService extends formatData {
 
-  async image (ctx) {
+  async image(ctx) {
     let response;
     try {
       const files = ctx.request.body.files;

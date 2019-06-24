@@ -5,7 +5,7 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class courseFeatureService extends formatData {
 
-  async getCourseFeatureList (ctx) {
+  async getCourseFeatureList(ctx) {
     let response;
     try {
       let number = ctx.request.query.number,
@@ -24,7 +24,7 @@ class courseFeatureService extends formatData {
     return response;
   }
 
-  async getCourseFeatureInfo (ctx) {
+  async getCourseFeatureInfo(ctx) {
     let response;
     try {
       let { id } = ctx.request.query;

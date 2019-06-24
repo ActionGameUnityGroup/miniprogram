@@ -4,12 +4,12 @@ const courseFeatureService = require(`${rootDirectory}/service/v0/courseFeatureS
 
 class CourseFeature {
 
-  async getCourseFeatureList (ctx) {
+  async getCourseFeatureList(ctx) {
     const response = await courseFeatureService.getCourseFeatureList(ctx);
     ctx.body = response;
   }
 
-  async getCourseFeatureInfo (ctx) {
+  async getCourseFeatureInfo(ctx) {
     const response = await courseFeatureService.getCourseFeatureInfo(ctx);
     ctx.body = response;
   }

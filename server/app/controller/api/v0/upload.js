@@ -4,7 +4,7 @@ const uploadService = require(`${rootDirectory}/service/v0/uploadService`);
 
 class Upload {
 
-  async image (ctx) {
+  async image(ctx) {
     let response = await uploadService.image(ctx);
     ctx.body = response;
   }

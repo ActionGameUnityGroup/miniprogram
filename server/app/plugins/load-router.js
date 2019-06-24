@@ -10,7 +10,7 @@ const addController = (controller) => {
     if (URL.startsWith('GET ')) {
       router.get(fileName, controller[URL]);
     } else if (URL.startsWith('OPTIONS ')) {
-      ctx.options(fileName, (ctx) => {
+      ctx.options(fileName,(ctx) => {
         ctx.status = 200;
       });
     } else if(URL.startsWith('POST ')) {

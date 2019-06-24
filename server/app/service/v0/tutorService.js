@@ -5,7 +5,7 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class TutorService extends formatData {
 
-	async getTutorList (ctx) {
+	async getTutorList(ctx) {
 		let response,
 				query = ctx.request.query;
 		try {
@@ -27,7 +27,7 @@ class TutorService extends formatData {
 		return response;
 	}
 
-	async getTutorInfo (ctx) {
+	async getTutorInfo(ctx) {
 		const { tutorId } = ctx.request.query || '';
 		let response;
 		try {
@@ -40,7 +40,7 @@ class TutorService extends formatData {
 		return response;
 	}
 
-	/*async getTeachingAssistant (ctx) {
+	/*async getTeachingAssistant(ctx) {
 		let response;
 		try {
 			let data = await TeachingAssistant.find({}, '-_id');

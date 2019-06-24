@@ -5,7 +5,7 @@ const formatData = require(`${rootDirectory}/service/formatData`);
 
 class AssistantService extends formatData {
 
-  async getAssistantList (ctx) {
+  async getAssistantList(ctx) {
     let response;
     try {
       let data = await assistantModel.find({}, '-_id');
