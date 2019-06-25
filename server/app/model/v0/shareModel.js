@@ -13,7 +13,7 @@ const shareSchema = new mongoose.Schema({
   id: String,
   avatar: String,
   name: String,
-  time: String,
+  time: Number,
   message: Array
 }, {collection: 'Share', versionKey: false});
 
