@@ -3,11 +3,13 @@ const dbDirectory = path.resolve(__dirname, '../../../config');
 const { db, mongoose } = require(`${dbDirectory}/config.db`);
 
 /**
- * @param {String} id 课程风采ID
- * @param {String} title 标题
- * @param {Number} viewCount 浏览量
- * @param {Number} releaseTime 发布时间
- * @param {Array} content 内容
+ * @param {String} id 助教ID
+ * @param {String} avatar 头像
+ * @param {String} title 助教头衔
+ * @param {String} name 助教名字
+ * @param {String} qrcode 微信二维码
+ * @param {String} phone 手机号
+ * @param {String} wechat 微信号
 */
 const assistantSchema = new mongoose.Schema({
     id: String,
@@ -15,7 +17,8 @@ const assistantSchema = new mongoose.Schema({
     title: String,
     name: String,
     qrcode: String,
-    phone: String
+    phone: String,
+    wechat: String,
 }, { collection: 'Assistant', versionKey: false });
 
 const assistant = db.model('assistant', assistantSchema);
