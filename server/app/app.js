@@ -51,7 +51,13 @@ class App {
       log4js.errorLogger(ctx, err);
     });
 
-    _this.app.use(body({ multipart: true }));
+    _this.app.use(body({
+      multipart: true,
+      formLimit: '10mb',
+      jsonLimit: '10mb',
+      textLimit: '10mb',
+      enableTypes: ['json', 'form', 'text']
+    }));
     _this.app.use(bodyParser());
     _this.app.use(render());
     _this.app.use(compress({threshold: 2048}));

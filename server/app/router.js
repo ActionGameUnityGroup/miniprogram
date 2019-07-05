@@ -18,6 +18,8 @@ module.exports = (app) => {
   router.post('/api/v0/banner/upload', Api.v0.Banner.upload);
   router.get('/api/v0/tutor/getTutorList', Api.v0.Tutor.getTutorList);
   router.get('/api/v0/tutor/getTutorInfo', Api.v0.Tutor.getTutorInfo);
+  router.post('/api/v0/tutor/setTutorInfo', Api.v0.Tutor.setTutorInfo);
+  router.post('/api/v0/tutor/updateTutorInfo', Api.v0.Tutor.updateTutorInfo);
   router.get('/api/v0/courseFeature/getCourseFeatureList', Api.v0.CourseFeature.getCourseFeatureList);
   router.get('/api/v0/courseFeature/getCourseFeatureInfo', Api.v0.CourseFeature.getCourseFeatureInfo);
   router.get('/api/v0/course/getCourseList', Api.v0.Course.getCourseList);

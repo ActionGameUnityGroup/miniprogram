@@ -9,7 +9,8 @@ const tutorSchema = new mongoose.Schema({
   title: Array,
   type: String,
   charactersIntro: Array,
-  personalIdentification: Array,
+  personalIdentification: String,
+  sort: Number,
 }, {collection: 'Tutor', versionKey: false});
 
 const tutorModel = db.model('tutor', tutorSchema);
