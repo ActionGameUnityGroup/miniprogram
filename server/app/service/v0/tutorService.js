@@ -60,7 +60,7 @@ class TutorService extends formatData {
         throw new Error('请添加查询页数和查询数量');
       }
 			let data = await tutorModel.find(params, '-_id').limit(size * 1).skip((number * 1) - 1).sort(sortParams);
-			const count = Math.ceil(await tutorModel.countDocuments({}));
+			const count = Math.ceil(await tutorModel.count({}));
 			const total = Math.ceil(count/size);
 			response = this.formatDataSuccess({ data, count, total, size: size * 1, current: number * 1 });
 		} catch (e) {
