@@ -38,6 +38,8 @@ module.exports = (app) => {
   router.post('/api/v0/upload/image', Api.v0.Upload.image);
 
   router.get('/api/v0/assistant/getAssistantList', Api.v0.Assistant.getAssistantList);
+  router.get('/api/v0/assistant/getAssistantIntroduce', Api.v0.Assistant.getAssistantIntroduce);
+  router.post('/api/v0/assistant/setAssistantIntroduce', Api.v0.Assistant.setAssistantIntroduce);
 
   router.get('/api/v0/share/getShareList', Api.v0.Share.getShareList);
 

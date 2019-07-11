@@ -13,10 +13,10 @@ class courseFeatureService extends formatData {
       if (!number && !size) {
         throw new Error('请添加查询页数和查询数量');
       }
-      const data = await courseFeatureModel.find({}, '-_id').limit(size * 1).skip((number * 1) - 1).sort({ order: -1 });
-      /*const count = await courseFeatureModel.count({});
-      console.log(count);*/
-      response = this.formatDataSuccess(data);
+      const data = await courseFeatureModel.find({}, '-_id').limit(size * 1).skip((number * 1) - 1).sort({ sort: -1 });
+      const count = Math.ceil(await courseFeatureModel.count({}));
+      const total = Math.ceil(count/size);
+      response = this.formatDataSuccess({ data, count, total, current: number * 1, size: size * 1 });
     }catch (e) {
       response = this.formatDataFail(e.message);
       // ctx.throw(400);
@@ -27,13 +27,15 @@ class courseFeatureService extends formatData {
   async getCourseFeatureInfo(ctx) {
     let response;
     try {
-      let { id } = ctx.request.query;
-      console.log(id);
+      let { id, source } = ctx.request.query;
       if (!id) {
         throw new Error('缺少课程特色ID！');
       }
-      await courseFeatureModel.update({ id: id }, { $inc: { viewCount: 1 } }, { multi: false });
-      const data = await courseFeatureModel.find({ id: id }, '-_id');
+      if (source === 'miniprogram') {
+        let updateCb = await courseFeatureModel.update({ featureId: id }, { $inc: { viewCount: 1 } }, { multi: false });
+        // console.log(updateCb);
+      }
+      const data = await courseFeatureModel.find({ featureId: id }, '-_id');
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);

@@ -4,6 +4,7 @@ const { db, mongoose } = require(`${dbDirectory}/config.db`);
 
 /**
  * @param {String} id 助教ID
+ * @param {Number} sort 排序
  * @param {String} avatar 头像
  * @param {String} title 助教头衔
  * @param {String} name 助教名字
@@ -13,6 +14,7 @@ const { db, mongoose } = require(`${dbDirectory}/config.db`);
 */
 const assistantSchema = new mongoose.Schema({
     id: String,
+    sort: Number,
     avatar: String,
     title: String,
     name: String,

@@ -9,6 +9,16 @@ class Assistant {
     ctx.body = response;
   }
 
+  async getAssistantIntroduce(ctx) {
+    const response = await assistantService.getAssistantIntroduce(ctx);
+    ctx.body = response;
+  }
+
+  async setAssistantIntroduce(ctx) {
+    const response = await assistantService.setAssistantIntroduce(ctx);
+    ctx.body = response;
+  }
+
 }
 
 module.exports = new Assistant();
