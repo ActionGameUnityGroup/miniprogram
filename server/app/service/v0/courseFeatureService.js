@@ -27,15 +27,15 @@ class courseFeatureService extends formatData {
   async getCourseFeatureInfo(ctx) {
     let response;
     try {
-      let { id, source } = ctx.request.query;
-      if (!id) {
+      let { featureId, source } = ctx.request.query;
+      if (!featureId) {
         throw new Error('缺少课程特色ID！');
       }
       if (source === 'miniprogram') {
-        let updateCb = await courseFeatureModel.update({ featureId: id }, { $inc: { viewCount: 1 } }, { multi: false });
+        let updateCb = await courseFeatureModel.update({ featureId: featureId }, { $inc: { viewCount: 1 } }, { multi: false });
         // console.log(updateCb);
       }
-      const data = await courseFeatureModel.find({ featureId: id }, '-_id');
+      const data = await courseFeatureModel.find({ featureId: featureId }, '-_id');
       response = this.formatDataSuccess(data);
     }catch (e) {
       response = this.formatDataFail(e.message);
