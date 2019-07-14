@@ -12,7 +12,6 @@ class FormatData{
       errMsg: errMsg,
       status: 'request:fail',
       code: 400
-      // info: [],
     };
   }
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const tutorModel = require(`${rootDirectory}/model/v0/tutorModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
+// const checkSession = require(`${rootDirectory}/service/checkSession`);
 const uuid = require('uuid');
 
 class TutorService extends formatData {

@@ -14,6 +14,16 @@ class CourseFeature {
     ctx.body = response;
   }
 
+  async setCourseFeatureInfo(ctx) {
+    const response = await courseFeatureService.setCourseFeatureInfo(ctx);
+    ctx.body = response;
+  }
+
+  async updateCourseFeatureInfo(ctx) {
+    const response = await courseFeatureService.updateCourseFeatureInfo(ctx);
+    ctx.body = response;
+  }
+
 }
 
 module.exports = new CourseFeature();
