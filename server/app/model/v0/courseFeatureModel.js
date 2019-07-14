@@ -19,8 +19,8 @@ const courseFeatureSchema = new mongoose.Schema({
   isRelease: Boolean,
   releaseTime: Number,
   cover: String,
-  content: Array,
-  order: Number,
+  content: String,
+  sort: Number,
 }, {collection: 'CourseFeature', versionKey: false});
 
 const courseFeature = db.model('courseFeature', courseFeatureSchema);

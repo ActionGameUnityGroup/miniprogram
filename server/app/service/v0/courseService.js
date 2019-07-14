@@ -8,7 +8,7 @@ class CourseService extends formatData {
 	async getCourseList(ctx) {
 		let response;
 		try {
-			const queryParams = {};
+			let queryParams = {};
 			let { category, number, size } = ctx.request.query;
 			if (category) {
 				queryParams['category'] = category;
@@ -16,8 +16,10 @@ class CourseService extends formatData {
 			if (!number || !size) {
 				throw new Error('请添加分页查询参数');
 			}
-			const data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1);
-			response = this.formatDataSuccess(data);
+			let data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1);
+      let count = Math.ceil(await courseModel.count({}));
+      let total = Math.ceil(count/size);
+      response = this.formatDataSuccess({ data, count, total, current: number * 1, size: size * 1 });
 		}catch (e) {
 			response = this.formatDataFail(e.message);
 		}
@@ -27,7 +29,7 @@ class CourseService extends formatData {
 	async getCourseInfo(ctx) {
 		let response;
 		try {
-			const queryParams = {};
+			let queryParams = {};
 			let { courseId } = ctx.request.query;
 			if (!courseId) {
 				throw new Error('缺少课程ID');

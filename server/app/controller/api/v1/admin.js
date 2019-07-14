@@ -7,14 +7,12 @@ class Admin{
   async login(ctx){
     let response = await adminService.login(ctx);
     ctx.body = response;
-    ctx.type = 'text/json';
   }
 
-  async getadminInfo(ctx){
-    let response = await adminService.getadminInfo(ctx);
+  /*async getAdminInfo(ctx){
+    let response = await adminService.getAdminInfo(ctx);
     ctx.body = response;
-    ctx.type = 'text/json';
-  }
+  }*/
 
 }
 
