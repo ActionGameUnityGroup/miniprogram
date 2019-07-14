@@ -1,5 +1,6 @@
 /server/node_modules/
 /server/db/
+/server/public/video/
 /server/log/
 /server/config/
 /server2/
