@@ -9,6 +9,11 @@ class Upload {
     ctx.body = response;
   }
 
+  async video(ctx) {
+    let response = await uploadService.video(ctx);
+    ctx.body = response;
+  }
+
 }
 
 module.exports = new Upload();

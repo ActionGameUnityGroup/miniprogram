@@ -40,6 +40,30 @@ class UploadService extends formatData {
     return response;
   }
 
+  async video(ctx) {
+    let response;
+    try {
+      const files = ctx.request.body.files;
+      const video = files.video;
+      if (video) {
+        let fileType = 'mp4';
+        if (!fileType) {
+          throw new TypeError('请选择正确的图片格式进行上传!');
+        }
+        let filename = `${uuid.v4()}.${fileType}`;
+        let reader = fs.createReadStream(video.path),
+            writer = fs.createWriteStream(`${publicDirectory}/video/${filename}`);
+        reader.pipe(writer);
+        response = this.formatDataSuccess({ info: '上传成功', url: `https://www.changdaolife.cn/public/video/${filename}` });
+      } else {
+        throw new TypeError('请选择图片进行上传!');
+      }
+    } catch(e){
+      response = this.formatDataFail(e.message);
+    }
+    return response;
+  }
+
 }
 
 module.exports = new UploadService();
