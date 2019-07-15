@@ -9,6 +9,11 @@ class Share {
     ctx.body = response;
   }
 
+  async getShareInfo(ctx) {
+    let response = await shareService.getShareInfo(ctx);
+    ctx.body = response;
+  }
+
 }
 
 module.exports = new Share();
