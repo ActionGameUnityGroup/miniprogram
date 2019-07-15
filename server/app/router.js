@@ -49,6 +49,11 @@ module.exports = (app) => {
 
   router.get('/api/v0/share/getShareList', Api.v0.Share.getShareList);
 
+  router.get('/api/v0/video/getVideoList', Api.v0.Video.getVideoList);
+  router.get('/api/v0/video/getVideoInfo', Api.v0.Video.getVideoInfo);
+  router.post('/api/v0/video/setVideoInfo', Api.v0.Video.setVideoInfo);
+  router.get('/api/v0/video/updateVideoInfo', Api.v0.Video.updateVideoInfo);
+
   return router.routes();
 
 };
