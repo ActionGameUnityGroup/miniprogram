@@ -48,6 +48,9 @@ module.exports = (app) => {
   router.post('/api/v0/assistant/setAssistantIntroduce', Api.v0.Assistant.setAssistantIntroduce);
 
   router.get('/api/v0/share/getShareList', Api.v0.Share.getShareList);
+  router.get('/api/v0/share/getShareInfo', Api.v0.Share.getShareInfo);
+  router.post('/api/v0/share/setShareInfo', Api.v0.Share.setShareInfo);
+  router.post('/api/v0/share/updateShareInfo', Api.v0.Share.updateShareInfo);
 
   router.get('/api/v0/video/getVideoList', Api.v0.Video.getVideoList);
   router.get('/api/v0/video/getVideoInfo', Api.v0.Video.getVideoInfo);
