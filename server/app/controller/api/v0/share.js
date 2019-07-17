@@ -14,6 +14,16 @@ class Share {
     ctx.body = response;
   }
 
+  async setShareInfo(ctx) {
+    let response = await shareService.setShareInfo(ctx);
+    ctx.body = response;
+  }
+
+  async updateShareInfo(ctx) {
+    let response = await shareService.updateShareInfo(ctx);
+    ctx.body = response;
+  }
+
 }
 
 module.exports = new Share();
