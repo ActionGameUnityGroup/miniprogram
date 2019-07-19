@@ -4,6 +4,10 @@ class Page {
     await ctx.render('index');
   }
 
+  async login(ctx) {
+    await ctx.render('index');
+  }
+
   async tutor(ctx) {
     await ctx.render('index');
   }

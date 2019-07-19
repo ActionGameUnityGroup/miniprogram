@@ -6,6 +6,7 @@ module.exports = (app) => {
   const { Page, Api } = app.Controller;
 
   router.get('/', Page.index);
+  router.get('/login', Page.login);
   router.get('/tutor', Page.tutor);
   router.get('/setTutor', Page.setTutor);
   router.get('/assistant', Page.assistant);
