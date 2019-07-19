@@ -15,7 +15,7 @@ class courseFeatureService extends formatData {
         throw new Error('请添加查询页数和查询数量');
       }
       const data = await courseFeatureModel.find({}, '-_id').limit(size * 1).skip((number * 1) - 1).sort({ sort: -1 });
-      const count = Math.ceil(await courseFeatureModel.countDocuments({}));
+      const count = Math.ceil(await courseFeatureModel.count({}));
       const total = Math.ceil(count/size);
       response = this.formatDataSuccess({ data, count, total, current: number * 1, size: size * 1 });
     }catch (e) {
