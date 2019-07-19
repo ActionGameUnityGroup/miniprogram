@@ -38,7 +38,7 @@ class App {
       await next();
     });
 
-    // 验证登录信息
+    /*// 验证登录信息
     _this.app.use(async (ctx, next) => {
       await next();
       if (!ctx.session.logged) {
@@ -47,7 +47,7 @@ class App {
           ctx.status = 401;
         }
       }
-    });
+    });*/
 
     _this.app.use(async (ctx, next) => {
       const start = new Date();
