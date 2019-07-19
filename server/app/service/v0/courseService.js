@@ -17,7 +17,7 @@ class CourseService extends formatData {
 				throw new Error('请添加分页查询参数');
 			}
 			let data = await courseModel.find(queryParams, '-_id').limit(size * 1).skip((number * 1) - 1).sort({sort: -1});
-      let count = Math.ceil(await courseModel.countDocuments({}));
+      let count = Math.ceil(await courseModel.count({}));
       let total = Math.ceil(count/size);
       response = this.formatDataSuccess({ data, count, total, current: number * 1, size: size * 1 });
 		}catch (e) {
