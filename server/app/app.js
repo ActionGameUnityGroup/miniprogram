@@ -31,10 +31,22 @@ class App {
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
       ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
+      ctx.set('Access-Control-Allow-Credentials', true);
       if (ctx.method === 'OPTIONS') {
         ctx.status = 200;
       };
       await next();
+    });
+
+    // 验证登录信息
+    _this.app.use(async (ctx, next) => {
+      await next();
+      if (!ctx.session.logged) {
+        ctx.session.logged = false;
+        if (ctx.url.includes('/api') && ctx.url !== '/api/v1/admin/login') {
+          ctx.status = 401;
+        }
+      }
     });
 
     _this.app.use(async (ctx, next) => {

@@ -2,9 +2,9 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../../');
 const adminService = require(`${rootDirectory}/service/v1/adminService`);
 
-class Admin{
+class Admin {
 
-  async login(ctx){
+  async login(ctx) {
     let response = await adminService.login(ctx);
     ctx.body = response;
   }
