@@ -6,6 +6,18 @@ module.exports = (app) => {
   const { Page, Api } = app.Controller;
 
   router.get('/', Page.index);
+  router.get('/tutor', Page.tutor);
+  router.get('/setTutor', Page.setTutor);
+  router.get('/assistant', Page.assistant);
+  router.get('/setAssistant', Page.setAssistant);
+  router.get('/feature', Page.feature);
+  router.get('/setFeature', Page.setFeature);
+  router.get('/rich', Page.rich);
+  router.get('/setRich', Page.setRich);
+  router.get('/video', Page.video);
+  router.get('/setVideo', Page.setVideo);
+  router.get('/studentShare', Page.studentShare);
+  router.get('/setStudentShare', Page.setStudentShare);
   router.get('/upload', Page.upload);
   router.get('/session', Page.session);
   router.post('/api/v0/user/login', Api.v0.User.login);
