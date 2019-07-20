@@ -66,7 +66,7 @@ class VideoService extends formatData {
       let updateOptions = Object.assign({}, params);
       delete updateOptions.videoId;
       if (!videoId) {
-        throw new Error('请选择导师!');
+        throw new Error('请选择视频!');
       }
       let data = await videoModel.update({ videoId }, updateOptions, { multi: false });
       if (!data) {
