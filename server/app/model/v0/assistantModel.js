@@ -21,6 +21,8 @@ const assistantSchema = new mongoose.Schema({
     qrcode: String,
     phone: String,
     wechat: String,
+    intro: String,
+    motto: String,
 }, { collection: 'Assistant', versionKey: false });
 
 const assistant = db.model('assistant', assistantSchema);

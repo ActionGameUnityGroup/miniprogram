@@ -52,6 +52,7 @@ module.exports = (app) => {
   router.post('/api/v1/test/list', Api.v1.Test.list)
 
   router.post('/api/v0/upload/image', Api.v0.Upload.image);
+  router.post('/api/v0/upload/video', Api.v0.Upload.video);
 
   router.get('/api/v0/assistant/getAssistantList', Api.v0.Assistant.getAssistantList);
   router.get('/api/v0/assistant/getAssistantInfo', Api.v0.Assistant.getAssistantInfo);
@@ -68,7 +69,13 @@ module.exports = (app) => {
   router.get('/api/v0/video/getVideoList', Api.v0.Video.getVideoList);
   router.get('/api/v0/video/getVideoInfo', Api.v0.Video.getVideoInfo);
   router.post('/api/v0/video/setVideoInfo', Api.v0.Video.setVideoInfo);
-  router.get('/api/v0/video/updateVideoInfo', Api.v0.Video.updateVideoInfo);
+  router.post('/api/v0/video/updateVideoInfo', Api.v0.Video.updateVideoInfo);
+
+  router.get('/api/v0/introduction/getIntroductionInfo', Api.v0.Introduction.getIntroductionInfo);
+  router.post('/api/v0/introduction/updateIntroductionInfo', Api.v0.Introduction.updateIntroductionInfo);
+
+  router.get('/api/v0/business/getBusinessInfo', Api.v0.Business.getBusinessInfo);
+  router.post('/api/v0/business/updateBusinessInfo', Api.v0.Business.updateBusinessInfo);
 
   return router.routes();
 
