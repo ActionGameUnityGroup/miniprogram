@@ -29,8 +29,8 @@ class UploadService extends formatData {
         let reader = fs.createReadStream(image.path),
             writer = fs.createWriteStream(`${publicDirectory}/image/${filename}`);
         reader.pipe(writer);
-        // response = this.formatDataSuccess({ info: '上传成功', url: `https://www.changdaolife.cn/public/image/${filename}` });
-        response = this.formatDataSuccess({ info: '上传成功', url: `http://127.0.0.1:9000/public/image/${filename}` });
+        response = this.formatDataSuccess({ info: '上传成功', url: `https://www.changdaolife.cn/public/image/${filename}` });
+        // response = this.formatDataSuccess({ info: '上传成功', url: `http://127.0.0.1:9000/public/image/${filename}` });
       } else {
         throw new TypeError('请选择图片进行上传!');
       }
@@ -54,8 +54,8 @@ class UploadService extends formatData {
         let reader = fs.createReadStream(video.path),
             writer = fs.createWriteStream(`${publicDirectory}/video/${filename}`);
         reader.pipe(writer);
-        // response = this.formatDataSuccess({ info: '上传成功', url: `https://www.changdaolife.cn/public/video/${filename}` });
-        response = this.formatDataSuccess({ info: '上传成功', url: `http://127.0.0.1:9000/public/video/${filename}` });
+        response = this.formatDataSuccess({ info: '上传成功', url: `https://www.changdaolife.cn/public/video/${filename}` });
+        // response = this.formatDataSuccess({ info: '上传成功', url: `http://127.0.0.1:9000/public/video/${filename}` });
       } else {
         throw new TypeError('请选择视频进行上传!');
       }
