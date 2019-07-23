@@ -1,0 +1,36 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='student-share-list'>
+  <block wx:for='{{studentList}}' wx:key='index'>
+    <view class="student-share-item">
+      <view class="student-info">
+        <view class="student-avatar"><image mode='widthFix' src='/assets/icon/student-avatar.png' /></view>
+        <view class="student-name">学员-{{item.name}}</view>
+      </view>
+      <block wx:if='{{item.content.length > 1}}'>
+        <view class='{{item.isOmit ? "student-word-limit" : "student-word"}}'>
+          <rich-text html='{{item.content}}' />
+          <!-- <block wx:for='{{item.content}}' wx:for-item='content' wx:key='contentKey'>
+            <view>{{content}}</view>
+          </block> -->
+        </view>
+        <block wx:if='{{item.isOmit}}'>
+          <view class='show-more' bindtap='showMore' data-key='{{index}}'>查看全文 <image style='width: 24rpx; height: 24rpx;' src='/assets/icon/arrow.png' /></view>
+        </block>
+        <block wx:else>
+          <view class='hide-more' bindtap='hideMore' data-key='{{index}}'>收起 <image style='width: 24rpx; height: 24rpx;' src='/assets/icon/arrow.png' /></view>
+        </block>
+      </block>
+      <block wx:else>
+        <view class="student-word">
+          <block wx:for='{{item.content}}' wx:for-item='content' wx:key='contentKey'>
+            <view>{{content}}</view>
+          </block>
+        </view>
+      </block>
+      <view class="word-time">{{item.time}}</view>
+    </view>
+  </block>
+</scroll-view>
+
+<view></view>

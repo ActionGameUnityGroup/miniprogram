@@ -1,0 +1,26 @@
+<view></view>
+
+<scroll-view scroll-y class="consult-content">
+  <view class="consult-item" bindtap='navigateToPage' data-routes='/routes/CompanyIntroduce/CompanyIntroduce'>
+    <text>公司介绍</text>
+    <image mode='widthFix' src='/assets/icon/cooperation-cover1.jpg' />
+  </view>
+  <view class="consult-item" bindtap='navigateToPage' data-routes='/routes/UndertakeBusiness/UndertakeBusiness'>
+    <text>承接业务</text>
+    <image mode='widthFix' src='/assets/icon/cooperation-cover2.jpg' />
+  </view>
+  <view class="consult-item" bindtap='navigateToPage' data-routes='/routes/CooperatFair/CooperatFair'>
+    <text>合作洽谈</text>
+    <image mode='widthFix' src='/assets/icon/cooperation-cover3.jpg' />
+  </view>
+  <view class="consult-item" bindtap='navigateToPage' data-routes='/routes/OnlineCustomer/OnlineCustomer'>
+    <text>在线客服</text>
+    <image mode='widthFix' src='/assets/icon/cooperation-cover4.jpg' />
+  </view>
+  <view class="consult-item" bindtap='navigateToPage' data-routes='/routes/TelephoneCounseling/TelephoneCounseling'>
+    <text>电话咨询</text>
+    <image mode='widthFix' src='/assets/icon/cooperation-cover5.jpg' />
+  </view>
+</scroll-view>
+
+<nav-bar cooperationActived='{{true}}' />

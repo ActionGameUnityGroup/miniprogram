@@ -2,6 +2,7 @@
 /server/db/
 /server/log/
 /server/config/
+/server/public
 /server2/
 /server3/
 /ReriServer/

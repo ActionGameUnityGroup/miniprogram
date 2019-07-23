@@ -1,0 +1,6 @@
+page{ background: #fff; }
+.consult-content{ margin-top: 37rpx; height: calc(100% - 37rpx - 102rpx); }
+.consult-item{ display: block; position: relative; margin: 0 auto 49rpx; width: 679rpx; height: 272rpx; border-radius: 10rpx; overflow: hidden; }
+.consult-item text { display: block; position: absolute; top: 20rpx; left: 18rpx; padding-left: 30rpx; line-height: 1; font-size: 34rpx; color: #1B1B1BFF; }
+.consult-item text::before { display: block; content: '•'; position: absolute; top: 0; left: 0; font-size: 36rpx; color: #1B1B1BFF; }
+.consult-item image { display: block; width: 100%; height: auto; }

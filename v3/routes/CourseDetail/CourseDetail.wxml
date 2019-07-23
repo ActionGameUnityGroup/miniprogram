@@ -1,0 +1,44 @@
+<view></view>
+<scroll-view scroll-y='{{true}}' class='course-series-content'>
+  <!-- <view class='course-series-header'>
+    <view class="course-series-cover"><image mode='widthFix' src='{{courseInfo.banner}}' /></view>
+    <view class="course-series-info">
+      <view class="course-series-title">
+        <text>{{courseInfo.title}}</text>
+        <view class="share" bindtap='shareCourse'><image mode='widthFix' src='/assets/icon/share.png' /></view>
+      </view>
+      <view class="course-series-msg">{{courseInfo.subTitle}}</view>
+    </view>
+  </view>
+  
+  <view class="intro-title">简介</view> -->
+  <view class='intro-list'>
+    <block wx:for='{{courseInfo.introList}}' wx:key='index'>
+      <view class="course-series-item">
+        <image mode='widthFix' src='{{item}}' />
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<block wx:if='{{showShareBar}}'>
+  <view class="share-shadow"></view>
+</block>
+<view class="{{shareBarClass}}">
+  <view class="share-content">
+    <view class="share-title">分享到</view>
+    <view class="share-target-list">
+      <button class="share-target-item" open-type="share" id='wechat'>
+        <view class="target-icon"><image mode='widthFix' src='/assets/icon/wechat.png' /></view>
+        <view class="target-name">微信好友</view>
+      </button>
+      <button class="share-target-item" open-type="share" id='moments'>
+        <view class="target-icon"><image mode='widthFix' src='/assets/icon/moments.png' /></view>
+        <view class="target-name">朋友圈</view>
+      </button>
+    </view>
+  </view>
+  <view class='cancel-share' bindtap='cancelShare'>取消分享</view>
+</view>
+
+<view></view>

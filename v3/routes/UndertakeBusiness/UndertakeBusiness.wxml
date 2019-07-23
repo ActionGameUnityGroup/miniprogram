@@ -1,0 +1,19 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='company-introduce-content'>
+  <view class="introduce-cover"><image mode='widthFix' src='{{banner}}' /></view>
+
+  <view class="introduce-info">
+    <view class="company-name">{{slogan}}</view>
+    <view class="company-location">{{name}}</view>
+  </view>
+
+  <view class="company-introduce-bar">承接业务</view>
+
+  <view class="company-introduce-list">
+    <rich-text nodes='{{intro}}' />
+  </view>
+
+</scroll-view>
+
+<view></view>

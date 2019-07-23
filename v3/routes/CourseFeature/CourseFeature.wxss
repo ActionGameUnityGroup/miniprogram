@@ -1,0 +1,8 @@
+.scroll-view{ padding: 0 33rpx; width: calc(100% - 66rpx); height: 100%; background: #fff; }
+.course-feature-item{ display: flex; justify-content: space-between; align-items: center; padding: 32rpx 0; width: 100%; border-bottom: 1rpx solid #BFBFBF; }
+.course-feature-item:last-child{ border-bottom: 0; }
+.course-feature-cover{ display: block; width: 203rpx; height: auto; border-radius: 15rpx; overflow: hidden; }
+.course-feature-cover image{ display: block; width: 100%; height: 100%; background: #BFBFBF; }
+.course-feature-info{ display: block; width: 450rpx; height: 154rpx; }
+.course-feature-info-title{ display: block; margin-bottom: 21rpx; font-size: 30rpx; color: #000; }
+.course-feature-info-msg{ display: block; line-height: 1.3; font-size: 24rpx; color: #5D5D5D; }

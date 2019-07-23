@@ -1,0 +1,45 @@
+<scroll-view scroll-y='{{true}}' scroll-top='{{dialogContentScrollTop}}' class='dialog-content'>
+  <block wx:for='{{dialogList}}' wx:key='index'>
+    <block wx:if='{{item.from === "customer"}}'>
+      <view class="customer-dialog-item">
+        <view class="avatar-bar"><image src='{{item.avatar}}' mode='widthFix' /></view>
+        <view class="dialog-bar"> {{item.content}} </view>
+      </view>
+      <!-- <block wx:if='{{showSelectContent && index === 0}}'>
+        <view class="customer-dialog-item">
+          <view class="avatar-bar"><image src='{{item.avatar}}' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view>让我猜猜您是不是想问以下问题：</view>
+            <view class="topic-content">
+              <view class="topic-item">关于身体</view>
+              <view class="topic-item">关于思想情绪</view>
+              <view class="topic-item">关于能量</view>
+              <view class="topic-item">关于系统</view>
+              <view class="topic-item">关于灵性成长</view>
+              <button class="turn-customer" open-type='contact'>
+                <text>转人工</text>
+                <image src='/assets/icon/manual-service.png' mode='widthFix' />
+              </button>
+            </view>
+          </view>
+        </view>
+      </block> -->
+    </block>
+    <block wx:else>
+      <view class="user-dialog-item">
+        <view class="dialog-bar">{{item.content}}</view>
+        <view class="avatar-bar"><image src='{{item.avatar}}' mode='widthFix' /></view>
+      </view>
+    </block>
+  </block>
+</scroll-view>
+<view class="input-bar">
+  <input class='input-content' value='{{inputValue}}' bindinput='changeInputValue'/>
+  <view class="emoji-btn"><image src='/assets/icon/emoji.png' mode='widthFix' /></view>
+  <block wx:if='{{inputValue.length === 0}}'>
+    <view class="more-btn"><image src='/assets/icon/more.png' mode='widthFix' /></view>
+  </block>
+  <block wx:else>
+    <view class="send-btn" bindtap='updateInputContent'>发送</view>
+  </block>
+</view>

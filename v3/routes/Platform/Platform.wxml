@@ -1,0 +1,12 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='platform-content'>
+  <block wx:for='{{platformList}}' wx:key='index'>
+    <view class="platform-item">
+      <view class="platform-cover"><image mode='aspectFit' src='{{item.cover}}' /></view>
+      <view class="platform-info">{{item.introduce}}</view>
+    </view>
+  </block>
+</scroll-view>
+
+<view></view>

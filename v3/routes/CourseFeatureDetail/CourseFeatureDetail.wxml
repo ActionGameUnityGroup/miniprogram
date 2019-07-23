@@ -1,0 +1,15 @@
+<view style='height: 47rpx; background: #fff;'></view>
+<scroll-view
+  style='height: calc(100% - 47rpx - 47rpx); background: #fff;'
+  scroll-y
+>
+  <view class="course-feature-title">{{featureInfo.title}}</view>
+  <view class="info-bar">
+    <view class="view-count-bar">浏览次数：  {{featureInfo.viewCount}}</view>
+    <view class="release-time-bar">发布时间：{{featureInfo.releaseTime}}</view>
+  </view>
+  <view class="course-feature-content">
+    <rich-text nodes='{{featureInfo.content}}'></rich-text>
+  </view>
+</scroll-view>
+<view style='height: 47rpx; background: #fff;'></view>

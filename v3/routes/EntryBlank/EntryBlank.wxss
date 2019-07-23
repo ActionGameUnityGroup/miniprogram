@@ -1,0 +1,18 @@
+page{ display: block; width: 100%; height: 100%; overflow: hidden; }
+image{ display: block; width: 100%; height: auto; }
+.entry-blank-content{ display: block; width: 100%; height: 100%; background: #f5f3f3; }
+.entry-blank-title{ display: block; width: 100%; }
+.entry-blank-tips{ display: block; margin: 42rpx auto 0; width: 100%; text-align: center; line-height: 1; font-size: 30rpx; }
+.red-color{ color: #f20000; }
+.entry-info-item{ display: block; margin-top: 38rpx; padding: 0 83rpx; }
+.entry-info-title{ display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 20rpx; font-size: 30rpx; }
+.entry-info-title text:last-child{ margin-left: 10rpx; color: #100f0f; }
+.entry-info-input{ display: flex; align-items: center; padding: 0 20rpx; text-align: left; height: 75rpx; color: #100f0f; font-size: 30rpx; }
+.entry-info-input-placeholder{ color: #a4a4a4; font-size: 30rpx; }
+.entry-info-radio{ display: flex; justify-content: space-between; align-items: center; padding: 0 20rpx; height: 75rpx; font-size: 30rpx; color: #000; }
+.entry-info-radio image{ display: block; width: 40rpx; height: auto; }
+.margin-bottom-10{ margin-bottom: 10rpx; }
+.entry-info-content{ display: block; width: 100%; }
+.entry-item-content{ background: #fff; border-radius: 10rpx; }
+
+.submit-operation{ display: block; margin: 48rpx auto; width: 88%; height: 88rpx; text-align: center; line-height: 88rpx; background: #ffbe10; border-radius: 50rpx; color: #fff; font-size: 34rpx; }

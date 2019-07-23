@@ -1,0 +1,26 @@
+<view style='height: 18rpx;'></view>
+<scoll-view scroll-y='{{true}}' class='telephone-list'>
+  <block wx:for='{{assistantList}}' wx:key='index'>
+    <view class="telephone-item" bindtap='callUp' data-key='{{index}}'>
+      <view class="avatar-bar"><image mode='widthFix' src='{{item.avatar}}' /></view>
+      <view class="info-bar">
+        <view class="info-content">
+          <view class="info-name">{{item.title}}-{{item.name}}</view>
+          <view class="info-phone">{{item.phone}}</view>
+        </view>
+        <view class="telephone-icon"><image mode='widthFix' src='/assets/icon/phone.png' /></view>
+      </view>
+    </view>
+  </block>
+</scoll-view>
+<block wx:if='{{calling}}'>
+  <view class="dialog-bar">
+    <view class="dialog-shadow" bindtap='cancelMakingCall'></view>
+    <view class="dialog-content">
+      <view class="dialog-title">电话咨询</view>
+      <view class="dialog-info">{{callingTitle}}-{{callingName}}：{{callingPhone}}</view>
+      <view class="dialog-confirm" bindtap='makingCall'>拨打</view>
+    </view>
+  </view>
+</block>
+<view style='height: 18rpx;'></view>

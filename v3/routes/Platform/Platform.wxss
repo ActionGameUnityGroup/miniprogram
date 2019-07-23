@@ -1,0 +1,6 @@
+.platform-content{ padding: 22rpx 0; height: calc(100% - 44rpx); }
+.platform-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 25rpx; padding: 41rpx 27rpx; width: 637rpx; background: #fff; border-radius: 15rpx; overflow: hidden; }
+.platform-item:last-child{ margin-bottom: 0; }
+.platform-cover{ display: block; width: 166rpx; height: 166rpx; }
+.platform-cover image{ display: block; width: 100%; height: 100%; }
+.platform-info{ display: block; width: 430rpx; text-align: justify;line-height: 37rpx; color: #000000FF; font-size: 24rpx; }

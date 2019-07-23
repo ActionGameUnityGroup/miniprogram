@@ -1,0 +1,20 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='course-content'>
+  <block wx:if='{{courseList.length !== 0}}'>
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <view class="course-item" bindtap='navigateToDetail' id='{{item.courseId}}'>
+        <view class="course-cover"><image mode='widthFix' src='{{item.cover}}' /></view>
+        <view class="course-info">
+          <view class="course-title">{{item.title}}</view>
+          <view class="course-subtitle">{{item.subTitle}}</view>
+        </view>
+      </view>
+    </block>
+  </block>
+  <block wx:else>
+    <view class='empty'>暂无课程</view>
+  </block>
+</scroll-view>
+
+<view></view>

@@ -1,0 +1,7 @@
+
+.normal {
+  background: #9379F2;
+}
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.title { margin: 0; margin-right: 15px; }

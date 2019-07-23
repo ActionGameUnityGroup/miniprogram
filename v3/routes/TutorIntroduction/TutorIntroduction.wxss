@@ -1,0 +1,13 @@
+.tutor-info-bar{ display: block; position: relative; margin: 0 auto; width: 710rpx; background: #fff; overflow: unset; }
+.tutor-info{ display: inline-block; vertical-align: top; margin-top: -19rpx; margin-left: 24rpx; width: 150rpx; overflow: hidden; }
+.tutor-cover{ display: block; width: 150rpx; height: 150rpx; border-radius: 15rpx; overflow: hidden; }
+.tutor-cover image{ display: block; width: 100%; height: auto; background: #BFBFBFFF; }
+.tutor-type{ display: block; margin: 10rpx auto 0; width: 150rpx; text-align: center; font-size: 28rpx; color: #000000FF; }
+.tutor-name{ display: block; margin-top: 10rpx auto 0; width: 150rpx; text-align: center; font-size: 28rpx; color: #000000FF; }
+.tutor-honor-bar{ display: inline-block; vertical-align: top; margin-left: 32rpx; padding: 32rpx 0 37rpx; width: 452rpx; height: auto; font-size: 22rpx; line-height: 32rpx; }
+
+.tutor-intro{ display: block; width: 100%; background: #fff; }
+.intro-title{ display: block; padding: 0 24rpx; height: 63rpx; line-height: 63rpx; border-bottom: 1rpx solid #BFBFBFFF; font-size: 28rpx; color: #767676FF; }
+.experience-intro-bar{ display: block; padding: 37rpx 18rpx 0; line-height: 38rpx; font-size: 24rpx; color: #747474FF; }
+.tutor-intro-bar{ display: block; padding: 54rpx 16rpx 40rpx; text-align: justify; line-height: 40rpx; color: #171717FF; font-size: 26rpx; }
+.honor-name{ white-space: nowrap; }

@@ -1,0 +1,18 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='rich-content-scroll'>
+  <view class="content-cover" bindtap='navigateOperation' data-route='/routes/RichSeriesDetail/RichSeriesDetail'><image mode='widthFix' src='/assets/icon/rich-cover.jpg' /></view>
+  <view class='rich-content'>
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <view class="rich-item" bindtap='navigateOperation' data-route='/routes/CourseDetail/CourseDetail?courseId={{item.courseId}}'>
+        <view class="rich-cover"><image mode='widthFix' src='{{item.cover}}' /></view>
+        <view class="rich-info">
+          <view class="rich-title">{{item.title}}</view>
+          <view class="rich-describe">{{item.subTitle}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<nav-bar richActived='{{true}}' />

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "routes/Index/Index",
+    "routes/CompanyIntroduce/CompanyIntroduce",
+    "routes/UndertakeBusiness/UndertakeBusiness",
+    "routes/AssistantIntroduction/AssistantIntroduction",
+    "routes/StudentShare/StudentShare",
+    "routes/Rich/Rich",
+    "routes/CourseList/CourseList",
+    "routes/RichSeriesDetail/RichSeriesDetail",
+    "routes/CooperatFair/CooperatFair",
+    "routes/RichSeries/RichSeries",
+    "routes/OnlineCustomer/OnlineCustomer",
+    "routes/Cooperation/Cooperation",
+    "routes/MarchTowardRich/MarchTowardRich",
+    "routes/RichDetail/RichDetail",
+    "routes/TelephoneCounseling/TelephoneCounseling",
+    "routes/CourseFeature/CourseFeature",
+    "routes/CourseFeatureDetail/CourseFeatureDetail",
+    "routes/AssistantGroup/AssistantGroup",
+    "routes/CourseDetail/CourseDetail",
+    "routes/Platform/Platform",
+    "routes/TutorIntroduction/TutorIntroduction",
+    "routes/EntryBlank/EntryBlank",
+    "routes/NineType/NineType",
+    "routes/LastestCourse/LastestCourse",
+    "routes/Pay/Pay",
+    "routes/HotList/HotList",
+    "routes/Collection/Collection",
+    "routes/PersonalInfo/PersonalInfo",
+    "routes/Income/Income"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "常道文化"
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,60 @@
+<view class='bg'>
+    <navigator url='../UserCenter/Address/addNewAddress' class='address-view'>
+      <image class='address-view-image' src="{{orderInfo.addressIcon}}"></image>
+      <text wx:if="{{orderInfo.addressText != ''}}" class='address-view-text'></text>
+      <text wx:else class='address-view-text'>{{defaultAddressText}}</text>
+    </navigator>
+
+    <view class='goods-view'>
+      <image class='goods-view-image' src='{{orderInfo.goodsImage}}'></image>
+      <view class='goods-view-content'>
+        <text class='goods-view-title'>{{orderInfo.goodsTitle}}</text>
+        <view class='goods-view-bottom'>
+          <view>
+            <text class='goods-view-price-title'>总价</text>
+            <text class='goods-view-price-symbol'>¥</text>
+            <text class='goods-view-price'>{{orderInfo.goodsPrice}}</text>
+          </view>
+          <text class='goods-number'>{{"x" + orderInfo.goodsNumber}}</text>
+        </view>
+      </view>
+    </view>
+
+  <view class='credits-view'>
+    <view class='credits-info'>
+      <text class='credits-title'>积分抵</text>
+      <text class='credits-instruction'>{{"本单最高可抵扣¥" + orderInfo.creditsNumber}}</text>
+    </view>
+    <switch class='credits-switcher' checked='{{orderInfo.useCredits}}' bindchange=""></switch>
+  </view>
+
+  <view class='price-view'>
+    <text style='font-size:24rpx'>商品金额</text>
+    <text class='price-view-number'>{{"¥ " + orderInfo.goodsPrice}}</text>
+  </view>
+
+  <view class='freight-view'>
+    <text style='font-size:24rpx'>运费</text>
+    <text class='freight-number'>{{"¥ " + orderInfo.freight}}</text>
+  </view>
+
+  <view class='remarks-view'>
+    <text style='font-size:24rpx'>订单备注</text>
+    <input bindconfirm='onRemarkInputConfirm' style='font-size:24rpx; width:500rpx' placeholder='{{remarkPlaceHolder}}'></input>
+  </view>
+
+  <view class='term-view'>
+    <checkbox-group bindchange='onCheckBoxChange'>
+      <checkbox checked='true'></checkbox>
+    </checkbox-group>
+    <text style='font-size:25rpx; margin-left:22rpx; margin-right:22rpx'>我已阅读并同意</text>
+    <view bindtap='onClickTerm' style='font-size:25rpx; color:#cf282f;'>{{orderInfo.termText}}</view>
+  </view>
+
+  <view class='bottom-view'>
+    <text style='font-size:26rpx; margin-left:15rpx; margin-top:35rpx; margin-bottom:35rpx;'>实付款</text>
+    <text style='font-size:27rpx; color:#cf282f; margin-left:28rpx;'>{{"¥ " + orderInfo.goodsPrice}}</text>
+    <button class='confirm-button' bindtap='onClickConfirm'>提交订单</button>
+  </view>
+
+</view>

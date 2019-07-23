@@ -1,0 +1,53 @@
+<view class="incone-content">
+  <view class="income-balance">
+    <text> 可提现余额(元) </text>
+    <text> {{incomeBalance}} </text>
+  </view>
+  <view class="today-income-action">
+    <view class="today-income-content">
+      <text> 今日收益 </text>
+      <text> {{todayIncome}} </text>
+    </view>
+    <view class="cash-action">
+      <text> 立即提现 </text>
+      <image mode='widthFix' src='/assets/icon/miniprogram-icon-68.png' style='width: 13rpx; height: 25rpx;'></image>
+    </view>
+  </view>
+</view>
+
+<view class="income-history">
+  <view class="income-history-header">
+    <text> 收益历史 </text>
+    <text> 历史总收益: {{totalIncome}} 元 </text>
+  </view>
+  <view class="income-history-content">
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <view class="income-history-item">
+        <view class="income-history-cover">
+          <image
+            wx:if='{{item.show}}'
+            class='{{item.loaded ? "image-top" : "image-bottom"}}'
+            mode='widthFix'
+            src='{{item.url}}'
+            bindload='imageLoaded'
+            data-index='{{index}}'
+            data-name='courseList'
+          />
+          <image
+            class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+            mode='widthFix'
+            src='{{item.thumb}}'
+            bindload='thumbLoaded'
+            data-index='{{index}}'
+            data-name='courseList'
+          />
+        </view>
+        <view class="course-info">
+          <text> {{item.mainTitle}} </text>
+          <text> 佣金比例: {{item.commissionRate}}% </text>
+          <text> 收益: {{item.income}}元 </text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
