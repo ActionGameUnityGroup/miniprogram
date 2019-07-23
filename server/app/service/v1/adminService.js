@@ -22,20 +22,34 @@ class AdminService extends formatData {
       let queryOptions = { username, password };
       let adminInfo = await adminModel.findOne(queryOptions, '-_id -username -password');
       if (adminInfo) {
-        ctx.session.logged = true;
-        ctx.session.token = uuid.v4();
+        let token = uuid.v4();
+        ctx.session.token = token;
         // console.log(adminInfo.token);
         // console.log('session:', adminInfo.token);
         response = this.formatDataSuccess({
           avatar: adminInfo.avatar,
           nickname: adminInfo.nickname,
           info: '欢迎你, '+ adminInfo.nickname,
-          // token: adminInfo.token,
+          token: token,
         });
       } else {
         response = this.formatDataFail('您不是管理员!');
       }
     } catch (e) {
+      response = this.formatDataFail(e.message);
+    }
+
+    return response;
+  }
+
+  async logout(ctx) {
+    let response;
+    try {
+      console.log('登出');
+      ctx.session.token = '';
+      response = this.formatDataSuccess({ info: '已注销登录信息，再见' });
+    } catch (e) {
+      console.error(e.message);
       response = this.formatDataFail(e.message);
     }
 

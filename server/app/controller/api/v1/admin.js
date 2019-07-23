@@ -9,6 +9,11 @@ class Admin {
     ctx.body = response;
   }
 
+  async logout(ctx) {
+    let response = await adminService.logout(ctx);
+    ctx.body = response;
+  }
+
   /*async getAdminInfo(ctx){
     let response = await adminService.getAdminInfo(ctx);
     ctx.body = response;
