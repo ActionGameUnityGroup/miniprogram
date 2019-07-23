@@ -1,5 +1,6 @@
 /server/node_modules/
 /server/db/
+/server/public/
 /server/log/
 /server/config/
 /server/public
@@ -29,5 +30,5 @@
 /app.rar
 /server4nodejs
 /server4nodejs.zip
-/.gitignore
+.gitignore
 /prettier-test
