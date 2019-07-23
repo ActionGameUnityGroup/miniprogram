@@ -43,6 +43,7 @@ class App {
       await next();
       let url = ctx.url,
           type = ctx.request.type;
+      console.log(type !== 'miniprogram');
       if (type !== 'miniprogram') {
         console.log(ctx.session.token);
         if (!ctx.session.token) {
