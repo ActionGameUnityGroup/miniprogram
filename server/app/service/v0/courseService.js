@@ -2,6 +2,7 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const courseModel = require(`${rootDirectory}/model/v0/courseModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
+const uuid = require('uuid');
 
 class CourseService extends formatData {
 
@@ -43,103 +44,45 @@ class CourseService extends formatData {
 		return response;
 	}
 
-	/*async checkCourseValidate(){
-		try{
-			const courseList = await courseModel.find({}, '-_id');
-			const time = new Date().getTime();
-			const newcourseList = courseList.map((course, key) => {
-				if(course.time > time) {
-					course.isExpire = false;
-				} else {
-					course.isExpire = true;
-				}
-				return course;
-			});
-			courseModel.update()
-		}catch(e){
-			console.log(e.message);
-		}
-	}
+  async setCourseInfo(ctx) {
+    let response;
+    try {
+      let params = JSON.parse(ctx.request.body) || {};
+      let featureInfo = new courseModel({
+        courseId: uuid.v4(),
+        ...params,
+      });
+      let data = await featureInfo.save();
+      if (!data) {
+        throw new Error('保存课程失败');
+      }
+      response = this.formatDataSuccess({info: '保存课程成功'});
+    }catch (e) {
+      response = this.formatDataFail(e.message);
+    }
+    return response;
+  }
 
-	async getLastestList(ctx){
-		let { page } = ctx.request.query || '';
-		let response;
-		try{
-			if(page === 'index' || page === ''){
-				let data = await courseModel.find({isExpire: false}, '-_id -key -isExpire').sort({time: 1}).limit(4);
-				response = this.formatDataSuccess(data);
-			} else {
-				let data = await courseModel.find({key: 'lastestCourse'}, '-_id -key -isExpire').sort({courseId: -1});
-				response = this.formatDataSuccess(data);
-			}
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}
-
-	async getAllCourse(ctx){
-		let response;
-		try{
-			let data = await courseModel.find({}, '-_id -key -isExpire').sort({time: 1});
-			response = this.formatDataSuccess(data);
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}
-
-	async getCourseList(ctx){
-		const type = ctx.request.query.type || '';
-		let response;
-		try{
-			let data = await courseModel.find({type: type}, '-_id -isExpire');
-			response = this.formatDataSuccess(data);
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}
-
-	async getCourseInfo(ctx){
-		const { courseId } = ctx.request.query;
-		let response;
-		try{
-			let data = await courseModel.find({courseId: courseId}, '-_id -key -isExpire').sort({time: 1});
-			response = this.formatDataSuccess(data);
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}
-
-	async getUnexpireCourse(ctx){
-		let response;
-		try{
-			let data = await courseModel.find({isExpire: false}, '-_id').sort({time: 1});
-			response = this.formatDataSuccess(data);
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}
-
-	async getAllCourseList(ctx){
-		let response;
-		try{
-			let data = await courseModel.find({}, '-_id').sort({time: 1});
-			response = this.formatDataSuccess(data);
-		} catch(e){
-			response = this.formatDataFail(e.message);
-			ctx.throw(500);
-		}
-		return response;
-	}*/
+  async updateCourseInfo(ctx) {
+    let response;
+    try {
+      let params = JSON.parse(ctx.request.body) || {};
+      let courseId = params.courseId;
+      let updateOptions = Object.assign({}, params);
+      delete updateOptions.courseId;
+      if (!courseId) {
+        throw new Error('没有找到目标课程，更新课程失败！');
+      }
+      let data = await courseModel.update({ courseId }, updateOptions, { multi: false });
+      if (!data) {
+        throw new Error('更新课程失败');
+      }
+      response = this.formatDataSuccess({info: '更新课程成功'});
+    }catch (e) {
+      response = this.formatDataFail(e.message);
+    }
+    return response;
+  }
 
 }
 
