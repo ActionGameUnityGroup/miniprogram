@@ -28,7 +28,6 @@ class App {
 
     _this.app.use(async (ctx, next) => {
       console.log(ctx.method, ctx.url);
-      console.log(ctx.request.query);
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
       ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
@@ -39,16 +38,21 @@ class App {
       await next();
     });
 
-    /*// 验证登录信息
+    // 验证登录信息
     _this.app.use(async (ctx, next) => {
       await next();
-      if (!ctx.session.logged) {
-        ctx.session.logged = false;
-        if (ctx.url.includes('/api') && ctx.url !== '/api/v1/admin/login') {
-          ctx.status = 401;
+      let url = ctx.url,
+          type = ctx.request.type;
+      if (type !== 'miniprogram') {
+        console.log(ctx.session.token);
+        if (!ctx.session.token) {
+          ctx.session.token = '';
+          if (ctx.url.includes('/api') && (ctx.url !== '/api/v1/admin/login' || ctx.url !== '/api/v1/admin/logout')) {
+            ctx.status = 401;
+          }
         }
       }
-    });*/
+    });
 
     _this.app.use(async (ctx, next) => {
       const start = new Date();

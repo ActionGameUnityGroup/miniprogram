@@ -47,6 +47,7 @@ module.exports = (app) => {
   router.get('/api/v0/activity/getHotList', Api.v0.Activity.getHotList);
   // router.post('/api/v1/upload', Api.v1.Upload.uploadFile);
   router.post('/api/v1/admin/login', Api.v1.Admin.login);
+  router.post('/api/v1/admin/logout', Api.v1.Admin.logout);
 
   router.get('/api/v1/test/list', Api.v1.Test.list)
   router.post('/api/v1/test/list', Api.v1.Test.list)
