@@ -2,6 +2,7 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '../../');
 const adminModel = require(`${rootDirectory}/model/v1/adminModel`);
 const formatData = require(`${rootDirectory}/service/formatData`);
+const uuid = require('uuid');
 // const checkLogged = request(`${rootDirectory}/service/checkLogged`);
 
 class AdminService extends formatData {
@@ -22,8 +23,8 @@ class AdminService extends formatData {
       let adminInfo = await adminModel.findOne(queryOptions, '-_id -username -password');
       if (adminInfo) {
         ctx.session.logged = true;
+        ctx.session.token = uuid.v4();
         // console.log(adminInfo.token);
-        // ctx.session.token = adminInfo.token;
         // console.log('session:', adminInfo.token);
         response = this.formatDataSuccess({
           avatar: adminInfo.avatar,
