@@ -14,6 +14,16 @@ class Course{
 		ctx.body = response;
 	}
 
+	async setCourseInfo(ctx) {
+		const response = await courseService.setCourseInfo(ctx);
+		ctx.body = response;
+	}
+
+	async updateCourseInfo(ctx) {
+		const response = await courseService.updateCourseInfo(ctx);
+		ctx.body = response;
+	}
+
 	/*async getLastestList(ctx) {
 		const response = await courseService.getLastestList(ctx);
 		ctx.body = response;
