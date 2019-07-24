@@ -32,7 +32,7 @@ class Login extends Component {
       message.warning('非法的登录凭证!');
       return;
     }
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
   }
 
   handleTypingUserName = (e) => {

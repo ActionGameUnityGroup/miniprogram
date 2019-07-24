@@ -115,7 +115,12 @@ class BasicLayout extends Component {
     if (pathname === '/login') {
       return props.children;
     }
-    let userInfo = JSON.parse(sessionStorage.userInfo) || {nickname: 'admin'};
+    let userInfo;
+    if (localStorage.userInfo) {
+      userInfo = JSON.parse(localStorage.userInfo);
+    } else {
+      userInfo = {nickname: 'admin'}
+    }
     let dropMenu = (
       <Menu>
         <Menu.Item style={{ textAlign: 'center' }} onClick={this.logout}>退出</Menu.Item>
