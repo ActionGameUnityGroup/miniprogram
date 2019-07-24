@@ -19,6 +19,8 @@ module.exports = (app) => {
   router.get('/setVideo', Page.setVideo);
   router.get('/studentShare', Page.studentShare);
   router.get('/setStudentShare', Page.setStudentShare);
+  router.get('/introduction', Page.introduction);
+  router.get('/business', Page.business);
   router.get('/upload', Page.upload);
   router.get('/session', Page.session);
   router.post('/api/v0/user/login', Api.v0.User.login);

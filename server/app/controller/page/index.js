@@ -56,6 +56,14 @@ class Page {
     await ctx.render('index');
   }
 
+  async introduction(ctx) {
+    await ctx.render('index');
+  }
+
+  async business(ctx) {
+    await ctx.render('index');
+  }
+
   async upload(ctx) {
     await ctx.render('upload');
   }
