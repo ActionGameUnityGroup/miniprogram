@@ -41,16 +41,9 @@ function RichList({ list, loading, handleRelease }) {
     align: 'center',
     width: '10%',
     render: ({ videoId }) => (
-      <div>
-        <div style={{ marginBottom: 10 }}>
-          <Button onClick={() => {
-            router.push('/setVideo', { videoId });
-          }}>修改信息</Button>
-        </div>
-        <div>
-          <Button type='danger'>删除视频</Button>
-        </div>
-      </div> 
+      <Button onClick={() => {
+        router.push('/setVideo', { videoId });
+      }}>修改信息</Button> 
     )
   }];
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
-import { Icon, Button, Input, Checkbox } from 'antd';
+import { Icon, Button, Checkbox } from 'antd';
 import router from 'umi/router';
 import style from './login.css';
 import crypto from 'crypto';

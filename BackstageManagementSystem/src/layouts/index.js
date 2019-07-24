@@ -4,7 +4,7 @@ import { LocaleProvider, Layout, Menu, Avatar, Icon, Dropdown } from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import styles from './index.css';
 import router from 'umi/router';
-import { request, message, URL } from '@/utils';
+// import { request, message, URL } from '@/utils';
 
 const { Header, Sider, Content, /*Footer*/ } = Layout;
 const { SubMenu } = Menu;

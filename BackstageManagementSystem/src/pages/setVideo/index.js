@@ -117,7 +117,7 @@ class SetVideo extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
-        <h2>课程信息</h2>
+        <h2>视频信息</h2>
         <div className={styles['form']}>
           <Form onSubmit={this.handleSubmit} labelCol={{ span: 2 }} wrapperCol={{ span: 22 }} colon={false}>
             <FormItem label='标题'>{
