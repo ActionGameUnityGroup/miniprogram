@@ -1,10 +1,10 @@
 {
   "pages": [
     "routes/Index/Index",
+    "routes/StudentShare/StudentShare",
     "routes/CompanyIntroduce/CompanyIntroduce",
     "routes/UndertakeBusiness/UndertakeBusiness",
     "routes/AssistantIntroduction/AssistantIntroduction",
-    "routes/StudentShare/StudentShare",
     "routes/Rich/Rich",
     "routes/CourseList/CourseList",
     "routes/RichSeriesDetail/RichSeriesDetail",

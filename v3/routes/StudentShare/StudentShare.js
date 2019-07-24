@@ -43,20 +43,9 @@ Page({
   checkMessageLength(text) {
     let flag = false,
         textLength = 0;
-    console.log(text.length);
-    /*for (var i = 0, length = list.length; i < length; i++) {
-      let message = list[i];
-      if (message.length > 105) {
-        flag = true;
-      }
-      if (length > 1) {
-        textLength += message.length;
-        if (textLength > 105) {
-          flag = true;
-          break;
-        }
-      }
-    }*/
+    if (text.length >= 166) {
+      flag = true;
+    }
     return flag;
   },
   showMore(e) {
