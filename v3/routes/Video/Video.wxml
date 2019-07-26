@@ -1,0 +1,33 @@
+<view></view>
+
+<scroll-view
+  class="video-list"
+  scroll-y='{{true}}'
+>
+  <block wx:for='{{videoList}}' wx:key='index'>
+    <view class="video-item">
+      <view class="video-title">{{item.title}}</view>
+      <view class="video-bar">
+        <video
+          id='{{item.videoId}}'
+          data-key='{{index}}'
+          src="{{item.url}}"
+          controls='{{true}}'
+          object-fit='cover'
+          autoplay='{{false}}'
+          class='video-content'
+          show-fullscreen-btn='{{false}}'
+          bindplay='playVideo'
+          bindended='videoEnd'
+          poster='{{item.poster}}'
+        >
+          <!-- <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
+            <cover-image mode='widthFix' src='{{item.poster}}' style='width: 100%;' />
+          </cover-view> -->
+        </video>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<view></view>

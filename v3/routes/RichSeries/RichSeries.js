@@ -13,6 +13,9 @@ const courseList = [{
         cover: '/assets/icon/richSourceCover.jpg',
         url: '/routes/CourseDetail/CourseDetail?courseId=2019061904',
       },{
+        cover: '/assets/icon/healthSeriesCover.jpg',
+        url: '/routes/CourseList/CourseList?category=healthSeries',
+      },{
         cover: '/assets/icon/studentShareCover.jpg',
         url: '/routes/StudentShare/StudentShare',
       }];

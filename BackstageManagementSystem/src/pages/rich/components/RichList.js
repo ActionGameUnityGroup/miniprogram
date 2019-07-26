@@ -8,6 +8,7 @@ function RichList({ list, loading, handleRelease }) {
     richDoor: '丰盛之门',
     richRoad: '丰盛之道',
     richSource: '丰盛之源',
+    healthSeries: '疗愈系列',
   };
 
   const columns = [{

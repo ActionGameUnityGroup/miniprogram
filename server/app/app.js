@@ -43,12 +43,11 @@ class App {
       await next();
       let url = ctx.url,
           type = ctx.request.type;
-      console.log(type !== 'miniprogram');
       if (type !== 'miniprogram') {
         console.log(ctx.session.token);
-        if (!ctx.session.token) {
+        if (!ctx.session.token && ctx.url.includes('/api')) {
           ctx.session.token = '';
-          if (ctx.url.includes('/api') && (ctx.url !== '/api/v1/admin/login' || ctx.url !== '/api/v1/admin/logout')) {
+          if ((ctx.url !== '/api/v1/admin/login' || ctx.url !== '/api/v1/admin/logout')) {
             ctx.status = 401;
           }
         }

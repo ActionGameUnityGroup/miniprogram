@@ -1,5 +1,5 @@
 page{ background: #fff; }
-.swiper-content{ display: block; padding-top: 46rpx; height: calc(100% - 46rpx); }
+/* .swiper-content{ display: block; padding-top: 46rpx; height: calc(100% - 46rpx); }
 .swiper-item{ display: block; margin: 26rpx auto 0; padding: 66rpx 57rpx 85rpx; width: 536rpx; background: #fff; border-radius: 20rpx; box-shadow: 0 0 17px 0 #29232424; overflow: hidden; }
 .info-bar{ display: flex; justify-content: space-between; align-items: center; }
 .assistant-cover{ display: block; width: 133rpx; height: 133rpx; background: #bfbfbf; border-radius: 15rpx; overflow: hidden; }
@@ -13,4 +13,8 @@ page{ background: #fff; }
 
 .share-btn{ display: block; margin: 23rpx auto 0; width: 337rpx; height: 61rpx; text-align: center; line-height: 61rpx; background: linear-gradient(180deg, #ffdf79FF 100%, #ffaf50FF 0%); border-radius: 31rpx; font-size: 28rpx; color: #FFFFFFFF; overflow: hidden; }
 
-.describe{ display: block; margin: 44rpx auto 0; width: 500rpx; text-align: center; line-height: 39rpx; font-size: 24rpx; color: #909090FF; }
+.describe{ display: block; margin: 44rpx auto 0; width: 500rpx; text-align: center; line-height: 39rpx; font-size: 24rpx; color: #909090FF; } */
+
+
+.company-introduce-list{ padding: 35rpx 50rpx; }
+.company-introduce-content{ width: 100%; height: 100%; }

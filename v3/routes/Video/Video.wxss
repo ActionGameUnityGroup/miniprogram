@@ -1,0 +1,8 @@
+Page{ background: #e1e1e1; }
+
+.video-list{ display: block; width: 100%; height: 100%; }
+.video-item{ display: block; margin-top: 12rpx; width: 100%; background: #fff; }
+.video-item:last-child{ margin-bottom: 50rpx; }
+.video-title{ display: block; padding: 0 30rpx; text-align: left; line-height: 112rpx; font-size: 30rpx; font-weight: bold; color: #101010; }
+.video-bar{ display: block; width: 100%; height: 416rpx; }
+.video-content{ display: block; width: 100%; height: 100%; }

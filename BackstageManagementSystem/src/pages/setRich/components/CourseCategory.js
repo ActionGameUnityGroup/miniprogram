@@ -40,6 +40,7 @@ export default class extends Component {
         <Radio value='richDoor'>丰盛之门</Radio>
         <Radio value='richRoad'>丰盛之道</Radio>
         <Radio value='richSource'>丰盛之源</Radio>
+        <Radio value='healthSeries'>疗愈系列</Radio>
       </Radio.Group>
     );
   }

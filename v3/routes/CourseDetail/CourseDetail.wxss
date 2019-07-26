@@ -28,3 +28,5 @@
 .target-icon image{ display: block; width: 100%; }
 .target-name{ display: block; margin-top: 17rpx; width: 100%; text-align: center; line-height: 48rpx; font-size: 28rpx; font-weight: 500; color: #878787FF; }
 .cancel-share{ display: block; margin: 0 auto 13rpx; width: 730rpx; height: 92rpx; text-align: center; line-height: 92rpx; background: #fff; border-radius: 10rpx; font-size: 32rpx; font-weight: 500; color: #575757FF; box-shadow: 0 0 21rpx 0 #00000087; }
+
+.empty{ display: block; height: 100%; text-align: center; line-height: 10; font-size: 24px; }

@@ -1,5 +1,11 @@
 <view></view>
-<swiper
+
+<scroll-view scroll-y='{{true}}' class="company-introduce-content">
+  <view class="company-introduce-list">
+    <rich-text nodes='{{intro}}' />
+  </view>
+</scroll-view>
+<!-- <swiper
   indicator-dots='{{true}}'  
   indicator-color='#B5B5B5'
   indicator-active-color='#8FC31F'
@@ -22,4 +28,4 @@
       </view>
     </swiper-item>
   </block>
-</swiper>
+</swiper> -->

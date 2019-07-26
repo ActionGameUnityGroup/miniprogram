@@ -8,6 +8,8 @@
 .motto-title{ line-height: 21rpx; font-size: 28rpx; color: #000000FF; }
 .motto-name{ margin-top: 26rpx; line-height: 32rpx; font-size: 22rpx; color: #000000FF; }
 
+.intro-content{ margin: 12rpx auto; width: 691rpx; height: calc(100% - 24rpx); overflow: hidden; }
+
 .intro-title{ display: block; margin: 20rpx auto 0; padding: 0 24rpx; width: 643rpx; height: 63rpx; line-height: 63rpx; background: #fff; border-bottom: 1rpx solid #BFBFBFFF; border-top-left-radius: 15rpx; border-top-right-radius: 15rpx; font-size: 28rpx; font-weight: bold; color: #000000FF; }
 .tutor-intro{ display: block; width: 100%; background: #fff; }
 .intro-item{ display: block; padding: 37rpx 18rpx 20rpx; text-align: justify; line-height: 48rpx; color: #171717FF; font-size: 26rpx; }

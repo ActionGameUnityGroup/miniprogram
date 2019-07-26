@@ -1,6 +1,6 @@
-<view class="placeholder" style='height: 40rpx;'></view>
+<view class="placeholder"></view>
 
-<swiper
+<!-- <swiper
   class="tutor-info-bar"
   previous-margin='50rpx'
   next-margin='50rpx'
@@ -15,10 +15,10 @@
       </view>
     </swiper-item>
   </block>
-</swiper>
+</swiper> -->
 
-<view class="intro-title">爱的使者——常道文化助教团队</view>
-<scroll-view scroll-y='{{true}}' style='margin: 0 auto 82rpx; width: 691rpx; height: calc(100% - 40rpx - 300rpx - 20rpx - 63rpx - 60rpx); border-radius: 15rpx; overflow: hidden;'>
+<!-- <view class="intro-title">爱的使者——常道文化助教团队</view> -->
+<scroll-view scroll-y='{{true}}' class='intro-content'>
   <view class="tutor-intro">
     <rich-text nodes='{{intro}}' />
     <!-- <view class="intro-item">有这么一群人，脸上洋溢着笑容，心里充满着热情，好像他们的存在就是为了传播爱。他们的生命里有源源不断的动力，支持着他们去奉献，去服务。</view>

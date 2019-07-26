@@ -1,7 +1,7 @@
 <view></view>
 <scroll-view scroll-y='{{true}}' class='company-introduce-content'>                       
-  <view class="introduce-cover"><image mode='widthFix' src='{{banner}}' /></view>
-
+  <!-- <view class="introduce-cover"><image mode='widthFix' src='{{banner}}' /></view>
+  
   <view class="introduce-info">
     <view class="company-name">{{name}}</view>
     <view class="company-location">
@@ -9,8 +9,8 @@
       <text>{{address}}</text>
     </view>
   </view>
-
-  <view class="company-introduce-bar">简介</view>
+  
+  <view class="company-introduce-bar">简介</view> -->
 
   <view class="company-introduce-list">
     <rich-text nodes='{{intro}}' />

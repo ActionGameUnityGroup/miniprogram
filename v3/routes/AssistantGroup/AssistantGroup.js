@@ -25,7 +25,7 @@ Page({
   onLoad(option) {
   	_this = this;
 
-    wx.request({
+    /*wx.request({
       url: 'https://www.changdaolife.cn/api/v0/assistant/getAssistantList?type=miniprogram',
       method: 'GET',
       success(res) {
@@ -34,7 +34,7 @@ Page({
           _this.setData({ assistantList });
         }
       }
-    });
+    });*/
 
   	wx.request({
   		url: `https://www.changdaolife.cn/api/v0/assistant/getAssistantIntroduce`,

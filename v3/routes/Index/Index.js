@@ -1,6 +1,5 @@
 //获取应用实例
 const app = getApp();
-let video = {};
 
 let _this;
 
@@ -13,7 +12,6 @@ Page({
   },
   data: {
     videoList: [],
-    videoPlayList: {},
     lastestList: [],
     residentTutorList: [],
     contributionTutorList: [],
@@ -91,14 +89,8 @@ Page({
       method: 'GET',
       success(res) {
         if (res.data.code) {
-          let videoPlayList = {};
           let videoList = res.data.data.data;
-          for (let i = 0, length = videoList.length; i < length; i++) {
-            video['video' + (i + 1)] = wx.createVideoContext('video' + (i + 1), _this);
-            console.log(video);
-            videoPlayList['video' + (i + 1)] = false;
-          }
-          _this.setData({ videoList, videoPlayList });
+          _this.setData({ videoList });
         }
       }
     });
@@ -139,9 +131,6 @@ Page({
     // this.loadFontFace();
 
   },
-  changeCurrent(e) {
-    this.setData({ currentVideo: e.detail.current });
-  },
   loadFontFace () {
     wx.loadFontFace({
       family: 'PingFangSC-Medium',
@@ -149,81 +138,6 @@ Page({
       success: function(){console.log('load font success')}
     });
   },
-  playVideo(e) {
-    let key = e.currentTarget.dataset.key;
-    let { videoPlayList } = this.data;
-    video['video' + key].play();
-    videoPlayList['video' + key] = true;
-    this.setData({ autoplay: false, videoPlayList });
-  },
-  pauseVideo(e) {
-    let key = e.target.id;
-    let { videoPlayList } = this.data;
-    // video['video' + key].pause();
-    videoPlayList[key] = false;
-    this.setData({ autoplay: true, videoPlayList });
-  },
-  videoPlay(e) {
-    let id = e.target.id;
-    console.log(id);
-    if (id === 'video1') {
-      video['video1'].play();
-      video['video2'].pause();
-      video['video3'].pause();
-    } else if (id === 'video2') {
-      video['video1'].pause();
-      video['video2'].play();
-      video['video3'].pause();
-    } else if (id === 'video3') {
-      video['video1'].pause();
-      video['video2'].pause();
-      video['video3'].play();
-    }
-  },
-  videoPause: function(e) {
-    let id = e.target.id;
-    console.log(id);
-    video[id].pause();
-  },
-  videoEnd(e) {
-    let key = e.currentTarget.id;
-    let { videoPlayList } = this.data;
-    video[key].stop();
-    videoPlayList['video' + key] = false;
-    let { currentVideo } = this.data;
-    if (currentVideo === 2) {
-      currentVideo = 0;
-    } else {
-      currentVideo += 1;
-    }
-    this.setData({ autoplay: true, videoPlayList, currentVideo });
-  },
-  /*imageLoaded: function(e){
-    let data = {};
-    const { index, name } = e.currentTarget.dataset;
-    const list = this.data[name];
-    list[index].loaded = true;
-    data[name] = list;
-    this.setData(data);
-  },
-  thumbLoaded: function(e){
-    let data = {};
-    const { index, name } = e.currentTarget.dataset;
-    const list = this.data[name];
-    list[index].show = true;
-    data[name] = list;
-    this.setData(data);
-  },*/
-  /*redirectToSyllabusMenu: function(){
-    wx.redirectTo({
-      url: '/Syllabus/Syllabus'
-    });
-  },
-  redirectToPersonalInfo: function(){
-    wx.redirectTo({
-      url: '/PersonalInfo/PersonalInfo'
-    });
-  },*/
   navigateAction: function(e){
     const url = e.currentTarget.dataset.route;
     wx.navigateTo({ url });

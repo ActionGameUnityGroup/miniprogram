@@ -10,15 +10,20 @@
       <view class="course-series-msg">{{courseInfo.subTitle}}</view>
     </view>
   </view>
-  
+
   <view class="intro-title">简介</view> -->
-  <view class='intro-list'>
-    <block wx:for='{{courseInfo.introList}}' wx:key='index'>
-      <view class="course-series-item">
-        <image mode='widthFix' src='{{item}}' />
-      </view>
-    </block>
-  </view>
+  <block wx:if='{{courseInfo.introList}}'>
+    <view class='intro-list'>
+      <block wx:for='{{courseInfo.introList}}' wx:key='index'>
+        <view class="course-series-item">
+          <image mode='widthFix' src='{{item}}' />
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='empty'>暂无课程</view>
+  </block>
 </scroll-view>
 
 <block wx:if='{{showShareBar}}'>

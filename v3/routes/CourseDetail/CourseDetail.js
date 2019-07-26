@@ -12,10 +12,11 @@ Page({
     wx.request({
       url: `https://www.changdaolife.cn/api/v0/course/getCourseInfo?courseId=${courseId}`,
       method: 'GET',
-      success (data) {
-        let courseInfo = data.data.data[0];
-        console.log(courseInfo);
-        _this.setData({ courseInfo });
+      success (res) {
+        if (res.data.code === 200) {
+          let courseInfo = res.data.data[0];
+          _this.setData({ courseInfo });
+        }
       }
     });
   },
