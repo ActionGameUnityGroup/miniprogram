@@ -16,7 +16,7 @@ module.exports = () => {
   return async (ctx, next) => {
     ctx.render = async (pageName) => {
       const viewRootPath = path.resolve(__dirname, '../view');
-      let page = await renderPath(`${viewRootPath}/${pageName}.html`);
+      let page = await renderPath(`${viewRootPath}/${pageName}`);
       ctx.body = page;
       ctx.type = 'text/html';
     };
