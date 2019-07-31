@@ -26,6 +26,8 @@ module.exports = (app) => {
   router.get('/session', Page.session);
   router.get('/webview', Page.webview);
 
+  router.get('/b555ZfH13v.txt', Page.staticFile);
+
   router.post('/api/v0/user/login', Api.v0.User.login);
   router.get('/api/v0/user/getUserInfo', Api.v0.User.getUserInfo);
   router.post('/api/v0/reserved/setReservedInfo', Api.v0.Reserved.setReservedInfo);

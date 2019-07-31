@@ -72,6 +72,10 @@ class Page {
     await ctx.render('webview');
   }
 
+  async staticFile(ctx) {
+    await ctx.render('static');
+  }
+
   session(ctx) {
     ctx.body = `session: ${ctx.session.token}`;
   }

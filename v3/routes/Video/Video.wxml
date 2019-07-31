@@ -1,4 +1,6 @@
-<view></view>
+<web-view src='https://www.changdaolife.cn/webview'></web-view>
+
+<!-- <view></view>
 
 <scroll-view
   class="video-list"
@@ -22,13 +24,13 @@
           bindpause='pauseVideo'
           poster='{{item.poster}}'
         >
-          <!-- <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
+          <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
             <cover-image mode='widthFix' src='{{item.poster}}' style='width: 100%;' />
-          </cover-view> -->
+          </cover-view>
         </video>
       </view>
     </view>
   </block>
 </scroll-view>
 
-<view></view>
+<view></view> -->
