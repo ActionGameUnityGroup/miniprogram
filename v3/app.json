@@ -1,16 +1,15 @@
 {
   "pages": [
     "routes/Index/Index",
+    "routes/Video/Video",
     "routes/OnlineCustomer/OnlineCustomer",
     "routes/Cooperation/Cooperation",
     "routes/UndertakeBusiness/UndertakeBusiness",
     "routes/CompanyIntroduce/CompanyIntroduce",
-    "routes/Video/Video",
     "routes/StudentShare/StudentShare",
     "routes/AssistantIntroduction/AssistantIntroduction",
     "routes/Rich/Rich",
     "routes/CourseList/CourseList",
-    "routes/RichSeriesDetail/RichSeriesDetail",
     "routes/CooperatFair/CooperatFair",
     "routes/RichSeries/RichSeries",
     "routes/MarchTowardRich/MarchTowardRich",
@@ -31,6 +30,12 @@
     "routes/PersonalInfo/PersonalInfo",
     "routes/Income/Income"
   ],
+  "plugins": {
+    "txv-video": {
+        "version": "1.3.3",
+        "provider": "wxa75efa648b60994b"
+    }
+  },
   "requiredBackgroundModes": [
     "audio"
   ],

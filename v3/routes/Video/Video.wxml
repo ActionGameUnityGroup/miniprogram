@@ -19,6 +19,7 @@
           show-fullscreen-btn='{{false}}'
           bindplay='playVideo'
           bindended='videoEnd'
+          bindpause='pauseVideo'
           poster='{{item.poster}}'
         >
           <!-- <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>

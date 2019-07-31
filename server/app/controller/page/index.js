@@ -68,6 +68,10 @@ class Page {
     await ctx.render('upload');
   }
 
+  async webview(ctx) {
+    await ctx.render('webview');
+  }
+
   session(ctx) {
     ctx.body = `session: ${ctx.session.token}`;
   }

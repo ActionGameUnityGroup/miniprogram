@@ -9,6 +9,12 @@ Page({
     _this = this;
     _this.getVideoList(options.videoId);
   },
+  onUnload() {
+    console.log('返回');
+    video['video1'].stop();
+    video['video2'].stop();
+    video['video3'].stop();
+  },
   getVideoList(videoId) {
     wx.request({
       url: 'https://www.changdaolife.cn/api/v0/video/getVideoList?type=miniprogram&number=1&size=10',
@@ -20,10 +26,10 @@ Page({
             let item = res.data.data.data[i];
             item.showPoster = true;
             video[item.videoId] = wx.createVideoContext(item.videoId, _this);
-            if (item.videoId === videoId) {
+            /*if (item.videoId === videoId) {
               video[item.videoId].play();
               item.showPoster = false;
-            }
+            }*/
             videoList.push(item);
           }
           _this.setData({ videoList });
@@ -43,8 +49,9 @@ Page({
     }
   },
   pauseVideo(e) {
-    let videoId = e.currentTarget.id
+    let videoId = e.currentTarget.id;
     let videoItem = video[videoId];
+    console.log(videoItem);
     if (videoItem) {
       let { videoList } = this.data;
       let key = e.currentTarget.dataset.key;

@@ -21,8 +21,11 @@ module.exports = (app) => {
   router.get('/setStudentShare', Page.setStudentShare);
   router.get('/introduction', Page.introduction);
   router.get('/business', Page.business);
+
   router.get('/upload', Page.upload);
   router.get('/session', Page.session);
+  router.get('/webview', Page.webview);
+
   router.post('/api/v0/user/login', Api.v0.User.login);
   router.get('/api/v0/user/getUserInfo', Api.v0.User.getUserInfo);
   router.post('/api/v0/reserved/setReservedInfo', Api.v0.Reserved.setReservedInfo);
