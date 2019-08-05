@@ -1,3 +1,6 @@
 {
-  "disableScroll": true
+  "disableScroll": true,
+  "usingComponents": {
+    "self-video": "/components/Video/Video"
+  }
 }

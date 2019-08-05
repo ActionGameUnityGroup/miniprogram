@@ -1,0 +1,41 @@
+<view class="video-content">
+  <video
+    id='{{videoId}}'
+    class='video-bar'
+    src="{{url}}"
+    duration='{{duration}}'
+    controls='{{false}}'
+    show-center-play-btn='{{false}}'
+    bindplay='videoPlay'
+    bindpause='videoPause'
+    bindended='videoEnd'
+  >
+    <cover-view class='video-poster' wx:if='{{!isPlay}}'>
+      <cover-view class='poster-shadow'></cover-view>
+      <cover-image src='{{poster}}' mode='widthFix' />
+    </cover-view>
+  </video>
+  <view class="video-control-bar">
+    <block wx:if='{{isPlay}}'>
+      <view class="pause-btn" bindtap='pauseVideo'><image mode='widthFix' src='/assets/icon/pause.png' /></view>
+    </block>
+    <block wx:else>
+      <view class="play-btn" bindtap='playVideo'><image mode='widthFix' src='/assets/icon/play.png' /></view>
+    </block>
+    <slider
+      class='video-slider'
+      min='0'
+      max='{{duration}}'
+      step='1'
+      value='{{current}}'
+      color='#ffffff'
+      activeColor='#ffffff'
+      backgroundColor='#e9e9e9'
+      block-size='16'
+      block-color='#ffffff'
+      show-value='{{false}}'
+      bindchange='changeSlider'
+    />
+    <view class='video-max-length'>{{videoMaxLength}}</view>
+  </view>
+</view>

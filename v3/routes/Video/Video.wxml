@@ -8,24 +8,60 @@
     <view class="video-item">
       <view class="video-title">{{item.title}}</view>
       <view class="video-bar">
-        <video
-          id='{{item.videoId}}'
-          data-key='{{index}}'
-          src="{{item.url}}"
-          controls='{{true}}'
-          object-fit='cover'
-          autoplay='{{false}}'
-          class='video-content'
-          show-fullscreen-btn='{{false}}'
-          bindplay='playVideo'
-          bindended='videoEnd'
-          bindpause='pauseVideo'
-          poster='{{item.poster}}'
-        >
-          <!-- <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
-            <cover-image mode='widthFix' src='{{item.poster}}' style='width: 100%;' />
-          </cover-view> -->
-        </video>
+        <view class="video-content" bindtap='showControlPanel' data-key='{{index}}'>
+          <video
+            id='{{item.videoId}}'
+            class='video-player'
+            data-key='{{index}}'
+            src="{{item.url}}"
+            controls='{{false}}'
+            show-center-play-btn='{{false}}'
+            bindended='videoEnd'
+            bindtimeupdate='videoTimeUpdate'
+          >
+            <cover-view class='video-poster' wx:if='{{!item.isPlay}}'>
+              <cover-view class='poster-shadow'></cover-view>
+              <cover-image src='{{item.poster}}' mode='widthFix' />
+            </cover-view>
+          </video>
+        </view>
+        <block wx:if='{{item.showController}}'>
+          <view class="video-control-bar">
+            <block wx:if='{{item.isPlay}}'>
+              <view
+                class="pause-btn"
+                bindtap='pauseVideo'
+                id='{{item.videoId}}'
+                data-key='{{index}}'
+              ><image mode='widthFix' src='/assets/icon/pause.png' /></view>
+            </block>
+            <block wx:else>
+              <view
+                class="play-btn"
+                bindtap='playVideo'
+                id='{{item.videoId}}'
+                data-key='{{index}}'
+              ><image mode='widthFix' src='/assets/icon/play.png' /></view>
+            </block>
+            <view class='video-current-time'>{{item.currentTime}}</view>
+            <slider
+              class='video-slider'
+              min='0'
+              max='{{item.duration}}'
+              step='1'
+              value='{{item.current}}'
+              color='#ffffff'
+              activeColor='#ffffff'
+              backgroundColor='#e9e9e9'
+              block-size='16'
+              block-color='#ffffff'
+              show-value='{{false}}'
+              bindchange='changeSlider'
+              data-key='{{index}}'
+            />
+            <view class='video-max-length'>{{item.videoMaxLength}}</view>
+          </view>
+        </block>
       </view>
     </view>
   </block>
