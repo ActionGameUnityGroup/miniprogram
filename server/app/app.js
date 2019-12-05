@@ -42,8 +42,8 @@ class App {
     _this.app.use(async (ctx, next) => {
       await next();
       let url = ctx.url,
-          type = ctx.request.type;
-      console.log(type);
+          type = ctx.request.query.type;
+      console.log('type', type);
       if (type !== 'miniprogram') {
         if (!ctx.session.token && ctx.url.includes('/api')) {
           ctx.session.token = '';
