@@ -55,4 +55,8 @@
   </view>
 </view>
 
+<<<<<<< HEAD:client/PersonalInfo/PersonalInfo.wxml
+<!-- <button open-type='getUserInfo' bindtap='getInfoAction' style="position: absolute; top: 529rpx;"> 获取用户数据 </button> -->
+=======
 <!-- <button open-type='getUserInfo' bindtap='getInfoAction'> 获取用户数据 </button> -->
+>>>>>>> d80f2a3356065a02b79ff0c837b05e813ef546cd:client/PersonalInfo/personalInfo.wxml

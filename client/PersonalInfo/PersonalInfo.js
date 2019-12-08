@@ -65,5 +65,10 @@ Page({
         console.log(info);
       }
     });
+<<<<<<< HEAD:client/PersonalInfo/PersonalInfo.js
+  }*/
+});
+=======
   }
 });
+>>>>>>> d80f2a3356065a02b79ff0c837b05e813ef546cd:client/PersonalInfo/personalInfo.js
