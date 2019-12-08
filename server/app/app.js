@@ -16,8 +16,8 @@ const db = require(`${rootDirectory}/config/config.db`);
 const sessionConfig = require(`${rootDirectory}/config/session.config`);
 
 const options = {
-  key: fs.readFileSync(`${__dirname}/cert/2164838_changdaolife.key`),
-  cert: fs.readFileSync(`${__dirname}/cert/2164838_changdaolife.pem`),
+  key: fs.readFileSync(`${__dirname}/config/2164838_changdaolife.key`),
+  cert: fs.readFileSync(`${__dirname}/config/2164838_changdaolife.pem`),
 };
 
 class App {
