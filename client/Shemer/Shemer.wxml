@@ -1,0 +1,76 @@
+<view class="tab-bar">
+  <view class="{{isRhythm ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='rhythm'>撒玛律动</view>
+  <view class="{{isSlient ? 'tab-item tab-item-active' : 'tab-item'}}" bindtap='changeTabContent' id='slient'>撒玛身之寂静</view>
+</view>
+<scroll-view scroll-y='{{true}}'>
+  <view class='shemer-content'>
+    <block wx:for='{{courseList}}' wx:key='index'>
+      <block wx:if='{{isRhythm && item.key === "rhythm"}}'>
+        <view class="shemer-item" bindtap='navigateOperation' id='{{item.courseId}}'>
+          <view class="shemer-cover">
+            <image
+              wx:if='{{item.show}}'
+              class='{{item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.cover2}}'
+              bindload='imageLoaded'
+              data-index='{{index}}'
+              data-name='courseList'
+            />
+            <image
+              class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.thumb2}}'
+              bindload='thumbLoaded'
+              data-index='{{index}}'
+              data-name='courseList'
+            />
+          </view>
+          <view class="shemer-info">
+            <view class="shemer-title">{{item.mainTitle}}</view>
+            <view class="shemer-describe">{{item.subTitle}}</view>
+            <view class="shemer-label">
+              导师：
+              <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
+                <text class='label-item'> {{author}} </text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{isSlient && item.key === "slient"}}'>
+        <view class="shemer-item" bindtap='navigateOperation' id='{{item.courseId}}'>
+          <view class="shemer-cover">
+            <image
+              wx:if='{{item.show}}'
+              class='{{item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.cover2}}'
+              bindload='imageLoaded'
+              data-index='{{index}}'
+              data-name='courseList'
+            />
+            <image
+              class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{item.thumb2}}'
+              bindload='thumbLoaded'
+              data-index='{{index}}'
+              data-name='courseList'
+            />
+          </view>
+          <view class="shemer-info">
+            <view class="shemer-title">{{item.mainTitle}}</view>
+            <view class="shemer-describe">{{item.subTitle}}</view>
+            <view class="shemer-label">
+              导师：
+              <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='authorKey'>
+                <text class='label-item'> {{author}} </text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</scroll-view>

@@ -1,0 +1,26 @@
+page{ width: 100%; height: 100%; background: #f5f5f5; }
+.list-content{ display: block; margin: 0 auto; width: 100%; height: 100%; }
+.list-title{ display: block; width: 100%; }
+.list-title image{ display: block; width: 100%; }
+.list-section{ display: block; position: relative; top: -70rpx; margin: 0 auto; width: 88%; }
+.course-activity-item{ display: flex; justify-content: space-between; align-items: center; margin: 0 auto 20rpx; padding: 0 23rpx 0 30rpx; height: 107rpx; background: #fff; border-radius: 20rpx; box-shadow: 3rpx 3rpx 18rpx rgba(54, 188, 245, .2); }
+.course-activity-info, .course-activity-head{ display: block; }
+.course-activity-title{ display: block; font-size: 26rpx; color: #000; }
+.course-activity-detail{ display: flex; justify-content: flex-start; align-items: center; margin: 16rpx 0 0 10rpx; font-size: 22rpx; color: #696969; }
+.course-activity-detail text:first-child{ margin-right: 81rpx; width: 200rpx; }
+.course-activity-head image{ display: inline-block; vertical-align: middle; width: 56rpx; height: auto; }
+
+/* .scroll-view{ display: block; position: relative; margin: 0 auto 21rpx; width: 100%; }
+.scroll-view image{ display: block; width: 100%; height: auto; } */
+
+.date-view{ display: flex; flex-direction: row; align-items: center; margin-top: 35rpx; }
+
+.remain-text{ margin-right: 12rpx; width: 60rpx; height: 30rpx; line-height: 30rpx; text-align: center; background: #f25c75; font-size: 18rpx; color: #fff; border-radius: 10rpx; }
+
+.date-text{ font-size: 24rpx; }
+
+.content-view{ display: flex; flex-direction: row; margin-top: 17rpx; padding-left: 19rpx; background: #f5f4f4; }
+
+.mainIcon{ width: 220rpx; height: 123.75rpx; background: gray; margin-top: 22rpx; margin-bottom: 22rpx; }
+
+.right-content{ display: flex; flex-direction: column; padding-left: 19rpx; margin-top: 22rpx; margin-bottom: 22rpx; }

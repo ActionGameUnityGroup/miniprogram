@@ -1,0 +1,121 @@
+const path = require('path');
+// const request = require('request');
+const rootDirectory = path.resolve(__dirname, '../../../');
+const config = require(`${rootDirectory}/config/miniprogram.config.js`);
+const userModel = require(`${rootDirectory}/app/model/v0/userModel`);
+const formatData = require(`${rootDirectory}/app/service/formatData`);
+const request = require(`${rootDirectory}/app/service/request`);
+const WXBizDataCrypt = require(`${__dirname}/WXBizDataCrypt`);
+
+class UserService extends formatData{
+
+  async login(ctx){
+    /*
+     * @Description: 登录以后返回openID
+    */
+    let response;
+    try {
+      let params = ctx.request.body;
+      /*let res = await request({
+        hostname: `api.weixin.qq.com`,
+        path: `/sns/jscode2session?appid=wxba59a2c0824fd1db&secret=5fb3f9c59ed54b36206dd07288620d7d&js_code=${params.code}&grant_type=authorization_code`,
+        method: 'GET',
+        header: {
+          'Content-Type': 'application/json; charset=utf-8'
+        }
+      });*/
+      let res = await request({
+        url: `https://api.weixin.qq.com/sns/jscode2session?appid=${config.appid}&secret=${config.secret}&js_code=${params.code}&grant_type=${config.grant_type}`,
+        method: 'GET',
+      });
+      let body = JSON.parse(res);
+      if(!body.errcode){
+        const { openid, session_key } = body;
+        let user = await userModel.find({ openid: openid }, '-_id');
+        if (user.length) {
+          // 数据库有
+          console.log('有');
+          response = this.formatDataSuccess({ openid });
+        } else {
+          console.log('没有');
+          const { encryptedData, iv } = params;
+          if(!encryptedData || !iv){
+            throw new Error('请先授权！');
+          }
+          let flag = await this.register({ openid, session_key, encryptedData, iv, });
+          if(flag){
+            console.log('注册成功');
+            response = this.formatDataSuccess({ openid });
+          } else {
+            console.log('注册失败');
+            response = this.formatDataSuccess({ msg: '注册失败', openid, });
+          }
+        }
+      }
+    } catch(e) {
+      console.log(e.message);
+      response = this.formatDataFail(e.message);
+    }
+    return response;
+  }
+
+  async register(registryInfo){
+    try {
+      const pc = new WXBizDataCrypt(config.appid, registryInfo.session_key);
+      console.log(pc, 'pc');
+      const data = pc.decryptData(`${decodeURIComponent(registryInfo.encryptedData)}`, `${decodeURIComponent(registryInfo.iv)}`);
+      console.log(data, '解析完毕');
+      const save = {
+        unionid: data.unionid || '',
+        userid: '',
+        openid: data.openId || '',
+        avatar: data.avatarUrl || '',
+        nickname: data.nickName || '',
+        gender: data.gender || 0,
+        language: data.language || '',
+        city: data.city || '',
+        province: data.province || '',
+        country: data.country || ''
+      };
+      /*const save = {
+        unionid: '',
+        userid: '',
+        openid: registryInfo.openid || '',
+        avatar: '',
+        nickname: '',
+        gender: 0,
+        language: '',
+        city: '',
+        province: '',
+        country: '',
+      };*/
+      const User = new userModel(save);
+      let saveInfo = await User.save();
+      return true;
+    } catch(e) {
+      return false;
+    }
+  }
+
+  async getUserInfo(ctx){
+    const { userId } = ctx.request.query || '';
+    let response;
+    if(userId.length){
+      try{
+        let data = await userModel.find({userId: userId}, '-_id');
+        if(data.length) throw new Error('请先授权！');
+        response = this.formatDataSuccess(data);
+      } catch(e){
+        response = this.formatDataFail(e.message);
+        ctx.throw(500);
+      }
+    } else {
+      response = this.formatDataFail('无法获取个人信息，请先授权');
+      ctx.throw(500);
+    }
+    return response;
+  }
+
+}
+
+module.exports = new UserService();

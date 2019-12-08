@@ -1,0 +1,42 @@
+<view class="nav-bar">
+
+  <block wx:if='{{indexActived}}'>
+    <view class="nav-bar-item active">
+      <image mode='aspectFit' src='/assets/icon/home-active.png'></image>
+      <text> 首页 </text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="nav-bar-item" bindtap='redirectHandler' data-route='/routes/Index/Index'>
+      <image mode='aspectFit' src='/assets/icon/home.png'></image>
+      <text> 首页 </text>
+    </view>
+  </block>
+
+  <block wx:if='{{richActived}}'>
+    <view class="nav-bar-item active">
+      <image mode='aspectFit' src='/assets/icon/rich-active.png'></image>
+      <text> 丰盛 </text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="nav-bar-item" bindtap='redirectHandler' data-route='/routes/Rich/Rich'>
+      <image mode='aspectFit' src='/assets/icon/rich.png'></image>
+      <text> 丰盛 </text>
+    </view>
+  </block>
+
+  <block wx:if='{{cooperationActived}}'>
+    <view class="nav-bar-item active">
+      <image mode='aspectFit' src='/assets/icon/cooperation-active.png'></image>
+      <text> 合作 </text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="nav-bar-item" bindtap='redirectHandler' data-route='/routes/Cooperation/Cooperation'>
+      <image mode='aspectFit' src='/assets/icon/cooperation.png'></image>
+      <text> 合作 </text>
+    </view>
+  </block>
+
+</view>

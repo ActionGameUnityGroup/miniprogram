@@ -1,0 +1,14 @@
+.company-introduce-content{ width: 100%; height: 100%; }
+.introduce-cover{ display: block; width: 100%; height: 422rpx; background: #ddd; }
+.introduce-cover image{ display: block; width: 100%; height: auto; }
+
+.introduce-info{ display: block; width: 100%; background: #fff; }
+.company-name{ display: block; padding: 35rpx 35rpx 0; line-height: 32rpx; font-size: 32rpx; color: #000000FF; }
+.company-location{ display: flex; justify-content: flex-start; align-items: center; padding: 21rpx 35rpx 35rpx; }
+.company-location image{ display: block; margin-right: 11rpx; width: 36rpx; }
+.company-location text{ display: block; line-height: 24rpx; font-size: 24rpx; color: #5E5E5EFF; }
+
+.company-introduce-bar{ display: block; margin-top: 15rpx; padding: 0 35rpx; height: 70rpx; text-align: left; line-height: 70rpx; border-bottom: 1rpx solid #BFBFBFFF; background: #fff; font-size: 30rpx; color: #000000FF; }
+.company-introduce-list{ display: block; margin: 0 auto; padding: 35rpx 50rpx 120rpx; background: #fff; }
+/* .company-introduce-item{ margin: 0 auto 50rpx; width: 648rpx; text-align: justify; line-height: 48rpx; font-size: 26rpx; color: #000000FF; }
+.company-introduce-item:last-child{ margin-bottom: 0; } */

@@ -1,0 +1,17 @@
+.tutor-info-bar{ display: block; margin: 0 auto; width: 100%; background: #fff; }
+.tutor-info{ display: block; margin-top: 37rpx; width: 150rpx; overflow: hidden; }
+.tutor-cover{ display: block; width: 150rpx; height: 150rpx; border-radius: 15rpx; background: #BFBFBFFF; overflow: hidden; }
+.tutor-cover image{ display: block; width: 100%; height: auto; background: #BFBFBFFF; }
+.tutor-type{ display: block; margin: 12rpx auto 0; width: 150rpx; text-align: center; font-size: 26rpx; color: #000000FF; }
+.tutor-name{ display: block; margin: 10rpx auto 0; width: 150rpx; text-align: center; font-size: 24rpx; color: #000000FF; }
+.tutor-honor-bar{ display: inline-block; vertical-align: top; margin-left: 32rpx; padding: 32rpx 0 37rpx; width: 452rpx; height: 181rpx; font-size: 22rpx; line-height: 32rpx; }
+.motto-title{ line-height: 21rpx; font-size: 28rpx; color: #000000FF; }
+.motto-name{ margin-top: 26rpx; line-height: 32rpx; font-size: 22rpx; color: #000000FF; }
+
+.intro-content{ margin: 12rpx auto; width: 691rpx; height: calc(100% - 24rpx); overflow: hidden; }
+
+.intro-title{ display: block; margin: 20rpx auto 0; padding: 0 24rpx; width: 643rpx; height: 63rpx; line-height: 63rpx; background: #fff; border-bottom: 1rpx solid #BFBFBFFF; border-top-left-radius: 15rpx; border-top-right-radius: 15rpx; font-size: 28rpx; font-weight: bold; color: #000000FF; }
+.tutor-intro{ display: block; width: 100%; background: #fff; }
+.intro-item{ display: block; padding: 37rpx 18rpx 20rpx; text-align: justify; line-height: 48rpx; color: #171717FF; font-size: 26rpx; }
+.intro-item:last-child{ padding-bottom: 30rpx; }
+.bold-style{ font-weight: bold; }

@@ -1,0 +1,35 @@
+<scrill-view scroll-y='{{true}}' class="pay-content">
+  <view class="pay-info-content">
+    <view class="pay-info-title"> 线下课程 </view>
+    <view class="course-info border-bottom">
+      <view class="course-info-cover"><image mode='widthFix' src='{{cover2}}' /></view>
+      <view class="course-info-message">
+        <view class="course-message-title"> {{mainTitle}} </view>
+        <view class="course-message-price"> ￥{{expenses}} </view>
+      </view>
+    </view>
+    <view class="coupon-content border-bottom">
+      <view class="coupon-content-title"> 优惠券 </view>
+      <view class="select-coupon-operation"> 暂无可用 > </view>
+    </view>
+    <view class="pay-price-content">
+      <text> 总计： ￥ </text>
+      <text> {{totalExpenses}} </text>
+    </view>
+  </view>
+  <view class="pay-tips-content">
+    <view class="pay-tips-title">
+      <view class="pay-tips-title-name">
+        <view class="pay-tips-title-name-logo"><image mode='widthFix' src='/assets/icon/pay-logo.png' /></view>
+        <view class="pay-tips-title-name-text"> 微信支付 </view>
+      </view>
+      <view class="pay-tips-title-label"><image mode='widthFix' src='/assets/icon/pay-label.png' /></view>
+    </view>
+    <view class="pay-tips-notes">
+      <view class="pay-tips-notes-title"> *购买须知* </view>
+      <view class="pay-tips-notes-content"> 若因临时有事不能如期参加者，请在开课前7天以上联系工作人员，线下课程在购买之日31天内允许退款，退款额为订单额度的80%（其中20%为已产生的行政费用，包含教材名牌、会务预定筹备等相关服务）。 </view>
+    </view>
+  </view>
+</scrill-view>
+
+<view class="confirm-payment-operation" bindtap='confirmPaymentOperation'> 确认支付 </view>

@@ -1,0 +1,31 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class="company-introduce-content">
+  <view class="company-introduce-list">
+    <rich-text nodes='{{intro}}' />
+  </view>
+</scroll-view>
+<!-- <swiper
+  indicator-dots='{{true}}'  
+  indicator-color='#B5B5B5'
+  indicator-active-color='#8FC31F'
+  class='swiper-content'
+>
+  <block wx:for='{{assistantList}}' wx:key='index'>
+    <swiper-item>
+      <view class="swiper-item">
+        <view class="info-bar">
+          <view class="assistant-cover"><image mode='widthFix' src='{{item.avatar}}' /></view>
+          <view class="assistant-info">
+            <view class="assistant-name">{{item.title}}-{{item.name}}</view>
+            <view class="assistant-wxchat-number">微信号：{{item.wechat}}</view>
+            <view class="assistant-phone-number">联系方式：{{item.phone}}</view>
+          </view>
+        </view>
+        <view class="qr-code-bar"><image mode='widthFix' src='{{item.qrcode}}' /></view>
+        <view class="share-btn" bindtap='saveQRCode' data-image='{{item.qrcode}}'>保存二维码至相册</view>
+        <view class="describe">保存二维码至微信后，点击微信扫一扫功能，选择相册中所保存的二维码即可添加</view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper> -->

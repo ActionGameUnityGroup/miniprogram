@@ -1,0 +1,13 @@
+.rich-content-scroll{ display: block; height: calc(100% - 102rpx); }
+.content-cover{ display: block; margin: 22rpx auto 0; width: 654rpx; border-top-left-radius: 15rpx; border-top-right-radius: 15rpx; overflow: hidden; }
+.content-cover image{ display: block; width: 100%; height: auto; }
+.rich-content{ display: block; margin: 0 auto 40rpx; width: 655rpx; height: auto; background: #ffffff; border-radius: 15rpx; overflow: hidden; }
+
+.rich-item{ display: flex; justify-content: space-between; align-items: center; padding: 22rpx 30rpx; border-bottom: 1rpx solid #BFBFBFFF; }
+.rich-item:last-child{ border: 0; }
+.rich-cover{ display: block; width: 203rpx; height: 154rpx; border-radius: 15rpx; overflow: hidden; background: #BFBFBFFF; }
+.rich-cover image{ display: block; width: 100%; height: auto; }
+
+.rich-info{ display: block; margin-left: 27rpx; width: 367rpx; height: 154rpx; }
+.rich-title{ display: -webkit-box; margin-bottom: 10rpx; width: 100%; text-align: left; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden; font-size: 30rpx; color: #000000FF; }
+.rich-describe{ display: -webkit-box; width: 100%; line-height: 1.2; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; font-size: 24rpx; color: #5D5D5DFF; }

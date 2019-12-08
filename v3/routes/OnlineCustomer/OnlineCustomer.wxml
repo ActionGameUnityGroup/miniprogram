@@ -1,0 +1,306 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' scroll-top='{{dialogContentScrollTop}}' class='dialog-content'>
+  <view class="customer-dialog-item">
+    <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+    <view class="dialog-bar">
+      <view style='padding: 0 20rpx;'>尊敬的用户，您好，我是智能客服小道，很高兴为您服务~</view>
+    </view>
+  </view>
+  <block wx:if='{{showSelectContent}}'>
+    <view class="customer-dialog-item">
+      <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+      <view class="dialog-bar">
+        <view class='dialog-title'>让我猜猜您是不是想问以下问题：</view>
+        <view class="topic-list" style='padding-top: 0;'>
+          <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+            <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+          </block>
+          <view class="turn-customer">
+            <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+            <button class="turn-customer-btn" open-type='contact'>
+              <text>转人工</text>
+              <image src='/assets/icon/manual-service.png' mode='widthFix' />
+            </button>
+          </view>
+        </view>
+        <!-- <view class="topic-content">
+          <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+            <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+          </block>
+        </view>
+        <view class="turn-customer">
+          <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+          <button class="turn-customer-btn" open-type='contact'>
+            <text>转人工</text>
+            <image src='/assets/icon/manual-service.png' mode='widthFix' />
+          </button>
+        </view> -->
+      </view>
+    </view>
+    <block wx:for='{{showList}}' wx:key='index'>
+      <block wx:if='{{item.id === "topic1"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛之门 • 力量之源：</view>
+              <view class="topic-subtitle">解析宇宙创造法则（质能转换原理、三一法则、八度法则），如何聚集精力和能量实现人生愿望和目标，达到成功和丰盛。</view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>1. 找到自己在人生中的位置，制定精准的人生目标；</view>
+                <view>2. 提升专注力和决断力；</view>
+                <view>3. 连接宇宙源头的力量，强健生命力，增加行动力；</view>
+                <view>4. 学到如何运用宇宙的创造法则，活出勇气和创造力；</view>
+                <view>5. 拥有和谐的关系，创造丰盛的事业。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic1"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic2"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛之门 • 爱的旅程：</view>
+              <view class="topic-subtitle">以系统理论+实际操作的方式解读。</view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>1. 宇宙中天、地、人及系统的运行法则（归属、序位、施与受的平衡等）；</view>
+                <view>2. 人们相互之间痛苦的关系纠缠背后的真相；</view>
+                <view>3. 找到爱的根源。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic2"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic3"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛之门 • 觉之道：</view>
+              <view class="topic-subtitle">提供一条生命成长和进化的道路，生命觉醒，明达自心。</view>
+              <view class="topic-remark">
+                <view>1. 生命的进化图；</view>
+                <view>2. 人类的4个意识层级；</view>
+                <view>3. 生命的进化图；</view>
+                <view>4. 觉察练习，观照自己的习惯性反应和自动化模式。</view>
+              </view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>1. 清晰生命进化的路线；</view>
+                <view>2. 提升定力和觉知度，生发出内在智慧；</view>
+                <view>3. 提升自我觉察的能力（行为举止、情绪情感、起心动念的深度觉察）；</view>
+                <view>4. 人格整合，连接到本质的存在，成为自己生命的主人。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic3"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic4"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛之门 • 师之门：</view>
+              <view class="topic-subtitle">回归本真、绽放自性。</view>
+              <view class="topic-remark">
+                <view>1. 透析宇宙的根本法则；</view>
+                <view>2. 透析建立各种能量场域的奥秘；</view>
+                <view>3. 回答“我是谁”的疑问，生从何处来，死往何处去；</view>
+                <view>4. 扩展觉察的能力（包括时间和空间）；深层次转化负能量；</view>
+                <view>5. 传授成为助人者必备的知识、技术和涵养。</view>
+              </view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>1. 提升点、线、面、空间的觉察能力；</view>
+                <view>2. 学会建立教学、疗愈、职业、家庭等能量场域，为自己和团体带来和谐；</view>
+                <view>3. 学会助人者必备的相关知识、技术和涵养；</view>
+                <view>4. 了解自然，顺应自然之道，合其序，知物性，辨阴阳；</view>
+                <view>5. 将清明的智慧带入思想，将爱和喜悦带入情感，将热情和积极带入行动；</view>
+                <view>6. 活出爱、喜悦、宁静、慈悲、清明的高等心灵品质。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic4"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic5"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛 • 能量疗愈：</view>
+              <view class="topic-subtitle">健康九型图（人体经脉中的生命能量循环）、能量疗愈技术、身体瑜伽</view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>化解身体、负面思想和情绪带来的烦恼痛苦和能量消耗。并转化为前行的资源和力量，达成目标。</view>
+                <view>1. 学会传承古老智慧的能量疗愈技术，自我转化负面思想和情绪；</view>
+                <view>2. 通过瑜伽练习，与身体连接，激活人体经脉中的生命能量循环，增强生命活力和自愈力；</view>
+                <view>3. 提升大脑和身体器官的机能运作。平衡左右脑，提升专注力和平衡感；</view>
+                <view>4. 改善身体亚健康状态，如烦躁、焦虑、失眠、消化不良、疲乏无力等。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic5"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic6"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">丰盛 • 系统结构疗愈：</view>
+              <view class="topic-subtitle">运用家族与系统排列的技术，调整系统结构，调和系统中的相互关系，让爱流动。</view>
+              <view class="topic-gain">
+                <view>课程收获:</view>
+                <view>1. 明白天、地、人的宇宙运行法则；</view>
+                <view>2. 掌握系统智慧，提升看待生活问题的高度、宽度、广度和深度；</view>
+                <view>3. 从系统的角度发现人生中各种困境（身体疾病、心理问题、事业失败、关系痛苦等）背后的真相；</view>
+                <view>4. 发现真正影响人际关系好坏的真相（伴侣关系、亲子关系、婆媳关系等）；</view>
+                <view>5. 学习怎样为事业、健康、金钱方面的问题找到最佳的解决方法；</view>
+                <view>6. 学习怎样让自己的学业和职业获得成功；</view>
+                <view>7. 学习怎样在家庭、企业和社会中找到自己的正确位置，活出自己生命的价值。</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic6"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:if='{{item.id === "topic7"}}'>
+        <view class="customer-dialog-item" id='dialog{{index}}'>
+          <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+          <view class="dialog-bar">
+            <view class='topic-content'>
+              <view class="topic-title">联系地址：</view>
+              <view class="topic-subtitle">广东省深圳市福田区石厦北二街新天世纪商务中心A座2106</view>
+              <view class="topic-gain">
+                <view>联系电话：</view>
+                <view>0755-82557627</view>
+              </view>
+            </view>
+            <view class="topic-list">
+              <block wx:for='{{topicList}}' wx:for-item='topic' wx:key='topicKey'>
+                <block wx:if='{{topic.id !== "topic7"}}'>
+                  <view class="topic-item" id='{{topic.id}}' bindtap='selectTopic'>{{topic.content}}</view>
+                </block>
+              </block>
+              <view class="turn-customer">
+                <text style='font-size: 26rpx; color: #000;'>如其他问题请点击</text>
+                <button class="turn-customer-btn" open-type='contact'>
+                  <text>转人工</text>
+                  <image src='/assets/icon/manual-service.png' mode='widthFix' />
+                </button>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+  <!-- <block wx:for='{{dialogList}}' wx:key='index'>
+    <block wx:if='{{item.from === "customer"}}'>
+    </block>
+    <block wx:else>
+      <view class="user-dialog-item">
+        <view class="dialog-bar">{{item.content}}</view>
+        <view class="avatar-bar"><image src='/assets/icon/logo.jpg' mode='widthFix' /></view>
+      </view>
+    </block>
+  </block> -->
+</scroll-view>
+
+<view></view>
+<!-- <view class="input-bar">
+  <input class='input-content' value='{{inputValue}}' bindinput='changeInputValue'/>
+  <view class="emoji-btn"><image src='/assets/icon/emoji.png' mode='widthFix' /></view>
+  <block wx:if='{{inputValue.length === 0}}'>
+    <view class="more-btn"><image src='/assets/icon/more.png' mode='widthFix' /></view>
+  </block>
+  <block wx:else>
+    <view class="send-btn" bindtap='updateInputContent'>发送</view>
+  </block>
+</view> -->

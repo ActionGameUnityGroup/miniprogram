@@ -1,0 +1,26 @@
+<view class="placeholder" style='height: 66rpx;'></view>
+
+<view class="tutor-info-bar">
+  <view class="tutor-info">
+    <view class="tutor-cover"><image mode='widthFix' src='{{tutorInfo.avatar}}' /></view>
+    <view class="tutor-name">{{tutorInfo.name}}</view>
+  </view>
+  <view class="tutor-honor-bar">
+    <view>座右铭：</view>
+    <view class="honor-name">{{tutorInfo.motto}}</view>
+  </view>
+</view>
+
+<scroll-view scroll-y='{{true}}' style='margin: 20rpx auto; width: 710rpx; height: calc(100% - 168rpx - 66rpx - 70rpx); border-radius: 15rpx; overflow: hidden;'>
+  <view class="tutor-intro">
+    <view class="intro-title">灵魂告白</view>
+    <view class="tutor-intro-bar">
+      <rich-text nodes="{{tutorInfo.intro}}" />
+      <!-- <block wx:for='{{tutorInfo.personalIdentification}}' wx:for-item='introduction' wx:key='index'>
+        <view class="tutor-intro-item"> {{introduction}} </view>
+      </block> -->
+    </view>
+  </view>
+</scroll-view>
+
+<view></view>

@@ -1,0 +1,56 @@
+<view></view>
+
+<scroll-view class="registration-content" scroll-y='{{true}}' style='height: {{showNavBar ? "calc(100% - 104rpx)" : "100%"}};'>
+  <block wx:for='{{courseList}}' wx:key='index'>
+    <view class="registration-item" bindtap='navigateAction' id='/RegistrationDetail/RegistrationDetail?courseId={{item.courseId}}'>
+      <view class="registration-cover">
+        <image
+          wx:if='{{item.show}}'
+          class='{{item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.cover2}}'
+          bindload='imageLoaded'
+          data-index='{{index}}'
+          data-name='courseList'
+        />
+        <image
+          class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+          mode='widthFix'
+          src='{{item.thumb2}}'
+          bindload='thumbLoaded'
+          data-index='{{index}}'
+          data-name='courseList'
+        />
+      </view>
+      <view class="registration-info">
+        <view class="registration-info-title">{{item.mainTitle}}</view>
+        <view class="registration-info-bottom">
+          <view class="registration-info-bottom-left">
+            <view class="registration-info-tutor">
+              导师：<block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='index'>
+                <text>{{author}}</text>
+              </block>
+            </view>
+            <view class="registration-info-date">开课时间： {{item.date}}</view>
+          </view>
+          <view class="registration-operation">报名</view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+
+<view class="nav-bar" wx:if='{{showNavBar}}'>
+  <view id='/Index/Index' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='/assets/icon/home.png'></image>
+    <text> 首页 </text>
+  </view>
+  <view id='/Syllabus/SyllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='/assets/icon/course.png'></image>
+    <text> 课程表 </text>
+  </view>
+  <view class="nav-bar-item">
+    <image mode='aspectFit' src='/assets/icon/my-active.png'></image>
+    <text> 我的 </text>
+  </view>
+</view>

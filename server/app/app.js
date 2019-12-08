@@ -1,48 +1,92 @@
 const Koa = require('koa');
-const app = new Koa();
-const Router = require('koa-router');
-const router = new Router();
-const loadRouter = require('./loadRouter');
-const koaBody = require('koa-body');
-const bodyParser = require('koa-bodyparser');
+const Session = require('koa-session');
+const fs = require('fs');
+const log4js = require(`${__dirname}/os/log4js`);
+const render = require(`${__dirname}/os/render`);
+const controller = require(`${__dirname}/os/controller`);
+const router = require(`${__dirname}/router`);
+const body = require(`${__dirname}/os/body`);
+const compress = require(`${__dirname}/os/compress`);
+const koaStatic = require(`${__dirname}/os/static`);
+const bodyParser = require(`${__dirname}/os/body-parser`);
 const path = require('path');
-// const static = require('koa-static');
-const bindConsole = require('./bindConsole');
-const staticFile = require('./static-file');
-const error = require('./error');
-
-const env = process.env.NODE_ENV == 'production';
+const rootDirectory = path.resolve(__dirname, '..');
+const db = require(`${rootDirectory}/config/config.db`);
+const sessionConfig = require(`${rootDirectory}/config/session.config`);
 
 class App {
-  constructor(){
-    app.use(async (ctx, next) => {
+  constructor() {
+    this.app = new Koa();
+    // secect keys is dreamplus
+    this.app.keys = ['a9b19dd2bbb7acafe5e8d8250df491bd'];
+
+    const pluginPath = `${__dirname}/plugins`;
+    const publicDirectory = `${rootDirectory}/`;
+    const _this = this;
+
+    _this.app.use(Session(sessionConfig, _this.app));
+
+    _this.app.use(async (ctx, next) => {
+      console.log(ctx.method, ctx.url);
       ctx.set('Access-Control-Allow-Origin', '*');
       ctx.set('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
       ctx.set('Access-Control-Allow-Methods','PUT, POST, GET, DELETE, OPTIONS');
+      ctx.set('Access-Control-Allow-Credentials', true);
       if (ctx.method === 'OPTIONS') {
         ctx.status = 200;
       };
       await next();
     });
 
-    const rootPath = path.resolve(__dirname, '..');
+    // 验证登录信息
+    _this.app.use(async (ctx, next) => {
+      await next();
+      let url = ctx.url,
+          type = ctx.request.query.type;
+      console.log('type', type);
+      if (type !== 'miniprogram') {
+        if (!ctx.session.token && ctx.url.includes('/api')) {
+          ctx.session.token = '';
+          if ((ctx.url !== '/api/v1/admin/login' || ctx.url !== '/api/v1/admin/logout')) {
+            ctx.status = 401;
+          }
+        }
+      }
+    });
 
-    app.use(error());
+    _this.app.use(async (ctx, next) => {
+      const start = new Date();
+      await next();
+      const ms = new Date() - start;
+      log4js.responseLogger(ctx, ms);
+    });
 
-    app.use(bindConsole());
+    _this.app.on('error', (err, ctx) => {
+      log4js.errorLogger(ctx, err);
+    });
 
-    app.use(staticFile(rootPath));
+    _this.app.use(body({
+      multipart: true,
+      formLimit: '10mb',
+      jsonLimit: '10mb',
+      textLimit: '10mb',
+      enableTypes: ['json', 'form', 'text']
+    }));
+    _this.app.use(bodyParser());
+    _this.app.use(render());
+    _this.app.use(compress({threshold: 2048}));
+    _this.app.use(controller(_this));
+    _this.app.use(router(_this));
+    _this.app.use(koaStatic(publicDirectory));
 
-    app.use(bodyParser());
+    fs.readdirSync(pluginPath).map(pluginName => {
+      const plugin = require(`${pluginPath}/${pluginName}`);
+      _this.app.use(plugin());
+    });
 
-    app.use(koaBody());
-
-    app.use(loadRouter(router, rootPath));
-
-    this.app = app;
   }
 
-  listen(port, f){
+  listen(port, f = function(){}){
     this.app.listen(port, f());
   }
 

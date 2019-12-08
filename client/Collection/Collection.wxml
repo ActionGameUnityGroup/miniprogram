@@ -1,0 +1,17 @@
+<block wx:if='{{!collectionList.length}}'>
+  <view class="empty-image"><image mode='widthFix' src='../assets/icon/miniprogram-icon-75.jpg'></image></view>
+</block>
+<block wx:else>
+  <view class="collection-list">
+    <block wx:for='{{collectionList}}' wx:key='index'>
+      <view class="collection-item" id='audio{{index}}'>
+        <image class="collection-image" src='{{item.courseImg}}' mode='widthFix'></image>
+        <view class="collection-info">
+          <text class="collection-name">{{item.courseName}}</text>
+          <text class="collection-describe">{{item.courseText}}</text>
+          <text class="collection-latest">已更新{{item.currentCourse}}期</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

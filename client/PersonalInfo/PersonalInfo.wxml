@@ -1,27 +1,12 @@
-<view style='position: relative; width: 100%; height: {{contentHeight}}px; overflow: auto;'>
-  <!-- <view bindtap='navigateAction' id='../UserCenter/userInfo' class="setting-action"><image mode='widthFix' src='../assets/icon/miniprogram-icon-38.png'></image></view> -->
+<view style='height: calc(100% - 104rpx); overflow: auto;'>
   <view class="personal-info-header">
-    <view class="header-background"><image mode='widthFix' src='{{headerBackground}}'></image></view>
     <view class="header-info">
       <view class="personal-info-avatar">
-        <image src='{{avatar}}' mode='aspectFit'></image>
+        <!-- <image src='{{avatar}}' mode='aspectFit'></image> -->
+        <open-data type="userAvatarUrl" />
       </view>
-      <view class="personal-info-name">
-        <text> {{userName}} </text>
-      </view>
-      <view class="personal-info-identify">
-        <text> {{identify}} </text>
-      </view>
-      <view class="header-action-content">
-        <button open-type='contact' class="header-action-item" session-from='mini'>
-          <image mode='aspectFit' src='../assets/icon/miniprogram-icon-34.png' style='width: 129rpx; height: 88rpx;'></image>
-          <text> 报名入学 </text>
-        </button>
-        <view class="header-action-item">
-          <image mode='aspectFit' src='../assets/icon/miniprogram-icon-46.png' style='width: 131rpx; height: 88rpx;'></image>
-          <text> 邀请好友 </text>
-        </view>
-      </view>
+      <!-- <view class="personal-info-name"> {{userName}} </view> -->
+      <view class="personal-info-name"><open-data type="userNickName" /></view>
     </view>
   </view>
 
@@ -33,7 +18,7 @@
           <text> {{item.moduleName}} </text>
         </view>
       </block>
-      <block wx:elif='{{index == 10}}'>
+      <block wx:elif='{{item.isCall}}'>
         <view class="module-item" bindtap='callAction'>
           <image mode='aspectFit' src='{{item.moduleImg}}'></image>
           <text> {{item.moduleName}} </text>
@@ -57,17 +42,21 @@
 
 <view class="nav-bar">
   <view id='../Index/Index' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-5.png' style='width: 94rpx'></image>
+    <image mode='aspectFit' src='../assets/icon/home.png'></image>
     <text> 首页 </text>
   </view>
-  <view id='../Syllabus/syllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-2.png' style='width: 55rpx'></image>
-    <text> 课程表 </text>
+  <view id='../Syllabus/SyllabusMenu' class="nav-bar-item" bindtap='redirectAction'>
+    <image mode='aspectFit' src='../assets/icon/course.png'></image>
+    <text> 年课 </text>
   </view>
   <view class="nav-bar-item">
-    <image mode='aspectFit' src='../assets/icon/miniprogram-icon-4.png' style='width: 43rpx'></image>
+    <image mode='aspectFit' src='../assets/icon/my-active.png'></image>
     <text> 我的 </text>
   </view>
 </view>
 
+<<<<<<< HEAD:client/PersonalInfo/PersonalInfo.wxml
 <!-- <button open-type='getUserInfo' bindtap='getInfoAction' style="position: absolute; top: 529rpx;"> 获取用户数据 </button> -->
+=======
+<!-- <button open-type='getUserInfo' bindtap='getInfoAction'> 获取用户数据 </button> -->
+>>>>>>> d80f2a3356065a02b79ff0c837b05e813ef546cd:client/PersonalInfo/personalInfo.wxml

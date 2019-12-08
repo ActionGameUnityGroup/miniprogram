@@ -1,0 +1,22 @@
+<view></view>
+<scroll-view scroll-y='{{true}}' class='company-introduce-content'>                       
+  <!-- <view class="introduce-cover"><image mode='widthFix' src='{{banner}}' /></view>
+  
+  <view class="introduce-info">
+    <view class="company-name">{{name}}</view>
+    <view class="company-location">
+      <image mode='widthFix' src='/assets/icon/location.png' />
+      <text>{{address}}</text>
+    </view>
+  </view>
+  
+  <view class="company-introduce-bar">简介</view> -->
+
+  <view class="company-introduce-list">
+    <rich-text nodes='{{intro}}' />
+    <!-- <view class='company-introduce-item'>常道文化是一家将古老智慧与现代生活相结合的文化传播机构。以“让生命活出丰盛”为使命，“为800万人的生命觉醒点亮心灯”为愿景。</view>
+    <view class='company-introduce-item'>常道文化的导师传承了古老智慧，融合了东西方文化，经研究和实践，形成了一套教学和疗愈体系，为个人、家庭、企业和社会服务。通过传播生命系统智慧，从身体、情感、思想、能量、系统、灵性六大层面入手，解除价值体系中的认知局限，引导提升个人的自我观察能力、身心调和能力、平衡运作能力，完善家庭系统结构和企业系统结构。内容涵盖“开启丰盛之旅、创造丰盛人生、提升丰盛品质、回归丰盛源头”的系列课程培训等等。</view>
+    <view class='company-introduce-item'>我们致力于为各大平台和团体，提供成熟的教学体系和优质的教学服务团队，共襄盛举。为人们生命觉醒，明达自心，回归本真，活出生命的活力，提供一条生命成长和进化的道路，帮助人们实现丰盛和谐的幸福人生。</view> -->
+  </view>
+
+</scroll-view>

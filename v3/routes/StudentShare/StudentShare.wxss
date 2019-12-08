@@ -1,0 +1,18 @@
+.student-share-list{ margin: 0 auto; padding: 0; width: 686rpx; height: 100%; }
+.student-share-item{ display: block; margin-bottom: 29rpx; padding: 39rpx 36rpx 49rpx; height: auto; background: #fff; border-radius: 17rpx; }
+.student-share-item:first-child{ margin-top: 32rpx; }
+/* .student-share-item:last-child{ margin-bottom: 0; } */
+
+.student-info{ display: flex; justify-content: flex-start; align-items: center; }
+.student-avatar{ display: block; width: 64rpx; height: 64rpx; border-radius: 100rpx; background: green; }
+.student-avatar image{ display: block; width: 100%; height: auto; }
+.student-name{ display: block; margin-left: 23rpx; font-size: 30rpx; font-weight: bold; color: #000000FF; }
+
+.student-word{ display: block; margin-top: 33rpx; width: 100%; text-align: justify; line-height: 47rpx; word-wrap: break-word; font-size: 28rpx; color: #000000FF; }
+.student-word-limit{ display: -webkit-box; margin-top: 33rpx; width: 100%; text-align: justify; line-height: 47rpx; font-size: 28rpx; color: #000000FF; -webkit-box-orient: vertical; -webkit-line-clamp: 4; overflow: hidden; }
+
+.show-more,
+.hide-more{ display: flex; justify-content: flex-start; align-items: center; margin-top: 16rpx; height: 24rpx; font-size: 24rpx; color: #697AA0; }
+.hide-more image{ margin-left: 10rpx; transform: rotate(-90deg); }
+
+.word-time{ display: block; margin-top: 35rpx; font-size: 24rpx; color: #8B8B8BFF; }

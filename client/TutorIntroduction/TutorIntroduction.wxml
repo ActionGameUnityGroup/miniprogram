@@ -1,0 +1,21 @@
+<view class="tutor-introduction-content">
+  <view class="introduction-label">
+    <text>{{tutorInfo.name}}</text>
+    <view class="bottom-background"></view>
+  </view>
+  <view class="introduction-cover"><image mode='widthFix' src='{{tutorInfo.introductionCover}}'></image></view>
+  <view class="introduction-honor">
+    <block wx:for='{{tutorInfo.honorList}}' wx:for-item='honor' wx:key='index'>
+      <view class="honor-name">{{honor}}</view>
+    </block>
+  </view>
+  <view class="introduction-label">
+    <text>导师介绍</text>
+    <view class="bottom-background"></view>
+  </view>
+  <view class="introduction-list">
+    <block wx:for='{{tutorInfo.introductionList}}' wx:for-item='introduction' wx:key='index'>
+      <view class="introduction-item"> {{introduction}} </view>
+    </block>
+  </view>
+</view>

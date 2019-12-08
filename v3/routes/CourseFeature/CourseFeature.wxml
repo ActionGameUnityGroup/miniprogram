@@ -1,0 +1,13 @@
+<view></view>
+<scroll-view class='scroll-view' scroll-y bindscrolltolower='queryCourseFeatureList'>
+  <block wx:for='{{courseFeatureList}}' wx:key='index'>
+    <view class="course-feature-item" bindtap='navigateAction' data-route='/routes/CourseFeatureDetail/CourseFeatureDetail?courseFeatureId={{item.featureId}}'>
+      <view class="course-feature-cover"><image mode='widthFix' src='{{item.cover}}' /></view>
+      <view class="course-feature-info">
+        <view class="course-feature-info-title">{{item.title}}</view>
+        <view class="course-feature-info-msg">{{item.subTitle}}</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<view></view>

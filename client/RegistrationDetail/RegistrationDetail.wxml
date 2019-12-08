@@ -1,0 +1,97 @@
+<scroll-view scroll-y='{{true}}' class="registration-detail-content">
+  <block wx:for='{{courseInfo}}' wx:key='courseIndex'>
+    <view class="activity-cover fade-in">
+      <image
+        wx:if='{{item.show}}'
+        class='{{item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.cover3}}'
+        bindload='imageLoaded'
+        data-index='{{index}}'
+        data-name='courseInfo'
+      />
+      <image
+        class='{{!item.loaded ? "image-top" : "image-bottom"}}'
+        mode='widthFix'
+        src='{{item.thumb3}}'
+        bindload='thumbLoaded'
+        data-index='{{index}}'
+        data-name='courseInfo'
+      />
+    </view>
+    <view class="activity-content">
+      <view class="activity-title">{{item.mainTitle}}</view>
+      <view class="activity-autor">
+        <block wx:for='{{item.authorList}}' wx:for-item='author' wx:key='index'>
+          <text>{{author}}</text>
+        </block>
+      </view>
+      <view class="activity-registration-info">
+        <view class="registration-info-title">报名信息</view>
+        <view class="registration-info-content">
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/city.png'></image></view>
+            <view class="registration-info-name">城市</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.city != ""}}'>{{item.city}}</block>
+              <block wx:else>待定</block>
+            </view>
+          </view>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/price.png'></image></view>
+            <view class="registration-info-name">费用</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.expenses != ""}}'>
+                <block wx:if='{{item.isSpread}}'>
+                  全国统一价￥{{item.unifieldPrice}}元，现推广价￥{{item.expenses}}元
+                </block>
+                <block wx:else>￥{{item.unifieldPrice}}元</block>
+              </block>
+              <block wx:else>待定</block>
+            </view>
+          </view>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/time.png'></image></view>
+            <view class="registration-info-name">时间</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.date != ""}}'>{{item.date}}</block>
+              <block wx:else>待定</block>
+            </view>
+          </view>
+          <view class="registration-info-item">
+            <view class="registration-info-icon"><image mode='widthFix' src='/assets/icon/location.png'></image></view>
+            <view class="registration-info-name">地点</view>
+            <view class="registration-info-value">
+              <block wx:if='{{item.venue != ""}}'>{{item.venue}}</block>
+              <block wx:else>待定</block>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="activity-image-content">
+        <block wx:for='{{courseDetailList}}' wx:for-item='courseDetail' wx:key='index'>
+          <view class="activity-image-item">
+            <image
+              wx:if='{{courseDetail.show}}'
+              class='{{courseDetail.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{courseDetail.cover}}'
+              bindload='imageLoaded'
+              data-index='{{index}}'
+              data-name='courseDetailList'
+            />
+            <image
+              class='{{!courseDetail.loaded ? "image-top" : "image-bottom"}}'
+              mode='widthFix'
+              src='{{courseDetail.thumb}}'
+              bindload='thumbLoaded'
+              data-index='{{index}}'
+              data-name='courseDetailList'
+            />
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<view class="registration-operation" bindtap='navigateOperation' id='/EntryBlank/EntryBlank?courseId={{courseId}}'> 报名入学 </view>

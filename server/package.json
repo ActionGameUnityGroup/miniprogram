@@ -2,34 +2,30 @@
   "name": "nodeServer",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect-history-api-fallback": "^1.5.0",
-    "content-type": "^1.0.4",
     "crypto": "^1.0.1",
     "koa": "^2.5.0",
-    "koa-cors": "0.0.16",
+    "koa-compress": "^3.0.0",
     "koa-router": "^7.4.0",
-    "koa-xml-body": "^2.0.0",
-    "mime": "^2.3.1",
+    "koa-static": "^5.0.0",
+    "log4js": "^3.0.6",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2",
-    "wechat-crypto": "0.0.2",
+    "uuid": "^3.3.2",
     "xml2js": "^0.4.19"
   },
   "devDependencies": {
     "body-parser": "^1.18.2",
-    "busboy": "^0.2.14",
     "koa-body": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
-    "koa-multer": "^1.0.2",
+    "koa-session": "^5.12.0",
     "mongoose": "^5.0.16"
   }
 }

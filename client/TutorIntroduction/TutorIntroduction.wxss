@@ -1,0 +1,14 @@
+Page{ width: 100%; height: 100%; background: #fff; overflow: auto; }
+.tutor-introduction-content{ display: block; padding: 0 52rpx; height: 100%; background: #fff; overflow: auto; }
+.introduction-label{ display: inline-block; position: relative; padding-top: 39rpx; }
+.introduction-label text{ display: block; position: relative; z-index: 2; padding: 0 23rpx; text-align: center; line-height: 42rpx; font-size: 28rpx; color: #000; }
+.bottom-background{ display: block; position: absolute; bottom: 0; z-index: 1; width: 100%; height: 20rpx; background: #ffbe10; }
+
+.introduction-cover{ display: block; margin: 40rpx auto 0; width: 100%; }
+.introduction-cover image{ display: block; width: 100%; }
+
+.introduction-honor{ display: block; margin: 52rpx auto 0; width: 100%; text-align: left; }
+.honor-name{ display: block; line-height: 48rpx; font-size: 24rpx; color: #000; }
+
+.introduction-list{ display: block; margin: 39rpx auto 58rpx; width: 100%; }
+.introduction-item{ display: block; margin: 0 auto 46rpx; width: 100%; text-align: left; line-height: 1.5; font-size: 24rpx; color: #1a1a1a; }

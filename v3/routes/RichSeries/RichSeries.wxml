@@ -1,0 +1,9 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class='course-list'>
+  <block wx:for='{{courseList}}' wx:key='index'>
+    <navigator class="course-item" url='{{item.url}}' open-type='navigate'><image mode='widthFix' src='{{item.cover}}' /></navigator>
+  </block>
+</scroll-view>
+
+<view></view>

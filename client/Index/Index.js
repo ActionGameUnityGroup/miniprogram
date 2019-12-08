@@ -5,173 +5,127 @@ let _this;
 
 Page({
   onShareAppMessage: function(res){
-    // console.log(res);
     return {
       title: '常道智慧生活平台',
       path: '/Index/Index',
     };
   },
   data: {
-    // testImageUrl: '',
     bannerList: [],
-    moduleList: [
-      /*{moduleImage: '../assets/icon/miniprogram-icon-27.png', moduleName: '木元素', moduleUrl: '../Elements/elements?key=wood'},
-      {moduleImage: '../assets/icon/miniprogram-icon-23.png', moduleName: '火元素', moduleUrl: '../Elements/elements?key=fire'},
-      {moduleImage: '../assets/icon/miniprogram-icon-30.png', moduleName: '土元素', moduleUrl: '../Elements/elements?key=earth'},
-      {moduleImage: '../assets/icon/miniprogram-icon-24.png', moduleName: '金元素', moduleUrl: '../Elements/elements?key=gold'},
-      {moduleImage: '../assets/icon/miniprogram-icon-29.png', moduleName: '水元素', moduleUrl: '../Elements/elements?key=water'},
-      {moduleImage: '../assets/icon/miniprogram-icon-25.png', moduleName: '课堂', moduleUrl: '../Class/Class'},
-      {moduleImage: '../assets/icon/miniprogram-icon-26.png', moduleName: '疗愈', moduleUrl: '../Health/Health'},
-      {moduleImage: '../assets/icon/miniprogram-icon-22.png', moduleName: '会员', moduleUrl: '../Member/member'},
-      {moduleImage: '../assets/icon/miniprogram-icon-21.png', moduleName: '公益', moduleUrl: '../PublicWelfare/PublicWelfare'},
-      {moduleImage: '../assets/icon/miniprogram-icon-28.png', moduleName: '签到', moduleUrl: '../SignIn/SignIn'},*/
-    ],
-    AudioList: [
-      /*{audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},
-      {audioCoverUrl: '../assets/icon/cover.png', audioName: '释道心精选单曲', audioId: ''},*/
-    ],
-    articleList: [
-      /*{articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},
-      {articleCoverUrl: '../assets/icon/miniprogram-icon-72.jpg', articleName: '空间的诗学', visitNumber: 526},*/
-    ],
-    courseList: [
-      /*{courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},
-      {courseCoverUrl: '../assets/icon/cover.png', courseName: '《中庸》第一章：天命之谓性', courseText: '“愤怒、焦虑、悲伤、抱怨......”各种负面情绪时常“充斥”我们的生命，影响我们的生活', currentCourse: 4, coursePrice: 99},*/
-    ],
-    showAudioWidth: 180 * 7 + 19 * 6,
-    contentHeight: 0,
-    navHeight: 0,
-    audioListWidth: 0,
-    articleListWidth: 0
+    lastestList: [],
+    tutorList: [],
+    lecturerList: [],
+    hasUserInfo: false,
   },
   onLoad: function () {
     _this = this;
-    wx.setNavigationBarTitle({
-      title: '常道智慧生活'
-    });
-    wx.request({
-      url: 'https://www.changdaolife.cn/api/banner/getBanner?page=index',
-      method: 'GET',
-      success: function(res){
-        console.log(res.data, '回调');
-        /*_this.setData({
-          bannerList: res.data.requestData[0].bannerList
-        });*/
-      }
-    });
 
-    /*wx.request({
-      url: 'https://www.changdaolife.cn/api/file/getFile',
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/v0/banner/getBannerList?page=index',
       method: 'GET',
       success: function(res){
-        console.log(res.errMsg);
-        _this.setData({
-          testImageUrl: res.data.requestData.bannerList[0].url 
+        let bannerList = res.data.data[0].bannerList.map(banner => {
+          banner.loaded = false;
+          banner.show = false;
+          return banner;
         });
+        _this.setData({ bannerList });
       }
-    });*/
+    });
 
     wx.request({
-      url: 'https://www.changdaolife.cn/api/course/getCourseList',
+      url: 'https://www.changdaolife.cn/api/v0/course/getLastestList?page=index',
       method: 'GET',
       success: function(res){
-        console.log(res.data.requestData);
-        const resList = [];
-        if(res.data.requestData.courseList.length < 4){
-          for(var i = 0; i < 4; i++){
-            resList[i] = res.data.requestData.courseList[i];
+        let lastestList = res.data.data.map(lastest => {
+          lastest.loaded = false;
+          lastest.show = false;
+          return lastest;
+        });
+        _this.setData({ lastestList });
+      }
+    });
+
+    wx.request({
+      url: 'https://www.changdaolife.cn/api/v0/tutor/getTutorList',
+      method: 'GET',
+      success: function(res){
+        let tutorList = res.data.data.map(tutor => {
+          tutor.loaded = false;
+          tutor.show = false;
+          return tutor;
+        });
+        if(tutorList.length < 5){
+          for(let index = tutorList.length; index < 5; index++){
+            tutorList.push({});
           }
+          console.log(tutorList, '导师列表');
+          _this.setData({ tutorList });
+        } else {
+          console.log(tutorList);
+          _this.setData({ tutorList });
         }
-        console.log(resList);
-        _this.setData({
-          AudioList: resList,
-          courseList: res.data.requestData.courseList,
-        });
       }
     });
 
-    wx.request({
-      url: 'https://www.changdaolife.cn/api/article/getArticleList',
-      method: 'GET',
-      success: function(res){
-        const resList = [];
-        if(res.data.requestData.articleList.length < 4){
-          for(var i = 0; i < 4; i++){
-            resList[i] = res.data.requestData.articleList[i];
-          }
-        }
-        console.log(res.data.requestData.articleList);
-        _this.setData({
-          articleList: resList,
-        });
-        wx.setStorage({
-          key: 'articleList',
-          data: res.data.requestData.articleList
-        });
-      }
-    });
-
-    let height = app.globalData.systemInfo.windowHeight;
-    _this = this;
-    _this.setData({
-      contentHeight: height*(1 - .083),
-      audioListWidth: 70 * _this.data.AudioList.length + (_this.data.AudioList.length - 1) * 23.5 + 54 + 45
-    });
+    // 登录
     wx.login({
-      success: function(res){
-        console.log(res);
+      success(res){
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.getUserInfo({
-          success: function(e){
-            /*console.log(e);
-            console.log(encodeURIComponent(e.encryptedData));
-            console.log(encodeURIComponent(e.iv));*/
-            wx.request({
-              url: 'https://www.changdaolife.cn/api/user/login',
-              method: 'GET',
-              data: {
-                code: res.code,
-                encryptedData: encodeURIComponent(e.encryptedData),
-                iv: encodeURIComponent(e.iv)
+          complete(userInfo){
+            let data = {code: res.code};
+            if(userInfo.errMsg.includes('ok')){
+              const encryptedData = encodeURIComponent(userInfo.encryptedData);
+              const iv = encodeURIComponent(userInfo.iv);
+              data = {...data, encryptedData, iv, };
+            }
+            app.request(
+              'https://www.changdaolife.cn/api/v0/user/login',
+              {
+                method: 'POST',
+                data: JSON.stringify(data),
               },
-              success: function(info){
-                console.log(info);
-                console.log(wx);
-                wx.setStorage({
-                  key: 'openid', 
-                  data: info.data.requestData.openid
-                });
-              }
-            });
+              function(res){
+                if(res.status.includes('ok')){
+                  wx.setStorageSync('openid', res.data.openid);
+                } else {
+                  wx.showToast({
+                    title: res.errMsg,
+                  });
+                }
+              },
+            );
           }
         });
       }
     });
-    console.log(app);
+
   },
-  moreArticleAction: function(){
-    wx.navigateTo({
-      url: '../ArticleList/ArticleList'
-    });
+  imageLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].loaded = true;
+    data[name] = list;
+    this.setData(data);
+  },
+  thumbLoaded: function(e){
+    let data = {};
+    const { index, name } = e.currentTarget.dataset;
+    const list = this.data[name];
+    list[index].show = true;
+    data[name] = list;
+    this.setData(data);
   },
   redirectToSyllabusMenu: function(){
     wx.redirectTo({
-      url: '../Syllabus/syllabusMenu'
+      url: '/Syllabus/Syllabus'
     });
   },
   redirectToPersonalInfo: function(){
     wx.redirectTo({
-      url: '../PersonalInfo/personalInfo'
+      url: '/PersonalInfo/PersonalInfo'
     });
   },
   navigateAction: function(e){

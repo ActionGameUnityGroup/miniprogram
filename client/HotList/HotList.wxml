@@ -1,0 +1,31 @@
+<view></view>
+
+<scroll-view scroll-y='{{true}}' class="list-content">
+  <view class="list-title">
+    <image mode='widthFix' src='/assets/icon/syllabus-content-title.png' />
+  </view>
+  <view class="list-section">
+    <block wx:for="{{hotList}}" wx:key="index">
+      <view class="course-activity-item">
+        <view class="course-activity-info">
+          <view class="course-activity-title">
+            <block wx:for='{{item.activityName}}' wx:for-item='title' wx:key='titleKey'>
+              <text>《{{title}}》</text>
+            </block>
+          </view>
+          <view class="course-activity-detail">
+            <text>{{item.activityDate}}</text>
+            <text>{{item.activityPlace}}</text>
+          </view>
+        </view>
+        <view class="course-activity-head">
+          <block wx:for='{{item.activityAuthorList}}' wx:for-item='author' wx:key='authorIndex'>
+            <image mode='widthFix' src='{{author}}' />
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+
+<view></view>

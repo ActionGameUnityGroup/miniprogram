@@ -1,0 +1,117 @@
+
+<view></view>
+
+<view class='scroll-view'>
+
+  <view class="header">
+    <!-- <view class="header-background"><image mode='widthFix' src='/assets/icon/video-bar-background.jpg' /></view> -->
+    <swiper
+      class="video-bar"
+      autoplay='{{autoplay}}'
+      circular='{{true}}'
+      indicator-dots='{{true}}'
+      indicator-color='rgba(146, 146, 146, 1)'
+      indicator-active-color='#ffffff'
+    >
+      <block wx:for='{{videoList}}' wx:key='index'>
+        <swiper-item item-id='{{index}}'>
+          <view style='width: 100%;' bindtap='navigateAction' data-route='/routes/Video/Video?videoId={{item.videoId}}'>
+            <image mode='widthFix' src='{{item.poster}}' style='width: 100%; border-radius: 20rpx;' />
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class="show-content ff-background">
+    <view class="show-title"><text>常驻导师</text></view>
+    <swiper class="tutor-list" display-multiple-items='{{3}}'>
+      <block wx:for='{{residentTutorList}}' wx:key='index'>
+        <block wx:if='{{item.tutorId === ""}}'>
+          <swiper-item>
+            <view class="tutor-item">
+              <view class="tutor-image"><image mode='widthFix' src='{{item.avatar}}'/></view>
+              <view class="tutor-name font-bold"><text> {{item.name}} </text></view>
+              <view class="tutor-title">{{ item.title[0] }}</view>
+            </view>
+          </swiper-item>
+        </block>
+        <block wx:else>
+          <swiper-item>
+            <view data-route='/routes/TutorIntroduction/TutorIntroduction?tutorId={{item.tutorId}}' class="tutor-item" bindtap='navigateAction'>
+              <view class="tutor-image"><image mode='widthFix' src='{{item.avatar}}'/></view>
+              <view class="tutor-name font-bold"><text> {{item.name}} </text></view>
+              <view class="tutor-title">{{ item.title[0] }}</view>
+            </view>
+          </swiper-item>
+        </block>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- <view class="show-content ff-background">
+    <view class="show-title"><text>特约导师</text></view>
+    <swiper class="contributing-tutor-list" display-multiple-items='{{3}}'>
+      <block wx:for='{{contributionTutorList}}' wx:key='index'>
+        <swiper-item>
+          <view data-route='/routes/TutorIntroduction/TutorIntroduction?tutorId={{item.tutorId}}' class="tutor-item-sec" bindtap='navigateAction'>
+            <view class="tutor-image"><image mode='widthFix' src='{{item.avatar}}'/></view>
+            <view class="tutor-name font-bold"><text> {{item.name}} </text></view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> -->
+
+  <view class="show-content ff-background rich-show-content">
+    <view class="show-title">
+      <text>常道•丰盛系列</text>
+      <view class="show-all" bindtap='navigateAction' data-route='/routes/RichSeries/RichSeries'>查看全部 ></view>
+    </view>
+    <view class="rich-content-series">
+      <view class="series-cover"><image mode='widthFix' src='/assets/icon/rich-series-cover.jpg' /></view>
+      <view class="series-info">
+        <view class="series-info-title">丰盛系列</view>
+        <view class="series-info-describe">这是一条迈向丰盛，最终拥抱丰盛的道路，我们在这里等你</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="show-content ff-background">
+    <view class="show-title">
+      <text>课程风采</text>
+      <view class="show-all" bindtap='navigateAction' data-route='/routes/CourseFeature/CourseFeature'>查看全部 ></view>
+    </view>
+    <view class="course-feature-content">
+      <block wx:for='{{courseFeatureList}}' wx:key='index'>
+        <view class="course-feature-item" bindtap='navigateAction' data-route='/routes/CourseFeatureDetail/CourseFeatureDetail?courseFeatureId={{item.featureId}}'>
+          <view class="course-feature-cover"><image mode='scaleToFill' src='{{item.cover}}' /></view>
+          <view class="course-feature-info">
+            <view class="course-feature-info-title">{{item.title}}</view>
+            <view class="course-feature-info-msg">{{item.subTitle}}</view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="show-content ff-background marin-bottom-x">
+    <view class="show-title">
+      <text>助教团</text>
+      <view class="show-all" bindtap='navigateAction' data-route='/routes/AssistantGroup/AssistantGroup'>了解详情 ></view>
+    </view>
+    <swiper class="tutor-list" display-multiple-items='{{3}}'>
+      <block wx:for='{{assistantList}}' wx:key='index'>
+        <swiper-item>
+          <view class="tutor-item" bindtap='navigateAction' data-route='/routes/AssistantIntroduction/AssistantIntroduction?assistantId={{item.assistantId}}'>
+            <view class="tutor-image"><image mode='widthFix' src='{{item.avatar}}'/></view>
+            <view class="tutor-title font-bold">常道助教</view>
+            <view class="tutor-name"><text> {{item.name}} </text></view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
+
+<nav-bar indexActived='{{true}}' />
