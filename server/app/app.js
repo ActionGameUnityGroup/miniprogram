@@ -1,5 +1,4 @@
 const Koa = require('koa');
-const https = require('https');
 const Session = require('koa-session');
 const fs = require('fs');
 const log4js = require(`${__dirname}/os/log4js`);
@@ -14,11 +13,6 @@ const path = require('path');
 const rootDirectory = path.resolve(__dirname, '..');
 const db = require(`${rootDirectory}/config/config.db`);
 const sessionConfig = require(`${rootDirectory}/config/session.config`);
-
-const options = {
-  key: fs.readFileSync(`${rootDirectory}/config/2164838_changdaolife.key`),
-  cert: fs.readFileSync(`${rootDirectory}/config/2164838_changdaolife.pem`),
-};
 
 class App {
   constructor() {
@@ -92,7 +86,7 @@ class App {
   }
 
   listen(port, f = function(){}){
-    https.createServer(options, this.app.callback()).listen(port, f());
+    this.app.listen(port, f());
   }
 
 }
