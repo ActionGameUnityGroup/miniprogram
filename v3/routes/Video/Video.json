@@ -1,6 +1,6 @@
 {
   "disableScroll": true,
   "usingComponents": {
-    "self-video": "/components/Video/Video"
+    "txv-video": "plugin://tencentvideo/video"
   }
 }

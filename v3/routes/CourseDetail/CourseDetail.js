@@ -4,11 +4,15 @@ Page({
   data: {
     showShareBar: false,
     shareBarClass: 'share-bar',
-    courseInfo: {}
+    courseInfo: {},
+    isMatch: false,
   },
   onLoad  (option) {
-    let { courseId } = option;
     let _this = this;
+    let { courseId, category } = option;
+    if (category) {
+      this.setData({ isMatch: true });
+    }
     wx.request({
       url: `https://www.changdaolife.cn/api/v0/course/getCourseInfo?courseId=${courseId}`,
       method: 'GET',

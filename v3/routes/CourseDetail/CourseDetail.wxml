@@ -22,7 +22,12 @@
     </view>
   </block>
   <block wx:else>
-    <view class='empty'>暂无课程</view>
+    <view class='empty'>
+      <block wx:if='{{isMatch}}'><image src='/assets/icon/no-course.jpg' mode='widthFix' style='width: 100%;' /></block>
+      <block wx:else>
+        暂无课程
+      </block>
+    </view>
   </block>
 </scroll-view>
 

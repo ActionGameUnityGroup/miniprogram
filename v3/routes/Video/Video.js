@@ -1,49 +1,59 @@
 let _this;
-let video = {};
+// let video = {};
 let playTime = null;
 
 Page({
   data: {
+    curr_id: '',
     videoList: [],
   },
   onLoad(options) {
     _this = this;
     _this.getVideoList(options.videoId);
   },
-  onUnload() {
+  onReady: function () {
+    this.videoContext = wx.createVideoContext('myVideo')
+  },
+  videoPlay(e) {
+    this.setData({
+      curr_id: e.currentTarget.dataset.id,
+    });
+    this.videoContext.play();
+  },
+  /*onUnload() {
     console.log('返回');
     video['video1'].stop();
     video['video2'].stop();
     video['video3'].stop();
-  },
+  },*/
   getVideoList(videoId) {
     wx.request({
       url: 'https://www.changdaolife.cn/api/v0/video/getVideoList?type=miniprogram&number=1&size=10',
       method: 'GET',
       success(res) {
         if (res.data.code) {
-          let videoList = [];
-          for (let i = 0, length = res.data.data.data.length; i < length; i++) {
-            let item = res.data.data.data[i];
-            item.showController = true;
-            item.showPoster = true;
-            item.isPlay = false;
-            item.current = 0;
-            item.currentTime = '00:00';
-            item.videoMaxLength = _this.setMaxLength(item.duration);
-            video[item.videoId] = wx.createVideoContext(item.videoId, _this);
-            /*if (item.videoId === videoId) {
-              video[item.videoId].play();
-              item.showPoster = false;
-            }*/
-            videoList.push(item);
-          }
+          let videoList = res.data.data.data;
+          // for (let i = 0, length = res.data.data.data.length; i < length; i++) {
+          //   let item = res.data.data.data[i];
+          //   item.showController = true;
+          //   item.showPoster = true;
+          //   item.isPlay = false;
+          //   item.current = 0;
+          //   item.currentTime = '00:00';
+          //   item.videoMaxLength = _this.setMaxLength(item.duration);
+          //   video[item.videoId] = wx.createVideoContext(item.videoId, _this);
+          //   /*if (item.videoId === videoId) {
+          //     video[item.videoId].play();
+          //     item.showPoster = false;
+          //   }*/
+          //   videoList.push(item);
+          // }
           _this.setData({ videoList });
         }
       }
     });
   },
-  playVideo(e) {
+  /*playVideo(e) {
     let videoId = e.currentTarget.id;
     let videoItem = video[videoId];
     if (videoItem) {
@@ -161,5 +171,5 @@ Page({
       videoItem.seek(value);
     }
     this.setData({ videoList });
-  },
+  },*/
 });

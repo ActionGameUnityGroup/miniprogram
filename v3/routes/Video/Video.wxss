@@ -19,3 +19,8 @@ Page{ background: #e1e1e1; }
 .video-slider{ display: block; width: 500rpx; }
 .video-current-time{ display: block; padding-left: 10rpx; color: #fff; font-size: 28rpx; }
 .video-max-length{ display: block; padding-right: 10rpx; color: #fff; font-size: 28rpx; }
+
+.video{ position: relative; }
+.model-img{ width: 100%; height: 420rpx; }
+.model-btn{ position: absolute; left: 0; top: 0; bottom: 0; right: 0; margin: auto; width: 100rpx; height: 100rpx; border-radius: 50%; background-color: rgba(0,0,0,.3); }
+.play-icon{ margin: 28rpx 42rpx; border-top: 26rpx solid transparent; border-left: 36rpx solid #fff; border-bottom: 22rpx solid transparent; }

@@ -7,7 +7,29 @@
   <block wx:for='{{videoList}}' wx:key='index'>
     <view class="video-item">
       <view class="video-title">{{item.title}}</view>
-      <view class="video-bar">
+        <txv-video 
+          vid="{{item.vid}}"
+          playerid="txv{{index}}"
+          usePoster="{{true}}"
+        />
+        <!-- <view class="video-container">
+          <view  class="video" data-id="{{item.videoId}}" bindtap="videoPlay">
+            <video
+              wx:if="{{curr_id == item.videoId}}"
+              id="myVideo"
+              style="width: 750rpx; height: calc(9 * 750rpx / 16);"
+              src="{{item.url}}"
+              poster="{{item.poster}}"
+              objectFit="cover"
+              controls
+            />
+            <view wx:else>
+              <image class="model-img" style="width: 750rpx; height: calc(9 * 750rpx / 16);" mode="aspectFill" src="{{item.poster}}" />
+              <view class="model-btn"><view class="play-icon"></view></view>
+            </view>
+          </view>
+        </view> -->
+      <!-- <view class="video-bar">
         <video
           id='{{item.videoId}}'
           data-key='{{index}}'
@@ -22,11 +44,11 @@
           bindpause='pauseVideo'
           poster='{{item.poster}}'
         >
-          <!-- <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
+          <cover-view style='width: 100%;' wx:if='{{item.showPoster}}' bindtap='playVideo' id='{{item.videoId}}' data-key='{{index}}'>
             <cover-image mode='widthFix' src='{{item.poster}}' style='width: 100%;' />
-          </cover-view> -->
+          </cover-view>
         </video>
-      </view>
+      </view> -->
     </view>
   </block>
 </scroll-view>

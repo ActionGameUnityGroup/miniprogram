@@ -31,14 +31,11 @@
     "routes/Income/Income"
   ],
   "plugins": {
-    "txv-video": {
+      "tencentvideo": {
         "version": "1.3.3",
         "provider": "wxa75efa648b60994b"
-    }
+      }
   },
-  "requiredBackgroundModes": [
-    "audio"
-  ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",

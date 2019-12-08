@@ -2,7 +2,7 @@ const app = getApp();
 
 const courseList = [{
         cover: '/assets/icon/marchTowardRichCover.jpg',
-        url: '/routes/CourseDetail/CourseDetail?courseId=',
+        url: '/routes/CourseDetail/CourseDetail?category=marchTowardRich&courseId=',
       },{
         cover: '/assets/icon/richDoorCover.jpg',
         url: '/routes/CourseList/CourseList?category=richDoor',
